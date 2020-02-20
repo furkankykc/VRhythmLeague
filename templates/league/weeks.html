@@ -1,0 +1,27 @@
+{% extends 'league/league_base.html' %}
+
+{% block content %}
+    {% load static %}
+    <div class="container">
+        <div class="row">
+
+            {% for week in weeks %}
+                <div class="col-md-offset-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{% static 'media/beatsaber.jpg' %}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ week.name }}</h5>
+                            <p class="card-text">{{ week.description }}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{ week.type }}</li>
+                            <li class="list-group-item">{{ week.game }}</li>
+                            <li class="list-group-item"><a href="{% url 'playlist_pk' week.playlist.pk %}">{{ week.playlist }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

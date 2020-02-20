@@ -1,0 +1,19 @@
+{% extends 'league/league_base.html' %}
+
+{% block content %}
+
+    {% for playlist in playlists %}
+        <div>
+            <a> playlist.name</a>
+            <a> playlist.game</a>
+            <a>
+                {% for song in playlist.songs.all %}
+                    <a>song.name</a>
+                {% endfor %}
+            </a>
+
+        </div>
+    {% endfor %}
+
+
+{% endblock content %}

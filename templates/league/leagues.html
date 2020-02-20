@@ -1,0 +1,86 @@
+{% extends 'league/league_base.html' %}
+
+{% block content %}
+    {% load static %}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            {% for league in leagues %}#}
+{##}
+{#                <div class="col">#}
+{#                    <div class="card" style="width: 18rem;">#}
+{#                        <img class="card-img-top" src="{% static 'media/beatsaber.jpg' %}" alt="Card image cap">#}
+{#                        <div class="card-body">#}
+{#                            <h5 class="card-title">{{ league.name }}</h5>#}
+{#                            <p class="card-text">Some quick example text to build on the card title and make up the bulk#}
+{#                                of#}
+{#                                the card's#}
+{#                                content.</p>#}
+{#                        </div>#}
+{#                        <ul class="list-group list-group-flush">#}
+{#                            <li class="list-group-item">{{ league.type }}</li>#}
+{#                            <li class="list-group-item">{{ league.game }}</li>#}
+{#                            <li class="list-group-item">Vestibulum at eros</li>#}
+{#                        </ul>#}
+{#                        <div class="card-body">#}
+{#                            <a href="/league/{{ league.game.pk }}/{{ league.pk }}" class="card-link">Explore</a>#}
+{#                            <a href="#" class="card-link">Register</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+{#    </div>#}
+
+    <section class="feature-section spad">
+        <div class="container">
+            <div class="row">
+                {% for league in leagues %}
+                    <div class="col-lg-3 col-md-6 p-0">
+                        <div class="feature-item set-bg" data-setbg="{% static 'media/beatsaber.jpg' %}">
+                            <span class="cata new">{{ league.game }}</span>
+                            <div class="fi-content text-white">
+                                <h5><a href="/league/{{ league.game.pk }}/{{ league.pk }}">{{ league.name.title }}</a>
+                                </h5>
+                                <p>{{ league.game }}</p>
+                                <a href="#" class="fi-comment">{{ league.uid }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {#            <div class="col-lg-3 col-md-6 p-0">#}
+        {#                <div class="feature-item set-bg" data-setbg="{% static 'game_site/img/features/2.jpg' %}">#}
+        {#                    <span class="cata strategy">strategy</span>#}
+        {#                    <div class="fi-content text-white">#}
+        {#                        <h5><a href="#">Justo tempor, rutrum erat id, molestie</a></h5>#}
+        {#                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>#}
+        {#                        <a href="#" class="fi-comment">3 Comments</a>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#            <div class="col-lg-3 col-md-6 p-0">#}
+        {#                <div class="feature-item set-bg" data-setbg="{% static 'game_site/img/features/3.jpg' %}">#}
+        {#                    <span class="cata new">new</span>#}
+        {#                    <div class="fi-content text-white">#}
+        {#                        <h5><a href="#">Nullam lacinia ex eleifend orci porttitor</a></h5>#}
+        {#                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>#}
+        {#                        <a href="#" class="fi-comment">3 Comments</a>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#            <div class="col-lg-3 col-md-6 p-0">#}
+        {#                <div class="feature-item set-bg" data-setbg="{% static 'game_site/img/features/4.jpg' %}">#}
+        {#                    <span class="cata racing">racing</span>#}
+        {#                    <div class="fi-content text-white">#}
+        {#                        <h5><a href="#">Lacinia ex eleifend orci suscipit</a></h5>#}
+        {#                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>#}
+        {#                        <a href="#" class="fi-comment">3 Comments</a>#}
+        {#                    </div>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </div>#}
+        {#    </div>#}
+    </section>
+{% endblock content %}

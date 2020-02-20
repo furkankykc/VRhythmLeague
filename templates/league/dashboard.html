@@ -1,0 +1,9 @@
+{% extends 'league/league_base.html' %}
+
+{% block content %}
+{% for score in  scores  %}
+    <i>{{ score }}</i>
+    <br/>
+{% endfor %}
+
+{% endblock %}
