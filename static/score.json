@@ -1,0 +1,16 @@
+[
+  {
+    "difficultyBeatMap": {
+      "difficultyRank": 1,
+      "noteJumpMovementSpeed": 1.1,
+      "noteJumpStartBeatOffset": 1.1
+    },
+    "rawscore": 1,
+    "modifiedScore": 1,
+    "fullcombo": "True",
+    "gooodCutsCount": 1,
+    "badCutsCount": 1,
+    "missedCount": 1,
+    "max_combo": 1
+  }
+]

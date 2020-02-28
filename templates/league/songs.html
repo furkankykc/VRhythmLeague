@@ -1,0 +1,146 @@
+{% extends 'league/league_base.html' %}
+
+
+{% block content %}
+    <style>
+        table {
+            table-layout: auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        table td {
+            border: 1px solid #ccc;
+        }
+
+        table .absorbing-column {
+            width: 9%;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#txtSearch").autocomplete({
+                source: "/search/",
+                minLength: 2,
+                open: function () {
+                    setTimeout(function () {
+                        $('.ui-autocomplete').css('z-index', 99);
+                    }, 0);
+                }
+            });
+        });
+    </script>
+    {#    <form id=”search” method=”POST” action=”{% url 'search' %}”>#}
+    {#        {% csrf_token %}#}
+    {#        <input type=”text” class=”form-control” id=”txtSearch” name=”txtSearch”>#}
+    {#        <button type=”submit” class=”btn btn-submit”>Submit</button>#}
+    {#    </form>#}
+    <table class="table table-striped table-bordered bg-turk">
+        <thead class="thead-dark">
+        <tr>
+            <th rowspan="2" width="1" scope="col">#</th>
+            <th rowspan="2" scope="col">Key</th>
+            <th rowspan="2" scope="col">Hash</th>
+            <th rowspan="2" scope="col">Name</th>
+            <th rowspan="2" scope="col">Sub Name</th>
+            <th class="table-bordered" colspan="4" scope="colgroup">Difficulties</th>
+            <th rowspan="2" scope="col">Bpm</th>
+            <th rowspan="2" scope="col">Played Count</th>
+            {#            <th rowspan="2" scope="col">upvotes</th>#}
+            {#            <th rowspan="2" scope="col">downvotes</th>#}
+            <th rowspan="2" scope="col">Heat</th>
+            <th rowspan="2" scope="col">Rating</th>
+        </tr>
+        <tr class="table-bordered">
+{#            <th>EASY</th>#}
+            <th>NORMAL</th>
+            <th>HARD</th>
+            <th>EXPERT</th>
+            <th>EP</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for song in songs %}
+            <tr>
+                <th scope="row"> {{ forloop.counter }}</th>
+                <th>{{ song.key }}</th>
+                <td>{{ song.hash }}</td>
+                <td>{{ song.name }}</td>
+                <td>{{ song.sub_name }}</td>
+
+
+{#                <th class="table-bordered" scope="row">#}
+{#                    {% if song.easy %}#}
+{#                        X#}
+{#                    {% endif %}#}
+{#                </th>#}
+                <th class="table-bordered" scope="row">
+                    {% if song.normal %}
+                        X
+                    {% endif %}
+                </th>
+                <th class="table-bordered" scope="row">
+                    {% if song.hard %}
+                        X
+                    {% endif %}
+                </th>
+                <th class="table-bordered" scope="row">
+                    {% if song.expert %}
+                        X
+                    {% endif %}
+                </th>
+
+                <th class="table-bordered" scope="row">
+                    {% if song.expert_plus %}
+                        X
+                    {% endif %}
+                </th>
+
+
+                <td>{{ song.bpm }}</td>
+                <td>{{ song.plays }}</td>
+                {#                <td>{{ song.up_votes }}</td>#}
+                {#                <td>{{ song.down_votes }}</td>#}
+                <td>{{ song.heat|floatformat:-2 }}</td>
+                <td>{{ song.rating|floatformat:-2 }}</td>
+            </tr>
+
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+    {% if songs.has_other_pages %}
+        <ul class="pagination mx-auto" style="width: 300px;">
+            {% if songs.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ songs.previous_page_number }}" tabindex="-1">Previous</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+            {% endif %}
+            <li class="page-item active">
+            <li class="current">
+                <a class="page-link">Page {{ songs.number }} of {{ songs.paginator.num_pages }}</a>
+            </li>
+            </li>
+
+            {% if songs.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ songs.next_page_number }}">Next</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            {% endif %}
+        </ul>
+    {% endif %}
+
+
+
+{% endblock content %}

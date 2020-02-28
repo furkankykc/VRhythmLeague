@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+form {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}
+
+div.page {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    font-size: 1.2em
+}
+
+div.page-title {
+    text-align: center;
+}
+
+nav.main-menu li {
+    text-align: center;
+}
+
+nav.main-menu a:hover {
+    border-bottom: 2px solid #1de1ff;
+    display: inline-block;
+    line-height: 0.85;
+    /*text-shadow: 2px 2px white,*/
+    /*0px -0px white,*/
+    /*-2px 2px white,*/
+    /*-2px -2px white;*/
+}
+
+div.page form {
+    margin: 20px 200px;
+}
+
+form h2 {
+    text-align: center;
+    margin: 100 auto;
+}
+
+form p {
+    margin: 20px;
+    display: block;
+
+}
+
+form ul {
+    color: #aba7a7;
+
+}
+
+.bg-pattern {
+    background-image: url("/static/game_site/img/pattern.png");
+    background-repeat: repeat;
+}
+
+.bg-turk {
+    background: #cdcdff;
+    background-repeat: repeat;
+}
+
+.tournament-item {
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+.tournament-title {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 0;
+    background: #1de1ff;
+}
+
+.season-link {
+    font-weight: 500;
+    color: #fff;
+
+}
+
+.season-link:hover {
+    color: darkred;
+}
+
+p span {
+    color: #1de1ff;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+
+}
+
+.tournament-item .ti-notic {
+    display: inline-block;
+    padding: 8px 21px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #131313;
+    text-transform: uppercase;
+    background: red;
+}
+
+
+.footer-section {
+    position: fixed;
+    Width: 100%;
+    bottom: 0;
+}
+
+
+.form-elegant .font-small {
+    font-size: 0.8rem;
+}
+
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+}
+
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+}
+
+.form-elegant .modal-header {
+    border-bottom: none;
+}
+
+.modal-dialog .form-elegant .btn .fab {
+    color: #2196f3 !important;
+}
+
+.form-elegant .modal-body, .form-elegant .modal-footer {
+    font-weight: 400;
+}

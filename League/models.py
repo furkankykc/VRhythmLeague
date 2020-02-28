@@ -1,15 +1,28 @@
+import datetime as dt
+
+from django.db.models import Q
+from django.utils import timezone
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
+import humanize
 from . import validators
 from django.utils import timezone
 from django.db import models
+from smart_selects.db_fields import ChainedManyToManyField, ChainedForeignKey
 
 # Create your models here.
-_max_length = 20
+_max_length = 50
+
+
+class TimeStampMixin(models.Model):
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
 
 
 class Game(models.Model):
@@ -20,23 +33,93 @@ class Game(models.Model):
         return '{}'.format(self.name)
 
 
-class Song(models.Model):
+class Difficulty(models.Model):
+    # name = models.CharField(max_length=_max_length)
+    # max_score = models.IntegerField()
+    # stars = models.FloatField()
+    length = models.IntegerField()
+    duration = models.FloatField()
+    bombs = models.IntegerField()
+    notes = models.IntegerField()
+    obstacles = models.IntegerField()
+    njs = models.IntegerField()
+    njs_offset = models.IntegerField()
+
+    # ranked = models.BooleanField()
+
+    class Meta:
+        abstract = False
+
+
+#
+# class Difficulties(models.Model):
+#     easy = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff1')
+#     normal = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff_normal')
+#     hard = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff_hard')
+#     expert = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff_ex')
+#     expert_plus = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff_exp_1')
+
+#
+# class Vote(models.Model):
+#     count = models.BigIntegerField()
+#
+#     class Meta:
+#         abstract = False
+#
+#
+# class Votes(models.Model):
+#     up_votes = models.OneToOneField(Vote, on_delete=models.CASCADE, related_name='Votes_up_votes')
+#     down_votes = models.OneToOneField(Vote, on_delete=models.CASCADE, related_name='Votes_down_votes')
+
+
+class Song(TimeStampMixin):
+    key = models.CharField(max_length=40, primary_key=True, blank=True)
     name = models.CharField(max_length=_max_length)
     picture = models.CharField(max_length=30, blank=True, null=True)
-    keywords = models.CharField(max_length=50)
-    created_date = models.DateTimeField(default=timezone.now)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
-    # published_date = models.DateTimeField(blank=True, null=True)
+    description = models.CharField(max_length=150)
+    hash = models.CharField(max_length=40)
+    sub_name = models.CharField(max_length=_max_length)
+    song_author_name = models.CharField(max_length=_max_length)
+    level_author_name = models.CharField(max_length=_max_length)
+    # diffs = models.OneToOneField(Difficulties, on_delete=models.CASCADE,related_name='diff_ez')
+    easy = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='easy', null=True)
+    normal = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='normal', null=True)
+    hard = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='hard', null=True)
+    expert = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert', null=True)
+    expert_plus = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert_plus', null=True)
 
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
+    up_votes = models.BigIntegerField()
+    down_votes = models.BigIntegerField()
+
+    downloads = models.BigIntegerField()
+    plays = models.BigIntegerField()
+    direct_download = models.URLField()
+    download_url = models.URLField()
+    cover_url = models.URLField()
+
+    bpm = models.FloatField()
+    heat = models.FloatField()
+    rating = models.FloatField()
 
     def __str__(self):
-        return '{}'.format( self.name)
+        return '{}'.format(self.name)
+
+    @classmethod
+    def difficulties(cls):
+        return ['easy', 'normal', 'hard', 'expert', 'expert_plus']
+
+    # @property
+    # def calculate_performance_point(self, difficulty: int):
+    #     return self.difficulties()[difficulty] * self.rating
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        self.created_at = timezone.now()
+        super(Song, self).save()
 
 
-class Player(models.Model):
+class Player(TimeStampMixin):
     name = models.CharField(max_length=_max_length)
     total_point = models.IntegerField(default=0)
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, null=True)
@@ -44,33 +127,40 @@ class Player(models.Model):
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
     email_confirmed = models.BooleanField(default=False)
+    steam_link = models.URLField(blank=True)
+    steam_uid = models.TextField(blank=True)
+    profile_pic = models.URLField(blank=True)
+    country = models.CharField(max_length=3, blank=True)
+    real_name = models.CharField(max_length=_max_length, blank=True)
+    timezone = models.CharField(max_length=_max_length, blank=True, null=True)
 
-    @receiver(post_save, sender=User)
-    def create_user_profile(sender, instance, created, **kwargs):
-        if created:
-            Player.objects.create(user=instance)
+    # @receiver(post_save, sender=User)
+    # def create_user_profile(sender, instance, created, **kwargs):
+    #     if created:
+    #         Player.objects.create(user=instance)
 
-    @receiver(post_save, sender=User)
-    def save_user_profile(sender, instance, **kwargs):
-        instance.player.save()
+    # @receiver(post_save, sender=User)
+    # def save_user_profile(sender, instance, **kwargs):
+    #     instance.player.save()
 
     def calculate_total_point(self):
         # bugune kadar toplam lig puani
         pass
 
-    def calculate_current_seaso_point(self):
+    def calculate_current_season_point(self):
         # suanki sezondak puani
         pass
+
     def __str__(self):
-            return '{}'.format(self.name)
+        return '{}'.format(self.name)
 
 
 class Type(models.Model):
     name = models.CharField(max_length=_max_length)
     week_count = models.IntegerField(validators=[
-            MaxValueValidator(24),
-            MinValueValidator(1)
-        ])
+        MaxValueValidator(24),
+        MinValueValidator(1)
+    ])
 
     def __str__(self):
         return '{}'.format(self.name)
@@ -78,17 +168,57 @@ class Type(models.Model):
 
 class Season(models.Model):
     name = models.CharField(max_length=_max_length)
+    sponsor_name = models.CharField(max_length=_max_length)
     type = models.ForeignKey(Type, on_delete=models.CASCADE, null=False)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
+
+    starting_at = models.DateField(null=True)
+    finishing_at = models.DateField(null=True, blank=True)
+
+    def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
+        self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.week_count)
+
+    @property
+    def is_season_started(self):
+        return self.starting_at <= dt.datetime.now().date()
+
+    @property
+    def is_season_finished(self):
+        if self.finishing_at is None:
+            self.calculate_finishing_date()
+            print(self.finishing_at)
+        return self.finishing_at < dt.datetime.now().date()
+
+    @classmethod
+    def get_current_season(cls):
+        seasons = cls.objects.filter(starting_at__lte=timezone.now(), finishing_at__gt=timezone.now())
+        return seasons
+
+    def calculate_finishing_date(self):
+        self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.week_count)
+
+    def clean(self):
+        if self.finishing_at is None:
+            self.calculate_finishing_date()
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        self.full_clean()
+        super(Season, self).save()
 
     def __str__(self):
         return '{}'.format(self.name)
 
 
-class PlayList(models.Model):
+class PlayList(TimeStampMixin):
     name = models.CharField(max_length=_max_length)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
-    songs = models.ManyToManyField(Song)
+    songs = ChainedManyToManyField(Song,
+                                   horizontal=True,
+                                   verbose_name="songs",
+                                   chained_field="game",
+                                   chained_model_field="game")
+
     # songs.queryset &= models.Q(
     #             game=game,
     #         )
@@ -110,14 +240,32 @@ class PlayList(models.Model):
 
 
 class Week(models.Model):
-    name = models.CharField(max_length=_max_length)
+    name = models.CharField(max_length=_max_length, editable=False)
     description = models.TextField()
-    season = models.ForeignKey(Season, on_delete=models.CASCADE,null=False)
-    playlist = models.ForeignKey(PlayList, on_delete=models.SET_NULL,null=True)
-    game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
+    season = models.ForeignKey(Season, on_delete=models.CASCADE, null=False)
+    playlist = models.ForeignKey(PlayList, on_delete=models.SET_NULL, null=True)
+    # game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
+    starting_at = models.DateField(null=True)
+
+    @classmethod
+    def prefix(cls, count):
+        return "Week {}".format(count)
 
     def __str__(self):
-        return '{}'.format(self.name)
+        return '{} | {}'.format(self.season.game.name, self.name)
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        self.full_clean()
+        super(Week, self).save()
+
+    def clean(self):
+        week_count = Week.objects.filter(season=self.season).count()
+        max_week_count = self.season.type.week_count
+        if self.season.type.week_count > week_count:
+            self.name = "Week {}/{}".format(week_count + 1, max_week_count)
+        else:
+            raise ValueError("hasbeen Reached Maximum Week Count ")
 
 
 class Achievement(models.Model):
@@ -129,20 +277,20 @@ class Achievement(models.Model):
         return '{}'.format(self.name)
 
 
-class Score(models.Model):
+class Score(TimeStampMixin):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     song = models.ForeignKey(Song, on_delete=models.CASCADE, null=False)
     player = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=False)
     score = models.IntegerField(default=0)
-    date = models.DateTimeField(blank=True, null=True)
 
     # def save(self, force_insert=False, force_update=False, using=None,update_fields=None):
     #     self.date = timezone.now()
     #     super()
 
     def __str__(self):
-        return 'Player {3}, recorded {4} score on {1} in {2} game at {0}'.format(self.date,
-                                                              self.song.name,
-                                                              self.game.name,
-                                                              self.player,
-                                                              self.score)
+        return 'Player {3}, recorded {4} score on {1} in {2} game at {0}'.format(
+            humanize.naturaltime(timezone.now() - self.created_at),
+            self.song.name,
+            self.game.name,
+            self.player,
+            self.score)

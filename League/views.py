@@ -1,36 +1,53 @@
+from math import log
+
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView
 from django.contrib.sites.shortcuts import get_current_site
-from django.shortcuts import render, redirect
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponse
+from django.shortcuts import render, redirect, render_to_response
+from django.template import RequestContext
 from django.template.loader import render_to_string
+from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
+from django.core import serializers
+
+from League.services import *
 from League.tokens import account_activation_token
-from . import models,forms
+from . import models, forms
+
+from .mixins import AjaxTemplateMixin
 
 
 # Create your views here.
 
 
 def home(request):
-    games = models.Game.objects.all()
-    context = {'games': games}
+    context = {'games': get_games()}
     return render(request, 'league/index.html', context)
 
 
 def dashboard(request):
-    # my_scores = models.Score.objects.filter(player=request.user)
-    my_scores = models.Score.objects.all()
-    context = {'scores': my_scores}
+    # my_scores = models.Score.objects.filter(player=request.user
+    context = {'scores': get_scores()}
     return render(request, 'league/dashboard.html', context)
 
 
-def profile(request):
-    me = request.user
-    context = {'me': me}
-    return render(request, 'league/profile.html', context)
+def profile(request, user_id):
+    profile = Player.objects.get(user_id=user_id)
+    context = {'profile': profile}
+    return render(request, 'components/profile.html', context)
+
+
+def profile(request, user_id):
+    profile = Player.objects.get(user_id=request.user.id)
+    context = {'profile': profile}
+    return render(request, 'components/profile.html', context)
 
 
 def leagues(request):
@@ -40,10 +57,10 @@ def leagues(request):
     return render(request, 'league/leagues.html', context)
 
 
-def week(request, game_pk=1, season_pk=1):
+def week(request, season_pk=1):
     # season = models.Season.objects.get(pk=season_pk)
     # game = models.Game.objects.get(pk=game_pk)
-    weeks = models.Week.objects.filter(season=season_pk, game=game_pk)
+    weeks = models.Week.objects.filter(season=season_pk)
     current_week = models.Week.objects.last()
     context = {'weeks': weeks, 'c_week': current_week}
     return render(request, 'league/weeks.html', context)
@@ -68,8 +85,26 @@ def playlist_game(request, game_pk):
 
 
 def gameSite(request):
-    return render(request,template_name='gameSite/index.html')
+    return render(request, template_name='gameSite/index.html')
 
+
+@login_required
+def songs(request):
+    page = request.GET.get('page', 1)
+    data = get_songs()
+    count = data.count()
+    # z = (count / 100) if count != 0 else 0
+
+    paginator = Paginator(data, 100)  # min(500,(count / 100)*100 if count != 0 else 100))
+
+    try:
+        songs = paginator.page(page)
+    except PageNotAnInteger:
+        songs = paginator.page(1)
+    except EmptyPage:
+        songs = paginator.page(paginator.num_pages)
+    context = {'songs': songs}
+    return render(request, 'league/songs.html', context)
 
 
 def signup(request):
@@ -81,7 +116,7 @@ def signup(request):
             user.save()
             current_site = get_current_site(request)
             subject = 'Activate Your MySite Account'
-            message = render_to_string('league/account_activation_email.html', {
+            message = render_to_string('components/mail/account_activation_email.html', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
@@ -91,11 +126,11 @@ def signup(request):
             return redirect('account_activation_sent')
     else:
         form = forms.SignUpForm()
-    return render(request, 'league/signup.html', {'form': form})
+    return render(request, 'components/auth/signup.html', {'form': form})
 
 
 def account_activation_sent(request):
-    return render(request, 'league/account_activation_sent.html')
+    return render(request, 'components/mail/account_activation_sent.html')
 
 
 def activate(request, uidb64, token):
@@ -112,4 +147,45 @@ def activate(request, uidb64, token):
         login(request, user)
         return redirect('home')
     else:
-        return render(request, 'league/account_activation_invalid.html')
+        return render(request, 'components/mail/account_activation_invalid.html')
+
+
+class CustomLoginView(AjaxTemplateMixin, LoginView):
+    template_name = 'components/auth/login.html'
+    form_class = AuthenticationForm
+
+
+
+def autocompleteModel(request):
+    if request.is_ajax():
+        q = request.GET.get('term', '').capitalize()
+        print(q)
+        search_qs = Song.objects.filter(name__startswith=q)
+        results = []
+        for r in search_qs[:5]:
+            results.append(r.name)
+        data = json.dumps(results)
+        print(data)
+    else:
+        data = 'fail'
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)
+
+
+def pink(request):
+    path = request.path_info
+    print('path=', path)
+    if path == '/':
+        return render(request, 'pinkhuge/index.html')
+    elif path == '/news/':
+        return render(request, 'pinkhuge/news/index.html')
+    elif path == '/matches/':
+        return render(request, 'pinkhuge/all-matches/index.html')
+    elif path == '/teams/':
+        return render(request, 'pinkhuge/all-teams/index.html')
+    elif path == '/aboutus/':
+        return render(request, 'pinkhuge/about-us-3/index.html')
+    elif path == '/sponsors/':
+        return render(request, 'pinkhuge/sponsor-page/index.html')
+    else:
+        return render(request, 'pinkhuge/sponsor-page/index.html')

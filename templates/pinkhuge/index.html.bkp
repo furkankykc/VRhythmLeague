@@ -1,0 +1,890 @@
+{% extends 'pinkhuge/pixie_base.html' %}
+{% load static %}
+{% block content %}
+<!-- /HEADER -->
+<section id="hero" style=" solid-opacity:50%;  background-image: url('{% static 'league/img/bs-banner.jpg' %}')">
+
+
+    <div class="container" style="float:bottom;margin: auto">
+
+        <article class="content" style="float: bottom; margin-top:28%; margin-left:15%;">
+
+            <h4>VR Rhythm League</h4>
+
+            <h3>Applications for Alpha program started!</h3>
+
+            <h5>For registiration fill out the form VR Teams and singular players will be accept only. </h5>
+
+            <a href="https://forms.gle/t9QRoo8CcYFXLFgr7" target="_blank" class="btn btn-blue">Apply</a>
+
+        </article>
+
+    </div>
+</section>
+<!-- /HERO -->
+
+<section id="sponsors">
+
+    <div class="container">
+        <span class="leftArrow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px"
+                 height="12px">
+            <path fill-rule="evenodd" opacity="0.2" fill="rgb(256, 256, 256)"
+                  d="M0.006,5.995 C0.006,6.252 0.103,6.508 0.299,6.704 L5.313,11.713 C5.704,12.104 6.339,12.104 6.731,11.713 C7.122,11.322 7.122,10.687 6.731,10.296 L2.426,5.995 L6.731,1.694 C7.122,1.303 7.122,0.669 6.731,0.277 C6.339,-0.114 5.704,-0.114 5.313,0.277 L0.299,5.287 C0.103,5.483 0.006,5.739 0.006,5.995 Z"/>
+            </svg>
+        </span>
+        <div class="owl-carousel">
+            <a href="#" target="_blank">
+                <img src="{% static 'league/img/BSLogo.png' %} " alt="Image">
+            <a href="#" target="_blank">
+                <img src="{% static 'league/img/pistolicon.png' %} " alt="Image">
+            </a>
+            <a href="#" target="_blank">
+                <img src="{% static 'league/img/audiotrip.png' %} " alt="Image">
+            </a>
+            <a href="#" target="_blank">
+                <img src="{% static 'league/img/audica.png' %} " alt="Image">
+            </a>
+            </a>
+            <a href="#" target="_blank">
+                <img src="{% static 'league/img/synthriders.png' %} " alt="Image">
+            </a>
+{#            <a href="#" target="_blank">#}
+{#                <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/7.png' %} " alt="Image">#}
+{#            </a>#}
+        </div>
+        <span class="rightArrow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px"
+                 height="12px">
+            <path fill-rule="evenodd" opacity="0.2" fill="rgb(256, 256, 256)"
+                  d="M0.006,5.995 C0.006,6.252 0.103,6.508 0.299,6.704 L5.313,11.713 C5.704,12.104 6.339,12.104 6.731,11.713 C7.122,11.322 7.122,10.687 6.731,10.296 L2.426,5.995 L6.731,1.694 C7.122,1.303 7.122,0.669 6.731,0.277 C6.339,-0.114 5.704,-0.114 5.313,0.277 L0.299,5.287 C0.103,5.483 0.006,5.739 0.006,5.995 Z"/>
+            </svg>
+        </span>
+    </div>
+
+</section>
+<!-- /SPONSORS -->
+
+<section id="news" class="home firstWithBg">
+
+    <div class="container">
+
+        <div class="section-header">
+            <article class="topbar">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
+                         height="8px">
+                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
+                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
+                    </svg>
+                    Latest news
+                </h3>
+            </article>
+            <!-- /TOP-BAR -->
+        </div>
+        <!-- /SECTION-HEADER -->
+
+        <div class="content">
+
+            <article
+                    class="news-box large post-143 post type-post status-publish format-standard has-post-thumbnail hentry category-overwatch"
+                    style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/post25.jpg' %}');"
+                    onclick="window.location = 'renegades-defeat-signature-to-minor-playoffs/index.html'">
+                <a href="category/overwatch/index.html" class="category">
+                    Overwatch </a>
+
+                <div class="details">
+                    <a href="renegades-defeat-signature-to-minor-playoffs/index.html">
+                        RENEGADES DEFEAT SIGNATURE; TO MINOR PLAYOFFS </a>
+
+                    <span class="date">
+                                June 16, 2017                                                            </span>
+                </div>
+                <!-- /DETAILS -->
+            </article>
+            <article
+                    class="news-box large post-140 post type-post status-publish format-standard has-post-thumbnail hentry category-counter-strike"
+                    style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/post26.jpg' %}');"
+                    onclick="window.location = 'scream-now-we-know-were-capable-of-winning/index.html'">
+                <a href="category/counter-strike/index.html" class="category">
+                    Counter Strike </a>
+
+                <div class="details">
+                    <a href="scream-now-we-know-were-capable-of-winning/index.html">
+                        SCREAM: &#8220;NOW WE KNOW WE&#8217;RE CAPABLE OF </a>
+
+                    <span class="date">
+                                June 16, 2017                                                            </span>
+                </div>
+                <!-- /DETAILS -->
+            </article>
+            <article
+                    class="news-box post-137 post type-post status-publish format-standard has-post-thumbnail hentry category-dota2"
+                    style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/post27.jpg' %}');"
+                    onclick="window.location = 'dh-valencia-and-atlanta-qualifiers-announced/index.html'">
+
+
+                <div class="details">
+                    <a href="category/dota2/index.html" class="category">
+                        Dota2 </a>
+
+                    <a href="dh-valencia-and-atlanta-qualifiers-announced/index.html">
+                        DH VALENCIA AND ATLANTA QUALIFIERS ANNOUNCED </a>
+
+                    <span class="date">
+                                June 16, 2017                                                            </span>
+                </div>
+                <!-- /DETAILS -->
+            </article>
+            <article
+                    class="news-box post-134 post type-post status-publish format-standard has-post-thumbnail hentry category-dota2 category-uncategorized"
+                    style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/post28.jpg' %}');"
+                    onclick="window.location = 'winners-and-losers-of-esl-pro-league-s5-finals/index.html'">
+
+
+                <div class="details">
+                    <a href="category/dota2/index.html" class="category">
+                        Dota2 </a>
+
+                    <a href="winners-and-losers-of-esl-pro-league-s5-finals/index.html">
+                        WINNERS AND LOSERS OF ESL PRO LEAGUE S5 FINALS </a>
+
+                    <span class="date">
+                                June 16, 2017                                                            </span>
+                </div>
+                <!-- /DETAILS -->
+            </article>
+            <article
+                    class="news-box post-122 post type-post status-publish format-standard has-post-thumbnail hentry category-counter-strike category-overwatch tag-black-panthers tag-rhyno-domynos tag-rilee"
+                    style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/post29.jpg' %}');"
+                    onclick="window.location = 'shahzam-returns-to-misfits-active-lineup/index.html'">
+
+
+                <div class="details">
+                    <a href="category/counter-strike/index.html" class="category">
+                        Counter Strike </a>
+
+                    <a href="shahzam-returns-to-misfits-active-lineup/index.html">
+                        SHAHZAM RETURNS TO MISFITS&#8217; ACTIVE LINEUP </a>
+
+                    <span class="date">
+                                June 16, 2017                                                            </span>
+                </div>
+                <!-- /DETAILS -->
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- /NEWS -->
+<section id="teams">
+
+    <div class="container">
+
+        <div class="section-header">
+            <article class="topbar">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
+                         height="8px">
+                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
+                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
+                    </svg>
+                    Our teams
+                </h3>
+            </article>
+            <!-- /TOP-BAR -->
+        </div>
+        <!-- /SECTION-HEADER -->
+
+
+        <article class="boxes">
+            <div class="box"
+                 style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/Team1.jpg' %}');"
+                 onclick="window.location.href = 'team/midnight-turtles/index.html'">
+                <div class="overlay">
+                    <h4>View team page</h4>
+                    <h5>Click here to see</h5>
+
+                    <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="14px" height="12px"><path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                                  d="M7.293,0.274 C6.902,0.665 6.902,1.299 7.293,1.690 L10.586,4.989 L1.000,4.989 C0.448,4.989 -0.000,5.438 -0.000,5.991 C-0.000,6.545 0.448,6.993 1.000,6.993 L10.586,6.993 L7.293,10.292 C6.902,10.684 6.902,11.318 7.293,11.709 C7.683,12.100 8.316,12.100 8.707,11.709 L13.707,6.700 C13.888,6.519 14.000,6.268 14.000,5.991 C14.000,5.714 13.888,5.464 13.707,5.283 L8.707,0.274 C8.316,-0.118 7.683,-0.118 7.293,0.274 Z"/></svg>
+                        </span>
+                </div>
+            </div>
+            <div class="box"
+                 style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/Team2.jpg' %}');"
+                 onclick="window.location.href = 'team/rhyno-domynos/index.html'">
+                <div class="overlay">
+                    <h4>View team page</h4>
+                    <h5>Click here to see</h5>
+
+                    <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="14px" height="12px"><path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                                  d="M7.293,0.274 C6.902,0.665 6.902,1.299 7.293,1.690 L10.586,4.989 L1.000,4.989 C0.448,4.989 -0.000,5.438 -0.000,5.991 C-0.000,6.545 0.448,6.993 1.000,6.993 L10.586,6.993 L7.293,10.292 C6.902,10.684 6.902,11.318 7.293,11.709 C7.683,12.100 8.316,12.100 8.707,11.709 L13.707,6.700 C13.888,6.519 14.000,6.268 14.000,5.991 C14.000,5.714 13.888,5.464 13.707,5.283 L8.707,0.274 C8.316,-0.118 7.683,-0.118 7.293,0.274 Z"/></svg>
+                        </span>
+                </div>
+            </div>
+            <div class="box"
+                 style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/Team3.jpg' %}');"
+                 onclick="window.location.href = 'team/black-panthers/index.html'">
+                <div class="overlay">
+                    <h4>View team page</h4>
+                    <h5>Click here to see</h5>
+
+                    <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="14px" height="12px"><path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                                  d="M7.293,0.274 C6.902,0.665 6.902,1.299 7.293,1.690 L10.586,4.989 L1.000,4.989 C0.448,4.989 -0.000,5.438 -0.000,5.991 C-0.000,6.545 0.448,6.993 1.000,6.993 L10.586,6.993 L7.293,10.292 C6.902,10.684 6.902,11.318 7.293,11.709 C7.683,12.100 8.316,12.100 8.707,11.709 L13.707,6.700 C13.888,6.519 14.000,6.268 14.000,5.991 C14.000,5.714 13.888,5.464 13.707,5.283 L8.707,0.274 C8.316,-0.118 7.683,-0.118 7.293,0.274 Z"/></svg>
+                        </span>
+                </div>
+            </div>
+            <div class="box"
+                 style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/Team4.jpg' %}');"
+                 onclick="window.location.href = 'team/cursed-warriors/index.html'">
+                <div class="overlay">
+                    <h4>View team page</h4>
+                    <h5>Click here to see</h5>
+
+                    <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="14px" height="12px"><path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                                  d="M7.293,0.274 C6.902,0.665 6.902,1.299 7.293,1.690 L10.586,4.989 L1.000,4.989 C0.448,4.989 -0.000,5.438 -0.000,5.991 C-0.000,6.545 0.448,6.993 1.000,6.993 L10.586,6.993 L7.293,10.292 C6.902,10.684 6.902,11.318 7.293,11.709 C7.683,12.100 8.316,12.100 8.707,11.709 L13.707,6.700 C13.888,6.519 14.000,6.268 14.000,5.991 C14.000,5.714 13.888,5.464 13.707,5.283 L8.707,0.274 C8.316,-0.118 7.683,-0.118 7.293,0.274 Z"/></svg>
+                        </span>
+                </div>
+            </div>
+        </article>
+    </div>
+
+</section>
+<!-- /Teams -->
+
+<section id="matches">
+
+    <div class="container">
+
+        <div class="section-header">
+            <article class="topbar">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
+                         height="8px">
+                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
+                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
+                    </svg>
+                    Our Matches
+                </h3>
+            </article>
+            <!-- /TOP-BAR -->
+
+            <article class="bottombar">
+                <ul>
+                    <li class="active">
+                        <a href="#UpcomingMatches" data-toggle="tab">Upcoming Matches</a>
+                    </li>
+                    <li>
+                        <a href="#LatestResults" data-toggle="tab">Latest Results</a>
+                    </li>
+                </ul>
+            </article>
+            <!-- /BOTTOM-BAR -->
+        </div>
+        <!-- /SECTION-HEADER -->
+
+        <div class="tab-content content">
+
+            <ul id="UpcomingMatches" class="active">
+
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="vs">VS</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league">SL i-League StarSeries S3</span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/1-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="vs">VS</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league">SL i-League StarSeries S3</span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/2-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="vs">VS</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league">SL i-League StarSeries S3</span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/3-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="vs">VS</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league">SL i-League StarSeries S3</span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/8-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="vs">VS</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league">SL i-League StarSeries S3</span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/9-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+
+            </ul>
+            <!-- /UPCOMING-MATCHES -->
+
+            <ul id="LatestResults">
+
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="score">1 - 0</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league"></span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/4-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="score">0 - 2</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league">SL i-League StarSeries S3</span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/5-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="score">2 - 0</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league"></span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/6-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+                <li class="matchBox">
+                    <div class="teams">
+                        <a href="team/midnight-turtles/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/logo2.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Midnight Turtles</span>
+                        </a>
+                        <span class="score">0 - 3</span>
+                        <a href="team/rhyno-domynos/index.html">
+                            <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/intz.png' %} "
+                                 alt="Team&#039;s logo">
+                            <span>Rhyno Domynos</span>
+                        </a>
+                    </div>
+                    <!-- /TEAMS -->
+
+                    <div class="rightBox">
+                        <div class="match-info">
+                            <span class="league">SL i-League StarSeries S3</span>
+                            <div class="status">
+                                <span>Online</span> Vainglory
+                            </div>
+                            <span class="date">16 June at 02:05 AM</span>
+                        </div>
+                        <!-- /MATCH INFO -->
+
+                    </div>
+                    <a href="match/7-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                  d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- /MATCH-BOX -->
+
+            </ul>
+            <!-- /LATEST-RESULTS -->
+
+        </div>
+        <!-- /CONTENT -->
+    </div>
+    <!-- /CONTAINER -->
+
+</section>
+<!-- /MATCHES -->
+<section id="twitter">
+    <div class="container tw-bg"
+         style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/twitter.jpg' %}')">
+        <article class="left">
+            <h4>Keep updated with the tweets</h4>
+
+            <h3>WE POST HOT TWEETS ABOUT ESPORTS</h3>
+
+            <p>Keep track of our amazing tweets on the right. We have awesomecontent that will let you know the latest
+                gaming trends.</p>
+
+
+            <a href="https://twitter.com/vrgamingroom" class="twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19px"
+                     height="16px">
+                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                          d="M12.923,0.000 C14.433,-0.027 15.237,0.544 16.004,1.270 C16.656,1.212 17.503,0.834 18.001,0.571 C18.163,0.479 18.325,0.388 18.486,0.295 C18.201,1.095 17.815,1.720 17.221,2.194 C17.090,2.300 16.959,2.442 16.794,2.509 C16.794,2.513 16.794,2.516 16.794,2.519 C17.640,2.510 18.337,2.114 19.000,1.899 C19.000,1.903 19.000,1.906 19.000,1.909 C18.652,2.483 18.181,3.066 17.678,3.483 C17.475,3.650 17.272,3.818 17.069,3.985 C17.081,4.914 17.056,5.801 16.889,6.582 C15.915,11.122 13.336,14.205 9.253,15.525 C7.786,15.999 5.417,16.195 3.737,15.761 C2.904,15.547 2.152,15.304 1.445,14.984 C1.053,14.806 0.690,14.614 0.342,14.394 C0.228,14.322 0.114,14.250 -0.000,14.177 C0.379,14.189 0.822,14.297 1.246,14.227 C1.629,14.162 2.005,14.179 2.358,14.099 C3.240,13.898 4.023,13.632 4.697,13.223 C5.024,13.024 5.521,12.791 5.753,12.505 C5.315,12.513 4.918,12.408 4.593,12.288 C3.332,11.826 2.598,10.977 2.120,9.701 C2.502,9.744 3.603,9.847 3.861,9.622 C3.380,9.595 2.917,9.306 2.586,9.091 C1.572,8.432 0.745,7.327 0.751,5.628 C0.884,5.693 1.017,5.759 1.151,5.825 C1.405,5.936 1.664,5.996 1.968,6.061 C2.097,6.088 2.353,6.167 2.501,6.110 C2.495,6.110 2.488,6.110 2.482,6.110 C2.285,5.873 1.966,5.715 1.769,5.461 C1.118,4.621 0.508,3.329 0.894,1.791 C0.992,1.401 1.147,1.056 1.312,0.738 C1.318,0.742 1.325,0.745 1.331,0.748 C1.407,0.913 1.576,1.034 1.683,1.171 C2.015,1.598 2.425,1.983 2.843,2.322 C4.267,3.477 5.549,4.187 7.607,4.713 C8.130,4.846 8.733,4.948 9.357,4.949 C9.182,4.420 9.238,3.563 9.376,3.050 C9.723,1.762 10.477,0.833 11.582,0.335 C11.847,0.216 12.140,0.129 12.448,0.059 C12.606,0.040 12.765,0.020 12.923,0.000 Z"/>
+                </svg>
+                <span class="right">
+                    Follow us						<span>VR Gaming Room</span>
+                </span>
+            </a>
+        </article>
+        <!-- /LEFT -->
+
+        <article class="right">
+            <a class="twitter-timeline" data-width="496" data-height="275" href="https://twitter.com/vrgamingroom"></a>
+        </article>
+        <!-- /RIGHT -->
+    </div>
+</section>
+<!-- /TWITTER-FEED -->
+
+<section id="streams">
+    <div class="container">
+
+        <div class="section-header">
+            <article class="topbar">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
+                         height="8px">
+                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
+                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"></path>
+                    </svg>
+                    Live Streams
+                </h3>
+            </article>
+            <!-- /TOP-BAR -->
+
+            <article class="bottombar">
+                <ul>
+                    <li class="active">
+                        <a href="#twitch" data-toggle="tab">twitch</a>
+                    </li>
+                    <li>
+                        <a href="#youtube" data-toggle="tab">youtube</a>
+                    </li>
+                    <li>
+                        <a href="#mixer" data-toggle="tab">mixer</a>
+                    </li>
+                </ul>
+            </article>
+            <!-- /BOTTOM-BAR -->
+        </div>
+        <!-- /SECTION-HEADER -->
+
+        <div class="tab-content content">
+
+            <div id="twitch" class="list active">
+
+                <div class="left">
+                    <article class="streamBox large"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/thumbnail4-1.jpg' %}');">
+                        <a href="stream/cohhcarnage/index.html" class="playBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="10px" height="12px">
+                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                      d="M10.000,6.000 C10.000,6.412 9.789,6.773 9.473,6.968 L9.474,6.968 L1.629,11.835 C1.626,11.837 1.623,11.839 1.620,11.841 L1.616,11.843 L1.616,11.843 C1.457,11.942 1.270,12.000 1.071,12.000 C0.480,12.000 -0.000,11.496 -0.000,10.875 L-0.000,10.875 L-0.000,1.124 L-0.000,1.124 C-0.000,0.503 0.480,-0.000 1.071,-0.000 C1.270,-0.000 1.457,0.057 1.616,0.156 L1.616,0.156 L1.620,0.159 C1.623,0.160 1.626,0.162 1.629,0.164 L9.474,5.031 L9.473,5.031 C9.789,5.227 10.000,5.587 10.000,6.000 Z"></path>
+                            </svg>
+                        </a>
+                        <div class="details">
+                            <span class="stream twitch">twitch</span>
+                            <a href="stream/cohhcarnage/index.html">EA hit with Battlefield 4 lawsuit but does it have
+                                merit?</a>
+                            <h6>CohhCarnage</h6>
+                        </div>
+                    </article>
+                </div>
+                <!-- /LEFT -->
+
+
+                <div class="right">
+                    <article class="streamBox"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/thumbnail5-2.jpg' %}');">
+                        <div class="details on-hover">
+                            <a href="stream/cohhcarnage/index.html">Amazing Call of Duty 4 in action</a>
+
+                            <a href="stream/cohhcarnage/index.html" class="cta-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="9px" height="8px">
+                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                          d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="streamBox"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/thumbnail6.jpg' %}');">
+                        <div class="details on-hover">
+                            <a href="stream/cohhcarnage/index.html">Crysis 3 streaming all night long</a>
+
+                            <a href="stream/cohhcarnage/index.html" class="cta-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="9px" height="8px">
+                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                          d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+
+            </div>
+            <div id="youtube" class="list">
+
+                <div class="left">
+                    <article class="streamBox large"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/stream1.jpg' %}');">
+                        <a href="stream/de4dcert-live/index.html" class="playBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="10px" height="12px">
+                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                      d="M10.000,6.000 C10.000,6.412 9.789,6.773 9.473,6.968 L9.474,6.968 L1.629,11.835 C1.626,11.837 1.623,11.839 1.620,11.841 L1.616,11.843 L1.616,11.843 C1.457,11.942 1.270,12.000 1.071,12.000 C0.480,12.000 -0.000,11.496 -0.000,10.875 L-0.000,10.875 L-0.000,1.124 L-0.000,1.124 C-0.000,0.503 0.480,-0.000 1.071,-0.000 C1.270,-0.000 1.457,0.057 1.616,0.156 L1.616,0.156 L1.620,0.159 C1.623,0.160 1.626,0.162 1.629,0.164 L9.474,5.031 L9.473,5.031 C9.789,5.227 10.000,5.587 10.000,6.000 Z"></path>
+                            </svg>
+                        </a>
+                        <div class="details">
+                            <span class="stream youtube">youtube</span>
+                            <a href="stream/de4dcert-live/index.html">EA hit with Battlefield 4 lawsuit but does it have
+                                merit?</a>
+                            <h6>De4dCert Live</h6>
+                        </div>
+                    </article>
+                </div>
+                <!-- /LEFT -->
+
+
+                <div class="right">
+                    <article class="streamBox"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/stream2.jpg' %}');">
+                        <div class="details on-hover">
+                            <a href="stream/immortal-esporttv/index.html">Amazing Call of Duty 4 in action</a>
+
+                            <a href="stream/immortal-esporttv/index.html" class="cta-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="9px" height="8px">
+                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                          d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="streamBox"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/stream3.jpg' %}');">
+                        <div class="details on-hover">
+                            <a href="stream/gaming/index.html">Crysis 3 streaming all night long</a>
+
+                            <a href="stream/gaming/index.html" class="cta-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="9px" height="8px">
+                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                          d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+
+            </div>
+            <div id="mixer" class="list">
+
+                <div class="left">
+                    <article class="streamBox large"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/stream1.jpg' %}');">
+                        <a href="stream/blizzy/index.html" class="playBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="10px" height="12px">
+                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                      d="M10.000,6.000 C10.000,6.412 9.789,6.773 9.473,6.968 L9.474,6.968 L1.629,11.835 C1.626,11.837 1.623,11.839 1.620,11.841 L1.616,11.843 L1.616,11.843 C1.457,11.942 1.270,12.000 1.071,12.000 C0.480,12.000 -0.000,11.496 -0.000,10.875 L-0.000,10.875 L-0.000,1.124 L-0.000,1.124 C-0.000,0.503 0.480,-0.000 1.071,-0.000 C1.270,-0.000 1.457,0.057 1.616,0.156 L1.616,0.156 L1.620,0.159 C1.623,0.160 1.626,0.162 1.629,0.164 L9.474,5.031 L9.473,5.031 C9.789,5.227 10.000,5.587 10.000,6.000 Z"></path>
+                            </svg>
+                        </a>
+                        <div class="details">
+                            <span class="stream mixer">mixer</span>
+                            <a href="stream/blizzy/index.html">EA hit with Battlefield 4 lawsuit but does it have
+                                merit?</a>
+                            <h6>Blizzy</h6>
+                        </div>
+                    </article>
+                </div>
+                <!-- /LEFT -->
+
+
+                <div class="right">
+                    <article class="streamBox"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/stream2.jpg' %}');">
+                        <div class="details on-hover">
+                            <a href="stream/blizzy/index.html">Amazing Call of Duty 4 in action</a>
+
+                            <a href="stream/blizzy/index.html" class="cta-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="9px" height="8px">
+                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                          d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+
+                    <article class="streamBox"
+                             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/stream3.jpg' %}');">
+                        <div class="details on-hover">
+                            <a href="stream/blizzy/index.html">Crysis 3 streaming all night long</a>
+
+                            <a href="stream/blizzy/index.html" class="cta-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="9px" height="8px">
+                                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                          d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- /CONTENT -->
+    </div>
+    <!-- /CONTAINER -->
+</section>
+
+{% endblock %}

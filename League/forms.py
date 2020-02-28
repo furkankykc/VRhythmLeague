@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms import ModelForm
+from .models import PlayList, Song
 
 
 class SignUpForm(UserCreationForm):
@@ -10,4 +12,12 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2',)
+
+
+class ChooseSiteForm(forms.Form):
+    site = forms.ModelChoiceField(
+        queryset=Song.objects.all(),
+        empty_label=None,
+        widget=forms.RadioSelect()
+    )

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- jQuery !-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- jQuery UI !-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+</head>
+<br>
+<form id="search" method="POST">
+
+    {% csrf_token %}
+    <input type="text" class="form-control" id="txtSearch" name="txtSearch">
+    <button id="butonum" class="btn btn-raised btn-primary" type="submit"
+            style="background-color:#1A88B9;">Search
+    </button>
+</form>
+<div id="table_body">
+
+    {% for d in data %}
+        {{ d }}<br>
+    {% endfor %}
+    {% for d in gps_json %}
+        <p>
+            {{ d }}<br>
+        </p>
+    {% endfor %}
+</div>
+<script>
+    {#$(function () {#}
+    {#    $("#txtSearch").autocomplete({#}
+    {#        source: "{% url 'search' %}",#}
+    {#        minLength: 1#}
+    {#    });#}
+    {# });#}
+    {#$(function(){#}
+    {#  $("#butonum").click(function () {#}
+    {#      $.ajax({#}
+    {#          source: "{% url 'search2' %}",#}
+    {#          data: {'song_query': $('#txtSearch').val()},#}
+    {#          minLength: 1,#}
+    {#      });#}
+    {#  });#}
+    {# });#}
+    $(function () {
+
+        $('#txtSearch').keyup(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/search2/",
+                data: {
+                    'song_query': $('#txtSearch').val()
+                },
+                success: searchSuccess,
+                dataType: 'application/json'
+            });
+        });
+    });
+
+    function searchSuccess(data, textStatus, jqXHR) {
+        {#$('#search-results').html(data)#}
+        // replace the inside of #wrapper div with the injection.html (that has the new items values)
+        $("#table_body").load(data);
+
+    }
+</script>
+{#<script type="text/javascript">#}
+
+{#</script>#}
+</body>
+</html>

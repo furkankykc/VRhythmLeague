@@ -56,7 +56,18 @@
             <img src="{% static 'game_site/img/logo.png' %}" alt="">
         </a>
         <div class="user-panel">
-            <a href="{% url 'login' %}">Login</a> / <a href="{% url 'signup' %}">Register</a>
+            {% if user.is_anonymous %}
+                {#                <button id="login-button" type="button" class="btn btn-primary">Login</button>#}
+                {#                <a href="{% url 'login' %}">Login</a> / <a href="{% url 'signup' %}">Register</a>#}
+                <a id="login-button" href="#">Login</a> / <a href="{% url 'signup' %}">Register</a>
+            {% else %}
+                <span class="navbar-text sm-auto mr-3">
+       <a href="{% url 'profile' user.id %}"><strong>{{ user }}</strong></a>
+    </span>
+                <a href="{% url 'logout' %}" id="logout-button" role="button" class="btn-sm btn-danger">Logout</a>
+            {% endif %}
+            </nav>
+
         </div>
         <!-- responsive -->
         <div class="nav-switch">
@@ -66,13 +77,17 @@
         <nav class="main-menu">
             <ul>
 
-                <li><a  href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a></li>
-                <li><a  href="{% url 'dashboard' %}">Dashboard <span class="sr-only">(current)</span></a></li>
-                <li><a  href="{% url 'leagues' %}">Leagues <span class="sr-only">(current)</span></a></li>
-                <li><a href="community.html">Forums</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="{% url 'dashboard' %}">Dashboard <span class="sr-only">(current)</span></a></li>
+                <li><a href="{% url 'leagues' %}">Leagues <span class="sr-only">(current)</span></a></li>
+                <li><a href="{% url 'songs' %}">Songs</a></li>
+                <li><a href="{% url 'home' %}">Contact</a></li>
+                <li></li>
             </ul>
         </nav>
     </div>
+    {% include 'components/auth/login-modal.html' %}
+
+
 </header>
 <!-- Header section end -->

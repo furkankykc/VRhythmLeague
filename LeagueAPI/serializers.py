@@ -1,7 +1,6 @@
 # serializers.py
 from rest_framework import serializers
 
-from .models import Hero
 from League.models import Score
 
 
@@ -12,8 +11,7 @@ class ScoreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Score
-        fields = ('game', 'song','score','player')
-
+        fields = ('game', 'song', 'score', 'player')
 
     def create(self, validated_data):
         if 'user' not in validated_data:

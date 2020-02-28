@@ -120,7 +120,7 @@ ol {
 }
 
 .rating i {
-	color: #fbb710;
+	color: #3ce9fb;
 }
 
 .rating .is-fade {
@@ -142,7 +142,7 @@ ol {
 	border-radius: 50px;
 	font-weight: 500;
 	border: none;
-	background: #ffb320;
+	background: #2be9ff;
 	cursor: pointer;
 }
 
@@ -252,7 +252,7 @@ ol {
 	clear: both;
 	overflow: hidden;
 	padding: 18px 0;
-	border-bottom: 1px solid #ffb320;
+	border-bottom: 1px solid #35fffa;
 }
 
 .site-logo {
@@ -264,7 +264,7 @@ ol {
 .user-panel {
 	float: right;
 	font-weight: 500;
-	background: #ffb320;
+	background: #3ce7ff;
 	padding: 8px 28px;
 	border-radius: 30px;
 }
@@ -335,7 +335,7 @@ ol {
 }
 
 .hero-slider .hs-text h2 span {
-	color: #ffb320;
+	color: #40ffee;
 }
 
 .hero-slider .hs-text p {
