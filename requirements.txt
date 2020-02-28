@@ -4,19 +4,19 @@
 #
 #    pip-compile ../VRhythmLeague/requirements.txt
 #
-defusedxml==0.6.0         # via python3-openid
 django-crispy-forms==1.7.2  # via -r ../VRhythmLeague/requirements.txt
-django-openid-auth==0.15  # via -r ../VRhythmLeague/requirements.txt
 django-smart-selects==1.5.4  # via -r ../VRhythmLeague/requirements.txt
-django-steam-api==0.3     # via -r ../VRhythmLeague/requirements.txt
+
 django-widget-tweaks==1.4.3  # via -r ../VRhythmLeague/requirements.txt
+
 django==2.1.7             # via -r ../VRhythmLeague/requirements.txt, django-openid-auth, django-steam-api, django-stubs, djangorestframework
-djangorestframework-stubs==1.1.0  # via -r ../VRhythmLeague/requirements.txt
 djangorestframework==3.11.0  # via -r ../VRhythmLeague/requirements.txt
-mypy-extensions==0.4.3    # via mypy
-mypy==0.761               # via django-stubs, djangorestframework-stubs
-python3-openid==3.1.0     # via django-openid-auth
-pytz==2019.3              # via django
-six==1.14.0               # via django-openid-auth
-typed-ast==1.4.1          # via mypy
-typing-extensions==3.7.4.1  # via django-stubs, djangorestframework-stubs, mypy
+
+ocial-auth-app-django
+humanize
+
+
+django-widget-tweaks
+# pip3 install six && echo import six >"$(python3 -c "import sys; print(tuple(filter(lambda x: 'site-packages' in x, sys.path))[0])")"/django/utils/__init__.py
+#
+git+git://github.com/jazzband/django-smart-selects.git@js-unlinting-fixes
