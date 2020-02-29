@@ -22,12 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6b4sy&r&2tb05h4ed&$cdmpe6xj9r1jkfl#(yul6^j&%9d-z)t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-if DEBUG:
-    ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0']
-else:
-    ALLOWED_HOSTS = ['vrrhythmleague.com', 'www.vrrhythmleague.com', 'vrrhythmleague.xyz', 'www.vrrhythmleague.com']
+ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0','vrrhythmleague.com','www.vrrhythmleague.com','vrrhythmleague.xyz','www.vrrhythmleague.com']
 
 # Application definition
 
@@ -163,8 +160,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = (os.path.join('static'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = (os.path.join('static'),)
 # STATIC_ROOT =os.path.join(BASE_DIR, 'static')
 # SITE_URL = "http://127.0.0.1:8000"
 

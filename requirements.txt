@@ -12,7 +12,7 @@ django-widget-tweaks==1.4.3  # via -r ../VRhythmLeague/requirements.txt
 django==2.1.7             # via -r ../VRhythmLeague/requirements.txt, django-openid-auth, django-steam-api, django-stubs, djangorestframework
 djangorestframework==3.11.0  # via -r ../VRhythmLeague/requirements.txt
 
-ocial-auth-app-django
+social-auth-app-django
 humanize
 
 

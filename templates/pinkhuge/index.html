@@ -1,0 +1,441 @@
+{% extends 'pinkhuge/pixie_base.html' %}
+{% load static %}
+{% block content %}
+    <!-- /HEADER -->
+
+
+    <section id="hero" style=" solid-opacity:50%;  background-image: url('{% static 'league/img/bs-banner.jpg' %}')">
+
+
+        <div class="container" style="float:bottom;margin: auto">
+
+            <article class="content" style="float: bottom; margin-top:29%; margin-left:15%;">
+
+                <h4>VR Rhythm League</h4>
+
+                <h3>Applications for Alpha program started!</h3>
+
+                <h5>For registiration fill out the form VR Teams, Singular Players, Arcade Owners and Sponsors will be
+                    accept only. </h5>
+
+                <a href="https://forms.gle/BrcVFndmWneA4vRM7" target="_blank" class="btn btn-blue">Apply</a>
+
+            </article>
+
+        </div>
+    </section>
+    <!-- /HERO -->
+    <section id="sponsors">
+        <style>
+            .fill {
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                object-fit: cover;
+            {#background-image: url('path/to/image.jpg');#}
+            }
+
+            owl-carousel a img {
+                max-height: available;
+            }
+        </style>
+        <div class="container">
+        <span class="leftArrow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px"
+                 height="12px">
+            <path fill-rule="evenodd" opacity="0.2" fill="rgb(256, 256, 256)"
+                  d="M0.006,5.995 C0.006,6.252 0.103,6.508 0.299,6.704 L5.313,11.713 C5.704,12.104 6.339,12.104 6.731,11.713 C7.122,11.322 7.122,10.687 6.731,10.296 L2.426,5.995 L6.731,1.694 C7.122,1.303 7.122,0.669 6.731,0.277 C6.339,-0.114 5.704,-0.114 5.313,0.277 L0.299,5.287 C0.103,5.483 0.006,5.739 0.006,5.995 Z"/>
+            </svg>
+        </span>
+            <div class="owl-carousel">
+                <a href="#" target="_blank">
+                    <img src="{% static 'league/img/BSLogo.png' %} " alt="Image">
+                    <a href="#" target="_blank">
+                        <img src="{% static 'league/img/pistolicon.png' %} " alt="Image">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="{% static 'league/img/audiotrip.png' %} " alt="Image">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="{% static 'league/img/audica.png' %} " alt="Image">
+                    </a>
+                </a>
+                <a href="#" target="_blank">
+                    <img src="{% static 'league/img/synthriders.png' %} " alt="Image">
+                </a>
+                {#            <a href="#" target="_blank">#}
+                {#                <img src="{% static 'pinkhuge/wp-content/uploads/2017/06/7.png' %} " alt="Image">#}
+                {#            </a>#}
+            </div>
+            <span class="rightArrow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px"
+                 height="12px">
+            <path fill-rule="evenodd" opacity="0.2" fill="rgb(256, 256, 256)"
+                  d="M0.006,5.995 C0.006,6.252 0.103,6.508 0.299,6.704 L5.313,11.713 C5.704,12.104 6.339,12.104 6.731,11.713 C7.122,11.322 7.122,10.687 6.731,10.296 L2.426,5.995 L6.731,1.694 C7.122,1.303 7.122,0.669 6.731,0.277 C6.339,-0.114 5.704,-0.114 5.313,0.277 L0.299,5.287 C0.103,5.483 0.006,5.739 0.006,5.995 Z"/>
+            </svg>
+        </span>
+        </div>
+
+    </section>
+    <style>
+        section#sponsor-page .container ul li figure img {
+            max-height: available;
+            width: auto;
+
+        }
+        p span {
+            color: #a1494d;
+        }
+        .fill {
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('{% static 'league/img/bsaber.png' %}');
+            object-fit: cover;
+        }
+
+        li {
+            padding: 10px 10px 10px 10px;
+        }
+
+        section#sponsor-page .container ul li figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+    <section id="sponsor-page" style="margin: 20px 50px;">
+
+        <div class="container">
+            <ul>
+                <li>
+                    <figure>
+                        <img class="fill" src="{% static 'league/img/bsaber.jpg' %}"
+                             style="min-height:100%;image-resolution: from-image" alt="Beat Saber">
+                    </figure>
+
+                    <div class="content">
+
+                        <div class="head">
+                            <span class="label red">Beat Saber</span>
+
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-facebook"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-twitter"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-instagram"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-youtube"></i>#}
+                            {#                            </a>#}
+                            <a href="https://store.steampowered.com/app/620980/Beat_Saber/" target="_blank">
+                                <i class="fa fa-steam" style="float: end"></i>
+                            </a>
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-linkedin"></i>#}
+                            {#                            </a>#}
+                        </div>
+
+                        <p>
+                            Would you like your brand to have a special <span>Beat Saber League</span> ? You can create a daily or
+                            4-8-16 week tournament and show your support to teams - players, you can be a partner in
+                            this great excitement. Send a message for details.
+                        </p>
+
+                        <a href="https://beatsaber.com/" class="cta-link"
+                           target="_blank">VIEW WEBSITE
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="9px" height="8px">
+                                <path fill-rule="evenodd"
+                                      d="M4.699,0.191 C4.448,0.452 4.448,0.874 4.699,1.134 L6.816,3.331 L0.653,3.331 C0.298,3.331 0.010,3.630 0.010,3.998 C0.010,4.366 0.298,4.665 0.653,4.665 L6.816,4.665 L4.699,6.862 C4.448,7.123 4.448,7.545 4.699,7.805 C4.950,8.066 5.357,8.066 5.608,7.805 L8.823,4.470 C8.939,4.349 9.011,4.182 9.011,3.998 C9.011,3.814 8.939,3.647 8.823,3.526 L5.608,0.191 C5.357,-0.069 4.950,-0.069 4.699,0.191 Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
+                <!-- /SPONSOR -->
+                <li>
+                    <figure>
+                        <img class="fill" src="{% static 'league/img/pistolwhip.jpg' %}"
+                             style="min-height:100%;image-resolution: from-image" alt="Pistol Whip">
+                    </figure>
+
+                    <div class="content">
+
+                        <div class="head">
+                            <span class="label red">Pistol Whip</span>
+
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-facebook"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-twitter"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-instagram"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-youtube"></i>#}
+                            {#                            </a>#}
+                            <a href="https://store.steampowered.com/app/1079800/Pistol_Whip/" target="_blank">
+                                <i class="fa fa-steam" style="float: end"></i>
+                            </a>
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-linkedin"></i>#}
+                            {#                            </a>#}
+                        </div>
+
+                        <p>
+                            Would you like your brand to have a special <span>Pistol Whip League</span> ? You can create a daily or
+                            4-8-16 week tournament and show your support to teams - players, you can be a partner in
+                            this great excitement. Send a message for details.
+                        </p>
+
+                        <a href="https://cloudheadgames.com/pistol-whip/" class="cta-link"
+                           target="_blank">VIEW WEBSITE
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="9px" height="8px">
+                                <path fill-rule="evenodd"
+                                      d="M4.699,0.191 C4.448,0.452 4.448,0.874 4.699,1.134 L6.816,3.331 L0.653,3.331 C0.298,3.331 0.010,3.630 0.010,3.998 C0.010,4.366 0.298,4.665 0.653,4.665 L6.816,4.665 L4.699,6.862 C4.448,7.123 4.448,7.545 4.699,7.805 C4.950,8.066 5.357,8.066 5.608,7.805 L8.823,4.470 C8.939,4.349 9.011,4.182 9.011,3.998 C9.011,3.814 8.939,3.647 8.823,3.526 L5.608,0.191 C5.357,-0.069 4.950,-0.069 4.699,0.191 Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
+                <!-- /SPONSOR -->
+                <li>
+                    <figure class="fill">
+                        <img class="fill" src="{% static 'league/img/synthriders.jpg' %}"
+                             style="min-height:100%;image-resolution: from-image" alt="Synth Riders">
+                    </figure>
+
+                    <div class="content">
+
+                        <div class="head">
+                            <span class="label red">Synth Riders</span>
+
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-facebook"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-twitter"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-instagram"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-youtube"></i>#}
+                            {#                            </a>#}
+                            <a href="https://store.steampowered.com/app/885000/Synth_Riders/" target="_blank">
+                                <i class="fa fa-steam" style="float: end"></i>
+                            </a>
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-linkedin"></i>#}
+                            {#                            </a>#}
+                        </div>
+
+                        <p>
+                            Would you like your brand to have a special <span>Synth Riders League</span> ? You can create a daily or
+                            4-8-16 week tournament and show your support to teams - players, you can be a partner in
+                            this great excitement. Send a message for details.
+                        </p>
+
+                        <a href="https://synthridersvr.com/" class="cta-link"
+                           target="_blank">VIEW WEBSITE
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="9px" height="8px">
+                                <path fill-rule="evenodd"
+                                      d="M4.699,0.191 C4.448,0.452 4.448,0.874 4.699,1.134 L6.816,3.331 L0.653,3.331 C0.298,3.331 0.010,3.630 0.010,3.998 C0.010,4.366 0.298,4.665 0.653,4.665 L6.816,4.665 L4.699,6.862 C4.448,7.123 4.448,7.545 4.699,7.805 C4.950,8.066 5.357,8.066 5.608,7.805 L8.823,4.470 C8.939,4.349 9.011,4.182 9.011,3.998 C9.011,3.814 8.939,3.647 8.823,3.526 L5.608,0.191 C5.357,-0.069 4.950,-0.069 4.699,0.191 Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
+                <!-- /SPONSOR -->
+                <li>
+                    <figure class="fill">
+                        <img class="fill" src="{% static 'league/img/audica2.jpg' %}"
+                             style="min-height:100%;image-resolution: from-image" alt="Audica">
+                    </figure>
+
+                    <div class="content">
+
+                        <div class="head">
+                            <span class="label red">Audica</span>
+
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-facebook"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-twitter"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-instagram"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-youtube"></i>#}
+                            {#                            </a>#}
+                            <a href="https://store.steampowered.com/app/1020340/AUDICA_Rhythm_Shooter/" target="_blank">
+                                <i class="fa fa-steam" style="float: end"></i>
+                            </a>
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-linkedin"></i>#}
+                            {#                            </a>#}
+                        </div>
+
+                        <p>
+                            Would you like your brand to have a special <span>Audica League</span> ? You can create a daily or
+                            4-8-16 week tournament and show your support to teams - players, you can be a partner in
+                            this great excitement. Send a message for details.
+                        </p>
+
+                        <a href="https://audicagame.com/" class="cta-link"
+                           target="_blank">VIEW WEBSITE
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="9px" height="8px">
+                                <path fill-rule="evenodd"
+                                      d="M4.699,0.191 C4.448,0.452 4.448,0.874 4.699,1.134 L6.816,3.331 L0.653,3.331 C0.298,3.331 0.010,3.630 0.010,3.998 C0.010,4.366 0.298,4.665 0.653,4.665 L6.816,4.665 L4.699,6.862 C4.448,7.123 4.448,7.545 4.699,7.805 C4.950,8.066 5.357,8.066 5.608,7.805 L8.823,4.470 C8.939,4.349 9.011,4.182 9.011,3.998 C9.011,3.814 8.939,3.647 8.823,3.526 L5.608,0.191 C5.357,-0.069 4.950,-0.069 4.699,0.191 Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
+                <!-- /SPONSOR -->
+                <li>
+                    <figure class="fill">
+                        <img class="fill" src="{% static 'league/img/AudioTrip.jpg' %}"
+                             style="min-height:100%;image-resolution: from-image" alt="Audio Trip">
+                    </figure>
+
+                    <div class="content">
+
+                        <div class="head">
+                            <span class="label red">Audio Trip</span>
+
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-facebook"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-twitter"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-instagram"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-youtube"></i>#}
+                            {#                            </a>#}
+                            <a href="https://store.steampowered.com/app/826540/Audio_Trip/" target="_blank">
+                                <i class="fa fa-steam" style="float: end"></i>
+                            </a>
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-linkedin"></i>#}
+                            {#                            </a>#}
+                        </div>
+
+                        <p>
+                            Would you like your brand to have a special <span>Audio Trip League</span> ? You can create a daily or
+                            4-8-16 week tournament and show your support to teams - players, you can be a partner in
+                            this great excitement. Send a message for details.
+                        </p>
+
+                        <a href="http://www.kinemotik.com/audiotrip/" class="cta-link"
+                           target="_blank">VIEW WEBSITE
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="9px" height="8px">
+                                <path fill-rule="evenodd"
+                                      d="M4.699,0.191 C4.448,0.452 4.448,0.874 4.699,1.134 L6.816,3.331 L0.653,3.331 C0.298,3.331 0.010,3.630 0.010,3.998 C0.010,4.366 0.298,4.665 0.653,4.665 L6.816,4.665 L4.699,6.862 C4.448,7.123 4.448,7.545 4.699,7.805 C4.950,8.066 5.357,8.066 5.608,7.805 L8.823,4.470 C8.939,4.349 9.011,4.182 9.011,3.998 C9.011,3.814 8.939,3.647 8.823,3.526 L5.608,0.191 C5.357,-0.069 4.950,-0.069 4.699,0.191 Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
+                <!-- /SPONSOR -->
+                <li>
+                    <figure class="fill">
+                        <img class="fill" src="{% static 'league/img/vromfill1280x720.png' %}"
+                             style="min-height:100%;image-resolution: from-image" alt="VR Game Studio">
+                    </figure>
+
+                    <div class="content">
+
+                        <div class="head">
+                            <span class="label red">VR Gaming Room League</span>
+
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-facebook"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-twitter"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-instagram"></i>#}
+                            {#                            </a>#}
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-youtube"></i>#}
+                            {#                            </a>#}
+                            <a href="#" target="_blank">
+                                <i class="fa fa-steam" style="float: end"></i>
+                            </a>
+                            {#                            <a href="#" target="_blank">#}
+                            {#                                <i class="fa fa-linkedin"></i>#}
+                            {#                            </a>#}
+                        </div>
+
+                        <p>
+                            Would you like your brand to have a special <span>Beat Saber League</span>  ? You can create a daily or
+                            4-8-16 week tournament and show your support to teams - players, you can be a partner in
+                            this great excitement. Send a message for details.
+                        </p>
+
+                        <a href="https://beatsaber.com/" class="cta-link"
+                           target="_blank">VIEW WEBSITE
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 width="9px" height="8px">
+                                <path fill-rule="evenodd"
+                                      d="M4.699,0.191 C4.448,0.452 4.448,0.874 4.699,1.134 L6.816,3.331 L0.653,3.331 C0.298,3.331 0.010,3.630 0.010,3.998 C0.010,4.366 0.298,4.665 0.653,4.665 L6.816,4.665 L4.699,6.862 C4.448,7.123 4.448,7.545 4.699,7.805 C4.950,8.066 5.357,8.066 5.608,7.805 L8.823,4.470 C8.939,4.349 9.011,4.182 9.011,3.998 C9.011,3.814 8.939,3.647 8.823,3.526 L5.608,0.191 C5.357,-0.069 4.950,-0.069 4.699,0.191 Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </li>
+                <!-- /SPONSOR -->
+            </ul>
+        </div>
+        <!-- /CONTAINER -->
+    </section>
+    <!-- /SPONSORS -->
+
+    <section id="cta-sponsor">
+        <div class="container bg"
+             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/sponsors-bg.jpg' %}');">
+            <article class="content">
+
+                <h3>Want to help us grow? Sponsor us!</h3>
+
+                <h4>an eSports organization</h4>
+
+                <p>Now in the modern age, the gaming world is to be called ‘E-Sports’. Where our main focus lies. We
+                    have dedicated ourselves to develop our careers in this direction. As it’s where we can show our
+                    creativity in</p>
+
+                <a href="https://themeforest.net/user/pixiesquad?ref=PixieSquad" class="btn btn-blue">Become a
+                    sponsor</a>
+
+                <a href="https://themeforest.net/user/pixiesquad?ref=PixieSquad" class="btn btn-transparent">Read
+                    more</a>
+            </article>
+        </div>
+    </section>
+
+
+    <section id="adSpace">
+        <div class="container"
+             style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/banner.jpg' %}');"
+             onclick="window.location.href = 'https://themeforest.net/user/pixiesquad?ref=PixieSquad';"></div>
+    </section>
+
+
+    <div class="container no-padding">
+    </div>
+
+
+    <!-- /SPONSORS -->
+{% endblock %}
