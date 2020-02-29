@@ -1,0 +1,694 @@
+{
+  "docs": [
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": true,
+          "normal": true,
+          "hard": true,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": {
+                "duration": 342.8125,
+                "length": 165,
+                "bombs": 0,
+                "notes": 313,
+                "obstacles": 27,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "normal": {
+                "duration": 343.8125,
+                "length": 166,
+                "bombs": 0,
+                "notes": 480,
+                "obstacles": 27,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "hard": {
+                "duration": 343.8125,
+                "length": 166,
+                "bombs": 0,
+                "notes": 730,
+                "obstacles": 27,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expert": {
+                "duration": 341.75,
+                "length": 165,
+                "bombs": 11,
+                "notes": 735,
+                "obstacles": 2,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "Lone Digger",
+        "songSubName": "",
+        "songAuthorName": "Caravan Palace",
+        "levelAuthorName": "calijor",
+        "bpm": 124
+      },
+      "stats": {
+        "downloads": 485114,
+        "plays": 57999,
+        "downVotes": 451,
+        "upVotes": 8509,
+        "heat": 46.1666495,
+        "rating": 0.9206175017208564
+      },
+      "description": "Caravan Palace - Lone Digger\r\nEasy | Normal | Hard | Expert\r\nThis is a re-upload of my previous map, with improvements for hard, and a new, harder expert difficulty mapped by Squeaksies, as well as lower difficulties as iterations on my original map.\r\n\r\nBPM: 124\r\nDuration: 2:49\r\nNotes (Hard): 730\r\nNotes (Expert): 735\r\nPreview (Hard): https://youtu.be/NExvLUyeBUU\r\nPreview (Expert): https://youtu.be/NYmExXlpB0k",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc6282",
+      "key": "1bf",
+      "name": "Caravan Palace - Lone Digger",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84ebb1",
+        "username": "calijor"
+      },
+      "uploaded": "2018-05-23T00:15:19.000Z",
+      "hash": "906160fd1f808e2f34f33c2ca5920118855c065d",
+      "directDownload": "/cdn/1bf/906160fd1f808e2f34f33c2ca5920118855c065d.zip",
+      "downloadURL": "/api/download/key/1bf",
+      "coverURL": "/cdn/1bf/906160fd1f808e2f34f33c2ca5920118855c065d.jpg"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": false,
+          "normal": false,
+          "hard": true,
+          "expert": false,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": null,
+              "normal": null,
+              "hard": {
+                "duration": 509.5,
+                "length": 220,
+                "bombs": 18,
+                "notes": 598,
+                "obstacles": 236,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expert": null,
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "Feel Good Inc.",
+        "songSubName": "",
+        "songAuthorName": "Gorillaz",
+        "levelAuthorName": "gavinmac",
+        "bpm": 139
+      },
+      "stats": {
+        "downloads": 468872,
+        "plays": 31080,
+        "downVotes": 718,
+        "upVotes": 1834,
+        "heat": 46.8967086,
+        "rating": 0.6980396150646109
+      },
+      "description": "Hard mode only, More coming in the future.",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc62a0",
+      "key": "1de",
+      "name": "Feel Good Inc. - The Gorillaz",
+      "uploader": {
+        "_id": "5cff0b7398cc5a672c84ed67",
+        "username": "gavinmac"
+      },
+      "uploaded": "2018-05-23T20:06:47.000Z",
+      "hash": "834bb9533ea0ba5dec806461230e103b85e1a5e3",
+      "directDownload": "/cdn/1de/834bb9533ea0ba5dec806461230e103b85e1a5e3.zip",
+      "downloadURL": "/api/download/key/1de",
+      "coverURL": "/cdn/1de/834bb9533ea0ba5dec806461230e103b85e1a5e3.jpg"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": false,
+          "normal": false,
+          "hard": false,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": null,
+              "normal": null,
+              "hard": null,
+              "expert": {
+                "duration": 189,
+                "length": 90,
+                "bombs": 0,
+                "notes": 330,
+                "obstacles": 0,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "Super Mario Bros. Theme (Overworld Theme)",
+        "songSubName": "Nintendo",
+        "songAuthorName": "red knight",
+        "levelAuthorName": "redknight",
+        "bpm": 125
+      },
+      "stats": {
+        "downloads": 417497,
+        "plays": 49329,
+        "downVotes": 666,
+        "upVotes": 2547,
+        "heat": 21.8799888,
+        "rating": 0.7669703573165727
+      },
+      "description": "Expert only",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc6106",
+      "key": "29",
+      "name": "Super Mario Bros Theme",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84e917",
+        "username": "redknight"
+      },
+      "uploaded": "2018-05-10T16:34:12.000Z",
+      "hash": "c1c8e2b9394050afad435608137941da0b64b8f3",
+      "directDownload": "/cdn/29/c1c8e2b9394050afad435608137941da0b64b8f3.zip",
+      "downloadURL": "/api/download/key/29",
+      "coverURL": "/cdn/29/c1c8e2b9394050afad435608137941da0b64b8f3.jpg"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": false,
+          "normal": false,
+          "hard": false,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": null,
+              "normal": null,
+              "hard": null,
+              "expert": {
+                "duration": 459.91717529296875,
+                "length": 194,
+                "bombs": 0,
+                "notes": 564,
+                "obstacles": 0,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "Every Time We Touch",
+        "songSubName": "",
+        "songAuthorName": "Cascada",
+        "levelAuthorName": "purphoros",
+        "bpm": 142
+      },
+      "stats": {
+        "downloads": 412303,
+        "plays": 42754,
+        "downVotes": 239,
+        "upVotes": 5311,
+        "heat": 36.6532459,
+        "rating": 0.9228421318700657
+      },
+      "description": "Expert Only\r\nTime - 3:19\r\nBPM - 142\r\nNotes- 564",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc61b5",
+      "key": "e4",
+      "name": "Every Time We Touch - Cascada",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84ea98",
+        "username": "purphoros"
+      },
+      "uploaded": "2018-05-18T03:51:03.000Z",
+      "hash": "bc6c7ef1385db4c11c59736d2b32eacf48c95bd9",
+      "directDownload": "/cdn/e4/bc6c7ef1385db4c11c59736d2b32eacf48c95bd9.zip",
+      "downloadURL": "/api/download/key/e4",
+      "coverURL": "/cdn/e4/bc6c7ef1385db4c11c59736d2b32eacf48c95bd9.jpg"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": false,
+          "normal": true,
+          "hard": true,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": null,
+              "normal": {
+                "duration": 472.5,
+                "length": 232,
+                "bombs": 0,
+                "notes": 373,
+                "obstacles": 11,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "hard": {
+                "duration": 472.5,
+                "length": 232,
+                "bombs": 0,
+                "notes": 503,
+                "obstacles": 14,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expert": {
+                "duration": 472.5,
+                "length": 232,
+                "bombs": 0,
+                "notes": 682,
+                "obstacles": 30,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "Livin' On A Prayer",
+        "songSubName": "Bon Jovi",
+        "songAuthorName": "Bon Jovi",
+        "levelAuthorName": "jnua12345",
+        "bpm": 122
+      },
+      "stats": {
+        "downloads": 370173,
+        "plays": 47593,
+        "downVotes": 478,
+        "upVotes": 1573,
+        "heat": 33.8554808,
+        "rating": 0.7400676294662104
+      },
+      "description": "Expert, Hard, Normal 122BPM",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc6194",
+      "key": "bd",
+      "name": "Bon Jovi - Livin' On A Prayer",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84e9da",
+        "username": "jnua12345"
+      },
+      "uploaded": "2018-05-17T01:12:03.000Z",
+      "hash": "4b47cccc819825f10ffbbf0d52ce2a00cc7a5f88",
+      "directDownload": "/cdn/bd/4b47cccc819825f10ffbbf0d52ce2a00cc7a5f88.zip",
+      "downloadURL": "/api/download/key/bd",
+      "coverURL": "/cdn/bd/4b47cccc819825f10ffbbf0d52ce2a00cc7a5f88.jpg"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": false,
+          "normal": false,
+          "hard": true,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": null,
+              "normal": null,
+              "hard": {
+                "duration": 1467.25,
+                "length": 440,
+                "bombs": 18,
+                "notes": 1356,
+                "obstacles": 22,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expert": {
+                "duration": 1467.25,
+                "length": 440,
+                "bombs": 26,
+                "notes": 2806,
+                "obstacles": 36,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "TTFAF",
+        "songSubName": "DragonForce",
+        "songAuthorName": "Freeek",
+        "levelAuthorName": "freeek",
+        "bpm": 200
+      },
+      "stats": {
+        "downloads": 367332,
+        "plays": 18661,
+        "downVotes": 811,
+        "upVotes": 3439,
+        "heat": 23.6284254,
+        "rating": 0.7841775202625676
+      },
+      "description": "Expert and a Hard difficulty. 2800 notes and Even more event light triggers... Enjoy!",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc6117",
+      "key": "3a",
+      "name": "Through the Fire and Flames - Dragonforce",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84e8ad",
+        "username": "freeek"
+      },
+      "uploaded": "2018-05-11T12:36:36.000Z",
+      "hash": "9b0881baab8b72f33424ecf0d9ad247ea10afbb2",
+      "directDownload": "/cdn/3a/9b0881baab8b72f33424ecf0d9ad247ea10afbb2.zip",
+      "downloadURL": "/api/download/key/3a",
+      "coverURL": "/cdn/3a/9b0881baab8b72f33424ecf0d9ad247ea10afbb2.jpg"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": false,
+          "normal": false,
+          "hard": false,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": null,
+              "normal": null,
+              "hard": null,
+              "expert": {
+                "duration": 317.85003662109375,
+                "length": 158,
+                "bombs": 0,
+                "notes": 697,
+                "obstacles": 45,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "Megalovania",
+        "songSubName": "Toby Fox",
+        "songAuthorName": "Sinlord",
+        "levelAuthorName": "sinlord",
+        "bpm": 120
+      },
+      "stats": {
+        "downloads": 359471,
+        "plays": 15195,
+        "downVotes": 492,
+        "upVotes": 3949,
+        "heat": 34.8381216,
+        "rating": 0.8581572444868593
+      },
+      "description": "First song created. Any suggestions are welcome. Have fun.",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc619b",
+      "key": "c5",
+      "name": "Megalovania",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84eaa0",
+        "username": "sinlord"
+      },
+      "uploaded": "2018-05-17T07:14:34.000Z",
+      "hash": "dc5b8a8f9178f2978521a942a7caf391712c63f9",
+      "directDownload": "/cdn/c5/dc5b8a8f9178f2978521a942a7caf391712c63f9.zip",
+      "downloadURL": "/api/download/key/c5",
+      "coverURL": "/cdn/c5/dc5b8a8f9178f2978521a942a7caf391712c63f9.jpg"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": false,
+          "normal": true,
+          "hard": true,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": null,
+              "normal": {
+                "duration": 291.375,
+                "length": 138,
+                "bombs": 0,
+                "notes": 291,
+                "obstacles": 8,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "hard": {
+                "duration": 291.375,
+                "length": 138,
+                "bombs": 0,
+                "notes": 367,
+                "obstacles": 8,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expert": {
+                "duration": 291.375,
+                "length": 138,
+                "bombs": 0,
+                "notes": 409,
+                "obstacles": 8,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "September",
+        "songSubName": "",
+        "songAuthorName": "Earth, Wind & Fire",
+        "levelAuthorName": "calijor",
+        "bpm": 126
+      },
+      "stats": {
+        "downloads": 357752,
+        "plays": 43006,
+        "downVotes": 178,
+        "upVotes": 4660,
+        "heat": 80.0087607,
+        "rating": 0.9271870816303923
+      },
+      "description": "Expert | Hard | Normal\r\n\r\nBPM - 126\r\nDuration - 2:21\r\n\r\nPreview: https://youtu.be/FOob1xit17Y",
+      "deletedAt": null,
+      "_id": "5cff620d48229f7d88fc651e",
+      "key": "480",
+      "name": "Earth, Wind & Fire - September",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84ebb1",
+        "username": "calijor"
+      },
+      "uploaded": "2018-06-09T18:27:58.000Z",
+      "hash": "aa2f7bf0df25cd57dddac159fa7c159f732e0553",
+      "directDownload": "/cdn/480/aa2f7bf0df25cd57dddac159fa7c159f732e0553.zip",
+      "downloadURL": "/api/download/key/480",
+      "coverURL": "/cdn/480/aa2f7bf0df25cd57dddac159fa7c159f732e0553.jpg"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": false,
+          "normal": false,
+          "hard": true,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": null,
+              "normal": null,
+              "hard": {
+                "duration": 486,
+                "length": 173,
+                "bombs": 0,
+                "notes": 368,
+                "obstacles": 285,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expert": {
+                "duration": 486,
+                "length": 173,
+                "bombs": 4,
+                "notes": 523,
+                "obstacles": 329,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "Thunder",
+        "songSubName": "(Maikyy Beatmap)",
+        "songAuthorName": "Imagine Dragons",
+        "levelAuthorName": "maikyy",
+        "bpm": 168
+      },
+      "stats": {
+        "downloads": 355660,
+        "plays": 26685,
+        "downVotes": 492,
+        "upVotes": 809,
+        "heat": 18.0446593,
+        "rating": 0.6077636850703245
+      },
+      "description": "Reupload with an added 'easier' Hard difficulty, really hard to balance so please let me know what I could change to make it better",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc60f2",
+      "key": "14",
+      "name": "Thunder - Imagine Dragons",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84e8e3",
+        "username": "maikyy"
+      },
+      "uploaded": "2018-05-09T02:17:42.000Z",
+      "hash": "f2c56d4ea62d31d04982db9a9e46199716a0dcfc",
+      "directDownload": "/cdn/14/f2c56d4ea62d31d04982db9a9e46199716a0dcfc.zip",
+      "downloadURL": "/api/download/key/14",
+      "coverURL": "/cdn/14/f2c56d4ea62d31d04982db9a9e46199716a0dcfc.png"
+    },
+    {
+      "metadata": {
+        "difficulties": {
+          "easy": true,
+          "normal": true,
+          "hard": true,
+          "expert": true,
+          "expertPlus": false
+        },
+        "duration": 0,
+        "characteristics": [
+          {
+            "name": "Standard",
+            "difficulties": {
+              "easy": {
+                "duration": 265.510009765625,
+                "length": 189,
+                "bombs": 0,
+                "notes": 297,
+                "obstacles": 57,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "normal": {
+                "duration": 264.510009765625,
+                "length": 188,
+                "bombs": 0,
+                "notes": 358,
+                "obstacles": 62,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "hard": {
+                "duration": 266.010009765625,
+                "length": 190,
+                "bombs": 0,
+                "notes": 514,
+                "obstacles": 67,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expert": {
+                "duration": 276.010009765625,
+                "length": 197,
+                "bombs": 0,
+                "notes": 681,
+                "obstacles": 67,
+                "njs": 10,
+                "njsOffset": 0
+              },
+              "expertPlus": null
+            }
+          }
+        ],
+        "songName": "Clint Eastwood",
+        "songSubName": "Gorillaz",
+        "songAuthorName": "unknow",
+        "levelAuthorName": "freeek",
+        "bpm": 84
+      },
+      "stats": {
+        "downloads": 345496,
+        "plays": 51819,
+        "downVotes": 212,
+        "upVotes": 2993,
+        "heat": 51.2023343,
+        "rating": 0.8956639592726948
+      },
+      "description": "Easy/Normal/Hard/Expert - Audio is as loud without clipping I swear! 100% Expert Playthrough: https://bit.ly/2LuFcxq\r\n\r\nHave fun! =D\r\n\r\n- Freeek =)",
+      "deletedAt": null,
+      "_id": "5cff620c48229f7d88fc62e4",
+      "key": "225",
+      "name": "Clint Eastwood - Gorillaz",
+      "uploader": {
+        "_id": "5cff0b7298cc5a672c84e8ad",
+        "username": "freeek"
+      },
+      "uploaded": "2018-05-25T20:58:36.000Z",
+      "hash": "507f0e09326d37e09dca08e3c2597f027dbe1940",
+      "directDownload": "/cdn/225/507f0e09326d37e09dca08e3c2597f027dbe1940.zip",
+      "downloadURL": "/api/download/key/225",
+      "coverURL": "/cdn/225/507f0e09326d37e09dca08e3c2597f027dbe1940.jpg"
+    }
+  ],
+  "totalDocs": 22524,
+  "lastPage": 2252,
+  "prevPage": 0,
+  "nextPage": 2
+}

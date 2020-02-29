@@ -1,0 +1,47 @@
+/*
+    Theme Name: PixieHuge
+    Theme URI: http://themes.pixiesquad.com
+    Description: PixieHuge - is a theme meant for eSports organizations / teams / gaming clans. The theme is built by the latest design standards in this industry, which brings the elite/premium feeling for the end user.
+    Version: 1.0.3
+    Author: PixieSquad.com | Shape The Gaming
+    Author URI: http://pixiesquad.com
+    License: PixieSquad Themes. All rights reserved.
+    License URI: https://themeforest.net/user/pixiesquad
+    Tags: sticky-post, featured-images, editor-style, custom-colors, custom-header, custom-background, right-sidebar, translation-ready, theme-options
+    Text Domain: pixiehuge
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Galleries
+# Alignment
+# Elements
+--------------------------------------------------------------*/
+
+/* Galleries */ 
+.gallery-caption {
+    font-weight: normal;
+}
+/* Alignment */
+.aligncenter {
+    text-align: center;
+}
+.alignleft {
+    text-align: left;
+}
+.alignright {
+    text-align: right;
+}
+/* Elements */
+.bypostauthor {
+    color: #d31f48;
+}
+.screen-reader-text {
+    display: none;
+}
+.wp-caption-text {
+    color: #d31f48;
+}
+.wp-caption {
+    max-width: 100%;
+}

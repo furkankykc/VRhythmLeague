@@ -1,0 +1,1009 @@
+@media screen and (max-width: 1200px) {
+    header > nav > .container > ul {
+        font-size: 15px;
+    }
+    header > nav > .container > ul li {
+        padding: 0 8px;
+    }
+    section#news .content .news-box {
+        width: 485px;
+        height: 291px;
+    }
+    section#news .content .news-box.large {
+        width: 485px;
+        height: 291px;
+    }
+    section#news .content .news-box.transparent {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+    }
+    section#news .content .news-box > a.category {
+        position: absolute;
+        bottom: 105px;
+    }
+    section#matches div.container > div.content li.matchBox div.stream {
+        padding-left: 40px;
+    }
+    section#matches div.container > div.content li.matchBox div.teams {
+        padding-right: 40px;
+    }
+    section#streams div.container div.content div.list {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    section#streams div.container div.content div.list .right {
+        display: flex;
+        display: -webkit-flex;
+    }
+    section#streams div.container div.content div.list article.streamBox {
+        width: 485px;
+        height: 291px;
+    }
+    section#streams div.container div.content div.list article.streamBox.large {
+        width: 970px;
+        height: 546px;
+    }
+    section#teams .boxes .box {
+        width: 49.4%;
+    }
+    footer .container.top article.box.useful {
+        width: 160px;
+    }
+    footer .container.top article.box.aboutUs {
+        max-width: 240px;
+    }
+    footer .container.top article.box:not(:last-child) {
+        padding-right: 30px;
+        margin-right: 30px;
+    }
+}
+@media screen and (max-width: 992px) {
+    header > nav > .container ul {
+        display: none;
+    }    header > nav > .container .mobile-nav {
+        display: inline-block;
+    }
+    section#hero article.content {
+        text-align: center;
+    }
+    section#news .content .news-box {
+        width: 375px;
+        height: 225px;
+    }
+    section#news .content .news-box.large {
+        width: 375px;
+        height: 225px;
+    }
+    section#teams .boxes .box {
+        width: 367px;
+        height: 111px;
+    }
+    section#matches div.container > div.content li.matchBox {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        height: initial;
+    }
+    section#matches div.container > div.content li.matchBox div.teams {
+        padding: 0;
+        margin-bottom: 34px;
+    }
+    section#matches div.container > div.content li.matchBox div.teams:after {
+        display: none;
+    }
+    section#matches div.container > div.content li.matchBox div.rightBox {
+        padding: 34px 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    section#matches div.container > div.content li.matchBox div.rightBox div.match-info {
+        padding-left: 0;
+        padding-right: 40px;
+    }
+    section#matches div.container > div.content li.matchBox div.rightBox div.match-info:after {
+        display: none;
+    }
+    section#matches div.container > div.content li.matchBox div.rightBox div.stream {
+        padding: 0;
+    }
+    section#matches div.container > div.content li.matchBox a.cta-btn {
+        display: none;
+    }
+    section#twitter div.tw-bg {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        height: initial;
+        text-align: center;
+    }
+    section#twitter div.tw-bg article.left {
+        max-width: initial;
+    }
+    section#twitter div.tw-bg article.left h3 {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 25px;
+    }
+    section#twitter div.tw-bg article.left h3:after {
+        display: none;
+    }
+    section#twitter div.tw-bg article.left p {
+        margin-top: 30px;
+    }
+    section#twitter div.tw-bg article.left a.twitter {
+        width: initial;
+        height: initial;
+        display: inline-block;
+        padding: 15px 22px 8px;
+    }
+    section#twitter div.tw-bg article.right {
+        margin: 69px 0 0;
+    }
+    section#streams div.container div.content div.list article.streamBox {
+        width: 375px;
+        height: 225px;
+    }
+    section#streams div.container div.content div.list article.streamBox.large {
+        width: 750px;
+        height: 422px;
+    }
+    footer .container.top {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+    footer .container.top article.box.aboutUs {
+        margin-top: 80px;
+        max-width: 100%;
+        width: 100%;
+    }
+    section#teams .boxes .box {
+        font-size: 14px;
+    }
+    section#teams .boxes .box .overlay span {
+        position: relative;
+        top: 15px;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    header > nav > .container > div.logo.bg:after {
+        width: 390px;
+    }
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    section#sponsors span.leftArrow,
+    section#sponsors span.rightArrow {
+        display: none;
+    }
+    section#teams .boxes .box {
+        width: 49.5%;
+    }
+    section#teams .boxes .box:nth-child(2n + 1) {
+        margin-right: 6px;
+    }
+    section#news .content .news-box {
+        width: 100%;
+        height: 50vw;
+    }
+    section#news .content .news-box.large {
+        width: 100%;
+        height: 50vw;
+    }
+    section#news .content .news-box > a.category {
+        position: absolute;
+        bottom: 105px;
+    }
+    section#twitter div.tw-bg iframe {
+        width: 90% !important;
+        height: 45vw !important;
+    }
+    section#streams div.container div.content div.list article.streamBox {
+        width: 50%;
+        height: 28vw;
+    }
+    section#streams div.container div.content div.list article.streamBox.large {
+        width: 100%;
+        height: 56vw;
+    }
+    section#twitter {
+        padding: 0 15px;
+    }
+    footer .container.top {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        width: 375px;
+    }
+    footer .container.top article.box:not(:last-child) {
+        padding-right: 15px;
+        margin-right: 15px;
+        width: 170px;
+    }
+    footer .container.top article.box:not(:last-child):after {
+        display: none;
+    }
+    footer .container.top article.box.aboutUs {
+        width: 170px;
+        margin-top: 50px;
+    }
+    footer .container.top article.box.useful {
+        margin-top: 50px;
+    }
+    footer .bottom {
+        height: auto;
+    }
+    footer .bottom .container {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        align-items: center;
+        -webkit-align-items: center;
+    }
+    footer .bottom .container article.left {
+        padding-top: 24px;
+        padding-bottom: 36px;
+    }
+    footer .bottom .container article.right {
+        margin: 0;
+        padding-bottom: 25px;
+    }
+}
+@media screen and (max-width: 615px) {
+    section#news:not(.nobg) {
+        padding-top: 45px;
+    }
+    section#teams .boxes .box {
+        background-size: cover;
+        width: 100%;
+        height: 29vw;
+        border: 0;
+    }
+    section#teams .boxes .box:nth-child(2n + 1) {
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 460px) {
+    header > nav > .container .mobile-nav {
+        display: none;
+    }
+    header > nav > .container div.logo {
+        margin: 0 auto;
+        float: none;
+    }
+
+    header div.topbar a:not(:last-child),
+    header div.topbar a.last{
+        margin-right: 15px !important;
+    }
+    header div.topbar .container {
+        text-align: left;
+    }
+    header div.topbar .mobile-nav {
+        display: inline-block;
+        padding: 10px 14px;
+        margin: 10px 0;
+        border: 0;
+    }
+    section#news .content .news-box.transparent > .details > span {
+        padding: 10px 0 10px;
+    }
+    section#news .content .news-box > .details > a.category {
+        margin-bottom: 8px;
+    }
+    section#news .content .news-box > .details > span {
+        padding: 18px 0 20px;
+    }
+    section#news .content .news-box > a.category {
+        bottom: 80px;
+    }
+    footer .bottom .container {
+        text-align: center;
+    }
+    footer .bottom .container article.left h5 {
+        margin: 0 30px 0 0;
+    }
+}
+@media screen and (max-width: 395px) {
+    header > nav > .container > div.logo.bg:after {
+        width: 330px;
+        background-size: cover;
+    }
+    section#matches div.container > div.content li.matchBox {
+        padding: 25px 20px;
+    }
+    footer .container.top {
+        padding-top: 0;
+        margin-top: 0;
+        width: 100%;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        align-items: center;
+        -webkit-align-items: center;
+        text-align: center;
+    }
+    footer .container.top article.box h4 {
+        padding-bottom: 20px;
+    }
+    footer .container.top article.box:not(:last-child) {
+        padding-right: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    footer .container.top article.box,
+    footer .container.top article.box.useful {
+        margin-top: 35px;
+        width: 100%;
+    }
+    footer .container.top article.box.aboutUs {
+        margin-top: 35px;
+        width: 100%;
+    }
+    footer .bottom .container > article.left {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    footer .bottom .container > article.left h5 {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 320px) {
+    section#news .content .news-box.large,
+    section#news .content .news-box {
+        height: 54vw;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .container.split-flex {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    section#news.news-page {
+        width: 100%;
+    }
+    section#news.news-page .content .news-box.large {
+        width: 485px;
+        height: 291px;
+    }
+    aside {
+        margin: 15px auto 0;
+        width: 100%;
+    }
+    section#single-page {
+        width: 100%;
+    }
+    section#stream {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 992px) {
+    section#news.news-page .content .news-box.large {
+        width: 375px;
+        height: 225px;
+    }
+}
+@media screen and (max-width: 768px) {
+    section#news.news-page .content .news-box.large {
+        width: 100%;
+        height: 50vw;
+    }
+}
+@media screen and (max-width: 615px) {
+    section#news.news-page {
+        padding-top: 0;
+    }
+}
+@media screen and (max-width: 1200px) {
+    section#aboutStory .bg article.head {
+        padding: 30px;
+    }
+    section#aboutStory .bg article.footer {
+        padding: 50px 30px;
+    }
+    section#aboutStory .bg article.footer div.left {
+        padding-right: 10px;
+    }
+    section#aboutStaff .container.bg ul.tab.active {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:last-child) {
+        margin-right: 0;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(4n)) {
+        margin-right: 67px;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:first-child):not(:nth-child(4n + 5)) {
+        margin-left: 0;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(4n)):after {
+        display: none;
+    }
+}
+@media screen and (max-width: 992px) {
+    section#aboutStory .bg article.head {
+        padding: 30px;
+        text-align: center;
+    }
+    section#aboutStory .bg article.footer {
+        -webkit-align-items: center;
+        align-items: center;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    section#aboutStory .bg article.footer div.left {
+        text-align: center;
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    section#aboutStory .bg article.footer div.right {
+        margin: 0;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(4n)) {
+        margin-right: 0;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(3n)) {
+        margin-right: 69px;
+    }
+    section#aboutInfo {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        justify-content: center;
+        -webkit-justify-content: center;
+        text-align: center;
+    }
+    section#aboutInfo .right {
+        margin: 48px auto 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    section#aboutStaff .container.bg ul.tab {
+        width: 390px;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        margin: 0 auto;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(3n)) {
+        margin-right: 0;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(2n)) {
+        margin-right: 69px;
+    }
+    section#aboutStory .bg article.footer div.right ul {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+    section#aboutStory .bg article.footer div.right ul li {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 460px) {
+    section#aboutStaff .container.bg ul.tab {
+        width: 157px;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(2n)) {
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 1200px) {
+    section#matchRoster .content ul.roster {
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+    section#matchRoster .content ul.roster li:not(:last-child):not(:nth-child(5n)) {
+        margin-right: 0;
+    }
+    section#matchRoster .content ul.roster li:not(:last-child):not(:nth-child(4n)) {
+        margin-right: 15px;
+    }
+    section#mapsPlayed ul li {
+        width: 313px;
+        height: 160px;
+    }
+}
+@media screen and (max-width: 992px) {
+    section#match-details {
+        font-size: 14px;
+    }
+    section#match-details .container.bg article.middle .team.away figure {
+        padding-right: 10px;
+    }
+    section#match-details .container.bg article.middle .team.home figure {
+        padding-left: 10px;
+    }
+    section#match-details .container.bg article.middle .team figure img {
+        max-width: 70px;
+        max-height: 65px;
+    }
+    section#matchRoster .content ul.roster {
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+    section#matchRoster .content ul.roster li {
+        margin-bottom: 33px;
+    }
+    section#matchRoster .content ul.roster li:not(:last-child):not(:nth-child(4n)) {
+        margin-right: 0;
+    }
+    section#matchRoster .content ul.roster li:not(:last-child):not(:nth-child(3n)) {
+        margin-right: 33px;
+    }
+    section#mapsPlayed ul li {
+        width: 367px;
+        height: 186px;
+    }
+    section#mapsPlayed ul li:not(:last-child):not(:nth-child(3n)) {
+        margin-right: 0;
+    }
+    section#mapsPlayed ul li:not(:last-child):not(:nth-child(2n)) {
+        margin-right: 15px;
+    }
+}
+@media screen and (max-width: 768px) {
+    section#match-details {
+        padding: 0 15px;
+    }
+    section#matchRoster .content ul.roster li:not(:last-child):not(:nth-child(3n)) {
+        margin-right: 23px;
+    }
+    section#mapsPlayed ul li {
+        width: 357px;
+        height: 180px;
+    }
+}
+@media screen and (max-width: 758px) {
+    section#matchRoster .content ul.roster li {
+        margin-bottom: 23px;
+    }
+    section#matchRoster .content ul.roster li:not(:last-child):not(:nth-child(3n)) {
+        margin-right: 0;
+    }
+    section#matchRoster .content ul.roster li:not(:last-child):not(:nth-child(2n)) {
+        margin-right: 23px;
+    }
+    section#mapsPlayed ul {
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+    section#mapsPlayed ul li {
+        width: 390px;
+        height: 200px;
+    }
+    section#mapsPlayed ul li:not(:last-child):not(:nth-child(2n)) {
+        margin-right: 0;
+    }
+    section#match-details .container.bg {
+        height: initial;
+    }
+    section#match-details .container.bg article.middle {
+        width: 334px;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+    section#match-details .container.bg article.middle div.details {
+        padding: 0;
+        order: 3;
+    }
+    section#match-details .container.bg article.middle div.team {
+        width: 130px;
+        text-align: center;
+    }
+    section#match-details .container.bg article.middle div.team.home {
+        -webkit-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        order: 1;
+        margin-right: 55px;
+    }
+    section#match-details .container.bg article.middle div.team.home figure {
+        padding: 0;
+    }
+    section#match-details .container.bg article.middle div.team.home .name {
+        margin: 0;
+    }
+    section#match-details .container.bg article.middle div.team.away {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        order: 2;
+    }
+    section#match-details .container.bg article.middle div.team.away .name {
+        margin: 0;
+    }
+    section#match-details .container.bg article.middle div.team figure {
+        margin-bottom: 30px;
+    }
+    section#match-details .container.bg article.middle div.details {
+        margin-top: 60px;
+    }
+    section#match-details article.footer {
+        text-align: center;
+    }
+    section#match-details article.footer a.btn {
+        margin-top: 50px;
+        position: initial !important;
+    }
+}
+@media screen and (max-width: 490px) {
+    section#match-details .container.bg {
+        font-size: 13px;
+    }
+    section#match-details .container.bg article.head .line {
+        width: 30px;
+    }
+    section#match-details .container.bg article.head .content {
+        padding: 0 10px;
+    }
+    section#matchRoster .content ul.roster li:not(:last-child):not(:nth-child(3n)) {
+        margin-right: 0;
+    }
+    section#mapsPlayed ul li {
+        width: 100%;
+        height: 45vw;
+    }
+}
+@media screen and (max-width: 1200px) {
+    section#team-profile article.stats {
+        font-size: 12px;
+    }
+    section#team-profile ul.achievements {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        height: initial;
+    }
+    section#team-profile ul.achievements li {
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+    }
+}
+@media screen and (max-width: 624px) {
+    section#team-profile .team-info {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        height: auto;
+    }
+    section#team-profile .team-info .profile-details,
+    section#team-profile .team-info .game {
+        width: 100%;
+        height: 124px;
+    }
+    section#team-profile .team-info .profile-details {
+        padding-left: 0;
+        justify-content: center;
+        -webkit-justify-content: center;
+    }
+    section#team-profile article.stats {
+        height: auto;
+        padding: 40px 0;
+        font-size: 12px;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    section#team-profile article.stats ul.left {
+        margin: 0;
+        padding-bottom: 80px;
+        border-bottom: 1px solid #303039;
+    }
+    section#team-profile article.stats ul.left li.numeric:not(:last-child) {
+        margin-right: 10px;
+        padding-right: 5px;
+        border: 0;
+    }
+    section#team-profile article.stats ul.right {
+        margin: 0;
+    }
+    section#team-profile article.stats ul.right li:not(:last-child) {
+        border: 0;
+    }
+    section#team-profile article.about {
+        padding: 25px;
+    }
+    section#team-profile ul.achievements {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        height: initial;
+    }
+    section#team-profile ul.achievements li {
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+    }
+}
+@media screen and (max-width: 1200px) {
+    section#player-profile .player-info .right-panel {
+        width: 610px;
+        font-size: 15px;
+    }
+    section#player-details .content .stats {
+        font-size: 14px;
+    }
+    section#player-details .content .stats ul li:not(:last-child) div.info:not(.last) {
+        margin-right: 10px;
+        padding-right: 15px;
+    }
+    section#player-details .content .stats ul li:not(:last-child) div.info:not(.last):after {
+        display: none;
+    }
+    section#player-details .content div.equip ul li {
+        width: 260px;
+    }
+    section#player-details .content div.equip ul li:not(:nth-child(3n)) {
+        margin-right: 49px;
+    }
+    section#player-details .content div.equip ul li:not(:last-child):nth-child(2):after,
+    section#player-details .content div.equip ul li:first-child:not(:last-child):after {
+        right: -22px;
+    }
+}
+@media screen and (max-width: 992px) {
+    section#player-profile {
+        margin-top: 150px;
+    }
+    section#player-profile .player-info {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        align-items: center;
+        -webkit-align-items: center;
+    }
+    section#player-profile .player-info .avatar {
+        width: 360px;
+        height: 426px;
+    }
+    section#player-profile .player-info .right-panel {
+        width: 100%;
+    }
+    section#player-details .content .stats {
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        align-items: center;
+        -webkit-align-items: center;
+        padding: 30px;
+        height: auto;
+    }
+    section#player-details .content .stats ul {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        justify-content: center;
+        -webkit-justify-content: center;
+        height: initial;
+    }
+    section#player-details .content .stats ul li {
+        margin-bottom: 20px;
+    }
+    section#player-details .content .stats ul li.steam {
+        display: none;
+    }
+    section#player-details .content .stats .mobile {
+        display: block;
+    }
+    section#player-details .content div.equip ul li {
+        width: 290px;
+    }
+    section#player-details .content div.equip ul li:not(:nth-child(3n)) {
+        margin-right: 0;
+    }
+    section#player-details .content div.equip ul li:not(:nth-child(2n)) {
+        margin-right: 78px;
+    }
+    section#player-details .content div.equip ul li:not(:last-child):nth-child(2):after,
+    section#player-details .content div.equip ul li:first-child:not(:last-child):after {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    section#player-details .content .stats {
+        font-size: 14px;
+    }
+    section#player-details .content .stats ul {
+        width: 328px;
+    }
+    section#player-details .content .stats ul li:not(:last-child) div.info:not(.last) {
+        margin-right: 0;
+        padding-right: 0;
+    }
+    section#player-details .content .stats ul li:nth-child(2n + 1) {
+        margin-right: 20px;
+    }
+    section#player-details .content div.equip ul {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        align-items: center;
+        -webkit-align-items: center;
+    }
+    section#player-details .content div.equip ul li {
+        width: 290px;
+    }
+    section#player-details .content div.equip ul li:not(:nth-child(2n)) {
+        margin-right: 0;
+    }
+    section#player-details .content div.equip ul li:not(:last-child):nth-child(2):after,
+    section#player-details .content div.equip ul li:first-child:not(:last-child):after {
+        display: none;
+    }
+    section#player-profile .player-info .right-panel {
+        font-size: 15px;
+    }
+    section#player-profile .player-info .right-panel div.about {
+        height: auto;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details {
+        border-bottom: 0;
+        padding-left: 28px;
+        padding-right: 38px;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details li:not(.social) {
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details li.social {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        justify-content: flex-end;
+        -webkit-justify-content: flex-end;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details li.social .links {
+        margin-top: 5px;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details li.social .links .first {
+        margin-left: 0;
+    }
+    section#player-profile .player-info .right-panel ul.info-section {
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        border-bottom: 0;
+    }
+    section#player-profile .player-info .right-panel ul.info-section li {
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+        border-bottom: 1px solid #393946;
+    }
+    section#player-profile .player-info .right-panel ul.info-section li:not(:last-child) {
+        border-right: 0;
+    }
+    section#player-profile .player-info .right-panel ul.info-section li:nth-child(2n + 1) {
+        border-right: 1px solid #393946;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details li.social a:not(.stream).first:before {
+        display: none;
+    }
+}
+@media screen and (max-width: 460px) {
+    section#player-profile .player-info .right-panel ul.profile-details {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items: center;
+        -webkit-align-items: center;
+        height: auto;
+        padding: 25px 0;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details li.social {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details li.social .links {
+        margin-top: -4px;
+    }
+    section#player-profile .player-info .right-panel ul.profile-details li.social a:not(.stream).first:before {
+        display: block;
+    }
+}
+@media screen and (max-width: 360px) {
+    section#player-details .content div.stats ul {
+        flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+    section#player-details .content div.stats ul li:nth-child(2n + 1) {
+        margin-right: 0;
+    }
+    section#sponsors .owl-carousel a img {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 1200px) {
+    section#sponsor-page .container ul li {
+        width: 322px;
+    }
+    section#sponsor-page .container ul li .content {
+        padding: 25px;
+    }
+}
+@media screen and (max-width: 992px) {
+    section#sponsor-page .container ul li {
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+    }
+    section#sponsor-page .container ul li .content {
+        padding: 25px;
+    }
+    section#sponsor-page .container ul li:not(:nth-child(3n)):not(:last-child) figure,
+    section#sponsor-page .container ul li:not(:nth-child(3n)):after {
+        border-right: 0;
+    }
+    section#sponsor-page .container ul li:not(:nth-child(2n)):after {
+        position: absolute;
+        content: ' ';
+        display: block;
+        height: 160px;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        top: 125px;
+        right: 0;
+    }
+    section#sponsor-page .container ul li:not(:nth-child(2n)):not(:last-child) figure {
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+@media screen and (max-width: 768px) {
+    section#sponsor-page {
+        padding: 0 15px;
+        text-align: center;
+    }
+    section#sponsor-page .container {
+        padding: 0 !important;
+    }
+    section#cta-sponsor {
+        padding: 0 15px;
+    }
+    section#cta-sponsor .container {
+        padding: 0 !important;
+    }
+    section#cta-sponsor article.content {
+        padding: 50px 15px;
+    }
+    section#cta-sponsor article.content .btn.btn-blue {
+        padding: 14px 23px;
+        margin-right: 10px;
+    }
+    section#cta-sponsor article.content .btn.btn-transparent {
+        padding: 12px 23px;
+    }
+    section#adSpace {
+        padding: 0 15px;
+    }
+}
+@media screen and (max-width: 345px) {
+    section#cta-sponsor article.content {
+        padding: 50px 15px;
+        font-size: 13px;
+    }
+    section#cta-sponsor article.content .btn.btn-blue {
+        padding: 12px 18px;
+        margin-right: 10px;
+    }
+    section#cta-sponsor article.content .btn.btn-transparent {
+        padding: 10px 18px;
+    }
+}
+@media screen and (max-width: 330px) {
+    section#sponsor-page .container ul li .content .head {
+        text-align: center;
+    }
+    section#sponsor-page .container ul li .content .head span.label {
+        display: block;
+        margin: 0 auto;
+    }
+    section#cta-sponsor article.content {
+        padding: 50px 15px;
+        font-size: 13px;
+    }
+    section#cta-sponsor article.content .btn.btn-blue {
+        padding: 12px 18px;
+        margin-right: 10px;
+    }
+    section#cta-sponsor article.content .btn.btn-transparent {
+        padding: 10px 18px;
+    }
+}
