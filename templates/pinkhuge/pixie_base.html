@@ -448,10 +448,12 @@
                     <a href="{% url 'pink' %}"><span class="title">Home</span><span class="subtitle"></span></a>
                 </li>
                 <li id="menu-item-1714" class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
-                      {% comment %}  href="{% url 'pink_news' %}"{% endcomment %}><span class="title">VR Esports</span><span class="subtitle"></span></a>
+                        {% comment %}  href="{% url 'pink_news' %}"{% endcomment %}><span
+                        class="title">VR Esports</span><span class="subtitle"></span></a>
                 </li>
                 <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                        href="{% url 'pink_matches' %}"><span class="title">About The League</span><span class="subtitle"></span></a>
+                        href="{% url 'pink_matches' %}"><span class="title">About The League</span><span
+                        class="subtitle"></span></a>
                 </li>
 
 
@@ -460,7 +462,8 @@
                         class="subtitle"></span></a></li>
 
                 <li id="menu-item-1712" class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
-                        {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span class="title">Sponsors</span><span
+                        {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
+                        class="title">Sponsors</span><span
                         class="subtitle"></span></a>
                 </li>
 
@@ -721,23 +724,30 @@
                 <div class="modal-body">
                     <ul id="header_menu_mobile" class="menu">
                         <li id="menu-item-1719"
-                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1719">
-                            <a href="index.html">Home</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                            <a href="{% url 'pink' %}"><span class="title">Home</span><span class="subtitle"></span></a>
+                        </li>
                         <li id="menu-item-1714"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1714"><a
-                                href="news/index.html">Fresh news</a></li>
-                        <li id="menu-item-1720"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1720"><a
-                                href="all-matches/index.html">All Matches</a></li>
-                        <li id="menu-item-1716"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1716"><a
-                                href="all-teams/index.html">Our Teams</a></li>
-                        <li id="menu-item-1717"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1717"><a
-                                href="about-us-3/index.html">About us</a></li>
+                            class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                                {% comment %}  href="{% url 'pink_news' %}"{% endcomment %}><span
+                                class="title">VR Esports</span><span class="subtitle"></span></a>
+                        </li>
+                        <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                href="{% url 'pink_matches' %}"><span class="title">About The League</span><span
+                                class="subtitle"></span></a>
+                        </li>
+
+
+                        <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                href="{% url 'pink_about_us' %}"><span class="title">About us</span><span
+                                class="subtitle"></span></a></li>
+
                         <li id="menu-item-1712"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1712"><a
-                                href="sponsor-page/index.html">Sponsors</a></li>
+                            class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                                {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
+                                class="title">Sponsors</span><span
+                                class="subtitle"></span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
