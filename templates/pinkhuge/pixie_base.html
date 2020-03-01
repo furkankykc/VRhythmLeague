@@ -5,8 +5,10 @@
     h5 span {
         color: rgba(43, 233, 241, 0.21);
     }
-    section#sponsors .owl-carousel a img{
-        max-height: 50px;@important
+
+    section#sponsors .owl-carousel a img {
+        max-height: 50px;
+    @important
     }
 </style>
 <!-- Mirrored from themes.pixiesquad.com/pixiehuge/pink-prime/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Feb 2020 18:13:20 GMT -->
@@ -359,6 +361,15 @@
         /* About page */
         section#aboutStaff .container.bg ul.header li a {
             text-shadow: 1px 0px 1px rgba(235, 32, 132, .35);
+
+
+        }
+
+        .disabled {
+            color: currentColor;
+            cursor: not-allowed;
+            opacity: 0.3;
+            text-decoration: none;
         }
 
     </style>
@@ -436,11 +447,11 @@
                     class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                     <a href="{% url 'pink' %}"><span class="title">Home</span><span class="subtitle"></span></a>
                 </li>
-                <li id="menu-item-1714" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                        href="{% url 'pink_news' %}"><span class="title">VR Esports</span><span class="subtitle"></span></a>
+                <li id="menu-item-1714" class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                      {% comment %}  href="{% url 'pink_news' %}"{% endcomment %}><span class="title">VR Esports</span><span class="subtitle"></span></a>
                 </li>
                 <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                        href="{% url 'pink_matches' %}"><span class="title">Leagues</span><span class="subtitle"></span></a>
+                        href="{% url 'pink_matches' %}"><span class="title">About The League</span><span class="subtitle"></span></a>
                 </li>
 
 
@@ -448,11 +459,11 @@
                         href="{% url 'pink_about_us' %}"><span class="title">About us</span><span
                         class="subtitle"></span></a></li>
 
-
-                <li id="menu-item-1712" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                        href="{% url 'pink_sponsors' %}"><span class="title">Sponsors</span><span
+                <li id="menu-item-1712" class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                        {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span class="title">Sponsors</span><span
                         class="subtitle"></span></a>
                 </li>
+
             </ul>
         </div>
     </nav>
@@ -522,132 +533,132 @@
     </script>
     <script type='text/javascript' src='{% static 'pinkhuge/wp-includes/js/widgets8a54.js' %} '></script>
     <script type='text/javascript' src='{% static 'pinkhuge/wp-includes/js/wp-embed.min5010.js' %} '></script>
-    <footer class="homepage">
-        <div class="container top">
+    <footer class="homepage" style="min-height: 20px">
+        <div class="container top" style="min-height: 0px;max-height: 0px;padding: 0 auto">
 
-            <article class="box">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
-                         height="8px">
-                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
-                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
-                    </svg>
-                    Latest Posts
-                </h4>
-                <ul>
-                    <li>
-                        <a href="category/overwatch/index.html" class="category">
-                            Overwatch </a>
-                        <a href="renegades-defeat-signature-to-minor-playoffs/index.html">RENEGADES DEFEAT SIGNATURE; TO
-                            MINOR PLAYOFFS</a>
-                        <span class="date">June 16, 2017</span>
-                    </li>
-                    <li>
-                        <a href="category/counter-strike/index.html" class="category">
-                            Counter Strike </a>
-                        <a href="scream-now-we-know-were-capable-of-winning/index.html">SCREAM: &#8220;NOW WE KNOW WE&#8217;RE
-                            CAPABLE OF WINNING&#8221;</a>
-                        <span class="date">June 16, 2017</span>
-                    </li>
-                </ul>
-            </article>
-            <!-- /BOX -->
-
-            <article class="box">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
-                         height="8px">
-                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
-                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
-                    </svg>
-                    Our Departments
-                </h4>
-                <ul>
-                    <li>
-                        <a href="http://office@pixiesquad.com/">
-                            <span class="info">
-                                <i class="icon"
-                                   style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/icon1.png' %}');"></i> Management                            </span>
-                            <span class=" email">
-                                <span class="__cf_email__" data-cfemail="8de2ebebe4eee8cdfde4f5e4e8fefcf8ece9a3eee2e0">[email&#160;protected]</span>                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://help@pixiesquad.com/">
-                            <span class="info">
-                                <i class="icon"
-                                   style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/icon2.png' %}');"></i> Support                            </span>
-                            <span class=" email">
-                                <span class="__cf_email__" data-cfemail="422a272e3202322b3a2b2731333723266c212d2f">[email&#160;protected]</span>                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://news@pixiesquad.com/">
-                            <span class="info">
-                                <i class="icon"
-                                   style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/icon3.png' %}');"></i> Press                            </span>
-                            <span class=" email">
-                                <span class="__cf_email__" data-cfemail="fe909b898dbe8e9786979b8d8f8b9f9ad09d9193">[email&#160;protected]</span>                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </article>
-            <!-- /BOX -->
-
-            <article class="box useful">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
-                         height="8px">
-                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
-                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
-                    </svg>
-                    Useful Links
-                </h4>
-                <ul id="footer_menu" class="useful-links">
-                    <li id="menu-item-1721"
-                        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1721">
-                        <span>+</span><a href="index.html">Home</a></li>
-                    <li id="menu-item-1722"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1722">
-                        <span>+</span><a href="about-us-3/index.html">About us</a></li>
-                    <li id="menu-item-1723"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1723">
-                        <span>+</span><a href="all-matches/index.html">All Matches</a></li>
-                    <li id="menu-item-1724"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1724">
-                        <span>+</span><a href="all-teams/index.html">All Teams</a></li>
-                    <li id="menu-item-1725"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1725">
-                        <span>+</span><a href="news/index.html">News</a></li>
-                </ul>
-            </article>
-            <!-- /BOX -->
-
-            <article class="box aboutUs">
-                <h4>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
-                         height="8px">
-                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
-                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
-                    </svg>
-                    About Us
-                </h4>
-
-                <p>
-                    Now in the modern age, the gaming world is to be called ‘E-Sports’. Where our main focus lies. We
-                    have
-                    dedicated ourselves to develop our careers in this direction. As it’s where we can show our
-                    creativity
-                    in </p>
-
-                <a href="http://pixiesquad.com/" target="_blank">More About Us</a>
-            </article>
+            {#            <article class="box">#}
+            {#                <h4>#}
+            {#                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"#}
+            {#                         height="8px">#}
+            {#                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"#}
+            {#                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>#}
+            {#                    </svg>#}
+            {#                    Latest Posts#}
+            {#                </h4>#}
+            {#                <ul>#}
+            {#                    <li>#}
+            {#                        <a href="category/overwatch/index.html" class="category">#}
+            {#                            Overwatch </a>#}
+            {#                        <a href="renegades-defeat-signature-to-minor-playoffs/index.html">RENEGADES DEFEAT SIGNATURE; TO#}
+            {#                            MINOR PLAYOFFS</a>#}
+            {#                        <span class="date">June 16, 2017</span>#}
+            {#                    </li>#}
+            {#                    <li>#}
+            {#                        <a href="category/counter-strike/index.html" class="category">#}
+            {#                            Counter Strike </a>#}
+            {#                        <a href="scream-now-we-know-were-capable-of-winning/index.html">SCREAM: &#8220;NOW WE KNOW WE&#8217;RE#}
+            {#                            CAPABLE OF WINNING&#8221;</a>#}
+            {#                        <span class="date">June 16, 2017</span>#}
+            {#                    </li>#}
+            {#                </ul>#}
+            {#            </article>#}
+            {#            <!-- /BOX -->#}
+            {##}
+            {#            <article class="box">#}
+            {#                <h4>#}
+            {#                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"#}
+            {#                         height="8px">#}
+            {#                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"#}
+            {#                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>#}
+            {#                    </svg>#}
+            {#                    Our Departments#}
+            {#                </h4>#}
+            {#                <ul>#}
+            {#                    <li>#}
+            {#                        <a href="http://office@pixiesquad.com/">#}
+            {#                            <span class="info">#}
+            {#                                <i class="icon"#}
+            {#                                   style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/icon1.png' %}');"></i> Management                            </span>#}
+            {#                            <span class=" email">#}
+            {#                                <span class="__cf_email__" data-cfemail="8de2ebebe4eee8cdfde4f5e4e8fefcf8ece9a3eee2e0">[email&#160;protected]</span>                            </span>#}
+            {#                        </a>#}
+            {#                    </li>#}
+            {#                    <li>#}
+            {#                        <a href="http://help@pixiesquad.com/">#}
+            {#                            <span class="info">#}
+            {#                                <i class="icon"#}
+            {#                                   style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/icon2.png' %}');"></i> Support                            </span>#}
+            {#                            <span class=" email">#}
+            {#                                <span class="__cf_email__" data-cfemail="422a272e3202322b3a2b2731333723266c212d2f">[email&#160;protected]</span>                            </span>#}
+            {#                        </a>#}
+            {#                    </li>#}
+            {#                    <li>#}
+            {#                        <a href="http://news@pixiesquad.com/">#}
+            {#                            <span class="info">#}
+            {#                                <i class="icon"#}
+            {#                                   style="background-image: url('{% static 'pinkhuge/wp-content/uploads/2017/06/icon3.png' %}');"></i> Press                            </span>#}
+            {#                            <span class=" email">#}
+            {#                                <span class="__cf_email__" data-cfemail="fe909b898dbe8e9786979b8d8f8b9f9ad09d9193">[email&#160;protected]</span>                            </span>#}
+            {#                        </a>#}
+            {#                    </li>#}
+            {#                </ul>#}
+            {#            </article>#}
+            {#            <!-- /BOX -->#}
+            {##}
+            {#            <article class="box useful">#}
+            {#                <h4>#}
+            {#                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"#}
+            {#                         height="8px">#}
+            {#                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"#}
+            {#                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>#}
+            {#                    </svg>#}
+            {#                    Useful Links#}
+            {#                </h4>#}
+            {#                <ul id="footer_menu" class="useful-links">#}
+            {#                    <li id="menu-item-1721"#}
+            {#                        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1721">#}
+            {#                        <span>+</span><a href="index.html">Home</a></li>#}
+            {#                    <li id="menu-item-1722"#}
+            {#                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1722">#}
+            {#                        <span>+</span><a href="about-us-3/index.html">About us</a></li>#}
+            {#                    <li id="menu-item-1723"#}
+            {#                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1723">#}
+            {#                        <span>+</span><a href="all-matches/index.html">All Matches</a></li>#}
+            {#                    <li id="menu-item-1724"#}
+            {#                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1724">#}
+            {#                        <span>+</span><a href="all-teams/index.html">All Teams</a></li>#}
+            {#                    <li id="menu-item-1725"#}
+            {#                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1725">#}
+            {#                        <span>+</span><a href="news/index.html">News</a></li>#}
+            {#                </ul>#}
+            {#            </article>#}
+            {#            <!-- /BOX -->#}
+            {##}
+            {#            <article class="box aboutUs">#}
+            {#                <h4>#}
+            {#                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"#}
+            {#                         height="8px">#}
+            {#                        <path fill-rule="evenodd" fill="rgb(57, 191, 253)"#}
+            {#                              d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>#}
+            {#                    </svg>#}
+            {#                    About Us#}
+            {#                </h4>#}
+            {##}
+            {#                <p>#}
+            {#                    Now in the modern age, the gaming world is to be called ‘E-Sports’. Where our main focus lies. We#}
+            {#                    have#}
+            {#                    dedicated ourselves to develop our careers in this direction. As it’s where we can show our#}
+            {#                    creativity#}
+            {#                    in </p>#}
+            {##}
+            {#                <a href="http://pixiesquad.com/" target="_blank">More About Us</a>#}
+            {#            </article>#}
             <!-- /BOX -->
 
         </div>
         <!-- /TOP-CONTAINER -->
 
-        <div class="bottom">
+        <div class="bottom" style="max-height: 30px;padding: auto;">
             <div class="container">
 
                 <article class="left">
@@ -676,7 +687,7 @@
 
 
                 <article class="right">
-                    <h5>Copyright PixieHuge, crafted with love by PixieSquad 2017</h5>
+                    <h5>Copyright crafted with love by VRoom Game Studio 2020</h5>
                 </article>
                 <!-- /RIGHT -->
 

@@ -1,26 +1,18 @@
-from math import log
-
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth.models import User
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
-from django.shortcuts import render, redirect, render_to_response
-from django.template import RequestContext
+from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
-from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-
-from django.core import serializers
 
 from League.services import *
 from League.tokens import account_activation_token
 from . import models, forms
-
 from .mixins import AjaxTemplateMixin
 
 
@@ -155,7 +147,6 @@ class CustomLoginView(AjaxTemplateMixin, LoginView):
     form_class = AuthenticationForm
 
 
-
 def autocompleteModel(request):
     if request.is_ajax():
         q = request.GET.get('term', '').capitalize()
@@ -177,15 +168,17 @@ def pink(request):
     print('path=', path)
     if path == '/':
         return render(request, 'pinkhuge/index.html')
-    elif path == '/news/':
-        return render(request, 'pinkhuge/news/index.html')
-    elif path == '/matches/':
+    # elif path == '/news/':
+    #     return render(request, 'pinkhuge/news/index.html')
+    elif path == '/aboutleague/':
         return render(request, 'pinkhuge/all-matches/index.html')
-    elif path == '/teams/':
-        return render(request, 'pinkhuge/all-teams/index.html')
+    # elif path == '/teams/':
+    #     return render(request, 'pinkhuge/all-teams/index.html')
     elif path == '/aboutus/':
         return render(request, 'pinkhuge/about-us-3/index.html')
-    elif path == '/sponsors/':
-        return render(request, 'pinkhuge/sponsor-page/index.html')
+    # elif path == '/sponsors/':
+    #     return render(request, 'pinkhuge/sponsor-page/index.html')
     else:
-        return render(request, 'pinkhuge/sponsor-page/index.html')
+        return render(request, 'pinkhuge/index.html')
+
+    #     return render(request, 'pinkhuge/sponsor-page/index.html')

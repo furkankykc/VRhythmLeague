@@ -26,7 +26,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0','vrrhythmleague.com','www.vrrhythmleague.com','vrrhythmleague.xyz','www.vrrhythmleague.com']
 
-# Application definition
+
+# [Unit]
+# Description=gunicorn daemon
+# After=network.target
+#
+# [Service]
+# User=root
+# Group=www-data
+# WorkingDirectory=/home/django/VRhythmLeague
+# ExecStart=/home/django/VRhythmLeague/venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/django/VRhythmLeague/gunicorn.sock VRhythmLeague.wsgi:application
+#
+# [Install]
+# WantedBy=multi-user.target
+#
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
