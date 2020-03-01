@@ -22,10 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6b4sy&r&2tb05h4ed&$cdmpe6xj9r1jkfl#(yul6^j&%9d-z)t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0','vrrhythmleague.com','www.vrrhythmleague.com','vrrhythmleague.xyz','www.vrrhythmleague.com']
-
+ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', 'www.vrrhythmleague.com',
+                 'vrrhythmleague.xyz', 'www.vrrhythmleague.com']
 
 # [Unit]
 # Description=gunicorn daemon
@@ -40,7 +40,6 @@ ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0','vrrhythmleague.com','ww
 # [Install]
 # WantedBy=multi-user.target
 #
-
 
 
 INSTALLED_APPS = [
@@ -166,8 +165,8 @@ EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'furkanfbr@gmail.com'
-EMAIL_HOST_PASSWORD = 'fur8989323846qQ@'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Static files (CSS, JavaScript, Images)
@@ -175,7 +174,8 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join('static'),)
+STATICFILES_DIRS = (os.path.join('staticfiles'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_ROOT =os.path.join(BASE_DIR, 'static')
 # SITE_URL = "http://127.0.0.1:8000"
 
