@@ -120,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# JQUERY_URL = "/static/thema_vr/wp-includes/jqueryb8ff.js"
+# JQUERY_URL = "/static/thema_vr/thema_inc/jqueryb8ff.js"
 # USE_DJANGO_JQUERY = True
 # USE_DJANGO_JQUERY = False
 # JQUERY_URL = False
