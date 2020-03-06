@@ -428,7 +428,8 @@ header > nav > .container > div.logo.bg:after {
     width: 642px;
     height: 171px;
     position: absolute;
-    background-image: url("../img/logo-bg.png");
+    /*background-image: url("../img/logo-bg.png");*/
+    background-image: url("static/league/img/vrthmlogo.png");
     background-repeat: no-repeat;
     content: ' ';
     top: -4px;
