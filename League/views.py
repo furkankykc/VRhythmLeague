@@ -167,21 +167,21 @@ def pink(request):
     path = request.path_info
     print('path=', path)
     if path == '/':
-        return render(request, 'pinkhuge/index.html')
+        return render(request, 'thema_vr/index.html')
     # elif path == '/news/':
-    #     return render(request, 'pinkhuge/news/index.html')
+    #     return render(request, 'thema_vr/news/index.html')
     elif path == '/aboutleague/':
-        return render(request, 'pinkhuge/all-matches/index.html')
+        return render(request, 'thema_vr/all-matches/index.html')
     # elif path == '/teams/':
-    #     return render(request, 'pinkhuge/all-teams/index.html')
+    #     return render(request, 'thema_vr/all-teams/index.html')
     elif path == '/aboutus/':
-        return render(request, 'pinkhuge/about-us-3/index.html')
+        return render(request, 'thema_vr/about-us-3/index.html')
     # elif path == '/sponsors/':
-    #     return render(request, 'pinkhuge/sponsor-page/index.html')
+    #     return render(request, 'thema_vr/sponsor-page/index.html')
     else:
-        return render(request, 'pinkhuge/index.html')
+        return render(request, 'thema_vr/index.html')
 
-    #     return render(request, 'pinkhuge/sponsor-page/index.html')
+    #     return render(request, 'thema_vr/sponsor-page/index.html')
 
 
 from django.views.generic.detail import DetailView
