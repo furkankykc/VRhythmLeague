@@ -15,7 +15,7 @@
                                 <div class="ti-thumb set-bg"
                                      data-setbg="{{ league.game.logo.url }}"></div>
                                 <div class="ti-text">
-                                    <h4><a class="season-link" href="/season/{{ league.pk }}">{{ league.name }}</a>
+                                    <h4><a class="season-link" href="{% url 'show_leagues' league.slug%}">{{ league.name }}</a>
                                     </h4>
                                     <ul>
                                         <li><span>Tournament Beggins:</span> {{ league.starting_at }}</li>

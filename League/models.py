@@ -1,36 +1,51 @@
 import datetime as dt
 
-from django.db.models import Q
-from django.utils import timezone
+import humanize
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-import humanize
-from . import validators
-from django.utils import timezone
 from django.db import models
-from smart_selects.db_fields import ChainedManyToManyField, ChainedForeignKey
+from django.utils import timezone
+from smart_selects.db_fields import ChainedManyToManyField
+
+from .validators import *
 
 # Create your models here.
+
 _max_length = 50
 
 
 class TimeStampMixin(models.Model):
-    created_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract = True
 
 
-class Game(models.Model):
+class PageModel(TimeStampMixin):
+    slug = models.SlugField(verbose_name='Page URL', blank=True, allow_unicode=True)
     name = models.CharField(max_length=_max_length)
-    logo = models.FileField(upload_to='documents/%Y/%m/%d/', default="", null=True)
+
+    class Meta:
+        abstract = True
+
+    #
+    # def save(self, force_insert=False, force_update=False, using=None,
+    #          update_fields=None):
+    #     super(PageModel, self).save()
+    #     self.full_clean()
+    #     self.slug = slugify(self.name)
+
+    def __unicode__(self):
+        return self.name
 
     def __str__(self):
         return '{}'.format(self.name)
+
+
+class Game(PageModel):
+    logo = models.FileField(upload_to='documents/%Y/%m/%d/', default="", null=True)
 
 
 class Difficulty(models.Model):
@@ -72,9 +87,8 @@ class Difficulty(models.Model):
 #     down_votes = models.OneToOneField(Vote, on_delete=models.CASCADE, related_name='Votes_down_votes')
 
 
-class Song(TimeStampMixin):
+class Song(PageModel):
     key = models.CharField(max_length=40, primary_key=True, blank=True)
-    name = models.CharField(max_length=_max_length)
     picture = models.CharField(max_length=30, blank=True, null=True)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     description = models.CharField(max_length=150)
@@ -119,7 +133,7 @@ class Song(TimeStampMixin):
         super(Song, self).save()
 
 
-class Player(TimeStampMixin):
+class Player(PageModel):
     name = models.CharField(max_length=_max_length)
     total_point = models.IntegerField(default=0)
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, null=True)
@@ -151,32 +165,72 @@ class Player(TimeStampMixin):
         # suanki sezondak puani
         pass
 
-    def __str__(self):
-        return '{}'.format(self.name)
-
 
 class Type(models.Model):
     name = models.CharField(max_length=_max_length)
-    week_count = models.IntegerField(validators=[
+    is_daily = models.BooleanField()
+    count = models.IntegerField(validators=[
         MaxValueValidator(24),
         MinValueValidator(1)
     ])
+    song_count = models.IntegerField(validators=[
+        MaxValueValidator(20),
+        MinValueValidator(1)
+    ])
+
+    # difficulty = models.
+
+    @property
+    def time(self):
+        return self.count if self.is_daily else self.count * 7
 
     def __str__(self):
         return '{}'.format(self.name)
 
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        super(Type, self).save()
 
-class Season(models.Model):
+
+class Season(PageModel):
     name = models.CharField(max_length=_max_length)
     sponsor_name = models.CharField(max_length=_max_length)
     type = models.ForeignKey(Type, on_delete=models.CASCADE, null=False)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
 
-    starting_at = models.DateField(null=True)
+    starting_at = models.DateField(null=False)
     finishing_at = models.DateField(null=True, blank=True)
 
-    def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
-        self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.week_count)
+    class Meta:
+        verbose_name = ("League Season")
+        verbose_name_plural = ("League Seasons")
+
+    EASY = 'EZ'
+    NORMAL = 'NM'
+    HARD = 'HD'
+    EXPERT = 'EX'
+    EXPERTPLUS = 'EP'
+    difficulties = [
+        (EASY, 'Easy'),
+        (NORMAL, 'Normal'),
+        (HARD, 'Hard'),
+        (EXPERT, 'Expert'),
+        (EXPERTPLUS, 'Expert Plus'),
+    ]
+    difficulty = models.CharField(
+        max_length=2,
+        choices=difficulties,
+        default=HARD
+    )
+
+    #
+    # def save(self, force_insert=False, force_update=False, using=None,
+    #          update_fields=None):
+    #     self.full_clean()
+    #     super(Season, self).save()
+    #
+    # def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
+    #     self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.count)
 
     @property
     def is_season_started(self):
@@ -195,29 +249,51 @@ class Season(models.Model):
         return seasons
 
     def calculate_finishing_date(self):
-        self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.week_count)
+        self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.count)
+
+    def get_difficulty(self, difficulty_code):
+        return dict(self.difficulties)[difficulty_code]
 
     def clean(self):
-        if self.finishing_at is None:
-            self.calculate_finishing_date()
+        pass
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
-        self.full_clean()
+
         super(Season, self).save()
+        if self.finishing_at is None:
+            self.calculate_finishing_date()
 
     def __str__(self):
-        return '{}'.format(self.name)
+        return '{}'.format(self.name.__str__())
 
 
-class PlayList(TimeStampMixin):
-    name = models.CharField(max_length=_max_length)
+class PlayList(PageModel):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     songs = ChainedManyToManyField(Song,
                                    horizontal=True,
                                    verbose_name="songs",
                                    chained_field="game",
-                                   chained_model_field="game")
+                                   auto_choose=True,
+                                   chained_model_field="game", blank=True)
+
+    EASY = 'EZ'
+    NORMAL = 'NM'
+    HARD = 'HD'
+    EXPERT = 'EX'
+    EXPERTPLUS = 'EP'
+    difficulties = [
+        (EASY, 'Easy'),
+        (NORMAL, 'Normal'),
+        (HARD, 'Hard'),
+        (EXPERT, 'Expert'),
+        (EXPERTPLUS, 'Expert Plus'),
+    ]
+    difficulty = models.CharField(
+        max_length=2,
+        choices=difficulties,
+        default=HARD
+    )
 
     # songs.queryset &= models.Q(
     #             game=game,
@@ -239,20 +315,20 @@ class PlayList(TimeStampMixin):
         return '{}'.format(self.name)
 
 
-class Week(models.Model):
-    name = models.CharField(max_length=_max_length, editable=False)
-    description = models.TextField()
-    season = models.ForeignKey(Season, on_delete=models.CASCADE, null=False)
-    playlist = models.ForeignKey(PlayList, on_delete=models.SET_NULL, null=True)
+class Week(PageModel):
+    # name = models.CharField(max_length=_max_length, editable=False)
+    description = models.TextField(blank=True)
+    season = models.ForeignKey(Season, on_delete=models.CASCADE, null=False, editable=False)
+    # playlist = models.ForeignKey(PlayList, on_delete=models.SET_NULL, null=True)
     # game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
-    starting_at = models.DateField(null=True)
-
-    @classmethod
-    def prefix(cls, count):
-        return "Week {}".format(count)
+    starting_at = models.DateField(null=False, editable=False)
+    songs = models.ManyToManyField(Song,
+                                   verbose_name="songs",
+                                   blank=True
+                                   )
 
     def __str__(self):
-        return '{} | {}'.format(self.season.game.name, self.name)
+        return '{} | {} | {}'.format(self.season.game.name, self.name, self.season.get_difficulty_display())
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
@@ -260,10 +336,23 @@ class Week(models.Model):
         super(Week, self).save()
 
     def clean(self):
+        # max_releations(self.songs, self.song_count())
+        pass
+
+    def set_name(self, id):
         week_count = Week.objects.filter(season=self.season).count()
-        max_week_count = self.season.type.week_count
-        if self.season.type.week_count > week_count:
-            self.name = "Week {}/{}".format(week_count + 1, max_week_count)
+        max_week_count = self.season.type.count
+
+        if self.season.type.count > week_count:
+            if self.season.type.is_daily:
+
+                self.name = "{1} {0} of {2} {0}s".format("day", id + 1,
+                                                         max_week_count)
+            else:
+
+                self.name = "{1} {0} of {2} {0}s".format("week", id + 1,
+                                                         max_week_count)
+
         else:
             raise ValueError("hasbeen Reached Maximum Week Count ")
 
@@ -281,6 +370,16 @@ class Score(TimeStampMixin):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     song = models.ForeignKey(Song, on_delete=models.CASCADE, null=False)
     player = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=False)
+    difficulty_rank = models.FloatField(default=0)
+    note_jump_movement_speed = models.FloatField(default=0)
+    note_jump_start_beat_offset = models.FloatField(default=0)
+    raw_score = models.FloatField(default=0)
+    modified_score = models.FloatField(default=0)
+    rawscore = models.FloatField(default=0)
+    full_combo = models.BooleanField(default=0)
+    good_cuts_count = models.IntegerField(default=0)
+    bad_cuts_count = models.IntegerField(default=0)
+    max_combo = models.IntegerField(default=0)
     score = models.IntegerField(default=0)
 
     # def save(self, force_insert=False, force_update=False, using=None,update_fields=None):
