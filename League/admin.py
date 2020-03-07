@@ -97,7 +97,7 @@ class WeekAdmin(admin.ModelAdmin):
         return obj.season.type.song_count
 
     def difficulty(self, obj):
-        return obj.season.get_difficulty(obj.season.difficulty)
+        return obj.season.get_difficulty()
 
 
 @admin.register(Type)

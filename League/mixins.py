@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django import template
+
 
 # AJAX mixin
+
+
 class AjaxTemplateMixin(object):
     def dispatch(self, request, *args, **kwargs):
         if not hasattr(self, 'ajax_template_name'):
@@ -20,3 +24,5 @@ class AjaxTemplateMixin(object):
         if request.is_ajax():
             self.template_name = self.ajax_template_name
         return super(AjaxTemplateMixin, self).dispatch(request, *args, **kwargs)
+
+

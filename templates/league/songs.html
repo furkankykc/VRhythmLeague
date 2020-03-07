@@ -53,7 +53,7 @@
             <th rowspan="2" scope="col">Rating</th>
         </tr>
         <tr class="table-bordered">
-{#            <th>EASY</th>#}
+            {#            <th>EASY</th>#}
             <th>NORMAL</th>
             <th>HARD</th>
             <th>EXPERT</th>
@@ -62,7 +62,11 @@
         </thead>
         <tbody>
 
-        {% for song in songs %}
+        {% for song in week.songs.all %}
+
+
+            {#        {% endfor %}#}
+
             <tr>
                 <th scope="row"> {{ forloop.counter }}</th>
                 <th>{{ song.key }}</th>
@@ -71,11 +75,11 @@
                 <td>{{ song.sub_name }}</td>
 
 
-{#                <th class="table-bordered" scope="row">#}
-{#                    {% if song.easy %}#}
-{#                        X#}
-{#                    {% endif %}#}
-{#                </th>#}
+                {#                <th class="table-bordered" scope="row">#}
+                {#                    {% if song.easy %}#}
+                {#                        X#}
+                {#                    {% endif %}#}
+                {#                </th>#}
                 <th class="table-bordered" scope="row">
                     {% if song.normal %}
                         X

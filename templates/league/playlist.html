@@ -3,16 +3,13 @@
 {% block content %}
 
 
-        <div>
-            <a> {{ playlist.name }}</a>
-            <a>{{  playlist.game }}</a>
-            <a>
-                {% for song in playlist.songs.all %}
-                    <a>{{ song.name }}</a>
-                {% endfor %}
-            </a>
+    <div>
+        {% for song in week.songs.all %}
+            <a>{{ song.name }}</a>
+            <a>{{ song.key }}</a>
+        {% endfor %}
 
-        </div>
+    </div>
 
 
 {% endblock content %}

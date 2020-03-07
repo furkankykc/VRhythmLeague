@@ -1,9 +1,8 @@
 from django.conf.urls import url
-from django.contrib.auth.views import LoginView, LogoutView
-from django.urls import include, path
-from rest_framework import routers
+from django.contrib.auth.views import LogoutView
+from django.urls import path
+
 from . import views
-from django.contrib.auth import views as auth_views
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -12,7 +11,7 @@ urlpatterns = [
     url(r'dashboard/$', views.dashboard, name='dashboard'),
     url(r'home/$', views.home, name='home'),
     url(r'games/$', views.home, name='games'),
-    url(r'leagues/$', views.leagues, name='leagues'),
+    path('leagues/', views.leagues, name='leagues'),
     url('contacts/$', views.week, name='contacts'),
     url(r'profile/$', views.profile, name='profile'),
     url(r'playlists/$', views.playlist, name='playlist'),
@@ -42,5 +41,10 @@ urlpatterns = [
     path('teams/', views.pink, name='pink_our_teams'),
     path('aboutus/', views.pink, name='pink_about_us'),
     path('sponsors/', views.pink, name='pink_sponsors'),
-    path('leagues/<slug:the_slug>/', views.SeasonDetailView.as_view, name='show_leagues'),
+    path('games/<slug:game_slug>/', views.GameDetailView.as_view(), name='show_seasons'),
+    path('games/<slug:game_slug>/leagues/<slug:season_slug>/', views.SeasonDetailView.as_view(), name='show_weeks'),
+    path('games/<slug:game_slug>/leagues/<slug:season_slug>/weeks/<slug:week_slug>/', views.WeekDetailView.as_view(),
+         name='show_songs'),
+    # url(r'^(?P<full_slug>(.*))/$', views.pages, name='show_ll')
+
 ]

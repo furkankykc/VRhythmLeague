@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils import timezone
+from django.utils.text import slugify
 from smart_selects.db_fields import ChainedManyToManyField
 
 from .validators import *
@@ -42,6 +43,14 @@ class PageModel(TimeStampMixin):
 
     def __str__(self):
         return '{}'.format(self.name)
+
+    def get_absolute_url(self):
+        url = "/%s/" % self.slug
+        page = self
+        while page.parent:
+            url = "/%s%s" % (page.parent.slug, url)
+            page = page.parent
+        return url
 
 
 class Game(PageModel):
@@ -251,8 +260,12 @@ class Season(PageModel):
     def calculate_finishing_date(self):
         self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.count)
 
-    def get_difficulty(self, difficulty_code):
-        return dict(self.difficulties)[difficulty_code]
+    def get_difficulty(self):
+        return dict(self.difficulties)[self.difficulty]
+
+    @property
+    def week(self):
+        return Week.objects.filter(season=self)
 
     def clean(self):
         pass
@@ -266,6 +279,18 @@ class Season(PageModel):
 
     def __str__(self):
         return '{}'.format(self.name.__str__())
+
+    @property
+    def parent(self):
+        return self.game
+
+    def get_absolute_url(self):
+        url = "/%s/" % self.slug
+        page = self
+        while page.parent:
+            url = "/%s%s" % (page.parent.slug, url)
+            page = page.parent
+        return url
 
 
 class PlayList(PageModel):
@@ -337,24 +362,40 @@ class Week(PageModel):
 
     def clean(self):
         # max_releations(self.songs, self.song_count())
+
         pass
 
-    def set_name(self, id):
-        week_count = Week.objects.filter(season=self.season).count()
-        max_week_count = self.season.type.count
+    def set_name(self, id=-1):
 
-        if self.season.type.count > week_count:
-            if self.season.type.is_daily:
+        if id > -1:
+            week_count = Week.objects.filter(season=self.season).count()
+            max_week_count = self.season.type.count
+            if self.season.type.count > week_count:
+                if self.season.type.is_daily:
 
-                self.name = "{1} {0} of {2} {0}s".format("day", id + 1,
-                                                         max_week_count)
+                    self.name = "{1} {0} of {2} {0}s".format("day", id + 1,
+                                                             max_week_count)
+                else:
+
+                    self.name = "{1} {0} of {2} {0}s".format("week", id + 1,
+                                                             max_week_count)
+
             else:
-
-                self.name = "{1} {0} of {2} {0}s".format("week", id + 1,
-                                                         max_week_count)
-
+                raise ValueError("hasbeen Reached Maximum Week Count ")
         else:
-            raise ValueError("hasbeen Reached Maximum Week Count ")
+            self.slug = slugify("%s" % self.name.split('of')[0])
+
+    @property
+    def parent(self):
+        return self.season
+
+    def get_absolute_url(self):
+        url = "/%s/" % self.slug
+        page = self
+        while page.parent:
+            url = "/%s%s" % (page.parent.slug, url)
+            page = page.parent
+        return url
 
 
 class Achievement(models.Model):

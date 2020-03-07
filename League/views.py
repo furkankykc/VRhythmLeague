@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.views.generic.detail import DetailView
 
 from League.services import *
 from League.tokens import account_activation_token
@@ -184,14 +185,53 @@ def pink(request):
     #     return render(request, 'thema_vr/sponsor-page/index.html')
 
 
-from django.views.generic.detail import DetailView
-
-
 class SeasonDetailView(DetailView):
-    model = Week
+    model = Season
     # This file should exist somewhere to render your page
     template_name = 'league/weeks.html'
     # Should match the value after ':' from url <slug:the_slug>
-    slug_url_kwarg = 'the_slug'
+    slug_url_kwarg = 'season_slug'
     # Should match the name of the slug field on the model
     slug_field = 'slug'  # DetailView's default value: optional
+    context_object_name = 'season'
+
+    # queryset = Week.objects.filter(season__name=season__name)
+    # queryset=Week.objects.filter(season__slug=)
+    def get_queryset(self):
+        return Season.objects.filter(
+            slug=self.kwargs['season_slug'],
+            game__slug=self.kwargs['game_slug'],
+        )
+
+
+class GameDetailView(DetailView):
+    model = Game
+    # This file should exist somewhere to render your page
+    template_name = 'league/games.html'
+    # Should match the value after ':' from url <slug:the_slug>
+    slug_url_kwarg = 'game_slug'
+    # Should match the name of the slug field on the model
+    slug_field = 'slug'  # DetailView's default value: optional
+    context_object_name = 'game'
+    # queryset = Game.objects.filter(season__name=season__name)
+    # queryset=Week.objects.filter(season__slug=)
+
+
+class WeekDetailView(DetailView):
+    model = Season
+    # This file should exist somewhere to render your page
+    template_name = 'league/songs.html'
+    # Should match the value after ':' from url <slug:the_slug>
+    slug_url_kwarg = 'week_slug'
+    # Should match the name of the slug field on the model
+    slug_field = 'slug'  # DetailView's default value: optional
+    context_object_name = 'week'
+
+    # queryset = Week.objects.filter(season__name=season__name)
+    # queryset=Week.objects.filter(season__slug=)
+    def get_queryset(self):
+        return Week.objects.filter(
+            slug=self.kwargs['week_slug'],
+            season__slug=self.kwargs['season_slug'],
+            season__game__slug=self.kwargs['game_slug'],
+        )
