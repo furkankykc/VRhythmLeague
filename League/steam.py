@@ -1,5 +1,9 @@
-from League.models import Player
+from django.conf import settings
+from social_core.exceptions import AuthForbidden
+from social_core.pipeline.social_auth import social_uid
 from social_core.pipeline.user import create_user
+
+from League.models import Player
 
 #
 #
@@ -52,3 +56,29 @@ def create_just_activated_users(strategy, details, backend, user=None, *args, **
     if backend.name == 'steam':
         if details.get('commentpermission') == 1:
             create_user(strategy, details, backend, user=None, *args, **kwargs)
+
+
+def accept_only_auth(backend, details, response, *args, **kwargs):
+    uid = social_uid(backend, details, response, *args, **kwargs)
+
+    if not uid != 76561198019013458:
+        raise AuthForbidden(backend)
+
+
+def auth_allowed(backend, details, response, *args, **kwargs):
+    uid = backend.get_user_id(details, response)
+    if not fdauth_allowed(response, uid):
+        raise AuthForbidden(backend)
+
+
+def fdauth_allowed(self, details):
+    """Return True if the user should be allowed to authenticate, by
+    default check if email is whitelisted (if there's a whitelist)"""
+    uids = settings.WHITELISTED_UIDS
+    # domains = self.setting('WHITELISTED_DOMAINS', [])
+    uid = details
+    allowed = True
+    if uid and uids:
+        # domain = email.split('@', 1)[1]
+        allowed = uid in uids
+    return allowed

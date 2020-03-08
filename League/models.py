@@ -1,14 +1,17 @@
 import datetime as dt
+import statistics
 
 import humanize
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
+from django.db.models import Max, Min, StdDev, Variance
 from django.utils import timezone
 from django.utils.text import slugify
 from smart_selects.db_fields import ChainedManyToManyField
 
+from League.mixins import normpdf
 from .validators import *
 
 # Create your models here.
@@ -75,27 +78,6 @@ class Difficulty(models.Model):
         abstract = False
 
 
-#
-# class Difficulties(models.Model):
-#     easy = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff1')
-#     normal = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff_normal')
-#     hard = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff_hard')
-#     expert = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff_ex')
-#     expert_plus = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='diff_exp_1')
-
-#
-# class Vote(models.Model):
-#     count = models.BigIntegerField()
-#
-#     class Meta:
-#         abstract = False
-#
-#
-# class Votes(models.Model):
-#     up_votes = models.OneToOneField(Vote, on_delete=models.CASCADE, related_name='Votes_up_votes')
-#     down_votes = models.OneToOneField(Vote, on_delete=models.CASCADE, related_name='Votes_down_votes')
-
-
 class Song(PageModel):
     key = models.CharField(max_length=40, primary_key=True, blank=True)
     picture = models.CharField(max_length=30, blank=True, null=True)
@@ -144,7 +126,7 @@ class Song(PageModel):
 
 class Player(PageModel):
     name = models.CharField(max_length=_max_length)
-    total_point = models.IntegerField(default=0)
+    total_score = models.IntegerField(default=0)
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, null=True)
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
@@ -165,14 +147,58 @@ class Player(PageModel):
     # @receiver(post_save, sender=User)
     # def save_user_profile(sender, instance, **kwargs):
     #     instance.player.save()
+    @classmethod
+    def get_max_point_ever(cls) -> int:
+        return Player.objects.only('total_score').aggregate(Max('total_score'))['total_score__max']
 
-    def calculate_total_point(self):
-        # bugune kadar toplam lig puani
-        pass
+    @classmethod
+    def get_min_point_ever(cls) -> int:
+        return Player.objects.filter(total_score__gt=0).aggregate(Min('total_score'))['total_score__min']
+
+    @classmethod
+    def get_total_player_count(cls) -> int:
+        return Player.objects.filter(total_score__gt=0).count()
+
+    @classmethod
+    def score_diffrence(cls) -> int:
+        score_diffrence = cls.get_max_point_ever() - cls.get_min_point_ever()
+        # score_norm = score_diffrence/cls.get_total_player_count()
+        return score_diffrence
+
+    @classmethod
+    def score_diff_mean(cls) -> float:
+        score_norm = Player.score_diffrence() / cls.get_total_player_count()
+        return score_norm
+
+    @classmethod
+    def standar_deviation(cls):
+        return Player.objects.filter(total_score__gt=0).aggregate(Variance('total_score'))['total_score__std']
+
+    @classmethod
+    def mean(cls):
+        player_list = Player.objects.filter(total_score__gt=0).values_list('total_score', flat=True)
+        mean = statistics.mean(player_list)
+        return mean
+
+    def normalized_sore(self) -> float:
+        return (self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()
+
+    @property
+    def calculate_normal(self):
+        return normpdf(self.total_score, Player.mean(), Player.standar_deviation())
+
+    #
+    # def calculate_total_point(self):
+    #     # bugune kadar toplam lig puani
+    #     pass
 
     def calculate_current_season_point(self):
         # suanki sezondak puani
         pass
+
+    @property
+    def season_rank(self):
+        return (1 - self.normalized_sore()) * 50
 
 
 class Type(models.Model):
@@ -206,7 +232,8 @@ class Season(PageModel):
     sponsor_name = models.CharField(max_length=_max_length)
     type = models.ForeignKey(Type, on_delete=models.CASCADE, null=False)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
-
+    picture = models.ImageField(upload_to='season_pics/%Y/%m/%d/', default="documents/vrlogo.png", null=False,
+                                blank=True)
     starting_at = models.DateField(null=False)
     finishing_at = models.DateField(null=True, blank=True)
 
@@ -232,14 +259,12 @@ class Season(PageModel):
         default=HARD
     )
 
-    #
-    # def save(self, force_insert=False, force_update=False, using=None,
-    #          update_fields=None):
-    #     self.full_clean()
-    #     super(Season, self).save()
-    #
-    # def _do_update(self, base_qs, using, pk_val, values, update_fields, forced_update):
-    #     self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.count)
+    @property
+    def get_photo_url(self):
+        if self.picture and hasattr(self.picture, 'url'):
+            return self.picture.url
+        else:
+            return "/static/league/img/vrom.jpg"
 
     @property
     def is_season_started(self):
@@ -410,7 +435,7 @@ class Achievement(models.Model):
 class Score(TimeStampMixin):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     song = models.ForeignKey(Song, on_delete=models.CASCADE, null=False)
-    player = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=False)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=False)
     difficulty_rank = models.FloatField(default=0)
     note_jump_movement_speed = models.FloatField(default=0)
     note_jump_start_beat_offset = models.FloatField(default=0)
@@ -427,10 +452,18 @@ class Score(TimeStampMixin):
     #     self.date = timezone.now()
     #     super()
 
+    def clean(self):
+        Player.objects.get(user=self.user).total_score += self.score
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        self.full_clean()
+        super(Score, self).save()
+
     def __str__(self):
         return 'Player {3}, recorded {4} score on {1} in {2} game at {0}'.format(
             humanize.naturaltime(timezone.now() - self.created_at),
             self.song.name,
             self.game.name,
-            self.player,
+            self.user,
             self.score)

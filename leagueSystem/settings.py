@@ -24,7 +24,7 @@ SECRET_KEY = '6b4sy&r&2tb05h4ed&$cdmpe6xj9r1jkfl#(yul6^j&%9d-z)t'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 DEBUG = True
-ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', 'www.vrrhythmleague.com','192.168.1.9',
+ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', 'www.vrrhythmleague.com', '192.168.1.9',
                  'vrrhythmleague.xyz', 'www.vrrhythmleague.com']
 
 # [Unit]
@@ -66,6 +66,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',  # <--
+
 ]
 
 ROOT_URLCONF = 'leagueSystem.urls'
@@ -83,6 +85,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # 'League.views.add_my_login_form',
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect',  # <--
 
             ],
         },
@@ -157,8 +161,8 @@ USE_TZ = True
 # ENVIRONMENT='production'
 # URL CONFIG
 LOGIN_REDIRECT_URL = '/dashboard/'
-LOGIN_URL = 'login'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = ''
+LOGOUT_REDIRECT_URL = ''
 
 # For conformation mail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -206,13 +210,19 @@ AUTHENTICATION_BACKENDS = (
 )
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
-    'social_core.pipeline.user.create_user',
     'social_core.pipeline.social_auth.social_uid',
-    'social_core.pipeline.social_auth.auth_allowed',
-    'social_core.pipeline.social_auth.social_user',
+    # 'social_core.pipeline.social_auth.auth_allowed',
+    'League.steam.auth_allowed',
+    # 'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.create_user',
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
-    'League.steam.save_profile',
+    # 'League.steam.save_profile',
 )
 SOCIAL_AUTH_STEAM_EXTRA_DATA = ['player']
+
+WHITELISTED_UIDS = [
+    '76561198019013458',
+    '76561198103998111',
+]

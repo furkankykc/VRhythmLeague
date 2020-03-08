@@ -1,27 +1,6 @@
-{% extends 'league/league_base.html' %}
+{% extends 'thema_vr/pixie_base.html' %}
 {% block content %}
 
-    {% load static %}
-    {#    <div class="container">#}
-    {#        <div class="row">#}
-    {##}
-    {#            {% for week in weeks %}#}
-    {#                <div class="col-md-offset-3">#}
-    {#                    <div class="card" style="width: 18rem;">#}
-    {#                        <img class="card-img-top" src="{% static 'media/beatsaber.jpg' %}" alt="Card image cap">#}
-    {#                        <div class="card-body">#}
-    {#                            <h5 class="card-title">{{ week.name }}</h5>#}
-    {#                            <p class="card-text">{{ week.description }}</p>#}
-    {#                        </div>#}
-    {#                        <ul class="list-group list-group-flush">#}
-    {#                            <li class="list-group-item">{{ week.type }}</li>#}
-    {#                            <li class="list-group-item"><a href="/playlist_pk/{{week.playlist.pk}} %}">{{ week.playlist.name }}</a></li>#}
-    {#                        </ul>#}
-    {#                    </div>#}
-    {#                </div>#}
-    {#            {% endfor %}#}
-    {#        </div>#}
-    {#    </div>#}
     <section class="feature-section spad">
 
         <div class="container">
@@ -31,7 +10,9 @@
                     <div class="feature-item set-bg" data-setbg="{{ season.game.logo.url }}">
                         <span class="cata new">{{ season.get_difficulty }}</span>
                         <div class="fi-content text-white">
-                            <h5><a href="{% url 'show_songs' week.season.game.slug week.season.slug week.slug %}">{{ week.name }}</a></h5>
+                            <h5>
+                                <a href="{% url 'show_songs' week.season.game.slug week.season.slug week.slug %}">{{ week.name }}</a>
+                            </h5>
                             {% for song in week.songs.all|slice:":5" %}
                                 <p>{{ song.name }} </p>
                             {% endfor %}

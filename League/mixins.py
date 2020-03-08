@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django import template
+from math import *
 
 
 # AJAX mixin
@@ -26,3 +26,23 @@ class AjaxTemplateMixin(object):
         return super(AjaxTemplateMixin, self).dispatch(request, *args, **kwargs)
 
 
+def normcdf(x, mu, sigma):
+    t = x - mu
+    y = 0.5 * erfc(-t / (sigma * sqrt(2.0)));
+    if y > 1.0:
+        y = 1.0
+    return y
+
+
+def normpdf(x, mu, sigma):
+    u = (x - mu) / abs(sigma)
+    y = (1 / (sqrt(2 * pi) * abs(sigma))) * exp(-u * u / 2)
+    return y
+
+
+def normdist(x, mu, sigma, f):
+    if f:
+        y = normcdf(x, mu, sigma)
+    else:
+        y = normpdf(x, mu, sigma)
+    return y
