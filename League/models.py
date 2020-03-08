@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from django.db.models import Max, Min, StdDev, Variance
+from django.db.models import Max, Min, StdDev
 from django.utils import timezone
 from django.utils.text import slugify
 from smart_selects.db_fields import ChainedManyToManyField
@@ -166,13 +166,13 @@ class Player(PageModel):
         return score_diffrence
 
     @classmethod
-    def score_diff_mean(cls) -> float:
+    def score_diff_avg(cls) -> float:
         score_norm = Player.score_diffrence() / cls.get_total_player_count()
         return score_norm
 
     @classmethod
-    def standar_deviation(cls):
-        return Player.objects.filter(total_score__gt=0).aggregate(Variance('total_score'))['total_score__std']
+    def standart_deviation(cls):
+        return Player.objects.filter(total_score__gt=0).aggregate(StdDev('total_score'))['total_score__stddev']
 
     @classmethod
     def mean(cls):
@@ -185,20 +185,26 @@ class Player(PageModel):
 
     @property
     def calculate_normal(self):
-        return normpdf(self.total_score, Player.mean(), Player.standar_deviation())
+        pdf = normpdf(self.total_score, Player.mean(), Player.score_diff_avg())
+        # if self.total_score - Player.score_diff_avg():
+        score_multipleer = Player.get_total_player_count() * 1000
+        return pdf * (score_multipleer if self.total_score - Player.score_diff_avg() > 0 else -score_multipleer)
 
-    #
-    # def calculate_total_point(self):
-    #     # bugune kadar toplam lig puani
-    #     pass
+        #
 
-    def calculate_current_season_point(self):
-        # suanki sezondak puani
-        pass
 
-    @property
-    def season_rank(self):
-        return (1 - self.normalized_sore()) * 50
+# def calculate_total_point(self):
+#     # bugune kadar toplam lig puani
+#     pass
+
+def calculate_current_season_point(self):
+    # suanki sezondak puani
+    pass
+
+
+@property
+def season_rank(self):
+    return (1 - self.normalized_sore()) * 50
 
 
 class Type(models.Model):

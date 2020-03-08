@@ -35,8 +35,12 @@ def normcdf(x, mu, sigma):
 
 
 def normpdf(x, mu, sigma):
-    u = (x - mu) / abs(sigma)
-    y = (1 / (sqrt(2 * pi) * abs(sigma))) * exp(-u * u / 2)
+    sigma_abs = abs(sigma)
+    if sigma_abs == 0:
+        sigma_abs = 0.0000000001
+
+    u = (x - mu) / sigma_abs
+    y = (1 / (sqrt(2 * pi) * sigma_abs)) * exp(-u * u / 2)
     return y
 
 
