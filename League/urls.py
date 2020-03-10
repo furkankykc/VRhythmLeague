@@ -18,6 +18,7 @@ urlpatterns = [
     #
     url(r'songs/$', views.songs, name='songs'),
     url(r'search/', views.autocompleteModel, name='search'),
+    url(r'pink/', views.pink, name='search'),
     #
     path('profile/<int:user_id>', views.profile, name='profile'),
     path('playlist/game/<int:game_pk>', views.playlist_game, name='playlist_game'),
@@ -29,13 +30,14 @@ urlpatterns = [
     # url(r'^login/$', LoginView.as_view(template_name='league.html'), name='login'),
     url(r'^login/$', views.CustomLoginView.as_view(), name='login'),
     #
-    url(r'^logout/$', LogoutView.as_view(next_page=''), name='logout'),
+    url(r'^logout/$', LogoutView.as_view(next_page='pink'), name='logout'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^account_activation_sent/$', views.account_activation_sent, name='account_activation_sent'),
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', views.activate,
         name='activate'),
 
     url(r'^$', views.pink, name='pink'),
+    url(r'^auth-alpha-only', views.home, name='forbidden'),
     path('news/', views.pink, name='pink_news'),
     path('aboutleague/', views.pink, name='pink_matches'),
     path('teams/', views.pink, name='pink_our_teams'),

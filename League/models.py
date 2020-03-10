@@ -139,6 +139,19 @@ class Player(PageModel):
     real_name = models.CharField(max_length=_max_length, blank=True)
     timezone = models.CharField(max_length=_max_length, blank=True, null=True)
 
+    BRONZE = 'Bronze'
+    SILVER = 'Silver'
+    PLATINIUM = 'Platinium'
+    DIAMOND = 'Diamond'
+
+    RANKS = [
+        (BRONZE, 'Bronze'),
+        (SILVER, 'Silver'),
+        (PLATINIUM, 'Platinium'),
+        (DIAMOND, 'Diamond'),
+        # (EXPERTPLUS, 'Expert Plus'),
+    ]
+
     # @receiver(post_save, sender=User)
     # def create_user_profile(sender, instance, created, **kwargs):
     #     if created:
@@ -181,15 +194,29 @@ class Player(PageModel):
         return mean
 
     def normalized_sore(self) -> float:
-        return (self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()
+        return 50-(self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()
 
     @property
     def calculate_normal(self):
-        pdf = normpdf(self.total_score, Player.mean(), Player.score_diff_avg())
+        vary = Player.score_diff_avg()
+        pdf = normpdf(self.total_score, Player.mean(), vary)
         # if self.total_score - Player.score_diff_avg():
         score_multipleer = Player.get_total_player_count() * 1000
-        return pdf * (score_multipleer if self.total_score - Player.score_diff_avg() > 0 else -score_multipleer)
+        pd_score = pdf * (score_multipleer if self.total_score - Player.score_diff_avg() > 0 else -score_multipleer)
 
+        if pd_score>0:
+            if pd_score<0.25:
+                rank = self.DIAMOND
+            elif pd_score<0.5:
+                rank = self.PLATINIUM
+            else:
+                rank = self.SILVER
+        else:
+            if pd_score>-0.25:
+                rank = self.SILVER
+            else:
+                rank = self.BRONZE
+        return rank
         #
 
 
