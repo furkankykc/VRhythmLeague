@@ -89,7 +89,7 @@
                     </div>
 
                    {% if not user in season.user_list.all  %}
-                    <a href="{% url 'apply' season.pk %}" class="dropbtn btn btn-transparent">Apply</a>
+                    <a href="{% url 'apply' season.pk %}" class="dropbtn btn btn-transparent right">Apply</a>
                     {% endif %}
                     <div class="dropdown top-right" style="float:right; margin-left:auto;margin-right: 20px">
                         <button class="dropbtn btn btn-transparent">History</button>

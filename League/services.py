@@ -259,7 +259,6 @@ def get_songs():
     return Song.objects.filter(hard__isnull=False).order_by('-rating')
 
 
-# todo sort not working
 def get_posts():
     posts = Post.objects.all().order_by('-created_at')
     scores = get_scores().order_by('-created_at')
