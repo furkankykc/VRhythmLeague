@@ -235,19 +235,24 @@ class WeekDetailView(DetailView):
     # queryset = Week.objects.filter(season__name=season__name)
     # queryset=Week.objects.filter(season__slug=)
     def get_queryset(self):
-        return Week.objects.filter(
+        weeks = Week.objects.filter(
             slug=self.kwargs['week_slug'],
             season__slug=self.kwargs['season_slug'],
             season__game__slug=self.kwargs['game_slug'],
-            starting_at__lte=timezone.now().date(),
+
         )
+        if weeks.first().season.is_season_started:
+            weeks = weeks.filter(starting_at__lte=timezone.now().date(), )
+        else:
+            weeks = weeks.filter(starting_at__exact=weeks.first().season.starting_at)
+        return weeks
 
 
 def seasondispacher(request, season_slug, game_slug):
     week = Season.objects.get(
         slug=season_slug,
         game__slug=game_slug,
-    ).current_week
+    ).get_current_week()
     return redirect(reverse('show_history', kwargs={'week_slug': week.slug,
                                                     'season_slug': week.season.slug,
                                                     'game_slug': week.season.game.slug,
