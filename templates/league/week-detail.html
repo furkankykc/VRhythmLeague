@@ -98,8 +98,10 @@
                         <div class="dropdown top-right" style="float:right; margin-left:auto;margin-right: 20px">
                             <button class="dropbtn btn btn-transparent">History</button>
                             <div class="dropdown-content">
-                                {% for week in week.season.history %}
-                                    <a href="{% url 'show_history' week.season.game.slug week.season.slug week.slug %}">{{ week.slug }}</a>
+                                {% for historical_week in week.season.history %}
+                                    {% if week != historical_week %}
+                                        <a href="{% url 'show_history' historical_week.season.game.slug historical_week.season.slug historical_week.slug %}">{{ historical_week.slug }}</a>
+                                    {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
@@ -138,7 +140,7 @@
                     </li>
                     <li>
                         <span class="mTitle">Starring Player:</span>
-                        <span class="number">{{week.week_scores.first.user.player.real_name}}</span>
+                        <span class="number">{{ week.week_scores.first.user.player.real_name }}</span>
                     </li>
                 </ul>
                 <!-- /LEFT -->
@@ -146,7 +148,8 @@
                 <ul class="right">
                     <li>
                         <span class="title">Required League</span>
-                        <span class="subtitle"><i class="flag-icon flag-icon-se"></i>{{week.season.get_difficulty}}</span>
+                        <span class="subtitle"><i
+                                class="flag-icon flag-icon-se"></i>{{ week.season.get_difficulty }}</span>
                     </li>
 
                     <li>
