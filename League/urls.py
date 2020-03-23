@@ -47,7 +47,7 @@ urlpatterns = [
     path('aboutus/', views.pink, name='pink_about_us'),
     path('sponsors/', views.pink, name='pink_sponsors'),
     path('games/<slug:game_slug>/', views.GameDetailView.as_view(), name='show_seasons'),
-    path('games/<slug:game_slug>/leagues/<slug:season_slug>/', views.SeasonDetailView.as_view(), name='show_weeks'),
+    path('games/<slug:game_slug>/leagues/<slug:season_slug>/', views.seasondispacher, name='show_weeks'),
     path('games/<slug:game_slug>/leagues/<slug:season_slug>/weeks/<slug:week_slug>/', views.WeekDetailView.as_view(),
          name='show_history'),
 

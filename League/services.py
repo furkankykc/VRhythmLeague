@@ -279,7 +279,6 @@ def get_posts():
         scores_post.append(score_post)
 
     all_posts = sorted(scores_post, key=lambda x: x.created_at)[::-1]
-    all_posts = sorted(scores_post, key=lambda x: x.created_at)[::-1]
 
     return all_posts
 
@@ -289,6 +288,7 @@ def apply_for_season(season: Season,
                      ):
     season.user_list.add(user)
 
-
-def getActiveWeeks():
-    return Week.objects.filter(starting)
+def updateSeasons():
+    for obj in Season.objects.all():
+        clean_weeks(obj)
+        Week.objects.bulk_create(create_week(obj))

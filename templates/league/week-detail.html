@@ -77,19 +77,19 @@
             <article class="team-info">
 
                 <div class="game"
-                     style="background-image: url({{ season.get_photo_url }});background-size: cover;"></div>
+                     style="background-image: url({{ week.season.get_photo_url }});background-size: cover;"></div>
 
                 <div class="profile-details">
                     <figure>
                         <img src="{% static 'league/img/vrthmlogo.png' %}">
                     </figure>
                     <div class="name">
-                        <h4>{{ season.name }}</h4>
-                        <span class="subtitle">{{ season.sponsor_name }}</span>
+                        <h4>{{ week.season.name }}</h4>
+                        <span class="subtitle">{{ week.season.sponsor_name }}</span>
                     </div>
-                    {% if not season.is_season_started %}
-                        {% if not user in season.user_list.all %}
-                            <a href="{% url 'apply' season.pk %}"
+                    {% if not week.season.is_season_started %}
+                        {% if not user in week.season.user_list.all %}
+                            <a href="{% url 'apply' week.season.pk %}"
                                class="dropbtn btn btn-transparent top-right"
                                style="float:right; margin-left:auto;margin-right: 20px">Apply</a>
 
@@ -98,7 +98,7 @@
                         <div class="dropdown top-right" style="float:right; margin-left:auto;margin-right: 20px">
                             <button class="dropbtn btn btn-transparent">History</button>
                             <div class="dropdown-content">
-                                {% for week in season.week.all %}
+                                {% for week in week.season.history %}
                                     <a href="{% url 'show_history' week.season.game.slug week.season.slug week.slug %}">{{ week.slug }}</a>
                                 {% endfor %}
                             </div>
@@ -121,7 +121,7 @@
                                 <path fill-rule="evenodd"
                                       d="M19.014,10.937 L18.021,10.937 C17.592,14.674 14.636,17.635 10.910,18.065 L10.910,19.062 C10.910,19.580 10.491,20.000 9.974,20.000 C9.458,20.000 9.039,19.580 9.039,19.062 L9.039,18.065 C5.313,17.635 2.357,14.674 1.928,10.937 L0.935,10.937 C0.419,10.937 -0.000,10.518 -0.000,10.000 C-0.000,9.482 0.419,9.062 0.935,9.062 L1.930,9.062 C2.359,5.326 5.312,2.363 9.039,1.933 L9.039,0.937 C9.039,0.420 9.458,-0.000 9.974,-0.000 C10.491,-0.000 10.910,0.420 10.910,0.937 L10.910,1.935 C14.636,2.365 17.592,5.326 18.021,9.062 L19.014,9.062 C19.531,9.062 19.949,9.482 19.949,10.000 C19.949,10.518 19.531,10.937 19.014,10.937 ZM14.338,9.062 L16.131,9.062 C15.725,6.363 13.601,4.233 10.910,3.826 L10.910,5.625 C10.910,6.142 10.491,6.562 9.974,6.562 C9.458,6.562 9.039,6.142 9.039,5.625 L9.039,3.828 C6.347,4.235 4.223,6.364 3.816,9.062 L5.611,9.062 C6.127,9.062 6.546,9.482 6.546,10.000 C6.546,10.518 6.127,10.937 5.611,10.937 L3.818,10.937 C4.224,13.637 6.348,15.766 9.039,16.174 L9.039,14.375 C9.039,13.857 9.458,13.437 9.974,13.437 C10.491,13.437 10.910,13.857 10.910,14.375 L10.910,16.174 C13.601,15.766 15.725,13.637 16.131,10.937 L14.338,10.937 C13.822,10.937 13.403,10.518 13.403,10.000 C13.403,9.482 13.822,9.062 14.338,9.062 ZM9.974,10.937 C9.458,10.937 9.039,10.518 9.039,10.000 C9.039,9.482 9.458,9.062 9.974,9.062 C10.491,9.062 10.910,9.482 10.910,10.000 C10.910,10.518 10.491,10.937 9.974,10.937 Z"/>
                             </svg>
-                            {{ season.game.name }}
+                            {{ week.season.game.name }}
                         </h5>
                     </li>
                     <li class="numeric">
@@ -129,12 +129,12 @@
                         <span class="number">125</span>
                     </li>
                     <li class="numeric">
-                        {% if season.type.is_daily %}
-                            <span class="mTitle"> Day</span>
+                        {% if week.season.type.is_daily %}
+                            <span class="mTitle">Current Day</span>
                         {% else %}
-                            <span class="mTitle"> Week</span>
+                            <span class="mTitle">Current Week</span>
                         {% endif %}
-                        <span class="number">{{ season.week.first.name }}</span>
+                        <span class="number">{{ week.name }}</span>
                     </li>
                     <li class="numeric">
                         <span class="mTitle">Starring Player:</span>
@@ -153,7 +153,7 @@
                         {% if league.is_season_started %}
 
                             <span class="title">Finishing At</span>
-                            <span class="subtitle"><i class="fa fa-clock-o"></i> {{ season.finishing_at }}</span>
+                            <span class="subtitle"><i class="fa fa-clock-o"></i> {{ week.season.finishing_at }}</span>
                         {% elif league.is_season_finished %}
 
                             <span class="title">Starting At</span>
@@ -161,7 +161,7 @@
                         {% else %}
 
                             <span class="title">Starting At</span>
-                            <span class="subtitle"><i class="fa fa-clock-o"></i> {{ season.starting_at }}</span>
+                            <span class="subtitle"><i class="fa fa-clock-o"></i> {{ week.season.starting_at }}</span>
                         {% endif %}
                     </li>
                 </ul>
@@ -170,7 +170,7 @@
             </article>
             <!-- /STATS -->
             <article class="about" style="float: left;width:75%;min-height: 365px;">
-                {{ season.description }}<br/>
+                {{ week.season.description }}<br/>
                 <br/>
                 &nbsp;<br/>
                 <br/>
@@ -178,70 +178,17 @@
             </article>
             <ul class="achievements" style="float:right;width: 25%;">
 
-                <li style="width: 100%;height: fit-content">
+                <li style="width: 100%;height: fit-content;min-height: 365px;">
                     <span class="title">High Scores</span>
                     {% for score in week.week_scores.all %}
                         <p>
                         <span class="place first" style="">
-                            {{ forloop.counter }}st place
+                            {{ forloop.counter }} {% if forloop.counter >= 3 %} st{% else %} th {% endif %}place
                         </span>
                             <span class="date" style="min-width: 120px;">{{ score.user.username }}</span>
                         </p>
                     {% endfor %}
-                    <p>
-                        <span class="place second" style="">
-                            2st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">Furkankykc</span>
-                    </p>
-                    <p>
-                        <span class="place third" style="">
-                            3st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">VRRhythmLeague</span>
-                    </p>
-                    <p>
-                        <span class="place third" style="">
-                            4st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">FoyaBey</span>
-                    </p>
-                    <p>
-                        <span class="place third" style="">
-                            5st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">FoyaBey</span>
-                    </p>
-                    <p>
-                        <span class="place third" style="">
-                            6st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">Brobengedik</span>
-                    </p>
-                    <p>
-                        <span class="place third" style="">
-                            7st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">BabaPlayer</span>
-                    </p>
-                    <p>
-                        <span class="place third" style="">
-                            8st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">Pilavyer</span>
-                    </p>
-                    <p>
-                        <span class="place third" style="">
-                            9st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">ServerirSirvermez</span>
-                    </p>
-                    <p>
-                        <span class="place third" style="">
-                            10st place
-                        </span>
-                        <span class="date" style="min-width: 120px;">BABAyaga</span>
-                    </p>
+
                 </li>
             </ul>
 

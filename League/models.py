@@ -202,10 +202,21 @@ class Season(PageModel):
             print(self.finishing_at)
         return self.finishing_at < dt.datetime.now().date()
 
+    # todo bunun daha efficent hali var yaziver bi zahmet
     @property
     def get_current_week(self):
-        seasons = Week.objects.filter(season=self, starting_at__lte=timezone.now(), finishing_at__gt=timezone.now())
-        return seasons
+        if self.is_season_finished:
+            current_week = self.week.last()
+        else:
+            current_week = self.week.first()
+        for week in self.week.all():
+            if week.is_active:
+                current_week = week
+
+        return current_week
+
+    def history(self):
+        return self.week.filter(finishing_at__lt=timezone.now().date())
 
     def calculate_finishing_date(self):
         self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.count)
@@ -306,10 +317,10 @@ class Week(PageModel):
     def __str__(self):
         return '{} | {} | {}'.format(self.season.game.name, self.name, self.season.get_difficulty_display())
 
-    def save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
-        self.full_clean()
-        super(Week, self).save()
+    # def save(self, force_insert=False, force_update=False, using=None,
+    #          update_fields=None):
+    #     self.full_clean()
+    #     super(Week, self).save()
 
     def clean(self):
         # max_releations(self.songs, self.song_count())
@@ -330,11 +341,10 @@ class Week(PageModel):
 
                     self.name = "{1} {0} of {2} {0}s".format("week", id + 1,
                                                              max_week_count)
+                self.slug = slugify("%s" % self.name.split('of')[0])
 
             else:
                 raise ValueError("hasbeen Reached Maximum Week Count ")
-        else:
-            self.slug = slugify("%s" % self.name.split('of')[0])
 
     @property
     def parent(self):
@@ -350,7 +360,11 @@ class Week(PageModel):
 
     @property
     def is_active(self):
-        return self.starting_at > timezone.now() > self.finishing_at
+        return self.starting_at < timezone.now().date() <= self.finishing_at
+
+    @property
+    def is_finished(self):
+        return self.finishing_at > timezone.now().date()
 
 
 class Achievement(models.Model):
@@ -383,17 +397,16 @@ class Score(TimeStampMixin):
 
     def apply_weeks(self):
         weeks = Week.objects.filter(songs=self.song, season__user_list=self.user, season__user_list__is_active=True)
-        self.week.add(weeks)
+        [self.week.add(week) for week in weeks.all()]
 
     def clean(self):
-        self.apply_weeks()
         Player.objects.get(user=self.user).total_score += self.score
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
         self.full_clean()
         super(Score, self).save()
-
+        self.apply_weeks()
     # def __str__(self):
     #     return 'Player {3}, recorded {4} score on {1} in {2} game at {0}'.format(
     #         humanize.naturaltime(timezone.now() - self.created_at),

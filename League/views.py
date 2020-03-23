@@ -7,6 +7,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
+from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.views.generic.detail import DetailView
@@ -222,9 +223,9 @@ class GameDetailView(DetailView):
 
 
 class WeekDetailView(DetailView):
-    model = Season
+    model = Week
     # This file should exist somewhere to render your page
-    template_name = 'league/songs.html'
+    template_name = 'league/week-detail.html'
     # Should match the value after ':' from url <slug:the_slug>
     slug_url_kwarg = 'week_slug'
     # Should match the name of the slug field on the model
@@ -239,6 +240,17 @@ class WeekDetailView(DetailView):
             season__slug=self.kwargs['season_slug'],
             season__game__slug=self.kwargs['game_slug'],
         )
+
+
+def seasondispacher(request, season_slug, game_slug):
+    week = Season.objects.get(
+        slug=season_slug,
+        game__slug=game_slug,
+    ).get_current_week
+    return redirect(reverse('show_history', kwargs={'week_slug': week.slug,
+                                                    'season_slug': week.season.slug,
+                                                    'game_slug': week.season.game.slug,
+                                                    }))
 
 
 def forbidden(request):
