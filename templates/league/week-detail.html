@@ -138,10 +138,10 @@
                         {% endif %}
                         <span class="number">{{ week.name }}</span>
                     </li>
-                    <li>
-                        <span class="mTitle">Starring Player:</span>
-                        <span class="number">{{ week.week_scores.first.user.player.real_name }}</span>
-                    </li>
+{#                    <li class="numeric">#}
+{#                        <span class="mTitle">Starring Player:</span>#}
+{#                        <span class="number">{{ week.week_scores.first.user.player.real_name }}</span>#}
+{#                    </li>#}
                 </ul>
                 <!-- /LEFT -->
 
@@ -164,7 +164,7 @@
                         {% else %}
 
                             <span class="title">Starting At</span>
-                            <span class="subtitle"><i class="fa fa-clock-o"></i> {{ week.season.starting_at }}</span>
+                            <span class="subtitle"><i class="fa fa-clock-o"></i> {{ week.starting_at }}</span>
                         {% endif %}
                     </li>
                 </ul>
