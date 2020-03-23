@@ -136,9 +136,9 @@
                         {% endif %}
                         <span class="number">{{ week.name }}</span>
                     </li>
-                    <li class="numeric">
+                    <li>
                         <span class="mTitle">Starring Player:</span>
-                        <span class="number">Furkankykc</span>
+                        <span class="number">{{week.week_scores.first.user.player.real_name}}</span>
                     </li>
                 </ul>
                 <!-- /LEFT -->
@@ -146,7 +146,7 @@
                 <ul class="right">
                     <li>
                         <span class="title">Required League</span>
-                        <span class="subtitle"><i class="flag-icon flag-icon-se"></i>Silver</span>
+                        <span class="subtitle"><i class="flag-icon flag-icon-se"></i>{{week.season.get_difficulty}}</span>
                     </li>
 
                     <li>
@@ -183,7 +183,7 @@
                     {% for score in week.week_scores.all %}
                         <p>
                         <span class="place first" style="">
-                            {{ forloop.counter }} {% if forloop.counter >= 3 %} st{% else %} th {% endif %}place
+                            {{ forloop.counter }}{% if forloop.counter < 3 %}st {% else %} th {% endif %}place
                         </span>
                             <span class="date" style="min-width: 120px;">{{ score.user.username }}</span>
                         </p>

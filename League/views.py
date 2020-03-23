@@ -246,7 +246,7 @@ def seasondispacher(request, season_slug, game_slug):
     week = Season.objects.get(
         slug=season_slug,
         game__slug=game_slug,
-    ).get_current_week
+    ).current_week
     return redirect(reverse('show_history', kwargs={'week_slug': week.slug,
                                                     'season_slug': week.season.slug,
                                                     'game_slug': week.season.game.slug,

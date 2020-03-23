@@ -204,6 +204,9 @@ class Season(PageModel):
 
     # todo bunun daha efficent hali var yaziver bi zahmet
     @property
+    def current_week(self):
+        return self.get_current_week
+
     def get_current_week(self):
         if self.is_season_finished:
             current_week = self.week.last()
@@ -216,7 +219,7 @@ class Season(PageModel):
         return current_week
 
     def history(self):
-        return self.week.filter(finishing_at__lt=timezone.now().date())
+        return self.week.filter(finishing_at__lt=timezone.now().date()) | self.week.filter(pk=self.get_current_week().pk)
 
     def calculate_finishing_date(self):
         self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.count)
