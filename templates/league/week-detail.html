@@ -138,10 +138,10 @@
                         {% endif %}
                         <span class="number">{{ week.name }}</span>
                     </li>
-{#                    <li class="numeric">#}
-{#                        <span class="mTitle">Starring Player:</span>#}
-{#                        <span class="number">{{ week.week_scores.first.user.player.real_name }}</span>#}
-{#                    </li>#}
+                    {#                    <li class="numeric">#}
+                    {#                        <span class="mTitle">Starring Player:</span>#}
+                    {#                        <span class="number">{{ week.week_scores.first.user.player.real_name }}</span>#}
+                    {#                    </li>#}
                 </ul>
                 <!-- /LEFT -->
 
@@ -182,8 +182,10 @@
             <ul class="achievements" style="float:right;width: 25%;">
 
                 <li style="width: 100%;height: fit-content;min-height: 365px;">
-                    <span class="title">High Scores</span>
                     {% for score in week.week_scores.all %}
+                        {% if forloop.counter0 == 0 %}
+                            <span class="title">High Scores</span>
+                        {% endif %}
                         <p>
                         <span class="place first" style="">
                             {{ forloop.counter }}{% if forloop.counter < 3 %}st {% else %} th {% endif %}place
@@ -202,9 +204,10 @@
                             color: #fff;
                             font-size: 1.375em;
                             font-weight: bold;
-                            margin: auto auto ;
+                            margin: auto auto;
                         }
-                        td{
+
+                        td {
                             margin: auto;
                             padding: 20px;
                         }
