@@ -80,6 +80,7 @@ def create_week(season: Season) -> [Week]:
         delta_time = timezone.timedelta(days=i) if season.type.is_daily else timezone.timedelta(weeks=i)
         week = Week(
             starting_at=season.starting_at + delta_time,
+            finishing_at=season.starting_at + delta_time*2,
             season=season
         )
         week.set_name(index)
@@ -289,3 +290,5 @@ def apply_for_season(season: Season,
     season.user_list.add(user)
 
 
+def getActiveWeeks():
+    return Week.objects.filter(starting)

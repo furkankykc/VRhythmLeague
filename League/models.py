@@ -159,7 +159,8 @@ class Season(PageModel):
                                 blank=True)
     starting_at = models.DateField(null=False)
     finishing_at = models.DateField(null=True, blank=True)
-    user_list = models.ManyToManyField(User, related_name='applied_users')
+    user_list = models.ManyToManyField(User, blank=True,
+                                       related_name='applied_users')
 
     class Meta:
         verbose_name = "League Season"
@@ -296,6 +297,7 @@ class Week(PageModel):
     # playlist = models.ForeignKey(PlayList, on_delete=models.SET_NULL, null=True)
     # game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     starting_at = models.DateField(null=False, editable=False)
+    finishing_at = models.DateField(null=False, editable=False)
     songs = models.ManyToManyField(Song,
                                    verbose_name="songs",
                                    blank=True
@@ -346,6 +348,10 @@ class Week(PageModel):
             page = page.parent
         return url
 
+    @property
+    def is_active(self):
+        return self.starting_at > timezone.now() > self.finishing_at
+
 
 class Achievement(models.Model):
     name = models.CharField(max_length=_max_length)
@@ -372,11 +378,15 @@ class Score(TimeStampMixin):
     max_combo = models.IntegerField(default=0)
     score = models.IntegerField(default=0)
 
-    # def save(self, force_insert=False, force_update=False, using=None,update_fields=None):
-    #     self.date = timezone.now()
-    #     super()
+    # todo must contain daily missions
+    week = models.ManyToManyField(Week, blank=True, related_name='week_scores')
+
+    def apply_weeks(self):
+        weeks = Week.objects.filter(songs=self.song, season__user_list=self.user, season__user_list__is_active=True)
+        self.week.add(weeks)
 
     def clean(self):
+        self.apply_weeks()
         Player.objects.get(user=self.user).total_score += self.score
 
     def save(self, force_insert=False, force_update=False, using=None,

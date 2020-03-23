@@ -87,19 +87,24 @@
                         <h4>{{ season.name }}</h4>
                         <span class="subtitle">{{ season.sponsor_name }}</span>
                     </div>
+                    {% if not season.is_season_started %}
+                        {% if not user in season.user_list.all %}
+                            <a href="{% url 'apply' season.pk %}"
+                               class="dropbtn btn btn-transparent top-right"
+                               style="float:right; margin-left:auto;margin-right: 20px">Apply</a>
 
-                   {% if not user in season.user_list.all  %}
-                    <a href="{% url 'apply' season.pk %}" class="dropbtn btn btn-transparent right">Apply</a>
-                    {% endif %}
-                    <div class="dropdown top-right" style="float:right; margin-left:auto;margin-right: 20px">
-                        <button class="dropbtn btn btn-transparent">History</button>
-                        <div class="dropdown-content">
-                            <a href="{% url 'apply' season.pk %}">Week 1</a>
-                            <a href="#">Week 2</a>
-                            <a href="#">Week 3</a>
+                        {% endif %}
+                    {% else %}
+                        <div class="dropdown top-right" style="float:right; margin-left:auto;margin-right: 20px">
+                            <button class="dropbtn btn btn-transparent">History</button>
+                            <div class="dropdown-content">
+                                {% for week in season.weeks %}
+                                <a href="{% url 'week' season.pk %}">Week 1</a>
+                                {% endfor %}
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        </div>
+                    {% endif %}
 
                 <!-- /PROFILE-DETAILS -->
             </article>

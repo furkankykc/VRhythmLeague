@@ -49,7 +49,7 @@ urlpatterns = [
     path('games/<slug:game_slug>/', views.GameDetailView.as_view(), name='show_seasons'),
     path('games/<slug:game_slug>/leagues/<slug:season_slug>/', views.SeasonDetailView.as_view(), name='show_weeks'),
     path('games/<slug:game_slug>/leagues/<slug:season_slug>/weeks/<slug:week_slug>/', views.WeekDetailView.as_view(),
-         name='show_songs'),
+         name='show_history'),
 
     # url(r'^(?P<full_slug>(.*))/$', views.pages, name='show_ll')
 
