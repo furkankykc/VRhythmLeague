@@ -239,6 +239,7 @@ class WeekDetailView(DetailView):
             slug=self.kwargs['week_slug'],
             season__slug=self.kwargs['season_slug'],
             season__game__slug=self.kwargs['game_slug'],
+            starting_at__lte=timezone.now().date(),
         )
 
 
