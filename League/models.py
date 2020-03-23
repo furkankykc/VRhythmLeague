@@ -1,7 +1,6 @@
 import datetime as dt
 import statistics
 
-import humanize
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -124,116 +123,6 @@ class Song(PageModel):
         super(Song, self).save()
 
 
-class Player(PageModel):
-    name = models.CharField(max_length=_max_length)
-    total_score = models.IntegerField(default=0)
-    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, null=True)
-    bio = models.TextField(max_length=500, blank=True)
-    location = models.CharField(max_length=30, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
-    email_confirmed = models.BooleanField(default=False)
-    steam_link = models.URLField(blank=True)
-    steam_uid = models.TextField(blank=True)
-    profile_pic = models.URLField(blank=True)
-    country = models.CharField(max_length=3, blank=True)
-    real_name = models.CharField(max_length=_max_length, blank=True)
-    timezone = models.CharField(max_length=_max_length, blank=True, null=True)
-
-    BRONZE = 'Bronze'
-    SILVER = 'Silver'
-    PLATINIUM = 'Platinium'
-    DIAMOND = 'Diamond'
-
-    RANKS = [
-        (BRONZE, 'Bronze'),
-        (SILVER, 'Silver'),
-        (PLATINIUM, 'Platinium'),
-        (DIAMOND, 'Diamond'),
-        # (EXPERTPLUS, 'Expert Plus'),
-    ]
-
-    # @receiver(post_save, sender=User)
-    # def create_user_profile(sender, instance, created, **kwargs):
-    #     if created:
-    #         Player.objects.create(user=instance)
-
-    # @receiver(post_save, sender=User)
-    # def save_user_profile(sender, instance, **kwargs):
-    #     instance.player.save()
-    @classmethod
-    def get_max_point_ever(cls) -> int:
-        return Player.objects.only('total_score').aggregate(Max('total_score'))['total_score__max']
-
-    @classmethod
-    def get_min_point_ever(cls) -> int:
-        return Player.objects.filter(total_score__gt=0).aggregate(Min('total_score'))['total_score__min']
-
-    @classmethod
-    def get_total_player_count(cls) -> int:
-        return Player.objects.filter(total_score__gt=0).count()
-
-    @classmethod
-    def score_diffrence(cls) -> int:
-        score_diffrence = cls.get_max_point_ever() - cls.get_min_point_ever()
-        # score_norm = score_diffrence/cls.get_total_player_count()
-        return score_diffrence
-
-    @classmethod
-    def score_diff_avg(cls) -> float:
-        score_norm = Player.score_diffrence() / cls.get_total_player_count()
-        return score_norm
-
-    @classmethod
-    def standart_deviation(cls):
-        return Player.objects.filter(total_score__gt=0).aggregate(StdDev('total_score'))['total_score__stddev']
-
-    @classmethod
-    def mean(cls):
-        player_list = Player.objects.filter(total_score__gt=0).values_list('total_score', flat=True)
-        mean = statistics.mean(player_list)
-        return mean
-
-    def normalized_sore(self) -> float:
-        return 50-(self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()
-
-    @property
-    def calculate_normal(self):
-        vary = Player.score_diff_avg()
-        pdf = normpdf(self.total_score, Player.mean(), vary)
-        # if self.total_score - Player.score_diff_avg():
-        score_multipleer = Player.get_total_player_count() * 1000
-        pd_score = pdf * (score_multipleer if self.total_score - Player.score_diff_avg() > 0 else -score_multipleer)
-
-        if pd_score>0:
-            if pd_score<0.25:
-                rank = self.DIAMOND
-            elif pd_score<0.5:
-                rank = self.PLATINIUM
-            else:
-                rank = self.SILVER
-        else:
-            if pd_score>-0.25:
-                rank = self.SILVER
-            else:
-                rank = self.BRONZE
-        return rank
-        #
-
-
-# def calculate_total_point(self):
-#     # bugune kadar toplam lig puani
-#     pass
-
-def calculate_current_season_point(self):
-    # suanki sezondak puani
-    pass
-
-
-@property
-def season_rank(self):
-    return (1 - self.normalized_sore()) * 50
-
-
 class Type(models.Model):
     name = models.CharField(max_length=_max_length)
     is_daily = models.BooleanField()
@@ -263,16 +152,18 @@ class Type(models.Model):
 class Season(PageModel):
     name = models.CharField(max_length=_max_length)
     sponsor_name = models.CharField(max_length=_max_length)
+    description = models.CharField(max_length=500)
     type = models.ForeignKey(Type, on_delete=models.CASCADE, null=False)
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     picture = models.ImageField(upload_to='season_pics/%Y/%m/%d/', default="documents/vrlogo.png", null=False,
                                 blank=True)
     starting_at = models.DateField(null=False)
     finishing_at = models.DateField(null=True, blank=True)
+    user_list = models.ManyToManyField(User, related_name='applied_users')
 
     class Meta:
-        verbose_name = ("League Season")
-        verbose_name_plural = ("League Seasons")
+        verbose_name = "League Season"
+        verbose_name_plural = "League Seasons"
 
     EASY = 'EZ'
     NORMAL = 'NM'
@@ -310,9 +201,9 @@ class Season(PageModel):
             print(self.finishing_at)
         return self.finishing_at < dt.datetime.now().date()
 
-    @classmethod
-    def get_current_season(cls):
-        seasons = cls.objects.filter(starting_at__lte=timezone.now(), finishing_at__gt=timezone.now())
+    @property
+    def get_current_week(self):
+        seasons = Week.objects.filter(season=self, starting_at__lte=timezone.now(), finishing_at__gt=timezone.now())
         return seasons
 
     def calculate_finishing_date(self):
@@ -401,7 +292,7 @@ class PlayList(PageModel):
 class Week(PageModel):
     # name = models.CharField(max_length=_max_length, editable=False)
     description = models.TextField(blank=True)
-    season = models.ForeignKey(Season, on_delete=models.CASCADE, null=False, editable=False)
+    season = models.ForeignKey(Season, on_delete=models.CASCADE, null=False, editable=False, related_name='season_week')
     # playlist = models.ForeignKey(PlayList, on_delete=models.SET_NULL, null=True)
     # game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     starting_at = models.DateField(null=False, editable=False)
@@ -493,10 +384,124 @@ class Score(TimeStampMixin):
         self.full_clean()
         super(Score, self).save()
 
-    def __str__(self):
-        return 'Player {3}, recorded {4} score on {1} in {2} game at {0}'.format(
-            humanize.naturaltime(timezone.now() - self.created_at),
-            self.song.name,
-            self.game.name,
-            self.user,
-            self.score)
+    # def __str__(self):
+    #     return 'Player {3}, recorded {4} score on {1} in {2} game at {0}'.format(
+    #         humanize.naturaltime(timezone.now() - self.created_at),
+    #         self.song.name,
+    #         self.game.name,
+    #         self.user,
+    #         self.score)
+
+
+class Post(TimeStampMixin):
+    user = models.ForeignKey(User, models.CASCADE)
+    detail = models.CharField(max_length=500)
+    game_detail = models.CharField(max_length=80, blank=True, null=True)
+
+
+class Player(PageModel):
+    name = models.CharField(max_length=_max_length)
+    total_score = models.IntegerField(default=0)
+    user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE, null=True, related_name='player')
+    bio = models.TextField(max_length=500, blank=True)
+    location = models.CharField(max_length=30, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
+    email_confirmed = models.BooleanField(default=False)
+    steam_link = models.URLField(blank=True)
+    steam_uid = models.TextField(blank=True)
+    profile_pic = models.URLField(blank=True)
+    country = models.CharField(max_length=3, blank=True)
+    real_name = models.CharField(max_length=_max_length, blank=True)
+    timezone = models.CharField(max_length=_max_length, blank=True, null=True)
+    seasons = models.ManyToManyField(Season, related_name='player_seasons')
+    BRONZE = 'Bronze'
+    SILVER = 'Silver'
+    PLATINIUM = 'Platinium'
+    DIAMOND = 'Diamond'
+
+    RANKS = [
+        (BRONZE, 'Bronze'),
+        (SILVER, 'Silver'),
+        (PLATINIUM, 'Platinium'),
+        (DIAMOND, 'Diamond'),
+        # (EXPERTPLUS, 'Expert Plus'),
+    ]
+
+    # @receiver(post_save, sender=User)
+    # def create_user_profile(sender, instance, created, **kwargs):
+    #     if created:
+    #         Player.objects.create(user=instance)
+
+    # @receiver(post_save, sender=User)
+    # def save_user_profile(sender, instance, **kwargs):
+    #     instance.player.save()
+    @classmethod
+    def get_max_point_ever(cls) -> int:
+        return Player.objects.only('total_score').aggregate(Max('total_score'))['total_score__max']
+
+    @classmethod
+    def get_min_point_ever(cls) -> int:
+        return Player.objects.filter(total_score__gt=0).aggregate(Min('total_score'))['total_score__min']
+
+    @classmethod
+    def get_total_player_count(cls) -> int:
+        return Player.objects.filter(total_score__gt=0).count()
+
+    @classmethod
+    def score_diffrence(cls) -> int:
+        score_diffrence = cls.get_max_point_ever() - cls.get_min_point_ever()
+        # score_norm = score_diffrence/cls.get_total_player_count()
+        return score_diffrence
+
+    @classmethod
+    def score_diff_avg(cls) -> float:
+        score_norm = Player.score_diffrence() / cls.get_total_player_count()
+        return score_norm
+
+    @classmethod
+    def standart_deviation(cls):
+        return Player.objects.filter(total_score__gt=0).aggregate(StdDev('total_score'))['total_score__stddev']
+
+    @classmethod
+    def mean(cls):
+        player_list = Player.objects.filter(total_score__gt=0).values_list('total_score', flat=True)
+        mean = statistics.mean(player_list)
+        return mean
+
+    def normalized_sore(self) -> float:
+        return 50 - (self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()
+
+    @property
+    def calculate_normal(self):
+        vary = Player.score_diff_avg()
+        pdf = normpdf(self.total_score, Player.mean(), vary)
+        # if self.total_score - Player.score_diff_avg():
+        score_multipleer = Player.get_total_player_count() * 1000
+        pd_score = pdf * (score_multipleer if self.total_score - Player.score_diff_avg() > 0 else -score_multipleer)
+
+        if pd_score > 0:
+            if pd_score < 0.25:
+                rank = self.DIAMOND
+            elif pd_score < 0.5:
+                rank = self.PLATINIUM
+            else:
+                rank = self.SILVER
+        else:
+            if pd_score > -0.25:
+                rank = self.SILVER
+            else:
+                rank = self.BRONZE
+        return rank
+        #
+
+    # def calculate_total_point(self):
+    #     # bugune kadar toplam lig puani
+    #     pass
+
+    def calculate_current_season_point(self):
+        # suanki sezondak puani
+        pass
+
+    @property
+    def season_rank(self):
+        return (1 - self.normalized_sore()) * 50

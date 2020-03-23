@@ -25,24 +25,27 @@ def home(request):
     return render(request, 'league/index.html', context)
 
 
+@login_required
 def dashboard(request):
     # my_scores = models.Score.objects.filter(player=request.user
-    context = {'scores': get_scores()}
+    context = {'posts': get_posts(), 'player': Player.objects.get(user=request.user)}
+
     return render(request, 'league/dashboard.html', context)
 
 
 def profile(request, user_id):
     profile = Player.objects.get(user_id=user_id)
-    context = {'profile': profile}
-    return render(request, 'components/profile.html', context)
+    context = {'player': profile}
+    return render(request, 'league/profile.html', context)
 
 
-def profile(request, user_id):
-    profile = Player.objects.get(user_id=request.user.id)
-    context = {'profile': profile}
-    return render(request, 'components/profile.html', context)
+# def profile(request):
+#     profile = Player.objects.get(user_id=request.user.id)
+#     print(profile)
+#     context = {'player': profile}
+#     return render(request, 'league/profile.html', context)
 
-
+@login_required
 def leagues(request):
     _leagues = models.Season.objects.all()
     current_league = models.Season.objects.last()
@@ -188,7 +191,8 @@ def pink(request):
 class SeasonDetailView(DetailView):
     model = Season
     # This file should exist somewhere to render your page
-    template_name = 'league/weeks.html'
+    # template_name = 'league/weeks.html'
+    template_name = 'league/season-detail.html'
     # Should match the value after ':' from url <slug:the_slug>
     slug_url_kwarg = 'season_slug'
     # Should match the name of the slug field on the model
@@ -235,3 +239,21 @@ class WeekDetailView(DetailView):
             season__slug=self.kwargs['season_slug'],
             season__game__slug=self.kwargs['game_slug'],
         )
+
+
+def forbidden(request):
+    return render(request, 'components/forbidden.html')
+
+
+def postComment(request):
+    comment_detail = request.POST.get('comment')
+    # print(comment_detail)
+    if len(comment_detail) > 10:
+        Post(detail=comment_detail, user=request.user).save()
+    return redirect('dashboard')
+
+
+def apply_season(request, season_pk):
+    apply_for_season(Season.objects.get(pk=season_pk), user=request.user)
+
+    return redirect(request.META['HTTP_REFERER'])

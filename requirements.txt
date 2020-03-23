@@ -15,7 +15,7 @@ djangorestframework==3.11.0  # via -r ../VRhythmLeague/requirements.txt
 social-auth-app-django
 humanize
 
-
+django_social_share
 django-widget-tweaks
 # pip3 install six && echo import six >"$(python3 -c "import sys; print(tuple(filter(lambda x: 'site-packages' in x, sys.path))[0])")"/django/utils/__init__.py
 #

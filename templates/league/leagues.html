@@ -1,46 +1,167 @@
 {% extends 'thema_vr/pixie_base.html' %}
 
+{% load static %}
+
 {% block content %}
+    <style>
+
+        /* Bottom left text */
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        /* Top left text */
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
+        /* Top right text */
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+
+        /* Bottom right text */
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        section#teams .boxes .box .overlay-text {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+            flex-direction: column;
+            -webkit-flex-direction: column;
+
+            background-color: rgba(253, 0, 140, 0.84);
+            background-color: rgba(235, 32, 132, 0.8);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            text-transform: uppercase;
+            line-height: 1;
+            font-family: "Ubuntu", sans-serif;
+            cursor: pointer;
+
+        }
 
 
-    <!-- Tournaments section -->
-    <section class="tournaments-section">
+        section#teams .boxes .box .overlay-text h4 {
+            margin: 0 0 8px;
+            color: rgb(253, 253, 255);
+            line-height: 1;
+            font-size: 2em;
+
+        }
+
+        section#teams .boxes .box:hover .overlay-text {
+            display: none;
+        }
+
+        section#teams .boxes .box .overlay-text h5 {
+
+            margin: 0;
+            line-height: 1;
+            font-size: 0.75em;
+            color: rgba(255, 255, 255, 0.90);
+        }
+
+        section#teams .boxes .box .overlay-text span {
+
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            border-radius: 6px;
+            padding: 5px 13px;
+            font-size: 0.75em;
+            font-weight: bold;
+            background-color: rgb(255, 15, 0);
+            color: #FFFFFF;
+        }
+
+    </style>
+
+
+    <section id="news" class="nobg">
+
         <div class="container">
-            <div class="row">
-                {% for league in leagues %}
-                    <div class="col-md-6">
-                        <div class="tournament-item mb-4 mb-lg-0">
-                            <div class="ti-notic">{{ league.game }}</div>
-                            <div class="ti-content">
-                                <div class="ti-thumb set-bg"
-                                     data-setbg="{{ league.get_photo_url }}"></div>
-                                <div class="ti-text">
-                                    <h4><a class="season-link"
-                                           href="{% url 'show_weeks' league.game.slug league.slug %}">{{ league.name }}</a>
-                                    </h4>
-                                    <ul>
-                                        <li><span>Tournament Beggins:</span> {{ league.starting_at }}</li>
-                                        <li><span>Tounament Ends:</span> {{ league.finishing_at }}</li>
-                                        <li><span>Participants:</span> 10 teams</li>
-                                        <li><span>Tournament Sponsor:</span> {{ league.sponsor_name }}</li>
-                                    </ul>
-                                    <p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
-                                </div>
-                                {% if league.is_season_started %}
-                                    <div class="tournament-title disabled">Started</div>
-                                {% elif league.is_season_finished %}
-                                    <div class="tournament-title disabled">Finished</div>
-                                {% else %}
-                                    <div class="tournament-title"><a class="season-link" href="/season/{{ league.pk }}">Apply
-                                        Now</a></div>
-                                {% endif %}
 
-                            </div>
+            <div class="section-header">
+                <article class="topbar">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="7px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
+                                  d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
+                        </svg>
+                        Leagues
+                    </h3>
+                </article>
+                <!-- /TOP-BAR -->
+
+            </div>
+            <!-- /SECTION-HEADER -->
+
+            <div class="content">
+
+                {% for league in leagues %}
+                    <article
+                            class="news-box large post-112 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized tag-cursed-warriors tag-midnight-turtles"
+                            style="background-image: url({{ league.get_photo_url }});
+                                    background-size: cover;
+                                    background-position: center;
+                                    max-width: 375px;
+                                    max-height: 200px;
+                                    margin: 10px
+                                    ;
+                                    "
+                            onclick="window.location = '{% url 'show_weeks' league.game.slug league.slug %}'">
+                        <a href="{% url 'show_weeks' league.game.slug league.slug %}" class="category">
+                            {{ league.game.name }} </a>
+                        <div class="details" >
+                            <a href="{% url 'show_weeks' league.game.slug league.slug %}">
+                                {{ league.name |title }} </a>
+                            <span class="date">{{ league.starting_at }}</span>
+                            {% if league.is_season_started %}
+                                <span class="date bottom-right">Started</span>
+                            {% elif league.is_season_finished %}
+                                <span class="date bottom-right">Finished</span>
+                            {% else %}
+                                <span class="date bottom-right">Apply Now</span>
+                            {% endif %}
+
                         </div>
-                    </div>
+                        <!-- /DETAILS -->
+                    </article>
                 {% endfor %}
             </div>
         </div>
+
     </section>
+    <!-- /Teams -->
+
+
+    <div class="container no-padding">
+    </div>
+    <!-- Tournaments section -->
 
 {% endblock content %}

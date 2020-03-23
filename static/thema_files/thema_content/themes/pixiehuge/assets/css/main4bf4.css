@@ -2689,7 +2689,7 @@ section#teams.teams-page {
 }
 
 section#team-profile {
-    margin-top: 200px;
+    margin-top: 80px;
 }
 
 section#team-profile .container {
@@ -2991,9 +2991,9 @@ section#news.news-page .content .news-box.large {
 }
 
 section#single-page {
-    width: 800px;
-    background-color: #ffffff;
-    min-height: 200px;
+    /*width: 800px;*/
+    background-color: #111;
+    /*min-height: 80px;*/
 }
 
 section#single-page figure.thumbnail {
@@ -3014,7 +3014,7 @@ section#single-page figure.thumbnail img {
 }
 
 section#single-page article.header {
-    margin: 27px;
+    /*margin: 27px;*/
     padding: 0 0 27px;
     border-bottom: 1px solid #e7e7f3;
 }
@@ -3022,11 +3022,11 @@ section#single-page article.header {
 section#single-page article.header div.top-line {
     display: flex;
     display: -webkit-flex;
-    margin-bottom: 16px;
+    /*margin-bottom: 16px;*/
 }
 
 section#single-page article.header div.top-line a.category {
-    padding: 8px 10px;
+    /*padding: 8px 10px;*/
     background-color: #39bffd;
     text-transform: uppercase;
     text-decoration: none;
@@ -3083,12 +3083,12 @@ section#single-page article.header div.top-line .social a i {
 }
 
 section#single-page article.header h3 {
-    color: #000;
+    /*color: #000;*/
     font-weight: bold;
     font-size: 1.125em;
     font-family: "Ubuntu", sans-serif;
     line-height: 1;
-    margin: 0 0 10px;
+    /*margin: 0 0 10px;*/
 }
 
 section#single-page article.header span.date {
@@ -3257,14 +3257,14 @@ section#single-page article.content .post-tags a:hover {
 }
 
 section#single-page article.comments {
-    padding: 5px 27px 27px;
-    color: #9292a2;
+    /*padding: 5px 27px 27px;*/
+    /*color: #9292a2;*/
     font-family: "Ubuntu", sans-serif;
 }
 
 section#single-page article.comments h3 {
-    margin: 0 0 20px 0;
-    color: #000;
+    /*margin: 0 0 20px 0;*/
+    /*color: #000;*/
     font-size: 1.125em;
     font-weight: bold;
     line-height: 1;
@@ -3432,7 +3432,7 @@ section#single-page article.comments form button:hover {
 }
 
 section#player-profile {
-    margin-top: 201px;
+    margin-top: 80px;
 }
 
 section#player-profile .container {

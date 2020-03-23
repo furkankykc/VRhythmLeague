@@ -1,20 +1,14 @@
-from typing import Any
-
-from django.shortcuts import render
-
 # Create your views here.
 from idna import unicode
-from rest_framework import viewsets, response, views
-from rest_framework.authentication import TokenAuthentication, SessionAuthentication, BasicAuthentication
+from rest_framework import viewsets
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
-from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
-from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from League.models import Score, Game, Player, Season
 from .serializers import ScoreSerializer
-from League.models import Score, Game, Player
 
 
 class ScoreViewSet(viewsets.ModelViewSet):
@@ -22,6 +16,23 @@ class ScoreViewSet(viewsets.ModelViewSet):
     serializer_class = ScoreSerializer
 
 
+class SeasonViewSet(viewsets.ModelViewSet):
+    queryset = Season.objects.all()
+    serializer_class = ScoreSerializer
+
+
+class SeasonView(APIView):
+
+    def get(self, request, pk):
+        queryset = Season.objects.all()
+        serializer_class = SeasonViewSet(
+            Season.objects.filter(
+                game=Game.objects.get(pk=pk)),
+            many=True)
+        content = {
+            'seasons': serializer_class.data
+        }
+        return Response(content)
 
 
 class ExampleView(APIView):
@@ -44,6 +55,8 @@ class ExampleView(APIView):
 
     def post(self, request):
         score = request.data.get('score')
+        game = request.data.get('game')
+        score.game=game
         score.player = Player.objects.get(user=request.user)
         # Create an score from the above data
         serializer = ScoreSerializer(data=score)
@@ -76,6 +89,3 @@ def example_view(request, format=None):
         'auth': unicode(request.auth),  # None
     }
     return Response(content)
-
-
-

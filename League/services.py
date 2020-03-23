@@ -92,8 +92,6 @@ def clean_weeks(season: Season):
     Week.objects.filter(season=season).delete()
 
 
-
-
 def create_song(*,
                 name: str,
                 game__id: int,
@@ -259,3 +257,36 @@ def get_diffs_json(json_data, diff_level):
 def get_songs():
     # .filter(hard__isnull=False)
     return Song.objects.filter(hard__isnull=False).order_by('-rating')
+
+
+# todo sort not working
+def get_posts():
+    posts = Post.objects.all().order_by('-created_at')
+    scores = get_scores().order_by('-created_at')
+    scores_post = []
+    print(scores_post)
+    for post in posts:
+        post = Post(user=post.user,
+                    detail=post.detail,
+                    created_at=post.created_at)
+        scores_post.append(post)
+
+    for score in scores:
+        score_post = Post(user=score.user,
+                          game_detail=score.game.name,
+                          detail='Scored on {} : {}'.format(score.song.name, score.score),
+                          created_at=score.created_at)
+        scores_post.append(score_post)
+
+    all_posts = sorted(scores_post, key=lambda x: x.created_at)[::-1]
+    all_posts = sorted(scores_post, key=lambda x: x.created_at)[::-1]
+
+    return all_posts
+
+
+def apply_for_season(season: Season,
+                     user: User
+                     ):
+    season.user_list.add(user)
+
+

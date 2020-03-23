@@ -1,9 +1,109 @@
 {% extends 'thema_vr/pixie_base.html' %}
-
+{% load static %}
 {% block content %}
-{% for score in  scores  %}
-    <i>{{ score }}</i>
-    <br/>
-{% endfor %}
 
+    <style>
+        aside article.latest-article ul li .details {
+            width: 1200px;
+        }
+
+        aside article.latest-article ul li span.date {
+            float: right;
+        }
+
+        aside article.latest-article ul li span.profile-name {
+            float: right;
+        }
+    </style>
+
+    <section id="player-profile" style="margin-top: 50px !important;">
+
+        <div class="container">
+            <article class="player-info">
+                <div class="avatar"
+                     style="background-image: url({{ player.profile_pic }});"></div>
+                <div class="right-panel">
+                    <img src="{% static 'league/img/vrom-transparan.png' %}" width="900" height="210">
+
+                    <div class="about" style="">
+                        <section id="single-page"
+                                 style="background-color:unset;min-width: inherit;max-height: 150px;margin-bottom: 20px; ">
+                            <article class="comments" style="background-color:unset;margin-bottom: 0px;">
+
+                                <div id="respond" class="comment-respond">
+                                    <form action="{% url 'comment' %}"
+                                          method="post"
+                                          id="commentform" class="comment-form">
+                                        {% csrf_token %}
+                                        {#                        <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span>#}
+                                        {#                            Required fields are marked <span class="required">*</span></p>#}
+                                        <textarea name="comment"
+                                                  id="comment"
+                                                  placeholder="Write your comment"></textarea>
+                                        {#                        <input#}
+                                        {#                            id="author" type="text" name="author" placeholder="Name*">#}
+                                        {#                        <input id="email" type="email" name="email" placeholder="Email*">#}
+                                        {#                        <input id="url" name="url" type="text" placeholder="Website">#}
+                                        <p class="form-submit" style="margin: 20px 0; ">
+                                            <input name="submit" type="submit" id="submit" class="submit"
+                                                   style="width: 25%;float: right;margin: 5px 10px;max-height: 30px"
+                                                   value="Post Comment"/>
+                                            {#                                            <input type='hidden' name='comment_post_ID'#}
+                                            {#                                                   value='140' id='comment_post_ID'/>#}
+                                            {#                                            <input type='hidden' name='comment_parent' id='comment_parent' value='0'/>#}
+                                        </p></form>
+                                </div>
+                            </article>
+                        </section>
+                    </div>
+                    <!-- /RIGHT-PANEL -->
+                </div>
+            </article>
+            <!-- /TEAM-INFO -->
+            <aside>
+                <article id="pixiehuge_latest_news_widget-2" class="latest-article" style="width: 1200px;">
+                    <div class="section-header">
+                        <article class="topbar">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="7px" height="8px">
+                                    <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
+                                          d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
+                                </svg>
+                                Posts
+                            </h3>
+                        </article>
+                    </div>
+                    <ul class="widget">
+                        {% for post in posts %}
+                            <li>
+                                <div class="thumbnail"
+                                     style="background-image: url({{ post.user.player.profile_pic }});"></div>
+                                <div class="details">
+                    <span class="categories">
+                        {% if post.game_detail == None %}
+                            <a class="category">Comment</a>
+                        {% else %}
+                            <a class="category">{{ post.game_detail }}</a>
+                        {% endif %}
+                    </span>
+                                    <span class="categories profile-name">
+                        <i class="bull">&bull;</i>
+                        <a href="{% url 'profile' post.user.id %}"
+                           class="category">{{ post.user.player.real_name }}</a>
+                    </span>
+                                    <a class="title">
+                                        {{ post.detail }}</a>
+                                    <span class="date">{{ post.created_at }}</span>
+                                </div>
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+                </article>
+            </aside>
+        </div>
+        <!-- /TOP-BAR -->
+
+    </section>
 {% endblock %}
