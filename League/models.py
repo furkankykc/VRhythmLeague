@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from django.db.models import Max, Min, StdDev
+from django.db.models import Max, Min, StdDev, Sum
 from django.utils import timezone
 from django.utils.text import slugify
 from smart_selects.db_fields import ChainedManyToManyField
@@ -219,7 +219,8 @@ class Season(PageModel):
         return current_week
 
     def history(self):
-        return self.week.filter(finishing_at__lt=timezone.now().date()) | self.week.filter(pk=self.get_current_week().pk)
+        return self.week.filter(finishing_at__lt=timezone.now().date()) | self.week.filter(
+            pk=self.get_current_week().pk)
 
     def calculate_finishing_date(self):
         self.finishing_at = self.starting_at + dt.timedelta(weeks=self.type.count)
@@ -371,8 +372,10 @@ class Week(PageModel):
 
     @property
     def highscores(self):
-        #fixme burda user bazli toplam score yollamasi lazim
-        return self.week_scores.order_by('score')[:10]
+        # self.week_scores.filter(user).aggregate(StdDev('total_score'))['total_score__stddev']
+        # return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
+        return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
+
 
 class Achievement(models.Model):
     name = models.CharField(max_length=_max_length)

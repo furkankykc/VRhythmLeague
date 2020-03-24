@@ -15,6 +15,14 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['username']
 
 
+class HighScoreSerializer(serializers.Serializer):
+    user = serializers.SerializerMethodField()
+    score = serializers.IntegerField()
+
+    def get_user(self, value):
+        return User.objects.get(id=value['user']).username
+
+
 class ScoreSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
 
@@ -37,7 +45,7 @@ class SongSerializer(serializers.ModelSerializer):
 
 class WeekSerializer(serializers.ModelSerializer):
     songs = SongSerializer(read_only=True, many=True)
-    highscores = ScoreSerializer(read_only=True, many=True)
+    highscores = HighScoreSerializer(read_only=True, many=True)
 
     class Meta:
         model = Week
