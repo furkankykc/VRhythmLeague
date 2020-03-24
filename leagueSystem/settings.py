@@ -54,11 +54,12 @@ INSTALLED_APPS = [
     'League.apps.LeagueConfig',
     'LeagueAPI.apps.LeagueAPIConfig',
     'rest_framework',
+    'rest_framework.authtoken',
     'widget_tweaks',
     'smart_selects',
     'social_django',
     'chained_selectbox',
-    'django_social_share'
+    'django_social_share',
 ]
 
 MIDDLEWARE = [
@@ -196,6 +197,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',

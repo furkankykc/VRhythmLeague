@@ -128,7 +128,7 @@
                     </li>
                     <li class="numeric">
                         <span class="mTitle">Applied Players</span>
-                        <span class="number">125</span>
+                        <span class="number">{{ week.season.user_list.count }}</span>
                     </li>
                     <li class="numeric">
                         {% if week.season.type.is_daily %}
@@ -182,7 +182,7 @@
             <ul class="achievements" style="float:right;width: 25%;">
 
                 <li style="width: 100%;height: fit-content;min-height: 365px;">
-                    {% for score in week.week_scores.all %}
+                    {% for score in week.highscores %}
                         {% if forloop.counter0 == 0 %}
                             <span class="title">High Scores</span>
                         {% endif %}

@@ -369,6 +369,10 @@ class Week(PageModel):
     def is_finished(self):
         return self.finishing_at > timezone.now().date()
 
+    @property
+    def highscores(self):
+        #fixme burda user bazli toplam score yollamasi lazim
+        return self.week_scores.order_by('score')[:10]
 
 class Achievement(models.Model):
     name = models.CharField(max_length=_max_length)

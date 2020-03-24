@@ -80,7 +80,7 @@ def create_week(season: Season) -> [Week]:
         delta_time = timezone.timedelta(days=i) if season.type.is_daily else timezone.timedelta(weeks=i)
         week = Week(
             starting_at=season.starting_at + delta_time,
-            finishing_at=season.starting_at + delta_time*2,
+            finishing_at=season.starting_at + delta_time * 2,
             season=season
         )
         week.set_name(index)
@@ -264,7 +264,6 @@ def get_posts():
     posts = Post.objects.all().order_by('-created_at')
     scores = get_scores().order_by('-created_at')
     scores_post = []
-    print(scores_post)
     for post in posts:
         post = Post(user=post.user,
                     detail=post.detail,
@@ -286,9 +285,11 @@ def get_posts():
 def apply_for_season(season: Season,
                      user: User
                      ):
-    season.user_list.add(user)
+    if not season.is_season_started:
+        season.user_list.add(user)
 
-def updateSeasons():
+
+def update_seasons():
     for obj in Season.objects.all():
         clean_weeks(obj)
         Week.objects.bulk_create(create_week(obj))

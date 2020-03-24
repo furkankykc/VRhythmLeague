@@ -155,13 +155,11 @@ class CustomLoginView(AjaxTemplateMixin, LoginView):
 def autocompleteModel(request):
     if request.is_ajax():
         q = request.GET.get('term', '').capitalize()
-        print(q)
         search_qs = Song.objects.filter(name__startswith=q)
         results = []
         for r in search_qs[:5]:
             results.append(r.name)
         data = json.dumps(results)
-        print(data)
     else:
         data = 'fail'
     mimetype = 'application/json'
@@ -170,7 +168,6 @@ def autocompleteModel(request):
 
 def pink(request):
     path = request.path_info
-    print('path=', path)
     if path == '/':
         return render(request, 'thema_vr/index.html')
     # elif path == '/news/':
@@ -189,24 +186,6 @@ def pink(request):
     #     return render(request, 'thema_vr/sponsor-page/index.html')
 
 
-class SeasonDetailView(DetailView):
-    model = Season
-    # This file should exist somewhere to render your page
-    # template_name = 'league/weeks.html'
-    template_name = 'league/season-detail.html'
-    # Should match the value after ':' from url <slug:the_slug>
-    slug_url_kwarg = 'season_slug'
-    # Should match the name of the slug field on the model
-    slug_field = 'slug'  # DetailView's default value: optional
-    context_object_name = 'season'
-
-    # queryset = Week.objects.filter(season__name=season__name)
-    # queryset=Week.objects.filter(season__slug=)
-    def get_queryset(self):
-        return Season.objects.filter(
-            slug=self.kwargs['season_slug'],
-            game__slug=self.kwargs['game_slug'],
-        )
 
 
 class GameDetailView(DetailView):
@@ -273,5 +252,4 @@ def postComment(request):
 
 def apply_season(request, season_pk):
     apply_for_season(Season.objects.get(pk=season_pk), user=request.user)
-
     return redirect(request.META['HTTP_REFERER'])

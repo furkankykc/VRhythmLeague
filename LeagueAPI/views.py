@@ -1,14 +1,16 @@
 # Create your views here.
+from django.utils import timezone
 from idna import unicode
 from rest_framework import viewsets
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.authtoken.views import *
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from League.models import Score, Game, Player, Season
-from .serializers import ScoreSerializer
+from League.models import Score, Game, Player, Season, Week
+from .serializers import ScoreSerializer, SeasonSerializer, WeekSerializer, SteamAuthTokenSerializer
 
 
 class ScoreViewSet(viewsets.ModelViewSet):
@@ -17,33 +19,25 @@ class ScoreViewSet(viewsets.ModelViewSet):
 
 
 class SeasonViewSet(viewsets.ModelViewSet):
-    queryset = Season.objects.all()
-    serializer_class = ScoreSerializer
+    queryset = Season.objects.filter(finishing_at__gte=timezone.now().date())
+    serializer_class = SeasonSerializer
 
 
-class SeasonView(APIView):
-
-    def get(self, request, pk):
-        queryset = Season.objects.all()
-        serializer_class = SeasonViewSet(
-            Season.objects.filter(
-                game=Game.objects.get(pk=pk)),
-            many=True)
-        content = {
-            'seasons': serializer_class.data
-        }
-        return Response(content)
+class WeekViewSet(viewsets.ModelViewSet):
+    queryset = Week.objects.filter(finishing_at__gte=timezone.now().date())
+    serializer_class = WeekSerializer
 
 
-class ExampleView(APIView):
+#
+class ScoreView(APIView):
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get(self, request, pk):
-        queryset = Score.objects.all()
+        pass
         serializer_class = ScoreSerializer(
             Score.objects.filter(
-                player=request.user,
+                user=request.user,
                 game=Game.objects.get(pk=pk)),
             many=True)
         content = {
@@ -56,7 +50,7 @@ class ExampleView(APIView):
     def post(self, request):
         score = request.data.get('score')
         game = request.data.get('game')
-        score.game=game
+        score.game = game
         score.player = Player.objects.get(user=request.user)
         # Create an score from the above data
         serializer = ScoreSerializer(data=score)
@@ -89,3 +83,35 @@ def example_view(request, format=None):
         'auth': unicode(request.auth),  # None
     }
     return Response(content)
+
+
+class SeasonGame(APIView):
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
+
+    """
+    Retrieve, update or delete a Season instance.
+    """
+
+    def get(self, request, pk, format=None):
+        serializer_class = SeasonSerializer(Season.objects.filter(game=pk), many=True,
+                                            context={'request': self.request})
+        valid_data = []
+        for data in serializer_class.data:
+            if not data['is_applied'] != True and data['is_season_started'] == True:
+                valid_data.append(data)
+        return Response(valid_data)
+
+    def get_serializer_context(self):
+        return {'request': self.request}
+
+
+class giveMeMyFuckingToken(ObtainAuthToken):
+    serializer_class = SteamAuthTokenSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data,
+                                           context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data['user']
+        token, created = Token.objects.get_or_create(user=user)
+        return Response({'token': token.key})
