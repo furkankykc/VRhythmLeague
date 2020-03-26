@@ -58,12 +58,12 @@ class WeekSerializer(serializers.ModelSerializer):
 
 class SeasonSerializer(serializers.ModelSerializer):
     current_week = WeekSerializer(read_only=True)
-    game = serializers.PrimaryKeyRelatedField(read_only=True)
+    # game = serializers.PrimaryKeyRelatedField(read_only=True)
     is_applied = SerializerMethodField()
 
     class Meta:
         model = Season
-        fields = ['name', 'is_season_started', 'current_week', 'game', 'is_applied', 'get_difficulty']
+        fields = ['name', 'is_season_started', 'current_week', 'is_applied', 'get_difficulty']
         read_only_fields = fields
 
     def create(self, validated_data):

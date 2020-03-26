@@ -182,7 +182,7 @@
             <ul class="achievements" style="float:right;width: 25%;">
 
                 <li style="width: 100%;height: fit-content;min-height: 365px;">
-                    {% for score in week.highscores %}
+                    {% for score in week.get_highscores %}
                         {% if forloop.counter0 == 0 %}
                             <span class="title">High Scores</span>
                         {% endif %}
@@ -190,7 +190,7 @@
                         <span class="place first" style="">
                             {{ forloop.counter }}{% if forloop.counter < 3 %}st {% else %} th {% endif %}place
                         </span>
-                            <span class="date" style="min-width: 120px;">{{ score.user.username }}</span>
+                            <span class="date" style="min-width: 120px;">{{ score.user }}</span>
                         </p>
                     {% endfor %}
 

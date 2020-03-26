@@ -5,7 +5,8 @@ from rest_framework import viewsets
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.authtoken.views import *
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, AllowAny
+from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -19,6 +20,8 @@ class ScoreViewSet(viewsets.ModelViewSet):
 
 
 class SeasonViewSet(viewsets.ModelViewSet):
+    renderer_classes = [JSONRenderer]
+    permission_classes = [AllowAny]
     queryset = Season.objects.filter(finishing_at__gte=timezone.now().date())
     serializer_class = SeasonSerializer
 
@@ -32,7 +35,7 @@ class WeekViewSet(viewsets.ModelViewSet):
 class ScoreView(APIView):
     authentication_classes = [SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticatedOrReadOnly]
-
+    renderer_classes = [JSONRenderer]
     def get(self, request, pk):
         pass
         serializer_class = ScoreSerializer(
@@ -86,8 +89,8 @@ def example_view(request, format=None):
 
 
 class SeasonGame(APIView):
-    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
-
+    # authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
+    renderer_classes = [JSONRenderer]
     """
     Retrieve, update or delete a Season instance.
     """

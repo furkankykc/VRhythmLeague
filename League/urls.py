@@ -13,9 +13,7 @@ urlpatterns = [
     url(r'games/$', views.home, name='games'),
     path('leagues/', views.leagues, name='leagues'),
     url('contacts/$', views.week, name='contacts'),
-    url(r'profile/$', views.profile, name='profile'),
-    path('profile/<int:user_id>', views.profile, name='profile'),
-    url(r'playlists/$', views.playlist, name='playlist'),
+    url(r'profile/$', views.profile, name='profile'), 
     #
     url(r'songs/$', views.songs, name='songs'),
     url(r'search/', views.autocompleteModel, name='search'),

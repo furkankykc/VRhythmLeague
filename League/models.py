@@ -376,6 +376,14 @@ class Week(PageModel):
         # return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
         return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
 
+    @property
+    def get_highscores(self):
+        # self.week_scores.filter(user).aggregate(StdDev('total_score'))['total_score__stddev']
+        # return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
+        high = self.highscores
+        for hg in high:
+            hg['user']= User.objects.get(pk=hg['user'])
+        return high
 
 class Achievement(models.Model):
     name = models.CharField(max_length=_max_length)
