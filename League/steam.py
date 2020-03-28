@@ -65,7 +65,7 @@ def fdauth_allowed(details):
     allowed = False
     # if uid and uids:
     #     # domain = email.split('@', 1)[1]
-    #     allowed = uid in uids
+    #     allowed = uid in uids
     if uid:
         if uid in list(AlphaUsers.objects.values_list('steam_id', flat=True)):
             allowed = True
