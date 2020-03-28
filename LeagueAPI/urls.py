@@ -13,6 +13,7 @@ router.register(r'weeks', views.WeekViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('score/<int:pk>', views.ScoreView.as_view()),
+    path('score/', views.ScoreView.as_view()),
     path('season/game/<int:pk>', views.SeasonGame.as_view()),
     path('api-token-auth/', views.giveMeMyFuckingToken.as_view(), name='api_token_auth'),
     # url(r'score/$',views.ScoreView.as_view()),

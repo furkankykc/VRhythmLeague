@@ -30,7 +30,10 @@ class PageAdmin(admin.ModelAdmin):
 class GameAdmin(PageAdmin):
     # list_display = ('name', 'slug')
     pass
-
+# @admin.register(AlphaUsers)
+# class AlphaUsersAdmin(PageAdmin):
+#     pass
+admin.site.register(AlphaUsers)
 
 @admin.register(Song)
 class SongAdmin(PageAdmin):

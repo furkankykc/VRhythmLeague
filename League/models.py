@@ -382,8 +382,9 @@ class Week(PageModel):
         # return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
         high = self.highscores
         for hg in high:
-            hg['user']= User.objects.get(pk=hg['user'])
+            hg['user'] = User.objects.get(pk=hg['user'])
         return high
+
 
 class Achievement(models.Model):
     name = models.CharField(max_length=_max_length)
@@ -546,3 +547,7 @@ class Player(PageModel):
     @property
     def season_rank(self):
         return (1 - self.normalized_sore()) * 50
+
+
+class AlphaUsers(models.Model):
+    steam_id = models.CharField(max_length=50)

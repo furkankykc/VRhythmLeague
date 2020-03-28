@@ -32,7 +32,7 @@ class ScoreSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         if 'user' not in validated_data:
-            validated_data['player'] = self.context['request'].user
+            validated_data['user'] = self.context['request'].user
 
         return Score.objects.create(**validated_data)
 

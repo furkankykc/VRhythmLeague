@@ -17,25 +17,32 @@ from .serializers import ScoreSerializer, SeasonSerializer, WeekSerializer, Stea
 class ScoreViewSet(viewsets.ModelViewSet):
     queryset = Score.objects.all()
     serializer_class = ScoreSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class SeasonViewSet(viewsets.ModelViewSet):
+    authentication_classes = [SessionAuthentication, BasicAuthentication,TokenAuthentication]
+
     renderer_classes = [JSONRenderer]
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
     queryset = Season.objects.filter(finishing_at__gte=timezone.now().date())
     serializer_class = SeasonSerializer
 
 
 class WeekViewSet(viewsets.ModelViewSet):
+    authentication_classes = [SessionAuthentication, BasicAuthentication,TokenAuthentication]
+
     queryset = Week.objects.filter(finishing_at__gte=timezone.now().date())
     serializer_class = WeekSerializer
+    permission_classes = [IsAuthenticated]
 
 
 #
 class ScoreView(APIView):
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    authentication_classes = [SessionAuthentication, BasicAuthentication,TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     renderer_classes = [JSONRenderer]
+
     def get(self, request, pk):
         pass
         serializer_class = ScoreSerializer(
@@ -54,7 +61,7 @@ class ScoreView(APIView):
         score = request.data.get('score')
         game = request.data.get('game')
         score.game = game
-        score.player = Player.objects.get(user=request.user)
+        score.user = request.user
         # Create an score from the above data
         serializer = ScoreSerializer(data=score)
         # serializer.initial_data.game = Game.objects.get(pk=pk)
@@ -89,7 +96,9 @@ def example_view(request, format=None):
 
 
 class SeasonGame(APIView):
-    # authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
     renderer_classes = [JSONRenderer]
     """
     Retrieve, update or delete a Season instance.
