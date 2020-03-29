@@ -22,8 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6b4sy&r&2tb05h4ed&$cdmpe6xj9r1jkfl#(yul6^j&%9d-z)t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-DEBUG = True
+DEBUG = False
+# DEBUG = True
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
 ALLOWED_HOSTS = ['192.168.1.10', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', 'www.vrrhythmleague.com', '192.168.1.9',
@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['192.168.1.10', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', '
 # [Unit]
 # Description=gunicorn daemon
 # After=network.target
-#
+
 # [Service]
 # User=root
 # Group=www-data
