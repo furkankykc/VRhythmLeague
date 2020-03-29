@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'smart_selects',
     'social_django',
-    'chained_selectbox',
     'django_social_share',
 ]
 
