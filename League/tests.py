@@ -1,15 +1,11 @@
 # TODO: Insert clever settings mechanism
-import os, django
+import django
+import os
 import sys
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "leagueSystem.settings")
 django.setup()
-from leagueSystem import settings
 from League import services
-from League import models
-
-from django.utils import timezone
-import datetime as dt
 
 
 #

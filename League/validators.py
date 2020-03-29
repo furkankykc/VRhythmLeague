@@ -1,9 +1,6 @@
-from django.core.exceptions import ValidationError
+def max_releations(field_value, value, _max_count=10) -> (bool, str):
+    print(value.count(), ' | ', _max_count)
+    if value and field_value and field_value.count() + value.count() > _max_count:
+        return True, ('Maximum %s related objects are allowed.' % int(_max_count))
 
-
-def max_releations(value,_max_count = 10):
-
-    if value and value.count() > _max_count:
-        raise ValidationError('Maximum %s related objects are allowed.' % _max_count )
-
-
+    return False, ''

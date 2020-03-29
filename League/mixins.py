@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from math import *
+
 
 # AJAX mixin
+
+
 class AjaxTemplateMixin(object):
     def dispatch(self, request, *args, **kwargs):
         if not hasattr(self, 'ajax_template_name'):
@@ -20,3 +24,29 @@ class AjaxTemplateMixin(object):
         if request.is_ajax():
             self.template_name = self.ajax_template_name
         return super(AjaxTemplateMixin, self).dispatch(request, *args, **kwargs)
+
+
+def normcdf(x, mu, sigma):
+    t = x - mu
+    y = 0.5 * erfc(-t / (sigma * sqrt(2.0)));
+    if y > 1.0:
+        y = 1.0
+    return y
+
+
+def normpdf(x, mu, sigma):
+    sigma_abs = abs(sigma)
+    if sigma_abs == 0:
+        sigma_abs = 0.0000000001
+
+    u = (x - mu) / sigma_abs
+    y = (1 / (sqrt(2 * pi) * sigma_abs)) * exp(-u * u / 2)
+    return y
+
+
+def normdist(x, mu, sigma, f):
+    if f:
+        y = normcdf(x, mu, sigma)
+    else:
+        y = normpdf(x, mu, sigma)
+    return y

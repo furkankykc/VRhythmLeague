@@ -1,12 +1,7 @@
-from collections import Iterable
-
 from django.db.models import Q
 from rest_framework.utils import json
 
 from League.models import *
-import datetime as dt
-from League import models
-from django.shortcuts import get_object_or_404
 
 
 # def get_users(*,fetched_by:User)-> Iterable[User]:
@@ -15,27 +10,35 @@ from django.shortcuts import get_object_or_404
 
 
 def get_scores():
-    return models.Score.objects.all()
+    return Score.objects.all()
 
 
 def get_games():
-    return models.Game.objects.all()
+    return Game.objects.all()
 
 
 def get_leagues():
-    return models.Season.objects.all()
+    return Season.objects.all()
 
 
 def get_active_leagues():
-    return models.Season.objects.all()
+    return Season.objects.all()
 
 
-def get_current_week(season: Season) -> Week:
-    week_id = (season.starting_at - timezone.now()) % dt.timedelta(weeks=1)
+def get_current_part(season: Season) -> Week:
+    week_id = (season.starting_at - timezone.now().date()) % (
+        dt.timedelta(weeks=1) if not season.type.is_daily else dt.timedelta(days=1))
     week_date = season.starting_at + dt.timedelta(weeks=week_id)
     query = Q(season=season, starting_at=week_date)
-    data = models.Week.objects.filter(query)
+    data = Week.objects.filter(query)
     return data
+
+
+def get_week_id(week: Week) -> int:
+    week_id = abs(week.season.starting_at - week.starting_at) / (
+        dt.timedelta(weeks=1) if not week.season.type.is_daily else dt.timedelta(days=1))
+
+    return int(week_id) + 1
 
 
 def create_season_(season):
@@ -43,7 +46,9 @@ def create_season_(season):
                   name=season.name,
                   game=season.game,
                   starting_at=season.starting_at,
-                  sponsor_name=season.sponsor_name)
+                  sponsor_name=season.sponsor_name,
+                  difficulty=season.difficulty
+                  )
 
 
 def create_season(*,
@@ -52,26 +57,40 @@ def create_season(*,
                   game: Game,
                   starting_at: dt.date,
                   sponsor_name: str,
+                  difficulty
                   ) -> Season:
-    season = Season(name=name,
-                    type=typ,
-                    game=game,
-                    starting_at=starting_at,
-                    sponsor_name=sponsor_name
-                    )
-    season.save()
-
-    weeks = []
-    for i in range(typ.week_count):
-        week = Week(name=Week.prefix(i + 1),
-                    starting_at=starting_at + timezone.timedelta(weeks=i),
-                    season=season
-                    )
-        weeks.append(week)
-
-    Week.objects.bulk_create(weeks)
+    season, created = Season.objects.get_or_create(name=name,
+                                                   type=typ,
+                                                   game=game,
+                                                   starting_at=starting_at,
+                                                   sponsor_name=sponsor_name,
+                                                   difficulty=difficulty
+                                                   )
+    if created:
+        season.save()
+        Week.objects.bulk_create(create_week(season))
 
     return season
+
+
+def create_week(season: Season) -> [Week]:
+    weeks = []
+    index = 0
+    for i in range(season.type.count):
+        delta_time = timezone.timedelta(days=i) if season.type.is_daily else timezone.timedelta(weeks=i)
+        week = Week(
+            starting_at=season.starting_at + delta_time,
+            finishing_at=season.starting_at + delta_time * 2,
+            season=season
+        )
+        week.set_name(index)
+        index += 1
+        weeks.append(week)
+    return weeks
+
+
+def clean_weeks(season: Season):
+    Week.objects.filter(season=season).delete()
 
 
 def create_song(*,
@@ -239,3 +258,38 @@ def get_diffs_json(json_data, diff_level):
 def get_songs():
     # .filter(hard__isnull=False)
     return Song.objects.filter(hard__isnull=False).order_by('-rating')
+
+
+def get_posts():
+    posts = Post.objects.all().order_by('-created_at')
+    scores = get_scores().order_by('-created_at')
+    scores_post = []
+    for post in posts:
+        post = Post(user=post.user,
+                    detail=post.detail,
+                    created_at=post.created_at)
+        scores_post.append(post)
+
+    for score in scores:
+        score_post = Post(user=score.user,
+                          game_detail=score.game.name,
+                          detail='Scored on {} : {}'.format(score.song.name, score.score),
+                          created_at=score.created_at)
+        scores_post.append(score_post)
+
+    all_posts = sorted(scores_post, key=lambda x: x.created_at)[::-1]
+
+    return all_posts
+
+
+def apply_for_season(season: Season,
+                     user: User
+                     ):
+    if not season.is_season_started:
+        season.user_list.add(user)
+
+
+def update_seasons():
+    for obj in Season.objects.all():
+        clean_weeks(obj)
+        Week.objects.bulk_create(create_week(obj))

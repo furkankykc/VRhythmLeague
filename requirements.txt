@@ -9,13 +9,13 @@ django-smart-selects==1.5.4  # via -r ../VRhythmLeague/requirements.txt
 
 django-widget-tweaks==1.4.3  # via -r ../VRhythmLeague/requirements.txt
 
-django==2.1.7             # via -r ../VRhythmLeague/requirements.txt, django-openid-auth, django-steam-api, django-stubs, djangorestframework
+# django==2.1.7             # via -r ../VRhythmLeague/requirements.txt, django-openid-auth, django-steam-api, django-stubs, djangorestframework
 djangorestframework==3.11.0  # via -r ../VRhythmLeague/requirements.txt
 
 social-auth-app-django
 humanize
 
-
+django_social_share
 django-widget-tweaks
 # pip3 install six && echo import six >"$(python3 -c "import sys; print(tuple(filter(lambda x: 'site-packages' in x, sys.path))[0])")"/django/utils/__init__.py
 #

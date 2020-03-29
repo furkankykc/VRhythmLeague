@@ -24,7 +24,9 @@ SECRET_KEY = '6b4sy&r&2tb05h4ed&$cdmpe6xj9r1jkfl#(yul6^j&%9d-z)t'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 DEBUG = True
-ALLOWED_HOSTS = ['192.168.1.35', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', 'www.vrrhythmleague.com','192.168.1.9',
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+
+ALLOWED_HOSTS = ['192.168.1.10', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', 'www.vrrhythmleague.com', '192.168.1.9',
                  'vrrhythmleague.xyz', 'www.vrrhythmleague.com']
 
 # [Unit]
@@ -52,9 +54,12 @@ INSTALLED_APPS = [
     'League.apps.LeagueConfig',
     'LeagueAPI.apps.LeagueAPIConfig',
     'rest_framework',
+    'rest_framework.authtoken',
     'widget_tweaks',
     'smart_selects',
     'social_django',
+    'chained_selectbox',
+    'django_social_share',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +70,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',  # <--
+
 ]
 
 ROOT_URLCONF = 'leagueSystem.urls'
@@ -82,6 +89,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # 'League.views.add_my_login_form',
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect',  # <--
 
             ],
         },
@@ -119,9 +128,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# JQUERY_URL = "/static/pinkhuge/wp-includes/jqueryb8ff.js"
+# JQUERY_URL = "/static/thema_vr/thema_inc/jqueryb8ff.js"
 # USE_DJANGO_JQUERY = True
-USE_DJANGO_JQUERY = True
+# USE_DJANGO_JQUERY = False
 # JQUERY_URL = False
 
 # CSP_DEFAULT_SRC = ("'none'",)
@@ -156,8 +165,8 @@ USE_TZ = True
 # ENVIRONMENT='production'
 # URL CONFIG
 LOGIN_REDIRECT_URL = '/dashboard/'
-LOGIN_URL = 'login'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = ''
+LOGOUT_REDIRECT_URL = '/home/'
 
 # For conformation mail
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -188,6 +197,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
@@ -199,17 +209,25 @@ REST_FRAMEWORK = {
 SOCIAL_AUTH_STEAM_API_KEY = 'BA270B7146A288C4A40DBF38E876E180'
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.steam.SteamOpenId',
+    'django.contrib.auth.backends.ModelBackend',
+
     # others, if you want them...
 )
 SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.social_details',
-    'social_core.pipeline.user.create_user',
     'social_core.pipeline.social_auth.social_uid',
-    'social_core.pipeline.social_auth.auth_allowed',
-    'social_core.pipeline.social_auth.social_user',
+    # 'social_core.pipeline.social_auth.auth_allowed',
+    'League.steam.auth_allowed',
+    # 'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.create_user',
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
     'League.steam.save_profile',
 )
 SOCIAL_AUTH_STEAM_EXTRA_DATA = ['player']
+
+WHITELISTED_UIDS = [
+    '76561198019013458',
+    '76561198103998111',
+]

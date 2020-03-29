@@ -1,0 +1,482 @@
+{% extends 'thema_vr/pixie_base.html' %}
+{% load static %}
+{% block content %}
+
+    {#	<section id="matches" class="match-page">#}
+    {##}
+    {#		<div class="container">#}
+    {##}
+    {#			<div class="section-header">#}
+    {#				<article class="topbar">#}
+    {#					<h3>#}
+    {#						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px" height="8px"><path fill-rule="evenodd"  fill="rgb(57, 191, 253)" d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/></svg> Our Matches					</h3>#}
+    {#				</article>#}
+    {#				<!-- /TOP-BAR -->#}
+    {##}
+    {#				<article class="bottombar">#}
+    {#					<ul>#}
+    {#						<li class="active">#}
+    {#							<a href="#UpcomingMatches" data-toggle="tab">Upcoming Matches</a>#}
+    {#						</li>#}
+    {#						<li>#}
+    {#							<a href="#LatestResults" data-toggle="tab">Latest Results</a>#}
+    {#						</li>#}
+    {#					</ul>#}
+    {#				</article>#}
+    {#				<!-- /BOTTOM-BAR -->#}
+    {#			</div>#}
+    {#			<!-- /SECTION-HEADER -->#}
+    {##}
+    {#			<div class="tab-content content">#}
+    {##}
+    {#				<ul id="UpcomingMatches" class="active">#}
+    {##}
+    {#												<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="vs">VS</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league">SL i-League StarSeries S3</span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/1-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#														<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="vs">VS</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league">SL i-League StarSeries S3</span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/2-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#														<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="vs">VS</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league">SL i-League StarSeries S3</span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/3-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#														<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="vs">VS</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league">SL i-League StarSeries S3</span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/8-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#														<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="vs">VS</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league">SL i-League StarSeries S3</span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/9-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#														<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="vs">VS</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league">SL i-League StarSeries S3</span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/10-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#							#}
+    {#										<li class="navigation" data-page="1">#}
+    {#						<a href="#" class="left" data-id="prev">#}
+    {#							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"><path fill-rule="evenodd"  fill="rgb(82, 82, 101)" d="M12.000,24.000 C5.373,24.000 -0.000,18.627 -0.000,12.000 C-0.000,5.372 5.373,-0.000 12.000,-0.000 C18.628,-0.000 24.000,5.372 24.000,12.000 C24.000,18.627 18.628,24.000 12.000,24.000 ZM12.000,3.000 C7.037,3.000 3.000,7.037 3.000,12.000 C3.000,16.962 7.037,21.000 12.000,21.000 C16.963,21.000 21.000,16.962 21.000,12.000 C21.000,7.037 16.963,3.000 12.000,3.000 ZM14.209,17.603 C13.680,18.132 12.822,18.132 12.293,17.603 L7.648,12.958 C7.383,12.693 7.251,12.347 7.251,12.000 C7.251,11.653 7.383,11.307 7.648,11.042 L12.293,6.397 C12.822,5.868 13.680,5.868 14.209,6.397 C14.738,6.926 14.738,7.783 14.209,8.313 L10.522,12.000 L14.209,15.687 C14.738,16.216 14.738,17.074 14.209,17.603 Z"/></svg>#}
+    {#						</a>#}
+    {#						<a href="#" class="right" data-id="next">#}
+    {#							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"><path fill-rule="evenodd"  fill="rgb(82, 82, 101)" d="M12.000,24.000 C5.372,24.000 0.000,18.628 0.000,12.000 C0.000,5.373 5.372,0.000 12.000,0.000 C18.627,0.000 24.000,5.373 24.000,12.000 C24.000,18.628 18.627,24.000 12.000,24.000 ZM12.000,3.000 C7.037,3.000 3.000,7.038 3.000,12.000 C3.000,16.963 7.037,21.000 12.000,21.000 C16.963,21.000 21.000,16.963 21.000,12.000 C21.000,7.038 16.963,3.000 12.000,3.000 ZM11.707,17.603 C11.178,18.132 10.320,18.132 9.791,17.603 C9.262,17.074 9.262,16.217 9.791,15.687 L13.478,12.000 L9.791,8.313 C9.262,7.784 9.262,6.926 9.791,6.397 C10.320,5.868 11.178,5.868 11.707,6.397 L16.352,11.042 C16.617,11.307 16.749,11.653 16.749,12.000 C16.749,12.347 16.617,12.693 16.352,12.958 L11.707,17.603 Z"/></svg>#}
+    {#						</a>#}
+    {#					</li>#}
+    {#									</ul>#}
+    {#				<!-- /UPCOMING-MATCHES -->#}
+    {##}
+    {#				<ul id="LatestResults">#}
+    {##}
+    {#												<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="score">1 - 0</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league"></span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/4-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#														<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="score">0 - 2</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league">SL i-League StarSeries S3</span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/5-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#														<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="score">2 - 0</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league"></span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/6-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#														<li class="matchBox">#}
+    {#								<div class="teams">#}
+    {#									<a href="../team/midnight-turtles/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/logo2.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Midnight Turtles</span>#}
+    {#									</a>#}
+    {#									<span class="score">0 - 3</span>#}
+    {#									<a href="../team/rhyno-domynos/index.html">#}
+    {#										<img src="{% static 'thema_vr/thema_content/uploads/2017/06/intz.png' %}" alt="Team&#039;s logo">#}
+    {#										<span>Rhyno Domynos</span>#}
+    {#									</a>#}
+    {#								</div>#}
+    {#								<!-- /TEAMS -->#}
+    {##}
+    {#								<div class="rightBox">#}
+    {#									<div class="match-info">#}
+    {#										<span class="league">SL i-League StarSeries S3</span>#}
+    {#										<div class="status">#}
+    {#											<span>Online</span> Vainglory										</div>#}
+    {#										<span class="date">16 June at 02:05 AM</span>#}
+    {#									</div>#}
+    {#									<!-- /MATCH INFO -->#}
+    {##}
+    {#																	</div>#}
+    {#								<a href="../match/7-midnight-turtles-rhyno-domynos/index.html" class="cta-btn">#}
+    {#									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="8px"><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M4.688,0.182 C4.437,0.442 4.437,0.865 4.688,1.126 L6.805,3.326 L0.643,3.326 C0.288,3.326 -0.000,3.625 -0.000,3.993 C-0.000,4.362 0.288,4.661 0.643,4.661 L6.805,4.661 L4.688,6.861 C4.437,7.122 4.437,7.544 4.688,7.805 C4.939,8.066 5.346,8.066 5.597,7.805 L8.811,4.466 C8.928,4.345 9.000,4.178 9.000,3.993 C9.000,3.809 8.928,3.642 8.811,3.521 L5.597,0.182 C5.346,-0.079 4.939,-0.079 4.688,0.182 Z"/>#}
+    {#									</svg>#}
+    {#								</a>#}
+    {#							</li>#}
+    {#							<!-- /MATCH-BOX -->#}
+    {#							#}
+    {#					#}
+    {#				</ul>#}
+    {#				<!-- /LATEST-RESULTS -->#}
+    {##}
+    {#			</div>#}
+    {#			<!-- /CONTENT -->#}
+    {#		</div>#}
+    {#		<!-- /CONTAINER -->#}
+    {##}
+    {#	</section>#}
+    <!-- /MATCHES -->
+
+    <style>
+        section#aboutStory .bg article.head > p {
+            margin: 20px 0 0;
+        }
+    </style>
+    <section id="aboutStory">
+
+        <div class="container bg"
+                {#             style="background-image: url('{% static 'thema_vr/thema_content/uploads/2017/06/about-us.jpg' %}');"#}
+        >
+            <div class="section-header">
+                <article class="topbar">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7px"
+                             height="8px">
+                            <path fill-rule="evenodd" fill="rgb(57, 191, 253)"
+                                  d="M-0.000,0.435 C-0.000,0.805 -0.000,7.292 -0.000,7.546 C-0.000,7.877 0.338,8.123 0.672,7.930 C0.940,7.775 6.293,4.649 6.750,4.381 C7.050,4.205 7.045,3.786 6.750,3.611 C6.421,3.415 1.048,0.272 0.658,0.054 C0.373,-0.106 -0.000,0.071 -0.000,0.435 Z"/>
+                        </svg>
+                        Information About The League
+                    </h3>
+                </article>
+            </div>
+            <article class="head">
+                <h3>VR Rhythm League</h3>
+                <p style="padding: 0px 0px;">VR Rhythm League is a professional tournament system which is founded for
+                    the biggest problem in the
+                    foundation of the VR E-Sport because of lacking in competitive game play.<br> According to the
+                    daily
+                    and
+                    monthly data from Steam™ shows that "Rhythm" type games which have the most users, suffers from
+                    lacking a competitive platform in their games, by means of millions of users can not find
+                    their place in
+                    such
+                    games. <br>Because of this reason VR Rhythm League aims to be a platform that all the "Rhythm"
+                    users
+                    can
+                    prove themselves and you will be rewarded for your efforts<br>
+                    VR Rhythm League with achievements, weekly tournaments, daily events and seasonal International
+                    league<br>
+                    systems will be appealed to all VR users varying from different levels and will develop the VR users'
+                    power<br>
+                    in the sector by gathering all their data under a single roof.</p>
+                <br>
+                <h4 style="margin-bottom:20px">Forming Leagues:</h4>
+                <p>
+                    vrrhythm.com is an organization which not only provides leagues they can be are personal but leagues that
+                    can
+                    be formed by any other companies.
+                    <br>Companies that fill the application form may organize daily,monthly,seasonal
+                    tournament if the rewards and the rules are accepted.<br>
+                    Users who whish to join VR Ry League can sign in our web site and can use the system by simply
+                    connecting the platform whenever, wherever they want to play a game.</p>
+
+
+            </article>
+            <!-- /HEAD -->
+
+            <article class="footer">
+                <div class="container">
+
+                    <h4>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19"
+                             height="16" viewBox="0 0 19 16">
+                            <image id="Vector_Smart_Object_copy_3" data-name="Vector Smart Object copy 3" width="19"
+                                   height="16"
+                                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAQCAMAAADDGrRQAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAzFBMVEUAAADX19fX19fX19fX19fX19fX19fX19fX19fX19f////////////////X19fX19fX19fX19fX19fX19f////////////////X19fX19fX19fX19fX19f////////////f39/////X19fX19fX19fX19fX19fd3d3////////////X19fX19fX19fX19f////////////////////X19fX19fX19fX19f////////////X19fX19fX19fX19fX19fX19fX19fX19cAAADc6kKKAAAAQnRSTlMAjf3KQ/ve8LYtYHpABaAUkfqdGoBBcHMjq/aDDRgEO8YgOMTpaQS8flgTUtrYTxZcfUgJbOrDKiRqbQ6E9+Vq3fyJdHXPAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAI1JREFUGNNjYAACRiZmFgY0wMrG7sTBieBzcfPwOvHxCwgyCQnDxERExcSd+BgYJCSdpKRloGKycvJOCopAlpKyk4qqGkSMgcFJXUNTC8jW1nHS1YOJ8ekbGBoZMzComZg6mZlDxRgYLCytQNqsbWzt8Ihh0YthB7Jb7NVwuRmb38Bh4IAaBuCwckQJKwBiRhd0mcnE2AAAAABJRU5ErkJggg=="/>
+                        </svg>
+                        Apply Now!
+                    </h4>
+
+                    <p style="font-size: 0.875em;color: #fff;line-height: 28px;margin: 20px 0 0;">
+                        For registiration fill out the form VR Teams, Singular Players, Arcade Owners and Sponsors will
+                        be
+                        accepted only.</p>
+
+                </div>
+                <!-- /LEFT -->
+
+                <div class="right">
+                    <ul>
+
+                        {#                        <li>#}
+                        {#                            <a href="http://office@pixiesquad.com/">#}
+                        {#								<span class="info">#}
+                        {#									<i class="icon"#}
+                        {#                                       style="background-image: url('{% static 'thema_vr/thema_content/uploads/2017/06/icon1.png' %}');"></i> Management								</span>#}
+                        {#                                <span class="email">#}
+                        {#									<span class="__cf_email__"#}
+                        {#                                          data-cfemail="3f505959565c5a7f4f5647565a4c4e4a5e5b115c5052">[email&#160;protected]</span>								</span>#}
+                        {#                            </a>#}
+                        <a style="margin: 20px auto" href="https://forms.gle/BrcVFndmWneA4vRM7" target="_blank"
+                           class="btn btn-blue">Apply</a>
+
+                        {#                        </li>#}
+                        {#                        <li>#}
+                        {#                            <a href="http://help@pixiesquad.com/">#}
+                        {#								<span class="info">#}
+                        {#									<i class="icon"#}
+                        {#                                       style="background-image: url('{% static 'thema_vr/thema_content/uploads/2017/06/icon2.png' %}');"></i> Support								</span>#}
+                        {#                                <span class="email">#}
+                        {#									<span class="__cf_email__" data-cfemail="7b131e170b3b0b1203121e080a0e1a1f55181416">[email&#160;protected]</span>								</span>#}
+                        {#                            </a>#}
+                        {#                        </li>#}
+                        {#                        <li>#}
+                        {#                            <a href="http://news@pixiesquad.com/">#}
+                        {#								<span class="info">#}
+                        {#									<i class="icon"#}
+                        {#                                       style="background-image: url('{% static 'thema_vr/thema_content/uploads/2017/06/icon3.png' %}');"></i> Press								</span>#}
+                        {#                                <span class="email">#}
+                        {#									<span class="__cf_email__" data-cfemail="573932202417273e2f3e3224262236337934383a">[email&#160;protected]</span>								</span>#}
+                        {#                            </a>#}
+                        {#                        </li>#}
+                    </ul>
+                </div>
+                <!-- /RIGHT -->
+
+            </article>
+        </div>
+
+        </div>
+    </section>
+{% endblock %}

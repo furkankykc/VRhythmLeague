@@ -1,0 +1,4899 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+input,
+button {
+    outline: none;
+}
+
+/* Heading 1 to Heading 6 */
+
+h1 {
+    margin: 33px 0;
+}
+
+h2 {
+    margin: 25px 0;
+}
+
+h3 {
+    margin: 22px 0;
+}
+
+h4 {
+    margin: 25px 0;
+}
+
+h5 {
+    margin: 30px 0;
+}
+
+h6 {
+    margin: 36px 0;
+}
+
+body {
+    background-color: #0b0b11;
+    font-size: 16px;
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1200px !important;
+    }
+}
+
+/* MODAL */
+
+.search-modal {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.search-modal .search-box {
+    margin-top: 50%;
+    background-color: transparent !important;
+    box-shadow: none;
+    border: 0;
+}
+
+.search-modal .search-box .modal-body {
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.search-modal .search-box a.close {
+    color: #fff;
+    opacity: 1;
+}
+
+.search-modal .search-box button:hover {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.search-modal .search-box button {
+    color: #fff;
+    border: 0;
+    background-color: transparent;
+}
+
+.search-modal .search-box input {
+    border: 0;
+    color: #fff;
+    outline: 0;
+    margin-left: 10px;
+    background-color: transparent;
+}
+
+.search-modal .search-box input[type="text"] {
+    width: 80%;
+}
+
+.search-modal .search-box #searchsubmit {
+    float: right;
+}
+
+.mo-modal {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.mo-modal .mo-menu-box {
+    margin-top: 30%;
+    background-color: transparent !important;
+    box-shadow: none;
+    border: 0;
+}
+
+.mo-modal .mo-menu-box .modal-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.mo-modal .mo-menu-box .modal-body ul li {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mo-modal .mo-menu-box .modal-body ul#header_menu_mobile ul.sub-menu {
+    padding: 0 0 0 50px;
+}
+
+.mo-modal .mo-menu-box .modal-body ul li a {
+    font-family: "Ubuntu", sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mo-modal .mo-menu-box a.close {
+    color: #fff;
+}
+
+a.search {
+    float: left;
+}
+
+.search-page {
+    margin-top: 0;
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    margin-bottom: 25px;
+    padding: 0;
+}
+
+.search-page h1 {
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 2;
+}
+
+.search-page h2 {
+    font-size: 1.125em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.search-page .formSearch {
+    display: flex;
+    display: -webkit-flex;
+    margin-top: 50px;
+}
+
+.search-page .formSearch input {
+    border: 1px solid #39bffd;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 7px 7px;
+    width: 50%;
+    color: #333333;
+}
+
+.search-page .formSearch button#searchsubmit {
+    background-color: #39bffd;
+    color: #fff;
+    border: 0;
+    width: 50px;
+    padding: 8px 0;
+}
+
+.nav-previous,
+.nav-next {
+    margin-top: 15px;
+    font-size: 1em;
+    font-family: "Ubuntu", sans-serif;
+    display: inline-block;
+}
+
+.nav-previous {
+    float: left;
+}
+
+.nav-previous a {
+    text-decoration: none;
+}
+
+.nav-next {
+    float: right;
+}
+
+.nav-next a {
+    text-decoration: none;
+}
+
+.blankpage {
+    padding: 0;
+    margin-top: 100px;
+    color: #fff;
+}
+
+#icon-discord {
+    position: relative;
+    top: 3px;
+    left: -3px;
+}
+
+#icon-discord path {
+    fill: #5e606e;
+}
+
+section.firstWithBg {
+    background: #181822;
+    background: -moz-linear-gradient(top, #181822 0%, transparent 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #181822), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(top, #181822 0%, transparent 100%);
+    background: -o-linear-gradient(top, #181822 0%, transparent 100%);
+    background: -ms-linear-gradient(top, #181822 0%, transparent 100%);
+    background: linear-gradient(to bottom, #181822 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#181822', endColorstr='#000000', GradientType=0);
+    padding-top: 120px;
+    margin-top: 0 !important;
+}
+
+.btn {
+    width: 160px;
+    height: 48px;
+    background-color: #39bffd;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    margin: 0;
+    border: 0;
+    line-height: 1;
+    text-align: center;
+}
+
+.btn.btn-blue {
+    overflow: hidden;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    background-color: #39bffd;
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    line-height: 48px;
+    padding: 0;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.btn.btn-blue:after {
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    content: '';
+    -webkit-transition: -webkit-transform 800ms;
+    transition: transform 800ms;
+    -webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0);
+    transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 135deg) translate3d(0, 100%, 0);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    visibility: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn.btn-blue:hover:after {
+    -webkit-transform: scale3d(3, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -130%, 0);
+    transform: scale3d(3, 1.4, 1) rotate3d(0, 0, 1, 135deg) translate3d(0, -130%, 0);
+    opacity: 1;
+    filter: alpha(opacity=100);
+    visibility: initial;
+}
+
+.btn.btn-transparent {
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    background-color: transparent;
+    border: 2px solid #39bffd;
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    padding: 0;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    width: 127px;
+    height: 36px;
+    line-height: 32px;
+    color: #39bffd;
+}
+
+.btn.btn-transparent:hover {
+    color: #fff;
+    opacity: .8;
+}
+
+header {
+    position: relative;
+}
+
+header:after {
+    background: #181822;
+    background: -moz-linear-gradient(top, #181822 0%, transparent 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #181822), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(top, #181822 0%, transparent 100%);
+    background: -o-linear-gradient(top, #181822 0%, transparent 100%);
+    background: -ms-linear-gradient(top, #181822 0%, transparent 100%);
+    background: linear-gradient(to bottom, #181822 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#181822', endColorstr='#000000', GradientType=0);
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: -100px;
+}
+
+header div.topbar {
+    height: 50px;
+    background-color: #000;
+    text-align: right;
+    line-height: 50px;
+}
+
+header div.topbar a {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    color: #5e606e;
+    outline: none;
+    text-decoration: none;
+    font-size: 0.875em;
+}
+
+header div.topbar a:not(:last-child):not(.last) {
+    margin-right: 25px;
+}
+
+header div.topbar a:hover {
+    color: #39bffd;
+}
+
+header > nav {
+    position: relative;
+    height: 110px;
+}
+
+header > nav:after {
+    height: 212px;
+    width: 100%;
+    position: absolute;
+    content: ' ';
+    display: block;
+    background-image: url("../img/header-bg.png");
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+header > nav > .container {
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+header .mobile-nav {
+    display: none;
+    padding: 15px 18px;
+    line-height: 1;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    font-size: 0.875em;
+    float: right;
+    margin: 32px 0;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+
+header > nav > .container > div.logo {
+    position: relative;
+    height: 110px;
+    width: 200px;
+    float: left;
+}
+
+header > nav > .container > div.logo.bg:after {
+    display: block;
+    width: 642px;
+    height: 171px;
+    position: absolute;
+    /*background-image: url("../img/logo-bg.png");*/
+    background-image: url("static/league/img/vrthmlogo.png");
+    background-repeat: no-repeat;
+    content: ' ';
+    top: -4px;
+    left: -130px;
+}
+
+header > nav > .container > div.logo.bg > a.logo-image {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 105px;
+    height: 118px;
+    margin: 0 auto;
+    top: 15px;
+    display: block;
+}
+
+header > nav > .container > div.logo:not(.bg) > a.logo-image {
+    width: 200px;
+    height: 110px;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+header > nav > .container > ul {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    position: relative;
+    height: 120px;
+}
+
+header > nav > .container > ul > li {
+    list-style: none;
+    display: inline-block;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    padding: 0 20px;
+    margin-top: 1px;
+    position: relative;
+}
+
+header > nav > .container > ul > li:hover span.title {
+    color: #39bffd;
+}
+
+header > nav > .container > ul > li:hover ul.sub-menu {
+    display: block;
+}
+
+header > nav > .container > ul > li > ul.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-border-bottom-right-radius: 12px;
+    -webkit-border-bottom-left-radius: 12px;
+    -moz-border-radius-bottomright: 12px;
+    -moz-border-radius-bottomleft: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.015);
+    top: 61px;
+    left: 20px;
+    padding: 20px;
+    min-width: 210px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+header > nav > .container > ul > li > ul.sub-menu ul {
+    padding: 10px 0 0 15px;
+}
+
+header > nav > .container > ul > li > ul.sub-menu:before {
+    content: '';
+    display: block;
+    height: 60px;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+}
+
+header > nav > .container > ul > li > ul.sub-menu li {
+    list-style: none;
+}
+
+header > nav > .container > ul > li > ul.sub-menu li:hover > a span.title {
+    color: #fff;
+}
+
+header > nav > .container > ul > li > ul.sub-menu li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+header > nav > .container > ul > li > ul.sub-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.875em;
+}
+
+header > nav > .container > ul > li > ul.sub-menu li a span.title {
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    color: #afafbc;
+}
+
+header > nav > .container > ul > li > a {
+    text-decoration: none;
+}
+
+header > nav > .container > ul > li > a > span {
+    display: block;
+    line-height: 1;
+}
+
+header > nav > .container > ul > li > a > span.title {
+    font-size: 1.125em;
+    font-family: "Baloo Bhai", cursive;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    text-shadow: 5px 0px 10px rgba(57, 191, 253, 0.35);
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+header > nav > .container > ul > li > a > span.subtitle {
+    color: #5e606e;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.75em;
+}
+
+section#hero {
+    min-height: 585px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-size: cover;
+    /*margin: 0 auto;*/
+}
+
+section#hero article.content {
+    margin-top: 198px;
+    line-height: 1;
+}
+
+section#hero article.content h4 {
+    color: #39bffd;
+    font-size: 1.375em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    margin: 0 0 11px 0;
+}
+
+section#hero article.content h3 {
+    color: #fff;
+    font-size: 2.25em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    margin: 0 0 22px 0;
+}
+
+section#hero article.content h5 {
+    color: #b7b9bd;
+    font-size: 1.125em;
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0 0 46px 0;
+}
+
+section#sponsors {
+    background-color: #020203;
+    height: 110px;
+    width: 100%;
+    border-bottom: 1px solid #2b2b39;
+    padding: 38px 0;
+}
+
+section#sponsors a:hover {
+    opacity: 0.8;
+}
+
+section#sponsors .container {
+    position: relative;
+}
+
+section#sponsors span.leftArrow {
+    position: absolute;
+    left: -20px;
+    top: 4px;
+    cursor: pointer;
+}
+
+section#sponsors span.rightArrow {
+    position: absolute;
+    right: -10px;
+    top: 4px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    cursor: pointer;
+}
+
+section#sponsors span.rightArrow svg:hover path,
+section#sponsors span.leftArrow svg:hover path {
+    fill: #39bffd;
+    opacity: 1;
+}
+
+section#sponsors .owl-carousel a img {
+    max-height: 70px;
+    max-width: 150px;
+    width: auto;
+}
+
+.section-header {
+    width: 100%;
+}
+
+.section-header article.topbar {
+    height: 72px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #26262e;
+    background: #14141b;
+    background: -moz-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #14141b), color-stop(26%, #1a1a22), color-stop(100%, #15151d));
+    background: -webkit-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -o-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -ms-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: linear-gradient(to right, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14141b', endColorstr='#15151d', GradientType=1);
+    padding: 0 25px;
+}
+
+.section-header article.topbar h3 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 1.125em;
+    line-height: 72px;
+    margin: 0;
+    padding: 0;
+}
+
+.section-header article.topbar h3 svg {
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+
+.section-header article.bottombar {
+    height: 50px;
+    background-color: #000;
+    padding: 0 25px;
+}
+
+.section-header article.bottombar ul li {
+    display: inline-block;
+    line-height: 50px;
+}
+
+.section-header article.bottombar ul li.active a,
+.section-header article.bottombar ul li:hover a {
+    color: #39bffd;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #39bffd;
+}
+
+.section-header article.bottombar ul li:not(:last-child) {
+    margin-right: 27px;
+}
+
+.section-header article.bottombar ul li > a {
+    font-family: "Ubuntu", sans-serif;
+    color: #5e606e;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+section#news {
+    width: 100%;
+}
+
+section#news.nobg .section-header {
+    margin-bottom: 10px;
+}
+
+section#news.home {
+    margin-top: 25px;
+}
+
+section#news.home .section-header {
+    margin-bottom: 10px;
+}
+
+section#news .container {
+    padding: 0;
+}
+
+section#news .content .news-box {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 226px;
+    float: left;
+    position: relative;
+    background-color: #111;
+    background-size: cover;
+}
+
+section#news .content .news-box:before {
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+section#news .content .news-box:hover:before {
+    display: block;
+}
+
+section#news .content .news-box.large {
+    width: 600px;
+    height: 360px;
+}
+
+section#news .content .news-box.transparent {
+    padding: 28px 24px 30px;
+}
+
+section#news .content .news-box a.category {
+    padding: 8px 10px;
+    background-color: #39bffd;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.625em;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    margin: 27px 24px;
+    display: inline-block;
+    line-height: 1;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#news .content .news-box a.category:hover {
+    opacity: .8;
+}
+
+section#news .content .news-box > .details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 24px;
+    background: rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.05)), color-stop(100%, black));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0);
+}
+
+section#news .content .news-box > .details > a:not(.category) {
+    color: #fff;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.125em;
+    display: block;
+    line-height: 25px;
+    max-width: 275px;
+    text-decoration: none;
+}
+
+section#news .content .news-box > .details > a.category {
+    margin: 0 0 16px;
+}
+
+section#news .content .news-box > .details > span {
+    color: #39bffd;
+    display: block;
+    line-height: 1;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    padding: 18px 0 36px;
+}
+
+section#news .content .news-box > .details > span span.sticky_post i {
+    margin-right: 5px;
+}
+
+section#news .content .news-box.transparent > .details {
+    position: relative;
+    background: transparent;
+    padding: 0;
+}
+
+section#news .content .news-box.transparent > .details > a:not(.category) {
+    color: #000;
+}
+
+section#news .content .news-box.transparent > .details > p {
+    color: #9292a2;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.875em;
+    margin: 0;
+}
+
+section#news .content .news-box.transparent > .details > span {
+    padding-bottom: 22px;
+}
+
+section#teams {
+    margin: 25px 0 0 0;
+}
+
+section#teams .section-header {
+    margin-bottom: 10px;
+}
+
+section#teams .container {
+    padding: 0;
+}
+
+section#teams .boxes {
+    width: 100%;
+}
+
+section#teams .boxes .box {
+    float: left;
+    width: 596px;
+    height: 180px;
+    margin-bottom: 8px;
+    background-size: cover;
+    background-color: #39bffd;
+    position: relative;
+}
+
+section#teams .boxes .box:nth-child(2n + 1) {
+    margin-right: 8px;
+}
+
+section#teams .boxes .box .overlay {
+    background-color: #39bffd;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: "Ubuntu", sans-serif;
+    cursor: pointer;
+}
+
+section#teams .boxes .box .overlay h4 {
+    margin: 0 0 8px;
+    color: #fff;
+    line-height: 1;
+    font-size: 1.125em;
+}
+
+section#teams .boxes .box .overlay h5 {
+    margin: 0;
+    line-height: 1;
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+section#teams .boxes .box .overlay span {
+    position: relative;
+    top: 32px;
+}
+
+section#teams .boxes .box:hover .overlay {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+section#matches {
+    margin: 25px 0 0 0;
+}
+
+section#matches.match-page {
+    margin-top: 100px;
+}
+
+section#matches.match-page .navigation {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    padding: 36px 0;
+}
+
+section#matches.match-page .navigation .left {
+    margin-right: 12px;
+}
+
+section#matches.match-page .navigation .left:hover svg path {
+    fill: #39bffd;
+}
+
+section#matches.match-page .navigation .right:hover svg path {
+    fill: #39bffd;
+}
+
+section#matches.match-page li.matchBox {
+    position: relative;
+}
+
+section#matches.match-page li.matchBox:after {
+    background-color: #39bffd;
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    content: ' ';
+    left: 0;
+    top: 0;
+    opacity: 0;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#matches.match-page li.matchBox:hover:after {
+    opacity: 1;
+}
+
+section#matches .container {
+    padding: 0;
+}
+
+section#matches div.container > div.content li.matchBox {
+    background: rgba(34, 34, 46, 0.08);
+    background: -moz-linear-gradient(left, rgba(34, 34, 46, 0.08) 0%, rgba(57, 191, 253, 0.08) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(34, 34, 46, 0.08)), color-stop(100%, rgba(57, 191, 253, 0.08)));
+    background: -webkit-linear-gradient(left, rgba(34, 34, 46, 0.08) 0%, rgba(57, 191, 253, 0.08) 100%);
+    background: -o-linear-gradient(left, rgba(34, 34, 46, 0.08) 0%, rgba(57, 191, 253, 0.08) 100%);
+    background: -ms-linear-gradient(left, rgba(34, 34, 46, 0.08) 0%, rgba(57, 191, 253, 0.08) 100%);
+    background: linear-gradient(to right, rgba(34, 34, 46, 0.08) 0%, rgba(57, 191, 253, 0.08) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#22222e', endColorstr='#39bffd', GradientType=1);
+    height: 143px;
+    width: 100%;
+    padding: 25px 45px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-wrap: no-wrap;
+    -webkit-flex-wrap: no-wrap;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+section#matches div.container > div.content li.matchBox:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+section#matches div.container > div.content ul#UpcomingMatches {
+    display: none;
+}
+
+section#matches div.container > div.content ul.tab {
+    display: none;
+}
+
+section#matches div.container > div.content ul.tab.active {
+    display: block;
+}
+
+section#matches div.container > div.content ul#LatestResults {
+    display: none;
+}
+
+section#matches div.container > div.content ul#UpcomingMatches.active {
+    display: block;
+}
+
+section#matches div.container > div.content ul#LatestResults.active {
+    display: block;
+}
+
+section#matches div.container > div.content li.matchBox > div.teams {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    padding-right: 54px;
+    position: relative;
+}
+
+section#matches div.container > div.content li.matchBox > div.teams:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 9px;
+    background-color: #26262e;
+    width: 1px;
+    height: 82px;
+}
+
+section#matches div.container > div.content li.matchBox > div.teams > a {
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-align: center;
+    color: #b7b9bd;
+    text-transform: uppercase;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#matches div.container > div.content li.matchBox > div.teams > a:hover {
+    opacity: .6;
+}
+
+section#matches div.container > div.content li.matchBox > div.teams > a > img {
+    width: auto;
+    max-height: 66px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+section#matches div.container > div.content li.matchBox > div.teams > span {
+    display: block;
+    margin: 0 40px;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #b7b9bd;
+    width: 48px;
+    height: 48px;
+    background-color: #1e1e27;
+    text-align: center;
+    line-height: 48px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #2f2f3a;
+}
+
+section#matches div.container > div.content li.matchBox > div.teams > span.score {
+    background: transparent;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    border: 0;
+    font-size: 1.375em;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.match-info {
+    padding: 0 47px;
+    line-height: 1;
+    position: relative;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.match-info:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -7px;
+    background-color: #26262e;
+    width: 1px;
+    height: 82px;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.match-info > span.league {
+    color: #39bffd;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    display: block;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.match-info > div.status {
+    margin: 12px 0;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.875em;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.match-info > div.status > span {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    padding: 5px 13px;
+    font-size: 0.75em;
+    margin-right: 6px;
+    background-color: #de442b;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.match-info > span.date {
+    color: #66696e;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    display: block;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.stream {
+    padding-left: 60px;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.stream > a {
+    text-decoration: none;
+    color: #39bffd;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    margin-bottom: 8px;
+    display: block;
+    text-transform: capitalize;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.stream > span {
+    padding: 5px 13px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.stream > span.youtube {
+    background-color: #e52d27;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.stream > span.mixer {
+    background-color: #000;
+}
+
+section#matches div.container > div.content li.matchBox > div.rightBox > div.stream > span.twitch {
+    background-color: #6442a3;
+}
+
+section#matches div.container > div.content li.matchBox > a.cta-btn {
+    display: block;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    width: 32px;
+    height: 20px;
+    background-color: #39bffd;
+    text-align: center;
+    color: #fff;
+    margin-left: auto;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#matches div.container > div.content li.matchBox > a.cta-btn:hover {
+    opacity: .8;
+}
+
+section#matches div.container > div.content li.matchBox > a.cta-btn svg {
+    position: relative;
+    top: -2px;
+}
+
+section#twitter {
+    margin: 25px 0 0;
+}
+
+section#twitter div.container {
+    padding: 0;
+}
+
+section#twitter div.tw-bg {
+    background-image: url("../img/twitter-feed-bg.jpg");
+    height: 400px;
+    padding: 72px 64px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+section#twitter div.tw-bg > article.left {
+    line-height: 1;
+    max-width: 468px;
+}
+
+section#twitter div.tw-bg > article.left > h4 {
+    font-size: 1.125em;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    color: #39bffd;
+    margin-bottom: 18px;
+    margin: 0 0 15px;
+}
+
+section#twitter div.tw-bg > article.left > h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 33px;
+    position: relative;
+}
+
+section#twitter div.tw-bg > article.left > h3:after {
+    background-color: rgba(255, 255, 255, 0.1);
+    content: ' ';
+    display: block;
+    width: 332px;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+}
+
+section#twitter div.tw-bg > article.left > p {
+    line-height: 24px;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    margin: 20px 0 55px;
+}
+
+section#twitter div.tw-bg > article.left > a.twitter {
+    height: 58px;
+    background-color: #39bffd;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 22px;
+}
+
+section#twitter div.tw-bg > article.left > a.twitter > svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+section#twitter div.tw-bg > article.left > a.twitter > span.right {
+    font-family: "Source Sans Pro", sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    vertical-align: middle;
+    font-weight: bold;
+    display: inline-block;
+    padding-left: 15px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+section#twitter div.tw-bg > article.left > a.twitter > span.right > span {
+    color: #000;
+    line-height: 24px;
+    display: block;
+}
+
+section#twitter div.tw-bg > article.right {
+    margin-left: auto;
+}
+
+section#streams {
+    margin-top: 25px;
+}
+
+section#streams div.container {
+    padding: 0;
+}
+
+section#streams div.container div.content div.list {
+    display: none;
+}
+
+section#streams div.container div.content div.list.active {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+section#streams div.container div.content div.list .small {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    margin-bottom: 180px;
+}
+
+section#streams div.container div.content div.list article.streamBox {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 225px;
+    position: relative;
+}
+
+section#streams div.container div.content div.list article.streamBox.large {
+    width: 800px;
+    height: 450px;
+}
+
+section#streams div.container div.content div.list article.streamBox .details {
+    padding: 28px 26px;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.05)), color-stop(100%, black));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, black 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0);
+    width: 100%;
+}
+
+section#streams div.container div.content div.list article.streamBox .details > span.stream {
+    padding: 5px 13px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+}
+
+section#streams div.container div.content div.list article.streamBox .details > span.stream.youtube {
+    background-color: #e52d27;
+}
+
+section#streams div.container div.content div.list article.streamBox .details > span.stream.mixer {
+    background-color: #000;
+}
+
+section#streams div.container div.content div.list article.streamBox .details > span.stream.twitch {
+    background-color: #6442a3;
+}
+
+section#streams div.container div.content div.list article.streamBox a.playBtn {
+    background-color: #17171f;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 48px;
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    top: 40%;
+}
+
+section#streams div.container div.content div.list article.streamBox .details > a {
+    display: block;
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 25px;
+    margin-top: 15px;
+    max-width: 304px;
+    text-decoration: none;
+}
+
+section#streams div.container div.content div.list article.streamBox .details > h6 {
+    margin: 8px 0 0;
+    color: #39bffd;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#streams div.container div.content div.list article.streamBox:not(.large) .details.on-hover {
+    display: none;
+}
+
+section#streams div.container div.content div.list article.streamBox:not(.large):hover .details.on-hover {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: initial;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 0;
+}
+
+section#streams div.container div.content div.list article.streamBox:not(.large):hover .details.on-hover a {
+    max-width: 304px;
+    margin: 0 auto;
+}
+
+section#streams div.container div.content div.list article.streamBox:not(.large) .details.on-hover > a.cta-btn {
+    display: block;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    width: 32px;
+    height: 20px;
+    background-color: #39bffd;
+    text-align: center;
+    color: #fff;
+    margin-left: auto;
+    margin-top: 24px;
+}
+
+section#streams div.container div.content div.list article.streamBox:not(.large) .details.on-hover > a.cta-btn svg {
+    position: relative;
+    top: -5px;
+}
+
+footer {
+    margin-top: 110px;
+    border-top: 1px solid #44445c;
+    background-image: url("../img/footer-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    min-height: 431px;
+    background-color: #000;
+    width: 100%;
+    position: relative;
+}
+
+footer:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: -121px;
+    width: 100%;
+    height: 120px;
+    background: transparent;
+    background: -moz-linear-gradient(top, transparent 0%, #181822 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, transparent), color-stop(100%, #181822));
+    background: -webkit-linear-gradient(top, transparent 0%, #181822 100%);
+    background: -o-linear-gradient(top, transparent 0%, #181822 100%);
+    background: -ms-linear-gradient(top, transparent 0%, #181822 100%);
+    background: linear-gradient(to bottom, transparent 0%, #181822 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#181822', GradientType=0);
+}
+
+footer .container {
+    padding: 0;
+}
+
+footer .container.top {
+    padding: 60px 0 15px;
+}
+
+footer .container.top {
+    display: flex;
+    display: -webkit-flex;
+    min-height: 360px;
+}
+
+footer .container.top article.box {
+    max-width: 180px;
+    position: relative;
+}
+
+footer .container.top article.box.latestPosts:not(:last-child):after {
+    top: 60px;
+}
+
+footer .container.top article.box.topmargin {
+    margin-top: 60px;
+}
+
+footer .container.top article.box h4 {
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.125em;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 42px;
+}
+
+footer .container.top article.box h4 svg {
+    position: relative;
+    top: -2px;
+    margin-right: 10px;
+}
+
+footer .container.top article.box:not(:last-child):after {
+    height: 307px;
+    width: 1px;
+    background-color: #15151f;
+    content: ' ';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+footer .container.top article.box:not(:last-child) {
+    padding-right: 68px;
+    margin-right: 68px;
+    max-width: 248px;
+}
+
+footer .container.top article.box.useful:after {
+    display: none;
+}
+
+footer .container.top article.box.useful {
+    width: 135px;
+    padding-right: 0;
+    margin-right: 132px;
+}
+
+footer .container.top article.box ul li {
+    list-style: none;
+    line-height: 1;
+}
+
+footer .container.top article.box ul li:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+footer .container.top article.box ul li > a.category {
+    color: #999b9e;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.875em;
+    display: block;
+    text-decoration: none;
+}
+
+footer .container.top article.box ul li > a:not(.email) {
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    line-height: 22px;
+    margin: 6px 0;
+}
+
+footer .container.top article.box ul li > span.date {
+    display: block;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.875em;
+    color: #39bffd;
+}
+
+footer .container.top article.box ul li > a.email {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer .container.top article.box ul li > a > span.info {
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 1;
+}
+
+footer .container.top article.box ul li > a > span.info .icon {
+    height: 11px;
+    width: 11px;
+    background-size: cover;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+footer .container.top article.box ul li > a > span.email {
+    color: #39bffd;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.8125em;
+    display: block;
+    margin-top: 8px;
+    line-height: 1;
+}
+
+footer .container.top article.box ul.useful-links li {
+    list-style: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+footer .container.top article.box ul.useful-links li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+footer .container.top article.box ul.useful-links li:hover {
+    opacity: .8;
+}
+
+footer .container.top article.box ul.useful-links li ul.sub-menu {
+    padding: 15px 20px;
+}
+
+footer .container.top article.box ul.useful-links li a {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.875em;
+    line-height: 1;
+    color: #fff;
+    font-weight: 500;
+    display: initial;
+    margin: 0;
+}
+
+footer .container.top article.box ul.useful-links li span {
+    color: #999b9e;
+    font-family: "Ubuntu", sans-serif;
+    margin-right: 5px;
+    font-size: 0.875em;
+    line-height: 1;
+}
+
+footer .container.top article.box.aboutUs {
+    max-width: 305px;
+}
+
+footer .container.top article.box.aboutUs p {
+    line-height: 26px;
+    font-size: 0.875em;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #999b9e;
+    margin: 0;
+}
+
+footer .container.top article.box.aboutUs a {
+    font-weight: bold;
+    width: 140px;
+    height: 36px;
+    background: transparent;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    border: 2px solid #39bffd;
+    color: #39bffd;
+    display: inline-block;
+    margin-top: 32px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 32px;
+    font-size: 0.75em;
+    text-decoration: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+footer .container.top article.box.aboutUs a:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+footer .bottom {
+    border-top: 1px solid #23232f;
+    margin-top: 15px;
+}
+
+footer .bottom .container {
+    display: flex;
+    display: -webkit-flex;
+    padding: 30px 0;
+}
+
+footer .bottom .container > article.left {
+    display: flex;
+    display: -webkit-flex;
+}
+
+footer .bottom .container > article.left div.social-icons {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+
+footer .bottom .container > article.left h5 {
+    margin: 0 55px 0 0;
+    color: #39bffd;
+    font-weight: 500;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.125em;
+}
+
+footer .bottom .container > article.left a {
+    color: #5e606e;
+    font-size: 0.875em;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+footer .bottom .container > article.left a:hover {
+    color: #39bffd;
+}
+
+footer .bottom .container > article.left a:not(:last-child) {
+    margin-right: 24px;
+}
+
+footer .bottom .container > article.right {
+    margin-left: auto;
+    color: #5e606e;
+    font-size: 0.875em;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+footer .bottom .container > article.right h5 {
+    margin: 0;
+}
+
+footer #icon-discord {
+    top: 0;
+}
+
+section#aboutStory {
+    margin-top: 100px;
+}
+
+section#aboutStory .bg {
+    padding: 0;
+    background-color: #1a122c;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+section#aboutStory .bg article.head {
+    padding: 70px 70px 60px;
+    position: relative;
+}
+
+section#aboutStory .bg article.head:after {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    clear: both;
+    display: block;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+section#aboutStory .bg article.head > h4,
+section#aboutStory .bg article.head > h3 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.375em;
+    margin: 0;
+    color: #fff;
+    line-height: 1;
+}
+
+section#aboutStory .bg article.head > h3 {
+    font-size: 2.25em;
+    font-weight: bold;
+}
+
+section#aboutStory .bg article.head > h4 {
+    color: #39bffd;
+    margin-bottom: 12px;
+}
+
+section#aboutStory .bg article.head > p {
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    line-height: 28px;
+    margin: 60px 0 0;
+}
+
+section#aboutStory .bg article.footer {
+    padding: 54px 70px;
+    display: flex;
+    display: -webkit-flex;
+}
+
+section#aboutStory .bg article.footer h4 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.375em;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+}
+
+section#aboutStory .bg article.footer h4 svg {
+    margin-right: 16px;
+}
+
+section#aboutStory .bg article.footer div.left {
+    width: 356px;
+}
+
+section#aboutStory .bg article.footer div.left p {
+    line-height: 27px;
+    font-size: 0.875em;
+    margin: 25px 0 0;
+    font-family: "Ubuntu", sans-serif;
+    color: #b7b9bd;
+}
+
+section#aboutStory .bg article.footer div.right {
+    margin-left: auto;
+}
+
+section#aboutStory .bg article.footer div.right ul {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section#aboutStory .bg article.footer div.right ul li {
+    padding: 16px 20px;
+    width: 182px;
+    height: 72px;
+    background-color: rgba(0, 0, 0, 0.3);
+    list-style: none;
+    line-height: 1;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    opacity: .5;
+    cursor: pointer;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#aboutStory .bg article.footer div.right ul li:not(:last-child) {
+    margin-right: 20px;
+}
+
+section#aboutStory .bg article.footer div.right ul li:hover {
+    opacity: 1;
+    border: 1px solid #39bffd;
+}
+
+section#aboutStory .bg article.footer div.right ul li a {
+    text-decoration: none;
+}
+
+section#aboutStory .bg article.footer div.right ul li .info {
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 1;
+}
+
+section#aboutStory .bg article.footer div.right ul li .info .icon {
+    height: 11px;
+    width: 11px;
+    background-size: cover;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+section#aboutStory .bg article.footer div.right ul li span.email {
+    color: #39bffd;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.8125em;
+    display: block;
+    margin-top: 6px;
+    line-height: 1;
+}
+
+section#aboutStaff .container {
+    padding: 74px 70px;
+}
+
+section#aboutStaff .container.bg {
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+section#aboutStaff .container.bg ul.header {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: fit-content;
+    margin: 0 auto 90px;
+    padding: 0 20px 20px;
+}
+
+section#aboutStaff .container.bg ul.header li {
+    list-style: none;
+}
+
+section#aboutStaff .container.bg ul.header li:not(:last-child) {
+    margin-right: 45px;
+}
+
+section#aboutStaff .container.bg ul.header li.active:after,
+section#aboutStaff .container.bg ul.header li:hover:after {
+    opacity: 1;
+}
+
+section#aboutStaff .container.bg ul.header li:after {
+    background-color: #39bffd;
+    height: 2px;
+    width: auto;
+    content: ' ';
+    display: block;
+    position: relative;
+    top: 21.5px;
+    opacity: 0;
+}
+
+section#aboutStaff .container.bg ul.header li a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.125em;
+    font-weight: bold;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    text-shadow: 1px 0px 1px #39bffd;
+}
+
+section#aboutStaff .container.bg ul.header li.active a,
+section#aboutStaff .container.bg ul.header li a:hover {
+    color: #39bffd;
+}
+
+section#aboutStaff .container.bg ul.tab {
+    line-height: 1;
+    text-align: center;
+    display: none;
+}
+
+section#aboutStaff .container.bg ul.tab.active {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+section#aboutStaff .container.bg ul.tab li {
+    list-style: none;
+    width: 157px;
+    position: relative;
+    margin-bottom: 70px;
+}
+
+section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(4n)) {
+    margin-right: 70px;
+}
+
+section#aboutStaff .container.bg ul.tab li:not(:first-child):not(:nth-child(4n + 5)) {
+    margin-left: 70px;
+}
+
+section#aboutStaff .container.bg ul.tab li:not(:last-child):not(:nth-child(4n)):after {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 100px;
+    width: 1px;
+    content: ' ';
+    display: block;
+    position: absolute;
+    right: -70px;
+    top: 70px;
+}
+
+section#aboutStaff .container.bg ul.tab img {
+    display: block;
+    margin: 0 auto 25px;
+    max-width: 157px;
+    height: auto;
+}
+
+section#aboutStaff .container.bg ul.tab span.role {
+    color: #39bffd;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    margin-bottom: 5px;
+    display: block;
+}
+
+section#aboutStaff .container.bg ul.tab span.name {
+    color: #fff;
+    font-size: 1.125em;
+    font-family: "Ubuntu", sans-serif;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+section#aboutStaff .container.bg ul.tab a {
+    color: #b7b9bd;
+    text-decoration: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#aboutStaff .container.bg ul.tab a:hover {
+    color: #fff;
+}
+
+section#aboutStaff .container.bg ul.tab a:not(:last-child) {
+    margin-right: 10px;
+}
+
+section#aboutInfo {
+    background-color: #39bffd;
+    padding: 70px 80px;
+    display: flex;
+    display: -webkit-flex;
+}
+
+section#aboutInfo .left h3 {
+    line-height: 1;
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: 1.375em;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#aboutInfo .left h4 {
+    line-height: 1;
+    margin: 0;
+    color: #000;
+    font-size: 1.125em;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#aboutInfo .right {
+    margin-left: auto;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+section#aboutInfo .right .btn.btn-transparent {
+    background: transparent;
+    border: 2px solid #fff !important;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: #fff !important;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    width: 196px;
+    height: 48px;
+    line-height: 44px;
+    padding: 0;
+}
+
+section#match-details {
+    margin-top: 100px;
+}
+
+section#match-details .container.bg {
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 520px;
+    padding: 65px 55px 55px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+section#match-details .container.bg article.head {
+    display: flex;
+    display: -webkit-flex;
+    text-align: center;
+    height: 75px;
+    align-items: center;
+    -webkit-align-items: center;
+    margin-bottom: 75px;
+}
+
+section#match-details .container.bg article.head .line {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 1px;
+    width: 110px;
+}
+
+section#match-details .container.bg article.head .content {
+    padding: 0 40px;
+}
+
+section#match-details .container.bg article.head .content span.info {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    padding: 5px 13px;
+    font-size: 0.75em;
+    margin-right: 6px;
+    background-color: #de442b;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#match-details .container.bg article.head .content h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.375em;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    line-height: 1;
+    margin: 12px 0 4px;
+}
+
+section#match-details .container.bg article.head .content span.subtitle {
+    color: #afafbc;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.875em;
+}
+
+section#match-details .container.bg article.middle {
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+}
+
+section#match-details .container.bg article.middle .details {
+    padding: 0 40px;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+section#match-details .container.bg article.middle .details h5 {
+    margin: 0;
+    line-height: 1;
+    color: #39bffd;
+    font-weight: bold;
+    font-size: 1.125em;
+}
+
+section#match-details .container.bg article.middle .details span {
+    display: block;
+}
+
+section#match-details .container.bg article.middle .details span.date {
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    font-size: 14px;
+    margin: 12px 0 6px;
+}
+
+section#match-details .container.bg article.middle .details span.type {
+    color: #afafbc;
+    font-size: 14px;
+    line-height: 1;
+}
+
+section#match-details .container.bg article.middle .details a.stream {
+    padding: 5px 13px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin: 12px auto 0;
+}
+
+section#match-details .container.bg article.middle .details a.stream.youtube {
+    background-color: #e52d27;
+}
+
+section#match-details .container.bg article.middle .details a.stream.mixer {
+    background-color: #000;
+}
+
+section#match-details .container.bg article.middle .details a.stream.twitch {
+    background-color: #6442a3;
+}
+
+section#match-details .container.bg article.middle .team {
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+section#match-details .container.bg article.middle .team.home > .name {
+    margin-right: auto;
+}
+
+section#match-details .container.bg article.middle .team.away > .name {
+    margin-left: auto;
+    text-align: right;
+}
+
+section#match-details .container.bg article.middle .team > .name h5 {
+    margin: 0 0 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.375em;
+    font-family: "Ubuntu", sans-serif;
+    line-height: 1;
+}
+
+section#match-details .container.bg article.middle .team > .name h6 {
+    margin: 0;
+    color: #afafbc;
+    font-size: 0.875em;
+    line-height: 1;
+    font-family: "Ubuntu", sans-serif;
+    text-transform: capitalize;
+}
+
+section#match-details .container.bg article.middle .team > figure > img {
+    max-width: 120px;
+    height: auto;
+}
+
+section#match-details .container.bg article.footer {
+    width: 100%;
+    padding-top: 56px;
+    position: relative;
+}
+
+section#match-details .container.bg article.footer .middle {
+    text-align: center;
+    width: 166px;
+    margin: 0 auto;
+}
+
+section#match-details .container.bg article.footer .middle span {
+    display: block;
+    font-family: "Ubuntu", sans-serif;
+    line-height: 1;
+}
+
+section#match-details .container.bg article.footer .middle span.final {
+    color: #39bffd;
+    font-size: 0.875em;
+    text-transform: capitalize;
+}
+
+section#match-details .container.bg article.footer .middle span.score {
+    color: #fff;
+    font-weight: bold;
+    font-size: 2.25em;
+    margin: 15px 0 32px;
+}
+
+section#match-details .container.bg article.footer .middle a {
+    text-decoration: none;
+    display: inline-block;
+    width: 72px;
+    height: 20px;
+    line-height: 20px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #ccc;
+    color: #fff;
+    font-size: 0.75em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+section#match-details .container.bg article.footer .middle a.facebook {
+    background-color: #3b5998;
+    margin-right: 16px;
+}
+
+section#match-details .container.bg article.footer .middle a.twitter {
+    background-color: #1da1f2;
+}
+
+section#match-details .container.bg article.footer .middle a i {
+    margin-right: 5px;
+}
+
+section#match-details .container.bg article.footer a.btn {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+}
+
+section#matchRoster {
+    margin-top: 24px;
+}
+
+section#matchRoster .container {
+    padding: 0;
+}
+
+section#matchRoster.noNav .section-header {
+    margin-bottom: 10px;
+}
+
+section#matchRoster .content .roster {
+    display: none;
+}
+
+section#matchRoster .content .roster > li {
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    list-style: none;
+    width: 228px;
+    height: 268px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+section#matchRoster .content .roster > li .details {
+    font-family: "Ubuntu", sans-serif;
+    position: absolute;
+    height: 66px;
+    bottom: 0;
+    background: #171721;
+    background: -moz-linear-gradient(left, #171721 0%, transparent 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #171721), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(left, #171721 0%, transparent 100%);
+    background: -o-linear-gradient(left, #171721 0%, transparent 100%);
+    background: -ms-linear-gradient(left, #171721 0%, transparent 100%);
+    background: linear-gradient(to right, #171721 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#171721', endColorstr='#000000', GradientType=1);
+    width: 100%;
+    padding: 15px;
+}
+
+section#matchRoster .content .roster > li .details h4 {
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1;
+}
+
+section#matchRoster .content .roster > li .details span {
+    font-size: 0.875em;
+    color: #39bffd;
+    line-height: 1;
+    margin-top: 6px;
+    display: block;
+}
+
+section#matchRoster .content .roster > li:not(:last-child):not(:nth-child(5n)) {
+    margin-right: 15px;
+}
+
+section#matchRoster .content .roster > li .overlay {
+    display: none;
+    background-color: #39bffd;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+}
+
+section#matchRoster .content .roster > li .overlay ul li {
+    list-style: none;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#matchRoster .content .roster > li .overlay ul li.firstname {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.375em;
+    line-height: 1;
+}
+
+section#matchRoster .content .roster > li .overlay ul li.lastname {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.375em;
+    line-height: 1;
+    margin: 12px 0;
+}
+
+section#matchRoster .content .roster > li .overlay ul li.nickname {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.375em;
+    line-height: 1;
+    margin: 0 0 15px;
+}
+
+section#matchRoster .content .roster > li .overlay ul li.role {
+    color: #000;
+    font-size: 0.875em;
+    line-height: 1;
+    margin: 0 0 24px;
+}
+
+section#matchRoster .content .roster > li .overlay ul li.role:after {
+    height: 1px;
+    content: ' ';
+    display: block;
+    margin-top: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 72px;
+}
+
+section#matchRoster .content .roster > li .overlay a {
+    color: #fff;
+    font-size: 0.875em;
+    text-decoration: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#matchRoster .content .roster > li .overlay a:hover {
+    opacity: .8;
+}
+
+section#matchRoster .content .roster > li .overlay a:not(:last-child) {
+    margin-right: 14px;
+}
+
+section#matchRoster .content .roster > li .overlay a.player-cta {
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    display: block;
+    position: absolute;
+    bottom: 24px;
+}
+
+section#matchRoster .content .roster > li .overlay a.player-cta svg {
+    position: relative;
+    top: -1px;
+    left: 7px;
+}
+
+section#matchRoster .content .roster > li:hover .overlay {
+    display: block;
+}
+
+section#matchRoster .content .roster.active {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+section#mapsPlayed .container {
+    padding: 0;
+}
+
+section#mapsPlayed .container .section-header {
+    margin-bottom: 12px;
+}
+
+section#mapsPlayed ul {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+section#mapsPlayed ul li {
+    margin-bottom: 15px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    list-style: none;
+    width: 390px;
+    height: 200px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#mapsPlayed ul li .details {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    font-family: "Ubuntu", sans-serif;
+    position: absolute;
+    height: 66px;
+    bottom: 0;
+    background: #171721;
+    background: -moz-linear-gradient(left, #171721 0%, transparent 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #171721), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(left, #171721 0%, transparent 100%);
+    background: -o-linear-gradient(left, #171721 0%, transparent 100%);
+    background: -ms-linear-gradient(left, #171721 0%, transparent 100%);
+    background: linear-gradient(to right, #171721 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#171721', endColorstr='#000000', GradientType=1);
+    width: 100%;
+    padding: 15px;
+}
+
+section#mapsPlayed ul li .details h5 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1;
+    margin: 0;
+}
+
+section#mapsPlayed ul li .details span.won {
+    color: #39bffd;
+    font-size: 0.875em;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+section#mapsPlayed ul li .details .right {
+    background-color: #191921;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #2f2f3a;
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+    text-align: center;
+    line-height: 39px;
+}
+
+section#mapsPlayed ul li .details .right img {
+    max-height: 22px;
+}
+
+section#mapsPlayed ul li:not(:last-child):not(:nth-child(3n)) {
+    margin-right: 15px;
+}
+
+section#teams.teams-page {
+    margin-top: 100px;
+}
+
+section#team-profile {
+    margin-top: 80px;
+}
+
+section#team-profile .container {
+    padding: 0;
+}
+
+section#team-profile .team-info {
+    display: flex;
+    display: -webkit-flex;
+    height: 124px;
+}
+
+section#team-profile .team-info .game {
+    background-color: #0f0f15;
+    width: 292px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    background-size: 160px;
+}
+
+section#team-profile .team-info .profile-details {
+    padding-left: 32px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    background: #1b1b22;
+    background: -moz-linear-gradient(left, #1b1b22 0%, transparent 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #1b1b22), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(left, #1b1b22 0%, transparent 100%);
+    background: -o-linear-gradient(left, #1b1b22 0%, transparent 100%);
+    background: -ms-linear-gradient(left, #1b1b22 0%, transparent 100%);
+    background: linear-gradient(to right, #1b1b22 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1b1b22', endColorstr='#000000', GradientType=1);
+    border-top: 1px solid #303039;
+    border-left: 1px solid #303039;
+    border-right: 1px solid #303039;
+    width: 100%;
+}
+
+section#team-profile .team-info .profile-details figure {
+    margin: 0 30px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+section#team-profile .team-info .profile-details figure img {
+    max-height: 49px;
+    width: auto;
+}
+
+section#team-profile .team-info .profile-details div.name {
+    align-items: center;
+    -webkit-align-items: center;
+    height: 65px;
+    font-family: "Ubuntu", sans-serif;
+    padding: 8px 8px 8px 28px;
+    border-left: 1px solid #46474c;
+}
+
+section#team-profile .team-info .profile-details div.name h4 {
+    margin: 0 0 2px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.375em;
+    line-height: 1;
+}
+
+section#team-profile .team-info .profile-details div.name span {
+    color: #39bffd;
+    font-size: 0.875em;
+}
+
+section#team-profile article.stats {
+    background-color: #1e1e26;
+    border: 1px solid #303039;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    height: 120px;
+    padding: 0 27px;
+}
+
+section#team-profile article.stats ul {
+    display: flex;
+    display: -webkit-flex;
+}
+
+section#team-profile article.stats ul li {
+    list-style: none;
+}
+
+section#team-profile article.stats ul.left {
+    height: 42px;
+    margin-right: auto;
+}
+
+section#team-profile article.stats ul.left li svg {
+    margin-right: 5px;
+}
+
+section#team-profile article.stats ul.left li svg path {
+    fill: #39bffd;
+}
+
+section#team-profile article.stats ul.left li span {
+    line-height: 1;
+}
+
+section#team-profile article.stats ul.left li span.title {
+    font-size: 0.875em;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 6px;
+    color: #39bffd;
+}
+
+section#team-profile article.stats ul.left li h5 {
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    font-size: 1.375em;
+    font-weight: bold;
+}
+
+section#team-profile article.stats ul.left li.first {
+    position: relative;
+    padding-right: 54px;
+    margin-right: 22px;
+}
+
+section#team-profile article.stats ul.left li.first:after {
+    height: 1px;
+    width: 32px;
+    background-color: #303039;
+    content: ' ';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 23px;
+}
+
+section#team-profile article.stats ul.left li span.mTitle {
+    display: block;
+    font-size: 0.875em;
+    color: #afafbc;
+    margin-bottom: 8px;
+}
+
+section#team-profile article.stats ul.left li span.number {
+    display: block;
+    color: #fff;
+    font-size: 1.375em;
+    font-weight: bold;
+}
+
+section#team-profile article.stats ul.left li.numeric:not(:last-child) {
+    margin-right: 22px;
+    padding-right: 22px;
+    border-right: 1px solid #303039;
+}
+
+section#team-profile article.stats ul.right {
+    height: 98px;
+    margin-left: auto;
+}
+
+section#team-profile article.stats ul.right li {
+    padding: 30px 0;
+}
+
+section#team-profile article.stats ul.right li span {
+    line-height: 1;
+    display: block;
+}
+
+section#team-profile article.stats ul.right li span.title {
+    color: #afafbc;
+    font-size: 0.875em;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+section#team-profile article.stats ul.right li span.subtitle {
+    color: #fff;
+    font-size: 1.375em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+section#team-profile article.stats ul.right li span.subtitle i.flag-icon {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+section#team-profile article.stats ul.right li:not(:last-child) {
+    margin-right: 30px;
+    padding-right: 30px;
+    border-right: 1px solid #303039;
+}
+
+section#team-profile article.about {
+    background-color: #16161d;
+    padding: 48px 40px;
+    border-bottom: 1px solid #303039;
+    color: #afafbc;
+    line-height: 25px;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#team-profile article.about p:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+section#team-profile ul.achievements {
+    width: 100%;
+    background-color: #16161d;
+    height: 100px;
+    display: flex;
+    display: -webkit-flex;
+}
+
+section#team-profile ul.achievements li {
+    list-style: none;
+    width: 240px;
+    line-height: 1;
+    text-align: center;
+    padding: 30px 0;
+}
+
+section#team-profile ul.achievements li:nth-child(2n + 1) {
+    background-color: #131319;
+}
+
+section#team-profile ul.achievements li span {
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+}
+
+section#team-profile ul.achievements li span.title {
+    text-transform: uppercase;
+    color: #39bffd;
+    font-size: 0.75em;
+    display: block;
+}
+
+section#team-profile ul.achievements li p {
+    margin: 8px 0 0;
+}
+
+section#team-profile ul.achievements li p span {
+    display: inline-block;
+}
+
+section#team-profile ul.achievements li p .date {
+    font-weight: bold;
+    font-size: 0.875em;
+}
+
+section#team-profile ul.achievements li p .place {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    padding: 5px 13px;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+section#team-profile ul.achievements li p .place.first {
+    background-color: #de442b;
+}
+
+section#team-profile ul.achievements li p .place.second {
+    background-color: #595963;
+}
+
+section#team-profile ul.achievements li p .place.third {
+    background-color: #30303b;
+}
+
+section#news.news-page {
+    background: none;
+    padding: 0;
+    width: 800px;
+}
+
+section#news.news-page .content .news-box.large {
+    width: 800px;
+    height: 453px;
+}
+
+section#single-page {
+    /*width: 800px;*/
+    background-color: #111;
+    /*min-height: 80px;*/
+}
+
+section#single-page figure.thumbnail {
+    padding: 0;
+    text-align: center;
+    border: 0;
+    background-color: #111;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    margin: 0;
+}
+
+section#single-page figure.thumbnail img {
+    max-width: 100%;
+    height: auto;
+}
+
+section#single-page article.header {
+    /*margin: 27px;*/
+    padding: 0 0 27px;
+    border-bottom: 1px solid #e7e7f3;
+}
+
+section#single-page article.header div.top-line {
+    display: flex;
+    display: -webkit-flex;
+    /*margin-bottom: 16px;*/
+}
+
+section#single-page article.header div.top-line a.category {
+    /*padding: 8px 10px;*/
+    background-color: #39bffd;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.625em;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    display: block;
+    line-height: 1;
+}
+
+section#single-page article.header div.top-line a.category:not(:last-child) {
+    margin-right: 5px;
+}
+
+section#single-page article.header div.top-line .social {
+    margin-left: auto;
+}
+
+section#single-page article.header div.top-line .social a {
+    text-decoration: none;
+    display: inline-block;
+    width: 74px;
+    height: 20px;
+    line-height: 20px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #ccc;
+    color: #fff;
+    font-size: 0.75em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+section#single-page article.header div.top-line .social a.facebook {
+    background-color: #3b5998;
+    margin-right: 5px;
+}
+
+section#single-page article.header div.top-line .social a.twitter {
+    background-color: #1da1f2;
+}
+
+section#single-page article.header div.top-line .social a i {
+    margin-right: 3px;
+}
+
+section#single-page article.header h3 {
+    /*color: #000;*/
+    font-weight: bold;
+    font-size: 1.125em;
+    font-family: "Ubuntu", sans-serif;
+    line-height: 1;
+    /*margin: 0 0 10px;*/
+}
+
+section#single-page article.header span.date {
+    color: #39bffd;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    line-height: 1;
+}
+
+section#single-page article.content {
+    padding: 0 27px 27px 27px;
+    color: #9292a2;
+    font-size: 0.875em;
+    font-family: "Ubuntu", sans-serif;
+    line-height: 25px;
+}
+
+section#single-page article.content .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#single-page article.content .alignleft {
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+section#single-page article.content .alignright {
+    float: right;
+    margin: 0 0 5px 5px;
+}
+
+section#single-page article.content .alignright {
+    float: right;
+    margin: 0 0 5px 5px;
+}
+
+section#single-page article.content h2:first-child {
+    margin-top: 0;
+    color: #39bffd;
+}
+
+section#single-page article.content table {
+    border-bottom: 1px solid #ededed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 2;
+    margin: 0 0 20px;
+    width: 100%;
+}
+
+section#single-page article.content table tr td {
+    border-top: 1px solid #ededed;
+    padding: 6px 10px 6px 0;
+}
+
+section#single-page article.content dl {
+    margin: 0 20px;
+}
+
+section#single-page article.content dl dd {
+    margin: 0 0 20px;
+}
+
+section#single-page article.content address {
+    font-style: italic;
+    margin: 0 0 24px;
+    font-weight: normal;
+}
+
+section#single-page article.content q {
+    font-style: italic;
+}
+
+section#single-page article.content ol,
+section#single-page article.content ul {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+section#single-page article.content pre {
+    border: 0;
+    background-color: #f0f0f0;
+    color: #888;
+}
+
+section#single-page article.content code {
+    color: #39bffd;
+    background-color: #333;
+}
+
+section#single-page article.content a {
+    text-decoration: none;
+    color: #39bffd;
+}
+
+section#single-page article.content blockquote {
+    border-color: #39bffd;
+}
+
+section#single-page article.content img {
+    max-width: 100%;
+    height: initial;
+    margin-bottom: 15px;
+}
+
+section#single-page article.content p {
+    margin: 0 0 15px;
+}
+
+section#single-page article.content p input:not([type="submit"]) {
+    background-color: #e7e7f3;
+    font-size: 0.875em;
+    border: 0;
+    margin: 0;
+    padding: 8px;
+}
+
+section#single-page article.content p input[type="submit"] {
+    background-color: #39bffd;
+    font-size: 0.875em;
+    border: 0;
+    margin: 0;
+    padding: 8px;
+    color: #fff;
+}
+
+section#single-page article.content .post-tags {
+    margin-top: 10px;
+}
+
+section#single-page article.content .post-tags a {
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    background-color: #9292a2;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff !important;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.75em;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    line-height: 1;
+    display: inline-block;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#single-page article.content .post-tags a:not(:last-child) {
+    margin-right: 5px;
+}
+
+section#single-page article.content .post-tags a:hover {
+    opacity: .8;
+}
+
+section#single-page article.comments {
+    /*padding: 5px 27px 27px;*/
+    /*color: #9292a2;*/
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#single-page article.comments h3 {
+    /*margin: 0 0 20px 0;*/
+    /*color: #000;*/
+    font-size: 1.125em;
+    font-weight: bold;
+    line-height: 1;
+}
+
+section#single-page article.comments p:not(.form-submit) {
+    font-size: 0.875em;
+    line-height: 27px;
+    color: #9292a2;
+}
+
+section#single-page article.comments p:not(.form-submit) a {
+    text-decoration: none;
+    color: #39bffd;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#single-page article.comments p:not(.form-submit) a:hover {
+    opacity: 0.8;
+}
+
+section#single-page article.comments ul li {
+    list-style: none;
+    padding-bottom: 5px;
+}
+
+section#single-page article.comments ul li article.author {
+    display: flex;
+    display: -webkit-flex;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#single-page article.comments ul li article.author .cancel-comment-reply-link {
+    text-decoration: none;
+    color: #39bffd;
+}
+
+section#single-page article.comments ul li article.author figure {
+    border: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    margin: 0 15px 0 0;
+}
+
+section#single-page article.comments ul li article.author figure img {
+    max-height: 48px;
+    width: auto;
+}
+
+section#single-page article.comments ul li article.author div.details h5 {
+    font-size: 1em;
+    font-weight: bold;
+    color: #39bffd;
+    margin: 5px 0 7px;
+}
+
+section#single-page article.comments ul li article.author div.details h5 a {
+    text-decoration: none;
+    color: #39bffd;
+}
+
+section#single-page article.comments ul li article.author div.details p {
+    color: #9292a2;
+    line-height: 1;
+    font-size: 0.875em;
+    margin: 0;
+}
+
+section#single-page article.comments ul li article.author div.details p a {
+    text-decoration: none;
+    color: #9292a2;
+}
+
+section#single-page article.comments ul li article.author .reply {
+    margin-left: auto;
+    color: #000;
+    font-weight: bold;
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+section#single-page article.comments ul li article.author .reply a {
+    text-decoration: none;
+    margin-left: 4px;
+    color: #000;
+}
+
+section#single-page article.comments ul li div.comment {
+    margin-top: 5px;
+    line-height: 25px;
+}
+
+section#single-page article.comments ul li:not(:last-child) {
+    border-bottom: 1px solid #e7e7f3;
+    margin-bottom: 25px;
+}
+
+section#single-page article.comments ul ul.children {
+    padding-left: 25px;
+}
+
+section#single-page article.comments form {
+    font-family: "Ubuntu", sans-serif;
+    width: 100%;
+}
+
+section#single-page article.comments form textarea {
+    background-color: #e7e7f3;
+    padding: 22px;
+    width: 100%;
+    border: 0;
+    resize: none;
+    height: 120px;
+    outline: none;
+    font-size: 0.875em;
+}
+
+section#single-page article.comments form input:not(#submit) {
+    background-color: #e7e7f3;
+    width: 100%;
+    font-size: 0.875em;
+    border: 0;
+    margin: 0;
+    display: block;
+    padding: 14px;
+}
+
+section#single-page article.comments form input:not(#submit):not(:last-child) {
+    margin-bottom: 5px;
+}
+
+section#single-page article.comments form input#submit,
+section#single-page article.comments form button {
+    background-color: #39bffd;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75em;
+    width: 100%;
+    border: 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    height: 52px;
+    outline: none;
+    position: relative;
+    top: -10px;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#single-page article.comments form input#submit:hover,
+section#single-page article.comments form button:hover {
+    opacity: .8;
+}
+
+section#player-profile {
+    margin-top: 80px;
+}
+
+section#player-profile .container {
+    padding: 0;
+}
+
+section#player-profile .player-info {
+    display: flex;
+    display: -webkit-flex;
+    height: 426px;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+section#player-profile .player-info .avatar {
+    background-repeat: no-repeat;
+    width: 360px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+}
+
+section#player-profile .player-info .right-panel {
+    width: 100%;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details {
+    height: 124px;
+    padding-left: 47px;
+    padding-right: 47px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    background: #000000;
+    background: -moz-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #000000), color-stop(100%, rgba(0, 0, 0, 0.4)));
+    background: -webkit-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: -o-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: -ms-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0.4) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=1);
+    border: 1px solid #303039;
+    width: 100%;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    list-style: none;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li figure {
+    margin: 0 30px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li figure img {
+    max-height: 49px;
+    width: auto;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li div.name {
+    align-items: center;
+    -webkit-align-items: center;
+    height: 65px;
+    font-family: "Ubuntu", sans-serif;
+    padding: 4px 8px 8px 28px;
+    border-left: 1px solid #46474c;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li div.name h4 {
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li div.name span {
+    margin: 0 0 4px;
+    color: #39bffd;
+    font-size: 1.125em;
+    font-weight: bold;
+    display: block;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social {
+    margin-left: auto;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a {
+    text-decoration: none;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a:not(.stream) {
+    color: #fff;
+    font-size: 0.875em;
+    position: relative;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a:not(.stream):not(:last-child) {
+    margin-right: 12px;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a:not(.stream).first {
+    margin-left: 48px;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a:not(.stream).first:before {
+    background-color: rgba(255, 255, 255, 0.35);
+    width: 1px;
+    content: ' ';
+    display: block;
+    left: -24px;
+    top: 0;
+    height: 100%;
+    position: absolute;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a.stream {
+    padding: 5px 13px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a.stream:hover {
+    opacity: .8;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a.stream.hitbox {
+    background-color: #99cc00;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a.stream.twitch {
+    background-color: #6442a3;
+}
+
+section#player-profile .player-info .right-panel ul.profile-details li.social a.stream.azubu {
+    background-color: #00a2e0;
+}
+
+section#player-profile .player-info .right-panel ul.info-section {
+    display: flex;
+    display: -webkit-flex;
+    background-color: #1c1c24;
+    border-bottom: 1px solid #393946;
+    border-right: 1px solid #393946;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+    list-style: none;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    width: 210px;
+    height: 84px;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li:hover {
+    background-color: #18181f;
+    border-bottom: 1px solid #39bffd;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li:hover span.title {
+    color: #39bffd;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li:not(:last-child) {
+    border-right: 1px solid #393946;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li span {
+    line-height: 1;
+    display: block;
+    margin-bottom: 10px;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li span.title {
+    color: #afafbc;
+    font-size: 0.875em;
+    text-transform: capitalize;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li a {
+    line-height: 1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li span.desc {
+    line-height: 1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li span.desc i.flag-icon {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+section#player-profile .player-info .right-panel ul.info-section li i.icon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+section#player-profile .player-info .right-panel div.about {
+    font-family: "Ubuntu", sans-serif;
+    padding: 36px 40px 30px;
+    background-color: #1c1c24;
+    height: 218px;
+    border-bottom: 1px solid #393946;
+    border-right: 1px solid #393946;
+}
+
+section#player-profile .player-info .right-panel div.about span.title {
+    color: #afafbc;
+    font-size: 0.875em;
+    line-height: 1;
+    margin-bottom: 10px;
+    display: block;
+}
+
+section#player-profile .player-info .right-panel div.about h4 {
+    line-height: 1;
+    margin: 0;
+    color: #fff;
+    font-size: 1em;
+}
+
+section#player-profile .player-info .right-panel div.about h4 svg {
+    margin-right: 10px;
+    position: relative;
+    top: 3px;
+}
+
+section#player-profile .player-info .right-panel div.about p {
+    line-height: 29px;
+    color: #afafbc;
+    font-size: 0.875em;
+    margin: 30px 0 0;
+}
+
+section#player-details {
+    margin-bottom: 15px;
+}
+
+section#player-details .container {
+    padding: 0;
+}
+
+section#player-details .container .section-header {
+    margin-bottom: 10px;
+}
+
+section#player-details .content .stats {
+    background-color: #000;
+    border-bottom: #3c3c4c;
+    width: 100%;
+    height: 120px;
+    padding: 36px 48px;
+}
+
+section#player-details .content .stats .mobile {
+    display: none;
+}
+
+section#player-details .content .stats ul {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+section#player-details .content .stats ul li {
+    list-style: none;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    display: -webkit-flex;
+}
+
+section#player-details .content .stats ul li h4 {
+    color: #fff;
+    font-size: 2.25em;
+    font-weight: bold;
+    margin: 0 15px 0 0;
+    line-height: 1;
+}
+
+section#player-details .content .stats ul li:not(:last-child) div.info:not(.last) {
+    margin-right: 30px;
+    padding-right: 30px;
+}
+
+section#player-details .content .stats ul li:not(:last-child) div.info:not(.last):after {
+    height: 30px;
+    width: 1px;
+    content: ' ';
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+section#player-details .content .stats ul li div.info {
+    position: relative;
+}
+
+section#player-details .content .stats ul li div.info span {
+    line-height: 1;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 0.875em;
+    color: #afafbc;
+    display: block;
+}
+
+section#player-details .content .stats ul li div.info span.title {
+    color: #39bffd;
+}
+
+section#player-details .content .stats ul li div.info span.desc {
+    margin-top: 6px;
+}
+
+section#player-details .content .stats ul li.steam {
+    margin-left: auto;
+}
+
+section#player-details .content div.equip {
+    background-color: #16161d;
+    padding: 48px 46px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#player-details .content div.equip p {
+    line-height: 29px;
+    font-size: 0.875em;
+    color: #afafbc;
+}
+
+section#player-details .content div.equip ul {
+    display: -flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    min-height: 140px;
+}
+
+section#player-details .content div.equip ul li {
+    display: flex;
+    display: -webkit-flex;
+    width: 290px;
+    height: 40px;
+    align-items: center;
+    -webkit-align-items: center;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+section#player-details .content div.equip ul li .details {
+    margin-right: auto;
+}
+
+section#player-details .content div.equip ul li .details span {
+    line-height: 1;
+    display: block;
+}
+
+section#player-details .content div.equip ul li .details span.name {
+    color: #39bffd;
+    font-size: 0.875em;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+section#player-details .content div.equip ul li .details span.model {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+section#player-details .content div.equip ul li a {
+    display: block;
+    margin-left: auto;
+    padding: 5px 13px;
+    line-height: 1;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #0c0c0f;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+section#player-details .content div.equip ul li a:hover {
+    background-color: #39bffd;
+}
+
+section#player-details .content div.equip ul li a svg {
+    position: relative;
+    top: -2px;
+}
+
+section#player-details .content div.equip ul li:not(:nth-child(3n)) {
+    margin-right: 119px;
+}
+
+section#player-details .content div.equip ul li:first-child:not(:last-child):after {
+    background-color: rgba(255, 255, 255, 0.2);
+    content: ' ';
+    display: block;
+    width: 1px;
+    height: 119px;
+    position: absolute;
+    right: -55px;
+    top: 5px;
+}
+
+section#player-details .content div.equip ul li:not(:last-child):nth-child(2):after {
+    background-color: rgba(255, 255, 255, 0.2);
+    content: ' ';
+    display: block;
+    width: 1px;
+    height: 119px;
+    position: absolute;
+    right: -55px;
+    top: 5px;
+}
+
+@media screen and (max-width: 375px) {
+    section#player-details .content div.equip {
+        padding: 29px;
+    }
+
+    section#player-details .content div.equip ul li {
+        width: 100% !important;
+    }
+
+    section#player-profile .player-info {
+        display: flex;
+        display: -webkit-flex;
+        height: 426px;
+        position: relative;
+        margin-bottom: 24px;
+    }
+
+    section#player-profile .player-info .avatar {
+        width: 100% !important;
+        height: 120vw !important;
+    }
+}
+
+section#sponsor-page {
+    margin-top: 244px;
+}
+
+section#sponsor-page .container {
+    padding: 0;
+    background-color: #14141c;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+section#sponsor-page .container ul {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+}
+
+section#sponsor-page .container ul li {
+    position: relative;
+    list-style: none;
+    width: 399px;
+}
+
+section#sponsor-page .container ul li:not(:nth-child(3n)):not(:last-child) figure {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+section#sponsor-page .container ul li figure {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    background-color: #0c0c11;
+    line-height: 125px;
+    text-align: center;
+    height: 125px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0;
+    margin: 0;
+}
+
+section#sponsor-page .container ul li figure img {
+    max-height: 58px;
+    width: auto;
+}
+
+section#sponsor-page .container ul li .content {
+    padding: 48px 42px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+section#sponsor-page .container ul li .content .head {
+    margin-bottom: 38px;
+}
+
+section#sponsor-page .container ul li .content .head span.label {
+    padding: 5px 13px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #000;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.75em;
+    margin-right: 20px;
+}
+
+section#sponsor-page .container ul li .content .head span.label.blue {
+    background-color: #39bffd;
+}
+
+section#sponsor-page .container ul li .content .head span.label.red {
+    background-color: #de442b;
+}
+
+section#sponsor-page .container ul li .content .head span.label.gray {
+    background-color: #433e59;
+}
+
+section#sponsor-page .container ul li .content .head a {
+    color: #afafbc;
+    text-decoration: none;
+    font-size: 0.75em;
+}
+
+section#sponsor-page .container ul li .content .head a:not(:last-child) {
+    margin-right: 15px;
+}
+
+section#sponsor-page .container ul li .content p {
+    line-height: 28px;
+    color: #afafbc;
+    font-size: 0.875em;
+    margin: 0 0 25px;
+}
+
+section#sponsor-page .container ul li .content a.cta-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #39bffd;
+}
+
+section#sponsor-page .container ul li .content a.cta-link svg {
+    margin-left: 6px;
+}
+
+section#sponsor-page .container ul li .content a.cta-link svg path {
+    fill: #39bffd;
+}
+
+section#sponsor-page .container ul li:not(:nth-child(3n)):after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    height: 160px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    top: 125px;
+    right: 0;
+}
+
+section#adSpace .container {
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 120px;
+    cursor: pointer;
+}
+
+section#cta-sponsor {
+    font-family: "Ubuntu", sans-serif;
+    text-align: center;
+}
+
+section#cta-sponsor .container {
+    padding: 0;
+    position: relative;
+}
+
+section#cta-sponsor .container.bg {
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-color: #1a122c;
+}
+
+section#cta-sponsor .container:before {
+    content: ' ';
+    display: block;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .3;
+    background: black;
+    background: -moz-linear-gradient(top, black 0%, transparent 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, black), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(top, black 0%, transparent 100%);
+    background: -o-linear-gradient(top, black 0%, transparent 100%);
+    background: -ms-linear-gradient(top, black 0%, transparent 100%);
+    background: linear-gradient(to bottom, black 0%, transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0);
+}
+
+section#cta-sponsor article.content {
+    padding: 50px 70px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+section#cta-sponsor article.content h3 {
+    margin: 0 0 15px;
+    line-height: 1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.375em;
+}
+
+section#cta-sponsor article.content h4 {
+    margin: 0 0 58px;
+    line-height: 1;
+    color: #39bffd;
+    font-weight: bold;
+    font-size: 1.125em;
+}
+
+section#cta-sponsor article.content p {
+    font-size: 0.875em;
+    color: #afafbc;
+    margin-bottom: 70px;
+}
+
+section#cta-sponsor article.content .btn {
+    width: initial;
+    height: initial;
+    line-height: 1;
+}
+
+section#cta-sponsor article.content .btn.btn-blue {
+    padding: 18px 37px;
+    margin-right: 35px;
+}
+
+section#cta-sponsor article.content .btn.btn-transparent {
+    padding: 16px 37px;
+    border-color: #fff;
+    color: #fff;
+}
+
+.cover-bg {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 324px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cover-bg.player {
+    height: 369px;
+}
+
+.container.split-flex {
+    margin-top: 100px;
+    padding: 0;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.container.no-padding {
+    padding: 0;
+}
+
+.container.no-margin {
+    margin-top: 0;
+}
+
+aside {
+    margin-left: 15px;
+    width: 385px;
+}
+
+aside ul li a {
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+}
+
+aside a {
+    text-decoration: none;
+}
+
+aside .section-header {
+    margin-bottom: 15px;
+}
+
+aside p,
+aside .widget_rss {
+    color: #ccc;
+}
+
+aside ul li {
+    list-style: none;
+}
+
+aside ul li .recentcomments {
+    color: #ccc;
+}
+
+aside article ul.sub-menu {
+    padding: 4px 15px;
+}
+
+aside article ul li {
+    color: #afafbc;
+}
+
+aside article ul li a {
+    text-decoration: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+aside article ul li a:hover {
+    opacity: .8;
+    text-decoration: none;
+}
+
+aside article ul li .details .categories a {
+    color: #afafbc !important;
+}
+
+aside article:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+aside article #wp-calendar {
+    width: 100%;
+    color: #fff;
+}
+
+aside article #wp-calendar thead th {
+    border: 1px solid #26262e;
+    text-align: center;
+    padding: 5px 0;
+}
+
+aside article #wp-calendar thead tr,
+aside article #wp-calendar tbody tr {
+    background-color: #14141c;
+}
+
+aside article #wp-calendar tbody tr td {
+    padding: 5px 0;
+    border: 1px solid #26262e;
+    text-align: center;
+}
+
+aside article #wp-calendar tfoot tr td {
+    padding: 10px 0 0;
+}
+
+aside article #wp-calendar tfoot #prev {
+    text-align: left;
+}
+
+aside article #wp-calendar tfoot #next {
+    text-align: right;
+}
+
+aside article #wp-calendar caption {
+    color: #fff;
+}
+
+aside article #wp-calendar a {
+    color: #39bffd;
+    text-decoration: none;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+aside article #wp-calendar a:hover {
+    color: #fff;
+}
+
+aside article #searchform .formSearch {
+    display: flex;
+    display: -webkit-flex;
+}
+
+aside article #searchform .formSearch input {
+    border: 1px solid #39bffd;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 7px 7px;
+    width: 85%;
+}
+
+aside article #searchform .formSearch button#searchsubmit {
+    background-color: #39bffd;
+    color: #fff;
+    border: 0;
+    width: 50px;
+    padding: 8px 0;
+}
+
+aside article select {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+}
+
+aside article img {
+    max-width: 100%;
+    height: auto;
+}
+
+aside article > ul:not(.children) li ul {
+    padding: 0 20px;
+}
+
+aside article > ul:not(.children) li ul li:not(:last-child) {
+    border: 0;
+}
+
+aside article > ul:not(.children) li ul li {
+    background: transparent;
+    padding: 4px 0;
+    display: block;
+}
+
+aside article > ul.widget li {
+    display: flex;
+    display: -webkit-flex;
+    width: 100%;
+}
+
+aside article > ul:not(.children) li {
+    background-color: #14141c;
+    padding: 20px 15px;
+}
+
+aside article > ul:not(.children) li:not(:last-child) {
+    border-bottom: 1px solid #26262e;
+}
+
+aside article > ul:not(.children) li .thumbnail {
+    background-color: #484852;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 54px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    border: 0;
+    margin: 0 20px 0 0;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+}
+
+aside article > ul:not(.children) li .details {
+    font-family: "Ubuntu", sans-serif;
+}
+
+aside article > ul:not(.children) li .details a.category {
+    color: #afafbc;
+    font-size: 0.625em;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+aside article > ul:not(.children) li .details i.bull {
+    margin: 0 2px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+aside article > ul:not(.children) li .details a.title {
+    color: #fff;
+    line-height: 21px;
+    font-weight: bold;
+    font-size: 0.875em;
+    display: block;
+    text-decoration: none;
+}
+
+aside article > ul:not(.children) li .details span.date {
+    color: #afafbc;
+    line-height: 1;
+    font-size: 0.875em;
+    margin-top: 8px;
+    display: block;
+}
+
+aside article.most-popular:not(:first-child) {
+    margin-top: 15px;
+}
+
+aside article.most-popular ul li {
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+aside article.most-popular ul li .details {
+    width: 220px;
+}
+
+aside article.most-popular ul li a.right {
+    margin-left: auto;
+}
+
+section#notfound {
+    margin-top: 100px;
+}
+
+section#notfound .container {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    color: #fff;
+    height: 300px;
+}
+
+section#notfound .container p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.woocommerce .cart {
+    background: #000;
+    padding: 20px 20px;
+}
+
+.woocommerce #review_form #respond .form-submit input,
+body.woocommerce-page .woocommerce span.post-details,
+body.woocommerce-page .woocommerce .return-to-shop a,
+body.woocommerce-page .woocommerce .wc-proceed-to-checkout a {
+    color: #fff !important;
+    -webkit-transition: opacity 300ms ease-in-out;
+    -moz-transition: opacity 300ms ease-in-out;
+    -ms-transition: opacity 300ms ease-in-out;
+    -o-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+}
+
+.woocommerce div.product form.cart .button:hover,
+.woocommerce #review_form #respond .form-submit input:hover,
+body.woocommerce-page .woocommerce span.post-details:hover,
+body.woocommerce-page .woocommerce .return-to-shop a:hover,
+body.woocommerce-page .woocommerce .wc-proceed-to-checkout a:hover {
+    opacity: 0.8;
+}
+
+#bbpress-forums div.bbp-breadcrumb p,
+#bbpress-forums li a,
+#bbpress-forums p.bbp-topic-meta span a,
+#bbpress-forums li.bbp-body .bbp-topic-title a {
+    font-family: "Ubuntu", sans-serif;
+}
+
+div.bbp-template-notice a,
+div.bbp-template-notice.info {
+    color: #fff;
+    border: 0;
+}
+
+div.bbp-template-notice p {
+    line-height: 62px;
+    font-family: "Ubuntu", sans-serif;
+    padding: 0;
+}
+
+div.bbp-submit-wrapper button,
+#bbpress-forums #bbp-search-form #bbp_search_submit {
+    font-family: "Ubuntu", sans-serif;
+}
+
+#bbpress-forums div.bbp-template-notice img.avatar {
+    border: 0;
+}
+
+div.bbp-template-notice.info {
+    height: 72px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #26262e;
+    background: #14141b;
+    background: -moz-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #14141b), color-stop(26%, #1a1a22), color-stop(100%, #15151d));
+    background: -webkit-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -o-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -ms-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: linear-gradient(to right, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14141b', endColorstr='#15151d', GradientType=1);
+    padding: 0 25px;
+}
+
+#bbpress-forums ul.bbp-topics,
+#bbpress-forums li.bbp-header,
+#bbpress-forums li.bbp-footer {
+    border: 0;
+}
+
+#bbpress-forums p.bbp-topic-meta img.avatar,
+#bbpress-forums ul.bbp-reply-revision-log img.avatar,
+#bbpress-forums ul.bbp-topic-revision-log img.avatar,
+#bbpress-forums div.bbp-template-notice img.avatar,
+#bbpress-forums .widget_display_topics img.avatar,
+#bbpress-forums .widget_display_replies img.avatar {
+    margin-bottom: 0;
+}
+
+#bbpress-forums fieldset.bbp-form textarea,
+#bbpress-forums fieldset.bbp-form select,
+#bbpress-forums fieldset.bbp-form input,
+#bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content,
+.woocommerce #review_form #respond p input,
+.woocommerce #review_form #respond textarea,
+body.woocommerce-page .woocommerce-ordering select,
+body.woocommerce-page .woocommerce form .form-row textarea,
+body.woocommerce-page .woocommerce form .form-row input.input-text {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    outline: none;
+    color: #fff;
+}
+
+body.woocommerce-page .woocommerce form .form-row textarea::-webkit-input-placeholder,
+body.woocommerce-page .woocommerce form input.input-tex::-webkit-input-placeholder {
+    color: #303640;
+}
+
+body.woocommerce-page .woocommerce form .form-row textarea::-moz-placeholder,
+body.woocommerce-page .woocommerce form input.input-tex::-moz-placeholder {
+    color: #303640;
+}
+
+body.woocommerce-page .woocommerce form .form-row textarea:-ms-input-placeholder,
+body.woocommerce-page .woocommerce form input.input-tex:-ms-input-placeholder {
+    color: #303640;
+}
+
+body.woocommerce-page .woocommerce form .form-row textarea:-moz-placeholder,
+body.woocommerce-page .woocommerce form input.input-tex:-moz-placeholder {
+    color: #303640;
+}
+
+body.woocommerce-page .woocommerce form .form-row textarea,
+body.woocommerce-page .woocommerce form .form-row input.input-text {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    outline: none;
+    color: #fff;
+    background-color: #0d121c;
+}
+
+.woocommerce .select2-container--default .select2-selection--single {
+    background-color: #0d121c;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#add_payment_method #payment ul.payment_methods li,
+.woocommerce-cart #payment ul.payment_methods li,
+.woocommerce-checkout #payment ul.payment_methods li {
+    color: #000;
+}
+
+.woocommerce #blank-template .woocommerce-result-count {
+    display: none;
+}
+
+.woocommerce h1.page-title {
+    color: #000;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+    margin: 0;
+    font-size: 3.75em;
+    cursor: default;
+    text-transform: uppercase;
+}
+
+.woocommerce span.onsale {
+    font-family: "Ubuntu", sans-serif;
+    text-transform: uppercase;
+    border-radius: 0;
+    min-width: initial;
+    min-height: initial;
+    line-height: 1;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 5px 18px;
+    font-size: 14px;
+    left: 8px;
+    margin: 0;
+    top: 8px;
+}
+
+.woocommerce ul.products li.product .onsale {
+    right: initial;
+    top: 10px;
+    left: 10px;
+    margin: 0 !important;
+}
+
+.woocommerce .quantity input.qty {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    outline: none;
+    color: #000;
+}
+
+.woocommerce ul.products li.product .onsale {
+    background-color: #000;
+}
+
+.woocommerce .star-rating span,
+.woocommerce .woocommerce-product-rating .star-rating,
+.woocommerce .products .star-rating,
+.woocommerce #review_form #respond p.stars a,
+.woocommerce p.stars a {
+    color: #b6b7c0 !important;
+}
+
+.woocommerce ul.products li.product .price {
+    color: #fff;
+}
+
+.chosen-container-single .chosen-single {
+    background: #fff !important;
+}
+
+.chosen-container-active .chosen-single {
+    border: 0;
+    box-shadow: none;
+}
+
+.chosen-container-single .chosen-search input[type=text],
+.chosen-container-single .chosen-single,
+.chosen-container-active.chosen-with-drop .chosen-single,
+.chosen-container .chosen-drop {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.woocommerce ul.products li.product h3 {
+    color: #000;
+    font-weight: bold;
+}
+
+.woocommerce ul.products li.product h3 {
+    color: #000;
+    font-weight: bold;
+}
+
+div.bbp-breadcrumb {
+    margin-right: 10px;
+}
+
+div.bbp-submit-wrapper button,
+#bbpress-forums #bbp-search-form #bbp_search_submit {
+    font-size: 100%;
+    margin: 0;
+    line-height: 1;
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+    text-decoration: none;
+    overflow: visible;
+    padding: 8.3px 10px;
+    font-weight: 700;
+    border-radius: 3px;
+    color: #fff;
+    border: 0;
+    white-space: nowrap;
+    background-image: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    text-shadow: none;
+}
+
+.woocommerce div.product a.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+    background-color: #000;
+    color: #fff !important;
+    font-family: "Ubuntu", sans-serif;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    background-color: #000;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    color: #fff !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+    color: #333 !important;
+}
+
+#bbpress-forums #bbp-search-form #bbp_search,
+.woocommerce.widget_product_search .search-field {
+    border: 1px solid rgba(0, 0, 0, 0.17);
+    border-radius: 3px;
+    padding: 5px;
+}
+
+#bbpress-forums ul.bbp-forums {
+    margin-top: 40px;
+}
+
+#bbpress-forums li .bbp-forum-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#bbpress-forums li.bbp-body .bbp-topic-title {
+    font-size: 18px;
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+    padding: 8px 6px;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel.woocommerce-Tabs-panel--description {
+    color: #000;
+    font-family: "Ubuntu", sans-serif;
+    padding: 15px;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel.woocommerce-Tabs-panel--description h2 {
+    margin: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel #reviews {
+    padding: 15px;
+    color: #000;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel #reviews h2 {
+    margin: 0;
+}
+
+#bbpress-forums li.bbp-header,
+#bbpress-forums li.bbp-footer {
+    background-color: #000;
+}
+
+div.bbp-template-notice,
+#bbpress-forums li.bbp-body ul.topic {
+    border: 1px solid #26262e;
+    background: #14141b;
+    background: -moz-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #14141b), color-stop(26%, #1a1a22), color-stop(100%, #15151d));
+    background: -webkit-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -o-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: -ms-linear-gradient(left, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    background: linear-gradient(to right, #14141b 0%, #1a1a22 26%, #15151d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14141b', endColorstr='#15151d', GradientType=1);
+    color: #fff;
+}
+
+#wp-bbp_topic_content-editor-container #bbpress-forums fieldset.bbp-form input {
+    color: #000;
+}
+
+.bbp-topic-form fieldset.bbp-form input {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    outline: none;
+    color: #fff;
+    background-color: #0d121c;
+}
+
+.bbp-topic-form {
+    border: 0 !important;
+    background-color: #000;
+}
+
+#bbpress-forums fieldset.bbp-form {
+    border: 0;
+}
+
+#bbpress-forums fieldset.bbp-form legend {
+    color: #fff;
+    border: 0;
+    margin: 0;
+    padding-top: 15px;
+    line-height: 1;
+}
+
+#bbpress-forums fieldset.bbp-form select {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    outline: none;
+    color: #fff;
+    background-color: #0d121c;
+}
+
+.quicktags-toolbar input {
+    padding: 5px !important;
+    outline: none;
+    background-color: #0d121c !important;
+}
+
+.quicktags-toolbar input:focus,
+.quicktags-toolbar input:hover {
+    background-color: #0d121c !important;
+}
+
+#new-post .bbp-form #bbp_topic_tags {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    outline: none;
+    color: #fff;
+    background-color: #0d121c;
+}
+
+.bbp-reply-form #new-post {
+    background-color: #000;
+}
+
+#bbpress-forums ul.bbp-replies {
+    border: 0;
+}
+
+textarea.bbp-the-content.wp-editor-area {
+    color: #000 !important;
+}
+
+#bbpress-forums div.bbp-forum-header,
+#bbpress-forums div.bbp-topic-header,
+#bbpress-forums div.bbp-reply-header {
+    background-color: #222;
+    border: 0;
+}
+
+#bbpress-forums div.odd,
+#bbpress-forums ul.odd {
+    background-color: #000;
+}
+
+#bbpress-forums div.even,
+#bbpress-forums ul.even {
+    background-color: #111;
+}
+
+section#stream {
+    width: 800px;
+    padding: 0;
+}
+
+section#stream .stream-embed {
+    margin: 15px 0;
+}

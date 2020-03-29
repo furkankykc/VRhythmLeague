@@ -7,8 +7,10 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
+from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.views.generic.detail import DetailView
 
 from League.services import *
 from League.tokens import account_activation_token
@@ -24,24 +26,27 @@ def home(request):
     return render(request, 'league/index.html', context)
 
 
+@login_required
 def dashboard(request):
     # my_scores = models.Score.objects.filter(player=request.user
-    context = {'scores': get_scores()}
+    context = {'posts': get_posts(), 'player': Player.objects.get(user=request.user)}
+
     return render(request, 'league/dashboard.html', context)
 
 
 def profile(request, user_id):
     profile = Player.objects.get(user_id=user_id)
-    context = {'profile': profile}
-    return render(request, 'components/profile.html', context)
+    context = {'player': profile}
+    return render(request, 'league/profile.html', context)
 
 
-def profile(request, user_id):
-    profile = Player.objects.get(user_id=request.user.id)
-    context = {'profile': profile}
-    return render(request, 'components/profile.html', context)
+# def profile(request):
+#     profile = Player.objects.get(user_id=request.user.id)
+#     print(profile)
+#     context = {'player': profile}
+#     return render(request, 'league/profile.html', context)
 
-
+@login_required
 def leagues(request):
     _leagues = models.Season.objects.all()
     current_league = models.Season.objects.last()
@@ -150,13 +155,11 @@ class CustomLoginView(AjaxTemplateMixin, LoginView):
 def autocompleteModel(request):
     if request.is_ajax():
         q = request.GET.get('term', '').capitalize()
-        print(q)
         search_qs = Song.objects.filter(name__startswith=q)
         results = []
         for r in search_qs[:5]:
             results.append(r.name)
         data = json.dumps(results)
-        print(data)
     else:
         data = 'fail'
     mimetype = 'application/json'
@@ -165,20 +168,88 @@ def autocompleteModel(request):
 
 def pink(request):
     path = request.path_info
-    print('path=', path)
     if path == '/':
-        return render(request, 'pinkhuge/index.html')
+        return render(request, 'thema_vr/index.html')
     # elif path == '/news/':
-    #     return render(request, 'pinkhuge/news/index.html')
+    #     return render(request, 'thema_vr/news/index.html')
     elif path == '/aboutleague/':
-        return render(request, 'pinkhuge/all-matches/index.html')
+        return render(request, 'thema_vr/all-matches/index.html')
     # elif path == '/teams/':
-    #     return render(request, 'pinkhuge/all-teams/index.html')
+    #     return render(request, 'thema_vr/all-teams/index.html')
     elif path == '/aboutus/':
-        return render(request, 'pinkhuge/about-us-3/index.html')
+        return render(request, 'thema_vr/about-us-3/index.html')
     # elif path == '/sponsors/':
-    #     return render(request, 'pinkhuge/sponsor-page/index.html')
+    #     return render(request, 'thema_vr/sponsor-page/index.html')
     else:
-        return render(request, 'pinkhuge/index.html')
+        return render(request, 'thema_vr/index.html')
 
-    #     return render(request, 'pinkhuge/sponsor-page/index.html')
+    #     return render(request, 'thema_vr/sponsor-page/index.html')
+
+
+
+
+class GameDetailView(DetailView):
+    model = Game
+    # This file should exist somewhere to render your page
+    template_name = 'league/games.html'
+    # Should match the value after ':' from url <slug:the_slug>
+    slug_url_kwarg = 'game_slug'
+    # Should match the name of the slug field on the model
+    slug_field = 'slug'  # DetailView's default value: optional
+    context_object_name = 'game'
+    # queryset = Game.objects.filter(season__name=season__name)
+    # queryset=Week.objects.filter(season__slug=)
+
+
+class WeekDetailView(DetailView):
+    model = Week
+    # This file should exist somewhere to render your page
+    template_name = 'league/week-detail.html'
+    # Should match the value after ':' from url <slug:the_slug>
+    slug_url_kwarg = 'week_slug'
+    # Should match the name of the slug field on the model
+    slug_field = 'slug'  # DetailView's default value: optional
+    context_object_name = 'week'
+
+    # queryset = Week.objects.filter(season__name=season__name)
+    # queryset=Week.objects.filter(season__slug=)
+    def get_queryset(self):
+        weeks = Week.objects.filter(
+            slug=self.kwargs['week_slug'],
+            season__slug=self.kwargs['season_slug'],
+            season__game__slug=self.kwargs['game_slug'],
+
+        )
+        if weeks.first().season.is_season_started:
+            weeks = weeks.filter(starting_at__lte=timezone.now().date(), )
+        else:
+            weeks = weeks.filter(starting_at__exact=weeks.first().season.starting_at)
+        return weeks
+
+
+def seasondispacher(request, season_slug, game_slug):
+    week = Season.objects.get(
+        slug=season_slug,
+        game__slug=game_slug,
+    ).get_current_week()
+    return redirect(reverse('show_history', kwargs={'week_slug': week.slug,
+                                                    'season_slug': week.season.slug,
+                                                    'game_slug': week.season.game.slug,
+                                                    }))
+
+
+def forbidden(request):
+    return render(request, 'components/forbidden.html')
+
+
+def postComment(request):
+    comment_detail = request.POST.get('comment')
+    # print(comment_detail)
+    if len(comment_detail) > 10:
+        Post(detail=comment_detail, user=request.user).save()
+    return redirect('dashboard')
+
+
+def apply_season(request, season_pk):
+    apply_for_season(Season.objects.get(pk=season_pk), user=request.user)
+    return redirect(request.META['HTTP_REFERER'])

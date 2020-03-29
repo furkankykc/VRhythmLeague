@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+{% load static %}
+<style>
+    h5 span {
+        color: rgba(43, 233, 241, 0.21);
+    }
+
+    section#sponsors .owl-carousel a img {
+        max-height: 50px;
+    @important
+    }
+</style>
+<!-- Mirrored from themes.pixiesquad.com/pixiehuge/pink-prime/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Feb 2020 18:13:20 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
+<head>
+    <link rel="shortcut icon" type="image/png" href="{% static 'league/img/VR_Ritim_Ligi_LogoLOGO-VR-2.ico' %}"/>
+    <meta charset="UTF-8">
+    <!--[if IE]>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VR Rhythm League Official Website">
+    {#    <meta property="og:title" content="VR Rhythm League Official Website">#}
+    {#    <meta property="og:image" content="{% static 'league/img/vrlogo.png' %}">#}
+    <meta property="og:description" content=" Aims to bring together all VR players in the world and to implement a competitive system to bring
+                    players together with the industry.">
+    <meta property="og:title" content="VR Rhythm League">
+    <meta property="og:image" content="{% static 'league/img/vrlogo.jpg' %}">
+    <meta property="og:image:secure_url" content="{% static 'league/img/vrlogo.jpg' %}">
+
+    <meta property="og:image:width" content="360"/>
+    <meta property="og:type" content="website"/>
+
+
+    <meta property="og:image:height" content="220"/>
+    {#    <meta property="og:image:width" content="180"/>#}
+    {##}
+    {#    <meta property="og:image:height" content="110"/>#}
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    {#    <meta name="apple-mobile-web-app-status-bar-style" content="#000">#}
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+    {# 600x314px #}
+    <meta name="author" content="[VR Rhythm League]">
+
+    <meta property="og:url" content="https://www.vrrhythmleague.com">
+    <meta name="twitter:card" content="{% static 'league/img/vrlogo.png' %}">
+    <style>
+
+        cop {
+            color: #000000;
+        }
+    </style>
+
+    <title>VR Rhythm League</title>
+    <link rel='dns-prefetch' href='http://platform.twitter.com/'/>
+    <link rel='dns-prefetch' href='http://fonts.googleapis.com/'/>
+    <link rel='dns-prefetch' href='http://s.w.org/'/>
+    <link rel="alternate" type="application/rss+xml" title="VR Rhythm League by VR Game Studio &raquo; Feed"
+          href="feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="VR Rhythm League by VR Game Studio &raquo; Comments Feed"
+          href="comments/feed/index.html"/>
+    {#    <script type="text/javascript">#}
+    {#window._wpemojiSettings = {#}
+    {#    "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/",#}
+    {#    "ext": ".png",#}
+    {#    "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/",#}
+    {#    "svgExt": ".svg",#}
+    {#    "source": {"concatemoji": "http:\/\/themes.pixiesquad.com\/pixiehuge\/pink-prime\/thema_inc\/js\/wp-emoji-release.min.js"}#}
+    {#        {#}
+    {#            !function (a, b, c) {#}
+    {#                function d(a, b) {#}
+    {#                    var c = String.fromCharCode;#}
+    {#                    l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, a), 0, 0);#}
+    {#                    var d = k.toDataURL();#}
+    {#                    l.clearRect(0, 0, k.width, k.height), l.fillText(c.apply(this, b), 0, 0);#}
+    {#                    var e = k.toDataURL();#}
+    {#                    return d === e#}
+    {#                }#}
+    {##}
+    {#                function e(a) {#}
+    {#                    var b;#}
+    {#                    if (!l || !l.fillText) return !1;#}
+    {#                    switch (l.textBaseline = "top", l.font = "600 32px Arial", a) {#}
+    {#                        case"flag":#}
+    {#                            return !(b = d([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819])) && (b = d([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]), !b);#}
+    {#                        case"emoji":#}
+    {#                            return b = d([55358, 56760, 9792, 65039], [55358, 56760, 8203, 9792, 65039]), !b#}
+    {#                    }#}
+    {#                    return !1#}
+    {#                }#}
+    {##}
+    {#                function f(a) {#}
+    {#                    var c = b.createElement("script");#}
+    {#                    c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)#}
+    {#                }#}
+    {##}
+    {#                var g, h, i, j, k = b.createElement("canvas"), l = k.getContext && k.getContext("2d");#}
+    {#                for (j = Array("flag", "emoji"), c.supports = {#}
+    {#                    everything: !0,#}
+    {#                    everythingExceptFlag: !0#}
+    {#                }, i = 0; i < j.length; i++) c.supports[j[i]] = e(j[i]), c.supports.everything = c.supports.everything && c.supports[j[i]], "flag" !== j[i] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[j[i]]);#}
+    {#                c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () {#}
+    {#                    c.DOMReady = !0#}
+    {#                }, c.supports.everything || (h = function () {#}
+    {#                    c.readyCallback()#}
+    {#                }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", h, !1), a.addEventListener("load", h, !1)) : (a.attachEvent("onload", h), b.attachEvent("onreadystatechange", function () {#}
+    {#                    "complete" === b.readyState && c.readyCallback()#}
+    {#                })), g = c.source || {}, g.concatemoji ? f(g.concatemoji) : g.wpemoji && g.twemoji && (f(g.twemoji), f(g.wpemoji)))#}
+    {#            }(window, document, window._wpemojiSettings);}#}
+    {#    </script>#}
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='pixiehuge-css'
+          href='{% static 'thema_files/thema_content/themes/pixiehuge/style8a54.css' %}' type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='fontawesome-css'
+          href='{% static 'thema_files/thema_content/themes/pixiehuge/assets/css/font-awesome.min5152.css' %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='bootstrap-css'
+          href='{% static 'thema_files/thema_content/themes/pixiehuge/assets/css/bootstrap.min8a54.css' %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='flagicon-css'
+          href='{% static 'thema_files/thema_content/themes/pixiehuge/assets/css/flag-icon.min8a54.css' %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='owlcarousel-css'
+          href='{% static 'thema_files/thema_content/themes/pixiehuge/assets/css/owl.carousel.min8a54.css' %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='chosen-css'
+          href='{% static 'thema_files/thema_content/themes/pixiehuge/assets/css/chosen.min8a54.css' %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='pixiehuge_main-css'
+          href='{% static 'thema_files/thema_content/themes/pixiehuge/assets/css/main4bf4.css' %}' type='text/css'
+          media='all'/>
+    <style id='pixiehuge_main-inline-css' type='text/css'>
+
+        /* BBPress */
+        div.bbp-submit-wrapper button,
+        #bbpress-forums #bbp-search-form #bbp_search_submit,
+
+            /* WooCommerce */
+        body.woocommerce-page .woocommerce .return-to-shop a,
+        body.woocommerce-page .woocommerce .form-row.place-order input.button.alt,
+        body.woocommerce-page .woocommerce .wc-proceed-to-checkout a,
+        .woocommerce span.onsale,
+        .woocommerce button.button.alt,
+        .woocommerce #review_form #respond .form-submit input,
+        .woocommerce div.product a.button a:hover,
+        .woocommerce #respond input#submit:hover,
+        .woocommerce a.button:hover,
+        .woocommerce button.button:hover,
+        .woocommerce input.button:hover,
+        .woocommerce a.remove:hover,
+
+            /* About page */
+        section#aboutInfo,
+        section#aboutStaff .container.bg ul.header li:after,
+
+            /* Player page */
+        section#player-details .content div.equip ul li a:hover,
+
+            /* Match page */
+        section#matchRoster .content .roster > li .overlay,
+
+            /* Sidebar */
+        aside article #searchform .formSearch button#searchsubmit,
+
+            /* Team section */
+        section#teams .boxes .box,
+        section#teams .boxes .box .overlay,
+
+            /* Single page */
+        section#single-page article.comments form input#submit,
+        section#single-page article.comments form button,
+        section#single-page article.header div.top-line a.category,
+        .search-page .formSearch button#searchsubmit,
+
+            /* Match page */
+        section#matches div.container > div.content li.matchBox > a.cta-btn,
+        section#matches.match-page li.matchBox:after,
+
+            /* News page */
+        section#news .content .news-box a.category,
+        section#single-page article.content p input[type="submit"],
+
+            /* Btn */
+        section#streams div.container div.content div.list article.streamBox:not(.large) .details.on-hover > a.cta-btn,
+        .btn.btn-blue {
+            background-color: #eb2084 !important;
+        }
+
+        /* Chosen */
+        .chosen-container .chosen-results li.highlighted {
+            background: #eb2084 !important
+        }
+
+        /* About page */
+        section#aboutStory .bg article.footer div.right ul li:hover,
+
+            /* Sidebar */
+        aside article #searchform .formSearch input,
+
+            /* Section header */
+        .section-header article.bottombar ul li.active a,
+        .section-header article.bottombar ul li:hover a,
+
+            /* Match page */
+        .btn.btn-transparent,
+
+            /* Single page */
+        .search-page .formSearch input,
+        section#single-page article.content blockquote,
+
+            /* WooCommerce */
+        .woocommerce-info,
+        body.woocommerce-page .woocommerce .woocommerce-info,
+        .woocommerce form.checkout_coupon,
+
+            /* Footer */
+        footer .container.top article.box.aboutUs a {
+            border-color: #eb2084 !important;
+        }
+
+        /* Player page */
+        section#player-profile .player-info .right-panel ul.info-section li:hover {
+            border-bottom: 1px solid #eb2084 !important;
+        }
+
+
+        /* BBPress*/
+        #bbpress-forums div.bbp-breadcrumb p a,
+        #bbpress-forums li a,
+        #bbpress-forums p.bbp-topic-meta span a,
+        #bbpress-forums li.bbp-body .bbp-topic-title a,
+
+            /* NAV */
+        .nav-previous a,
+        .nav-next a,
+        .mo-modal .mo-menu-box .modal-body ul li a,
+
+            /* Header */
+        header > nav > .container > ul > li > a > span.title:hover,
+        header > nav > .container > ul > li:hover span.title,
+        header div.topbar a:hover,
+        #cancel-comment-reply-link,
+
+            /* About Page*/
+        section#aboutStaff .container.bg ul.tab span.role,
+        section#aboutStaff .container.bg ul.header li.active a,
+        section#aboutStaff .container.bg ul.header li a:hover,
+        section#aboutStory .bg article.footer div.right ul li span.email,
+        section#aboutStory .bg article.head > h4,
+
+            /* Sponsors Page*/
+        section#sponsor-page .container ul li .content .head a:hover,
+        section#cta-sponsor article.content h4,
+        section#sponsor-page .container ul li .content a.cta-link,
+
+            /* Team Page*/
+        section#team-profile ul.achievements li span.title,
+        section#team-profile article.stats ul.left li span.title,
+        section#team-profile .team-info .profile-details div.name span,
+
+            /* Match section */
+        section#matches div.container > div.content li.matchBox > div.rightBox > div.match-info > span.league,
+        section#matches div.container > div.content li.matchBox > div.rightBox > div.stream > a,
+        section#match-details .container.bg article.middle .details h5,
+        .btn.btn-transparent,
+
+            /* Player Page*/
+        section#player-details .content div.equip ul li .details span.name,
+        section#player-details .content .stats ul li div.info span.title,
+        section#player-profile .player-info .right-panel ul.info-section li:hover span.title,
+        section#player-profile .player-info .right-panel ul.profile-details li.social a:not(.stream):hover,
+        section#player-profile .player-info .right-panel ul.profile-details li div.name span,
+
+            /* Maps */
+        section#mapsPlayed ul li .details span.won,
+        section#matchRoster .content .roster > li .details span,
+
+            /* Sidebar */
+        aside article #wp-calendar a,
+        aside ul li a,
+        aside .tagcloud a,
+
+            /* Single page */
+        section#single-page article.header span.date,
+        section#single-page article.comments ul li article.author div.details h5,
+        section#single-page article.comments p:not(.form-submit) a,
+        section#single-page article.comments ul li article.author div.details h5 a,
+        section#single-page article.content code,
+        section#single-page article.content a,
+        section#single-page article.content h2:first-child,
+
+            /* Hero section */
+        section#hero article.content h4,
+
+            /* Section header */
+        .section-header article.bottombar ul li.active a,
+        .section-header article.bottombar ul li:hover a,
+
+            /* Stream section */
+        section#streams div.container div.content div.list article.streamBox .details > h6,
+
+            /* Twitter section */
+        section#twitter div.tw-bg > article.left > h4,
+
+            /* News section */
+        section#news .content .news-box > .details > span,
+        .wp-caption-text,
+
+            /* WooCommerce */
+        body.woocommerce-page .woocommerce .woocommerce-info a.showcoupon,
+        body.woocommerce-page .woocommerce .woocommerce-info a,
+        body.woocommerce-page .woocommerce .woocommerce-info:before,
+        section#boardmembers ul li.dropdown.active button,
+        section#boardmembers ul li.dropdown.active .dropdown-menu li.active a,
+        .woocommerce div.product a,
+        .woocommerce div.product p.price,
+        .woocommerce ul.products li.product .price,
+        .woocommerce .woocommerce-product-rating a,
+        .woocommerce table.shop_table td.product-name a,
+        .woocommerce form .lost_password a,
+        .woocommerce-info:before,
+        .woocommerce a.remove,
+        .woocommerce a.added_to_cart,
+        .woocommerce-loop-product__title,
+
+            /* Footer */
+        footer .bottom .container > article.left a:hover,
+        footer .bottom .container > article.left h5,
+        footer .container.top article.box ul li > span.date,
+        footer .container.top article.box ul li > a > span.email,
+        footer .container.top article.box.aboutUs a {
+            color: #eb2084 !important;
+        }
+
+        /* Match section */
+        section#matches div.container > div.content li.matchBox {
+            background: rgba(34, 34, 46, 0.08);
+            background: -moz-linear-gradient(left, rgba(34, 34, 46, 0.08) 0%, rgba(235, 32, 132, .08) 100%);
+            background: -webkit-gradient(radial, left top, right top, color-stop(0%, rgba(34, 34, 46, 0.08)), color-stop(100%, rgba(235, 32, 132, .008)));
+            background: -webkit-linear-gradient(left, rgba(34, 34, 46, 0.08) 0%, rgba(235, 32, 132, .08) 100%);
+            background: -o-linear-gradient(left, rgba(34, 34, 46, 0.08) 0%, rgba(235, 32, 132, .08) 100%);
+            background: -ms-linear-gradient(left, rgba(34, 34, 46, 0.08) 0%, rgba(235, 32, 132, .08) 100%);
+            background: linear-gradient(to right, rgba(34, 34, 46, 0.08) 0%, rgba(235, 32, 132, .08) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#22222e', endColorstr='#eb2084', GradientType=1);
+        }
+
+        /* Top bar */
+        #icon-discord:hover path,
+
+            /* Match */
+        section#matches.match-page .navigation .left:hover svg path,
+        section#matches.match-page .navigation .right:hover svg path,
+
+            /* Header */
+        section#sponsors span.rightArrow svg:hover path,
+        section#sponsors span.leftArrow svg:hover path,
+
+            /* Sponsor page */
+        section#sponsor-page .container ul li .content a.cta-link svg path,
+
+            /* Team page */
+        section#team-profile article.stats ul.left li svg path,
+
+            /* Footer */
+        footer .container.top article.box h4 svg path,
+
+            /* Section header */
+        .section-header article.topbar h3 svg path {
+            fill: #eb2084 !important;
+        }
+
+        /* Header */
+        header > nav > .container > ul > li > a > span.title {
+            text-shadow: 5px 0px 6px rgba(235, 32, 132, .35);
+        }
+
+        /* About page */
+        section#aboutStaff .container.bg ul.header li a {
+            text-shadow: 1px 0px 1px rgba(235, 32, 132, .35);
+
+
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .disabled {
+            color: currentColor;
+            cursor: not-allowed;
+            opacity: 0.3;
+            text-decoration: none;
+        }
+
+    </style>
+    <link rel='stylesheet' id='pixiehuge_responsive-css'
+          href='{% static 'thema_files/thema_content/themes/pixiehuge/assets/css/responsive4bf4.css' %}'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='google-fonts-css'
+          href="{% static 'googlefonts.css' %}"
+          type='text/css' media='all'/>
+    <script type='text/javascript'
+            src='{% static 'thema_files/thema_inc/js/jquery/jqueryb8ff.js' %}'></script>
+    <script type='text/javascript'
+            src='{% static 'thema_files/thema_inc/js/jquery/jquery-migrate.min330a.js' %}'></script>
+</head>
+
+<body class="home blog">
+<header>
+    <div class="topbar">
+        <div class="container">
+            <a href="#searchModal" class="search" data-toggle="modal" data-target="#searchModal">
+                <i class="fa fa-search"></i>
+            </a>
+            <a href="https://facebook.com/vrgamingroom48" target="_blank"><i class="fa fa-facebook"></i></a><a
+                href="https://twitter.com/vrgamingroom" target="_blank"><i class="fa fa-twitter"></i></a><a
+                href="https://www.instagram.com/vrgamingroom/" target="_blank"><i class="fa fa-instagram"></i></a><a
+                href="https://www.youtube.com/vrgamingroom" target="_blank"><i
+                class="fa fa-youtube"></i></a>
+            {#            <a href="https://facebook.com/pixiesquad" target="_blank"><i#}
+            {#                class="fa fa-twitch"></i></a><a href="#" target="_blank"><i#}
+            {#                class="fa fa-vimeo"></i></a><a href="#" target="_blank"><i#}
+            {#                class="fa fa-steam"></i></a>#}
+            <a href="https://discord.gg/waNh32D" class="last" target="_blank">
+                <svg id="icon-discord" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+                    <path d="M 9.375 5.03125 L 8.75 5.09375 C 8.75 5.09375 6.008 5.39175 4 6.96875 L 3.96875 6.96875 L 3.9375 7 C 3.4875 7.406 3.31 7.897 3 8.625 C 2.69 9.353 2.3545 10.2835 2.0625 11.3125 C 1.4785 13.3705 1 15.844 1 18.125 L 1 18.34375 L 1.09375 18.53125 C 1.82075 19.77825 3.1155 20.578 4.3125 21.125 C 5.5095 21.672 6.535 21.94675 7.25 21.96875 L 7.71875 22 L 8.8125 19.65625 C 9.7225 19.85625 10.795 20 12 20 C 13.205 20 14.24625 19.85625 15.15625 19.65625 L 16.25 22 L 16.71875 21.96875 C 17.43375 21.94575 18.45925 21.672 19.65625 21.125 C 20.85325 20.578 22.149 19.77825 22.875 18.53125 L 22.96875 18.34375 L 22.96875 18.125 C 22.96975 15.844 22.5215 13.3705 21.9375 11.3125 C 21.6455 10.2835 21.309 9.352 21 8.625 C 20.691 7.898 20.48125 7.406 20.03125 7 L 20 6.96875 C 17.992 5.39175 15.21875 5.09375 15.21875 5.09375 L 14.625 5.03125 C 14.625 5.03125 14.17325 6.5485 14.03125 7.1875 C 13.14225 7.0725 12.419 7.03125 12 7.03125 C 11.581 7.03125 10.85775 7.0715 9.96875 7.1875 C 9.82675 6.5485 9.375 5.03125 9.375 5.03125 z M 8.125 7.1875 C 8.159 7.2895 8.221 7.418 8.25 7.5 C 7.235 7.73 6.27425 8.02775 5.28125 8.59375 L 6.125 10.3125 C 8.162 9.1535 11.099 9 12 9 C 12.901 9 15.838 9.1535 17.875 10.3125 L 18.6875 8.59375 C 17.6945 8.02875 16.8285 7.73 15.8125 7.5 C 15.8415 7.418 15.93475 7.2895 15.96875 7.1875 C 16.70075 7.3225 17.81175 7.62875 18.96875 8.46875 C 18.96275 8.47175 19.2935 8.87475 19.5625 9.46875 C 19.8385 10.07775 20.12925 10.8955 20.40625 11.8125 C 20.93825 13.5725 21.341 15.89425 21.375 17.78125 C 20.883 18.47525 19.97 19.11525 19 19.53125 C 18.154 19.89425 17.7105 20.02675 17.3125 20.09375 L 16.90625 19.21875 C 17.13825 19.14075 17.175 19.1435 17.375 19.0625 C 18.582 18.5755 19.21875 18.03125 19.21875 18.03125 L 18.40625 16.46875 C 18.40625 16.46875 17.9665 16.834 16.9375 17.25 C 15.9085 17.666 14.133 18.09375 12 18.09375 C 9.867 18.09375 8.4675 17.666 7.4375 17.25 C 6.4075 16.834 5.96875 16.46875 5.96875 16.46875 L 4.75 18.03125 C 4.75 18.03125 5.417 18.5755 6.625 19.0625 C 6.825 19.1435 6.892 19.14075 7.125 19.21875 L 6.6875 20.09375 C 6.2895 20.02675 5.81475 19.89425 4.96875 19.53125 C 3.99775 19.11425 3.08675 18.47525 2.59375 17.78125 C 2.62775 15.89525 3.0315 13.5725 3.5625 11.8125 C 3.8395 10.8955 4.1605 10.07775 4.4375 9.46875 C 4.7065 8.87475 5.006 8.47175 5 8.46875 C 6.157 7.62875 7.393 7.3225 8.125 7.1875 z M 9.5 12 C 8.6715729 12 8 12.895431 8 14 C 8 15.104569 8.6715729 16 9.5 16 C 10.328427 16 11 15.104569 11 14 C 11 12.895431 10.328427 12 9.5 12 z M 14.5 12 C 13.671573 12 13 12.895431 13 14 C 13 15.104569 13.671573 16 14.5 16 C 15.328427 16 16 15.104569 16 14 C 16 12.895431 15.328427 12 14.5 12 z"/>
+                </svg>
+            </a>
+            <a href="#menuModal" data-toggle="modal" class="mobile-nav topbar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14px"
+                     height="12px">
+                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                          d="M13.125,6.857 L0.875,6.857 C0.392,6.857 -0.000,6.473 -0.000,5.999 C-0.000,5.526 0.392,5.143 0.875,5.143 L13.125,5.143 C13.608,5.143 14.000,5.526 14.000,5.999 C14.000,6.473 13.608,6.857 13.125,6.857 ZM13.125,1.714 L0.875,1.714 C0.392,1.714 -0.000,1.330 -0.000,0.857 C-0.000,0.383 0.392,-0.001 0.875,-0.001 L13.125,-0.001 C13.608,-0.001 14.000,0.383 14.000,0.857 C14.000,1.330 13.608,1.714 13.125,1.714 ZM0.875,10.285 L13.125,10.285 C13.608,10.285 14.000,10.669 14.000,11.142 C14.000,11.616 13.608,12.000 13.125,12.000 L0.875,12.000 C0.392,12.000 -0.000,11.616 -0.000,11.142 C-0.000,10.669 0.392,10.285 0.875,10.285 Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <!-- /TOPBAR -->
+
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'pink' %}" class="logo-image"
+                   style=" background-image: url('{% static 'league/img/vrlogo.png' %}');">
+                </a>
+                {#                    <img src="{% static 'league/img/vrthmlogo.png' %}" width="250" class="centered">#}
+                {#                </a>#}
+            </div>
+
+            {#                 src="{% static 'league/img/vrlogo.png' %}"/>#}
+            <!-- /LOGO-BG -->
+
+            <a href="#menuModal" data-toggle="modal" class="mobile-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14px"
+                     height="12px">
+                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                          d="M13.125,6.857 L0.875,6.857 C0.392,6.857 -0.000,6.473 -0.000,5.999 C-0.000,5.526 0.392,5.143 0.875,5.143 L13.125,5.143 C13.608,5.143 14.000,5.526 14.000,5.999 C14.000,6.473 13.608,6.857 13.125,6.857 ZM13.125,1.714 L0.875,1.714 C0.392,1.714 -0.000,1.330 -0.000,0.857 C-0.000,0.383 0.392,-0.001 0.875,-0.001 L13.125,-0.001 C13.608,-0.001 14.000,0.383 14.000,0.857 C14.000,1.330 13.608,1.714 13.125,1.714 ZM0.875,10.285 L13.125,10.285 C13.608,10.285 14.000,10.669 14.000,11.142 C14.000,11.616 13.608,12.000 13.125,12.000 L0.875,12.000 C0.392,12.000 -0.000,11.616 -0.000,11.142 C-0.000,10.669 0.392,10.285 0.875,10.285 Z"/>
+                </svg>
+                Menu</a>
+
+
+            <ul id="header_menu" class="menu">
+                <li id="menu-item-1719"
+                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                    <a href="{% url 'pink' %}"><span class="title">Home</span><span class="subtitle"></span></a>
+                </li>
+                <li id="menu-item-1714" class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                        {% comment %}  href="{% url 'pink_news' %}"{% endcomment %}><span
+                        class="title">VR Esports</span><span class="subtitle"></span></a>
+                </li>
+
+                {% if user.is_anonymous %}
+                    <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="{% url 'pink_matches' %}"><span class="title">The League</span><span
+                            class="subtitle"></span></a>
+                    </li>
+
+
+                    <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="{% url 'pink_about_us' %}"><span class="title">About</span><span
+                            class="subtitle"></span></a></li>
+
+                    <li id="menu-item-1712"
+                        class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                            {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
+                            class="title">Sponsors</span><span
+                            class="subtitle"></span></a>
+                    </li>
+                    <li id="menu-item-1712" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a
+                                href="{% url 'social:begin' 'steam' %}"><span
+                                class="title">Login</span><span
+                                class="subtitle"></span></a>
+                    </li>
+                {% else %}
+
+                    <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="{% url 'dashboard' %}"><span class="title">Dashboard</span><span
+                            class="subtitle"></span></a>
+                    </li>
+                    <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="{% url 'leagues' %}"><span class="title">Leagues</span><span
+                            class="subtitle"></span></a></li>
+
+                    <li id="menu-item-1712"
+                        class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                            {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
+                            class="title">Sponsors</span><span
+                            class="subtitle"></span></a>
+                    </li>
+
+                    <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                            href="{% url 'profile' user.id %}"> <span class="title">{{ user }}</span>
+                        <a href="{% url 'logout' %}"><span class=" subtitle">Logout</span></a></a>
+                    </li>
+
+
+                {% endif %}
+
+            </ul>
+        </div>
+    </nav>
+    <!-- /MAINMENU -->
+
+</header>
+<!-- /HEADER -->
+<body>
+{% block content %}
+{% endblock %}
+</body>
+
+{% block footer %}
+
+    <!-- FOOTER -->
+    <script type='text/javascript'
+            src='{% static 'thema_files/thema_content/themes/pixiehuge/assets/js/bootstrap.min8a54.js' %}'></script>
+    <script type='text/javascript'
+            src='{% static 'thema_files/thema_content/themes/pixiehuge/assets/js/owl.carousel8a54.js' %}'></script>
+    <script type='text/javascript'
+            src='{% static 'thema_files/thema_content/themes/pixiehuge/assets/js/chosen.jquery.min8a54.js' %}'></script>
+    <script type='text/javascript'
+            src='{% static 'thema_files/thema_content/themes/pixiehuge/assets/js/main8a54.js' %}'></script>
+    <script type='text/javascript'>
+        jQuery('section#sponsors .owl-carousel').owlCarousel({
+            margin: 10,
+            loop: true,
+            autoWidth: false,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 0,
+                },
+                360: {
+                    items: 2,
+                    margin: 50,
+                },
+                480: {
+                    items: 3,
+                    margin: 50,
+                },
+                768: {
+                    items: 3,
+                    margin: 50,
+                },
+                992: {
+                    items: 4,
+                    margin: 100,
+                },
+                1200: {
+                    items: 5,
+                    margin: 100,
+                }
+            }
+        });
+
+        var owl = jQuery('section#sponsors .owl-carousel').owlCarousel();
+        jQuery("section#sponsors .leftArrow").click(function () {
+            owl.trigger('prev.owl.carousel');
+        });
+
+        jQuery("section#sponsors .rightArrow").click(function () {
+            owl.trigger('next.owl.carousel');
+        });
+
+    </script>
+    <script type='text/javascript' src='{% static 'thema_files/thema_inc/js/widgets8a54.js' %} '></script>
+    <script type='text/javascript' src='{% static 'thema_files/thema_inc/js/wp-embed.min5010.js' %} '></script>
+    <footer class="homepage" style="min-height: 20px">
+        <div class="container top" style="min-height: 0px;max-height: 0px;padding: 0 auto">
+
+        </div>
+        <!-- /TOP-CONTAINER -->
+
+        <div class="bottom" style="max-height: 30px;padding:auto auto;">
+            <div class="container">
+
+                <article class="left">
+                    <h5 class="website">VR Rhythm League <span>by VR Game Studio </span></h5>
+
+                    <div class="social-icons">
+                        <a href="https://facebook.com/vrgamingroom48" target="_blank"><i class="fa fa-facebook"></i></a><a
+                            href="https://twitter.com/vrgamingroom" target="_blank"><i class="fa fa-twitter"></i></a><a
+                            href="https://www.instagram.com/vrgamingroom/" target="_blank"><i
+                            class="fa fa-instagram"></i></a><a
+                            href="https://www.youtube.com/watch?v=g36u6vsg5dE" target="_blank"><i
+                            class="fa fa-youtube"></i></a>
+                        {#                        <a href="#" target="_blank"><i#}
+                        {#                            class="fa fa-twitch"></i></a>#}
+                        {#                        <a href="#" target="_blank"><i#}
+                        {#                            class="fa fa-vimeo"></i></a>#}
+                        {#                        <a href="#" target="_blank"><i#}
+                        {#                            class="fa fa-steam"></i></a>#}
+                        <a href="https://discord.gg/waNh32D" target="_blank">
+                            <svg id="icon-discord" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18"
+                                 height="18">
+                            </svg>
+                        </a></div>
+                </article>
+                <!-- /LEFT -->
+
+
+                <article class="right">
+                    <h5>Copyright crafted with love by VRoom Game Studio 2020</h5>
+                </article>
+                <!-- /RIGHT -->
+
+            </div>
+        </div>
+        <!-- /BOTTOM-CONTAINER -->
+    </footer>
+    <!-- /FOOTER -->
+    <!-- Modal -->
+    <div class="search-modal modal fade" id="searchModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content search-box">
+                <div class="modal-body">
+                    <form role="search" method="get" id="searchform" class="searchform"
+                          action="">
+                        <div class="formSearch">
+                            <input type="text" value="" name="s" id="s"/>
+                            <button type="submit" id="searchsubmit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal#Menu -->
+    <div class="mo-modal modal fade" id="menuModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content mo-menu-box">
+                <div class="modal-body">
+                    <ul id="header_menu_mobile" class="menu">
+                        <li id="menu-item-1719"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                            <a href="{% url 'pink' %}"><span class="title">Home</span><span class="subtitle"></span></a>
+                        </li>
+                        <li id="menu-item-1714"
+                            class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                                {% comment %}  href="{% url 'pink_news' %}"{% endcomment %}><span
+                                class="title">VR Esports</span><span class="subtitle"></span></a>
+                        </li>
+                        {% if user.is_anonymous %}
+                            <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{% url 'pink_matches' %}"><span class="title">The League</span><span
+                                    class="subtitle"></span></a>
+                            </li>
+
+
+                            <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{% url 'pink_about_us' %}"><span class="title">About</span><span
+                                    class="subtitle"></span></a></li>
+
+                            <li id="menu-item-1712"
+                                class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                                    {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
+                                    class="title">Sponsors</span><span
+                                    class="subtitle"></span></a>
+                            </li>
+                            <li id="menu-item-1712" class="menu-item menu-item-type-post_type menu-item-object-page">
+                                <a
+                                        href="{% url 'social:begin' 'steam' %}"><span
+                                        class="title">Login</span><span
+                                        class="subtitle"></span></a>
+                            </li>
+                        {% else %}
+
+                            <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{% url 'dashboard' %}"><span class="title">Dashboard</span><span
+                                    class="subtitle"></span></a>
+                            </li>
+                            <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{% url 'leagues' %}"><span class="title">Leagues</span><span
+                                    class="subtitle"></span></a></li>
+
+                            <li id="menu-item-1712"
+                                class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
+                                    {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
+                                    class="title">Sponsors</span><span
+                                    class="subtitle"></span></a>
+                            </li>
+                            <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{% url 'profile' user.id %}"> <span class="title">{{ user }}</span>
+                            </a>
+                            </li>
+
+                            <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page">
+                                <a href="{% url 'logout' %}"><span class=" subtitle">Logout</span></a>
+                            </li>
+
+
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script data-cfasync="false" src="{% static 'thema_files/thema_inc/js/email-decode.min.js' %}"></script>
+{% endblock %}
