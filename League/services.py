@@ -287,6 +287,9 @@ def apply_for_season(season: Season,
                      ):
     if not season.is_season_started:
         season.user_list.add(user)
+        return True
+    else:
+        return False
 
 
 def update_seasons():

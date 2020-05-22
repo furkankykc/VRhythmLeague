@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
 
-from League.models import Score, Season, Week, Song
+from League.models import Score, Season, Week, Song, Player
 from LeagueAPI import Crypter
 
 
@@ -40,34 +40,43 @@ class ScoreSerializer(serializers.ModelSerializer):
 class SongSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
-        fields = ['key', 'name', 'bpm']
+        fields = ['key', 'hash', 'name', 'bpm']
 
 
 class WeekSerializer(serializers.ModelSerializer):
     songs = SongSerializer(read_only=True, many=True)
     highscores = HighScoreSerializer(read_only=True, many=True)
-
+    songs_played = SerializerMethodField()
     class Meta:
         model = Week
-        fields = ['name', 'songs', 'highscores']
+        fields = ['name', 'songs', 'highscores','songs_played']
         read_only_fields = [f.name for f in Week._meta.get_fields()]
 
     def create(self, validated_data):
         pass
+
+    def get_songs_played(self, obj):
+        return obj.week_statistics(self.context['request'].user)['songs_played']
 
 
 class SeasonSerializer(serializers.ModelSerializer):
     current_week = WeekSerializer(read_only=True)
     # game = serializers.PrimaryKeyRelatedField(read_only=True)
     is_applied = SerializerMethodField()
+    cover_url = SerializerMethodField()
+    season_score = SerializerMethodField()
+    season_rank = SerializerMethodField()
 
     class Meta:
         model = Season
-        fields = ['name', 'is_season_started', 'current_week', 'is_applied', 'get_difficulty']
+        fields = ['name', 'is_season_started', 'current_week', 'is_applied', 'get_difficulty','cover_url','description','finishing_at','season_score','season_rank']
         read_only_fields = fields
 
     def create(self, validated_data):
         pass
+
+    def get_cover_url(self, obj):
+        return obj.get_photo_url
 
     def get_is_applied(self, obj):
         season_list = obj.user_list.filter(id=self.context['request'].user.id)
@@ -78,7 +87,11 @@ class SeasonSerializer(serializers.ModelSerializer):
             return reverse('apply', args=[
                 obj.id])
 
+    def get_season_score(self, obj):
+        return obj.get_season_score(user=self.context['request'].user)
 
+    def get_season_rank(self, obj):
+        return Player(user_id=self.context['request'].user.id).calculate_normal
 class SteamAuthTokenSerializer(serializers.Serializer):
     steamid = serializers.CharField(label=_("Steamid"),
                                     style={'input_type': 'password'}

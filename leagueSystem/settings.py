@@ -22,11 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6b4sy&r&2tb05h4ed&$cdmpe6xj9r1jkfl#(yul6^j&%9d-z)t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # DEBUG = True
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
-ALLOWED_HOSTS = ['192.168.1.10', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', 'www.vrrhythmleague.com', '192.168.1.9',
+ALLOWED_HOSTS = ['192.168.1.12', '127.0.0.1', '0.0.0.0', 'vrrhythmleague.com', 'www.vrrhythmleague.com', '192.168.1.9',
                  'vrrhythmleague.xyz', 'www.vrrhythmleague.com']
 
 # [Unit]
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'smart_selects',
     'social_django',
-    'django_social_share',
+    # 'django_social_share',
 ]
 
 MIDDLEWARE = [
@@ -164,7 +164,7 @@ USE_TZ = True
 # ENVIRONMENT='production'
 # URL CONFIG
 LOGIN_REDIRECT_URL = '/dashboard/'
-LOGIN_URL = ''
+LOGIN_URL = 'pink'
 LOGOUT_REDIRECT_URL = '/home/'
 
 # For conformation mail

@@ -17,5 +17,6 @@ urlpatterns = [
     path('season/game/<int:pk>', views.SeasonGame.as_view()),
     path('api-token-auth/', views.giveMeMyFuckingToken.as_view(), name='api_token_auth'),
     # url(r'score/$',views.ScoreView.as_view()),
+    path('apply/<int:season_pk>',views.apply_season),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

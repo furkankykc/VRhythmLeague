@@ -45,7 +45,7 @@ class SongAdmin(PageAdmin):
 @admin.register(Season)
 class SeasonAdmin(admin.ModelAdmin):
     # inlines = [SeasonInline, ]
-    # exclude = ['finishing_at']
+    exclude = ['user_list']
 
     # prepopulated_fields = {'slug': ('name',)}  # new
     readonly_fields = ['finishing_at']

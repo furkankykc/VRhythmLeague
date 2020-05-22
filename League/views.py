@@ -249,7 +249,12 @@ def postComment(request):
         Post(detail=comment_detail, user=request.user).save()
     return redirect('dashboard')
 
-
+@login_required
 def apply_season(request, season_pk):
-    apply_for_season(Season.objects.get(pk=season_pk), user=request.user)
-    return redirect(request.META['HTTP_REFERER'])
+
+    response_data = {}
+    response_data['result'] = apply_for_season(Season.objects.get(pk=season_pk), user=request.user)
+    if 'HTTP_REFERER' in request.META:
+        return redirect(request.META['HTTP_REFERER'])
+    else:
+        return HttpResponse(json.dumps(response_data), content_type="application/json")

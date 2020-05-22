@@ -493,53 +493,7 @@
                         class="title">VR Esports</span><span class="subtitle"></span></a>
                 </li>
 
-                {% if user.is_anonymous %}
-                    <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="{% url 'pink_matches' %}"><span class="title">The League</span><span
-                            class="subtitle"></span></a>
-                    </li>
-
-
-                    <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="{% url 'pink_about_us' %}"><span class="title">About</span><span
-                            class="subtitle"></span></a></li>
-
-                    <li id="menu-item-1712"
-                        class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
-                            {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
-                            class="title">Sponsors</span><span
-                            class="subtitle"></span></a>
-                    </li>
-                    <li id="menu-item-1712" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a
-                                href="{% url 'social:begin' 'steam' %}"><span
-                                class="title">Login</span><span
-                                class="subtitle"></span></a>
-                    </li>
-                {% else %}
-
-                    <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="{% url 'dashboard' %}"><span class="title">Dashboard</span><span
-                            class="subtitle"></span></a>
-                    </li>
-                    <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="{% url 'leagues' %}"><span class="title">Leagues</span><span
-                            class="subtitle"></span></a></li>
-
-                    <li id="menu-item-1712"
-                        class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
-                            {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
-                            class="title">Sponsors</span><span
-                            class="subtitle"></span></a>
-                    </li>
-
-                    <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                            href="{% url 'profile' user.id %}"> <span class="title">{{ user }}</span>
-                        <a href="{% url 'logout' %}"><span class=" subtitle">Logout</span></a></a>
-                    </li>
-
-
-                {% endif %}
+                {% include 'components/nav.html' %}
 
             </ul>
         </div>
@@ -687,56 +641,7 @@
                                 {% comment %}  href="{% url 'pink_news' %}"{% endcomment %}><span
                                 class="title">VR Esports</span><span class="subtitle"></span></a>
                         </li>
-                        {% if user.is_anonymous %}
-                            <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                    href="{% url 'pink_matches' %}"><span class="title">The League</span><span
-                                    class="subtitle"></span></a>
-                            </li>
-
-
-                            <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                    href="{% url 'pink_about_us' %}"><span class="title">About</span><span
-                                    class="subtitle"></span></a></li>
-
-                            <li id="menu-item-1712"
-                                class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
-                                    {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
-                                    class="title">Sponsors</span><span
-                                    class="subtitle"></span></a>
-                            </li>
-                            <li id="menu-item-1712" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                <a
-                                        href="{% url 'social:begin' 'steam' %}"><span
-                                        class="title">Login</span><span
-                                        class="subtitle"></span></a>
-                            </li>
-                        {% else %}
-
-                            <li id="menu-item-1720" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                    href="{% url 'dashboard' %}"><span class="title">Dashboard</span><span
-                                    class="subtitle"></span></a>
-                            </li>
-                            <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                    href="{% url 'leagues' %}"><span class="title">Leagues</span><span
-                                    class="subtitle"></span></a></li>
-
-                            <li id="menu-item-1712"
-                                class="menu-item menu-item-type-post_type menu-item-object-page disabled"><a
-                                    {% comment %}href="{% url 'pink_sponsors' %}"{% endcomment %}><span
-                                    class="title">Sponsors</span><span
-                                    class="subtitle"></span></a>
-                            </li>
-                            <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page"><a
-                                    href="{% url 'profile' user.id %}"> <span class="title">{{ user }}</span>
-                            </a>
-                            </li>
-
-                            <li id="menu-item-1717" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                <a href="{% url 'logout' %}"><span class=" subtitle">Logout</span></a>
-                            </li>
-
-
-                        {% endif %}
+                        {% include 'components/nav.html' %}
 
                     </ul>
                 </div>

@@ -257,6 +257,19 @@ class Season(PageModel):
             page = page.parent
         return url
 
+    def get_season_score(self, user: User = None):
+        slist = []
+        seasonScoreDict = {}
+        [slist.extend(list(week.calculate_winners())) for week in self.week.all()]
+        for s in slist:
+            if s['user'] in seasonScoreDict:
+                seasonScoreDict[s['user']] += s['score']
+            else:
+                seasonScoreDict[s['user']] = s['score']
+        if user is not None:
+            return seasonScoreDict[user.id]
+        return seasonScoreDict
+
 
 class PlayList(PageModel):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
@@ -313,6 +326,7 @@ class Week(PageModel):
     # game = models.ForeignKey(Game, on_delete=models.CASCADE, null=False)
     starting_at = models.DateField(null=False, editable=False)
     finishing_at = models.DateField(null=False, editable=False)
+    weight = models.IntegerField(null=False, default=1)
     songs = models.ManyToManyField(Song,
                                    verbose_name="songs",
                                    blank=True
@@ -374,16 +388,42 @@ class Week(PageModel):
     def highscores(self):
         # self.week_scores.filter(user).aggregate(StdDev('total_score'))['total_score__stddev']
         # return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
-        return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
+        return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')
 
     @property
     def get_highscores(self):
         # self.week_scores.filter(user).aggregate(StdDev('total_score'))['total_score__stddev']
         # return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
-        high = self.highscores
+        high = self.highscores[:10]
         for hg in high:
             hg['user'] = User.objects.get(pk=hg['user'])
         return high
+
+    def get_user_score(self, user: User):
+        return self.highscores.get(user=user)['score']
+
+    def get_user_rank(self, user: User):
+        # self.week_scores.filter(user).aggregate(StdDev('total_score'))['total_score__stddev']
+        # return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
+        hs = self.highscores
+        for index, userScore in enumerate(hs):
+            if user.pk == userScore['user']:
+                return index + 1
+        return '--'
+
+    def week_statistics(self, user: User):
+        stats = {}
+        songsPlayed = Score.objects.filter(week=self, user=user).count()
+        stats.update(songs_played=songsPlayed)
+        return stats
+
+    def calculate_winners(self):
+        win_len = 3
+        high_scores = self.highscores[:win_len]
+        for i in range(len(high_scores)):
+            point = (win_len - i) * self.weight
+            high_scores[i]['score'] = point
+        return high_scores
 
 
 class Achievement(models.Model):
@@ -518,10 +558,11 @@ class Player(PageModel):
         vary = Player.score_diff_avg()
         pdf = normpdf(self.total_score, Player.mean(), vary)
         # if self.total_score - Player.score_diff_avg():
-        score_multipleer = Player.get_total_player_count() * 1000
-        pd_score = pdf * (score_multipleer if self.total_score - Player.score_diff_avg() > 0 else -score_multipleer)
-
-        if pd_score > 0:
+        score_multiplier = Player.get_total_player_count() * 1000
+        pd_score = pdf * (score_multiplier if self.total_score - Player.score_diff_avg() > 0 else -score_multiplier)
+        if self.season_rank < 0:
+            rank = "- -"
+        elif pd_score > 0:
             if pd_score < 0.25:
                 rank = self.DIAMOND
             elif pd_score < 0.5:
