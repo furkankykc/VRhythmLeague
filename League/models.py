@@ -3,6 +3,7 @@ import statistics
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import Max, Min, StdDev, Sum
@@ -259,16 +260,28 @@ class Season(PageModel):
 
     def get_season_score(self, user: User = None):
         slist = []
-        seasonScoreDict = {}
         [slist.extend(list(week.calculate_winners())) for week in self.week.all()]
-        for s in slist:
-            if s['user'] in seasonScoreDict:
-                seasonScoreDict[s['user']] += s['score']
-            else:
-                seasonScoreDict[s['user']] = s['score']
+
         if user is not None:
-            return seasonScoreDict[user.id]
-        return seasonScoreDict
+            seasonScoreDict = {}
+
+            for s in slist:
+                if s['user'] in seasonScoreDict:
+                    seasonScoreDict[s['user']] += s['score']
+                else:
+                    seasonScoreDict[s['user']] = s['score']
+            if user.id in seasonScoreDict:
+                return seasonScoreDict[user.id]
+            else:
+                return 0
+        return slist
+
+    @property
+    def highscores(self):
+        high = self.get_season_score()[:10]
+        # for hg in high:
+        #     hg['user'] = User.objects.get(pk=hg['user'])
+        return high
 
 
 class PlayList(PageModel):
@@ -400,7 +413,11 @@ class Week(PageModel):
         return high
 
     def get_user_score(self, user: User):
-        return self.highscores.get(user=user)['score']
+        try:
+            highscore_user = self.highscores.get(user=user)
+            return highscore_user['score']
+        except ObjectDoesNotExist:
+            return 0
 
     def get_user_rank(self, user: User):
         # self.week_scores.filter(user).aggregate(StdDev('total_score'))['total_score__stddev']
@@ -409,11 +426,11 @@ class Week(PageModel):
         for index, userScore in enumerate(hs):
             if user.pk == userScore['user']:
                 return index + 1
-        return '--'
+        return 0
 
     def week_statistics(self, user: User):
         stats = {}
-        songsPlayed = Score.objects.filter(week=self, user=user).count()
+        songsPlayed = Score.objects.filter(week=self, user=user).values('song').distinct().count()
         stats.update(songs_played=songsPlayed)
         return stats
 
@@ -455,7 +472,7 @@ class Score(TimeStampMixin):
     week = models.ManyToManyField(Week, blank=True, related_name='week_scores')
 
     def apply_weeks(self):
-        weeks = Week.objects.filter(songs=self.song, season__user_list=self.user, season__user_list__is_active=True)
+        weeks = Week.objects.filter(songs__pk__exact=self.song.pk, season__user_list=self.user, season__user_list__is_active=True)
         [self.week.add(week) for week in weeks.all()]
 
     def clean(self):
@@ -561,7 +578,7 @@ class Player(PageModel):
         score_multiplier = Player.get_total_player_count() * 1000
         pd_score = pdf * (score_multiplier if self.total_score - Player.score_diff_avg() > 0 else -score_multiplier)
         if self.season_rank < 0:
-            rank = "- -"
+            rank = ""
         elif pd_score > 0:
             if pd_score < 0.25:
                 rank = self.DIAMOND
@@ -580,10 +597,6 @@ class Player(PageModel):
     # def calculate_total_point(self):
     #     # bugune kadar toplam lig puani
     #     pass
-
-    def calculate_current_season_point(self):
-        # suanki sezondak puani
-        pass
 
     @property
     def season_rank(self):

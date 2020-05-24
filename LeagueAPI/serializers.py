@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
+from django.core.exceptions import ObjectDoesNotExist
 
 from League.models import Score, Season, Week, Song, Player
 from LeagueAPI import Crypter
@@ -33,8 +34,14 @@ class ScoreSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         if 'user' not in validated_data:
             validated_data['user'] = self.context['request'].user
+            try:
+                _song = Song.objects.get(hash=validated_data['song'])
+                validated_data['song'] = _song.key
+                print(_song.key)
+            except ObjectDoesNotExist as ex:
+                pass
 
-        return Score.objects.create(**validated_data)
+            return Score.objects.create(**validated_data)
 
 
 class SongSerializer(serializers.ModelSerializer):
@@ -47,9 +54,12 @@ class WeekSerializer(serializers.ModelSerializer):
     songs = SongSerializer(read_only=True, many=True)
     highscores = HighScoreSerializer(read_only=True, many=True)
     songs_played = SerializerMethodField()
+    user_score = SerializerMethodField()
+    user_rank = SerializerMethodField()
+
     class Meta:
         model = Week
-        fields = ['name', 'songs', 'highscores','songs_played']
+        fields = ['name', 'songs', 'highscores', 'songs_played', 'user_score', 'user_rank']
         read_only_fields = [f.name for f in Week._meta.get_fields()]
 
     def create(self, validated_data):
@@ -58,10 +68,17 @@ class WeekSerializer(serializers.ModelSerializer):
     def get_songs_played(self, obj):
         return obj.week_statistics(self.context['request'].user)['songs_played']
 
+    def get_user_score(self, obj):
+        return obj.get_user_score(self.context['request'].user)
+
+    def get_user_rank(self, obj):
+        return obj.get_user_rank(self.context['request'].user)
+
 
 class SeasonSerializer(serializers.ModelSerializer):
     current_week = WeekSerializer(read_only=True)
     # game = serializers.PrimaryKeyRelatedField(read_only=True)
+    highscores = HighScoreSerializer(read_only=True, many=True)
     is_applied = SerializerMethodField()
     cover_url = SerializerMethodField()
     season_score = SerializerMethodField()
@@ -69,7 +86,8 @@ class SeasonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Season
-        fields = ['name', 'is_season_started', 'current_week', 'is_applied', 'get_difficulty','cover_url','description','finishing_at','season_score','season_rank']
+        fields = ['name', 'is_season_started', 'current_week', 'is_applied', 'get_difficulty', 'cover_url',
+                  'description', 'finishing_at', 'season_score', 'season_rank', 'highscores']
         read_only_fields = fields
 
     def create(self, validated_data):
@@ -92,6 +110,8 @@ class SeasonSerializer(serializers.ModelSerializer):
 
     def get_season_rank(self, obj):
         return Player(user_id=self.context['request'].user.id).calculate_normal
+
+
 class SteamAuthTokenSerializer(serializers.Serializer):
     steamid = serializers.CharField(label=_("Steamid"),
                                     style={'input_type': 'password'}

@@ -1,19 +1,17 @@
 # Create your views here.
-from django.http import HttpResponse
 from django.utils import timezone
 from idna import unicode
 from rest_framework import viewsets
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.authtoken.views import *
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-import League
 from League import services
-from League.models import Score, Game, Player, Season, Week
+from League.models import Score, Game, Season, Week
 from .serializers import ScoreSerializer, SeasonSerializer, WeekSerializer, SteamAuthTokenSerializer
 
 
@@ -22,9 +20,10 @@ class ScoreViewSet(viewsets.ModelViewSet):
     serializer_class = ScoreSerializer
     permission_classes = [IsAuthenticated]
 
+
 @permission_classes([IsAuthenticated])
 class SeasonViewSet(viewsets.ModelViewSet):
-    authentication_classes = [SessionAuthentication, BasicAuthentication,TokenAuthentication]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
 
     renderer_classes = [JSONRenderer]
     permission_classes = [IsAuthenticated]
@@ -33,16 +32,16 @@ class SeasonViewSet(viewsets.ModelViewSet):
 
 
 class WeekViewSet(viewsets.ModelViewSet):
-    authentication_classes = [SessionAuthentication, BasicAuthentication,TokenAuthentication]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
 
     queryset = Week.objects.filter(finishing_at__gte=timezone.now().date())
     serializer_class = WeekSerializer
     permission_classes = [IsAuthenticated]
 
 
-#
+@authentication_classes([SessionAuthentication, BasicAuthentication, TokenAuthentication])
 class ScoreView(APIView):
-    authentication_classes = [SessionAuthentication, BasicAuthentication,TokenAuthentication]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]
     renderer_classes = [JSONRenderer]
 
@@ -97,13 +96,14 @@ def example_view(request, format=None):
     }
     return Response(content)
 
+
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def apply_season(request, season_pk):
-
     response_data = {}
     response_data['result'] = services.apply_for_season(Season.objects.get(pk=season_pk), user=request.user)
     return Response(response_data)
+
 
 class SeasonGame(APIView):
     permission_classes = [IsAuthenticated]
