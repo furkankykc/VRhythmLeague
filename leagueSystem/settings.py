@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'League.apps.LeagueConfig',
     'LeagueAPI.apps.LeagueAPIConfig',
     'rest_framework',

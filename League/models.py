@@ -260,7 +260,7 @@ class Season(PageModel):
 
     def get_season_score(self, user: User = None):
         slist = []
-        [slist.extend(list(week.calculate_winners())) for week in self.week.all()]
+        [slist.extend(list(week.calculate_winners())) if week.is_finished else None for week in self.week.all()]
 
         if user is not None:
             seasonScoreDict = {}
@@ -472,7 +472,8 @@ class Score(TimeStampMixin):
     week = models.ManyToManyField(Week, blank=True, related_name='week_scores')
 
     def apply_weeks(self):
-        weeks = Week.objects.filter(songs__pk__exact=self.song.pk, season__user_list=self.user, season__user_list__is_active=True)
+        weeks = Week.objects.filter(songs__pk__exact=self.song.pk, season__user_list=self.user,
+                                    season__user_list__is_active=True)
         [self.week.add(week) for week in weeks.all()]
 
     def clean(self):

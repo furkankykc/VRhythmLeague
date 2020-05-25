@@ -1,5 +1,6 @@
 {% extends 'thema_vr/pixie_base.html' %}
 
+{% load humanize %}
 
 
 {% block content %}
@@ -136,7 +137,7 @@
                         {% else %}
                             <span class="mTitle">Current Week</span>
                         {% endif %}
-                        <span class="number">{{ week.name }}</span>
+                        <span class="number">{{ week.name}}</span>
                     </li>
                     {#                    <li class="numeric">#}
                     {#                        <span class="mTitle">Starring Player:</span>#}
@@ -188,7 +189,8 @@
                         {% endif %}
                         <p>
                         <span class="place first" style="">
-                            {{ forloop.counter }}{% if forloop.counter < 3 %}st {% else %} th {% endif %}place
+{#                            {{ forloop.counter }}{% if forloop.counter < 3 %}st {% else %} th {% endif %}place#}
+                            {{ forloop.counter |ordinal }}
                         </span>
                             <span class="date" style="min-width: 120px;">{{ score.user }}</span>
                         </p>

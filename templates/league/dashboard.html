@@ -1,6 +1,7 @@
 {% extends 'thema_vr/pixie_base.html' %}
 {% load static %}
 {% block content %}
+{% load humanize %}
 
     <style>
         aside article.latest-article ul li .details {
@@ -94,7 +95,7 @@
                     </span>
                                     <a class="title">
                                         {{ post.detail }}</a>
-                                    <span class="date">{{ post.created_at }}</span>
+                                    <span class="date">{{ post.created_at|naturaltime }}</span>
                                 </div>
                             </li>
 
