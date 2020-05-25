@@ -217,7 +217,7 @@ def create_songs_from_url(json_data: dict):
             hard=get_diffs_json(diffs, 2),
             expert=get_diffs_json(diffs, 3),
             expert_plus=get_diffs_json(diffs, 4),
-            description=data['description'],
+            description=data['description'][:150],
             up_votes=data['stats']['upVotes'],
             down_votes=data['stats']['downVotes'],
             downloads=data['stats']['downloads'],

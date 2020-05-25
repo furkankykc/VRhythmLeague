@@ -37,8 +37,8 @@ class PageModel(TimeStampMixin):
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
         super(PageModel, self).save()
-        self.full_clean()
         self.slug = slugify(self.name)
+      #  self.full_clean()
 
     def __unicode__(self):
         return self.name
@@ -87,11 +87,11 @@ class Song(PageModel):
     song_author_name = models.CharField(max_length=_max_length)
     level_author_name = models.CharField(max_length=_max_length)
     # diffs = models.OneToOneField(Difficulties, on_delete=models.CASCADE,related_name='diff_ez')
-    easy = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='easy', null=True)
-    normal = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='normal', null=True)
-    hard = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='hard', null=True)
-    expert = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert', null=True)
-    expert_plus = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert_plus', null=True)
+    easy = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='easy',blank=True, null=True)
+    normal = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='normal',blank=True, null=True)
+    hard = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='hard',blank=True, null=True)
+    expert = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert',blank=True, null=True)
+    expert_plus = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert_plus',blank=True, null=True)
 
     up_votes = models.BigIntegerField()
     down_votes = models.BigIntegerField()
