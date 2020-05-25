@@ -134,8 +134,8 @@ class giveMeMyFuckingToken(ObtainAuthToken):
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data,
                                            context={'request': request})
-        serializer.is_valid(raise_exception=True)
         try:
+            serializer.is_valid(raise_exception=False)
             user = serializer.validated_data['user']
         except ObjectDoesNotExist as ex:
             return Response({'token': 'UserDoesNotExist'})
