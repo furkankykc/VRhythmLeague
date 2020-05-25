@@ -36,10 +36,9 @@ class PageModel(TimeStampMixin):
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
-
-        self.slug = slugify(self.name)
         super(PageModel, self).save()
         self.full_clean()
+        self.slug = slugify(self.name)
 
     def __unicode__(self):
         return self.name
@@ -236,8 +235,6 @@ class Season(PageModel):
     def clean(self):
         pass
 
-    def full_clean(self, exclude=None, validate_unique=True):
-        pass
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
 

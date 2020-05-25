@@ -50,18 +50,16 @@ class SeasonAdmin(admin.ModelAdmin):
         'name',
         'slug',
     )
-    prepopulated_fields = {'slug': ('name',)}  # new
+    # prepopulated_fields = {'slug': ('name',)}  # new
     readonly_fields = ['finishing_at']
 
     # def save_form(self, request, form, change):
     #     form.save(commit=False)
-
     def get_form(self, request, obj=None, **kwargs):
         form = super(SeasonAdmin, self).get_form(request, obj, **kwargs)
         form.base_fields['slug'].disabled = True
         form.base_fields['slug'].help_text = "This field is not editable"
         return form
-
     def save_model(self, request, obj, form, change):
         if form.is_valid():
             # season_data = form.save()
