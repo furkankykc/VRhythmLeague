@@ -1,4 +1,5 @@
 # Create your views here.
+from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
 from idna import unicode
 from rest_framework import viewsets
@@ -134,6 +135,9 @@ class giveMeMyFuckingToken(ObtainAuthToken):
         serializer = self.serializer_class(data=request.data,
                                            context={'request': request})
         serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
+        try:
+            user = serializer.validated_data['user']
+        except ObjectDoesNotExist as ex:
+            return Response({'token': 'UserDoesNotExist'})
         token, created = Token.objects.get_or_create(user=user)
         return Response({'token': token.key})
