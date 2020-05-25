@@ -540,6 +540,7 @@ class Player(PageModel):
         score = Player.objects.only('total_score').aggregate(Max('total_score'))['total_score__max']
 
         return score if score is not None else 0
+
     @classmethod
     def get_min_point_ever(cls) -> int:
         score = Player.objects.filter(total_score__gt=0).aggregate(Min('total_score'))['total_score__min']
@@ -557,7 +558,8 @@ class Player(PageModel):
 
     @classmethod
     def score_diff_avg(cls) -> float:
-        score_norm = Player.score_diffrence() / cls.get_total_player_count()
+        total_player_count = cls.get_total_player_count()
+        score_norm = (Player.score_diffrence() / total_player_count) if total_player_count != 0 else 0
         return score_norm
 
     @classmethod
