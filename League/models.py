@@ -573,7 +573,8 @@ class Player(PageModel):
         return mean
 
     def normalized_sore(self) -> float:
-        return 50 - (self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()
+        return (50 - (
+                    self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()) if Player.score_diffrence() != 0 else 0
 
     @property
     def calculate_normal(self):
