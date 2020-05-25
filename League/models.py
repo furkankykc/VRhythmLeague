@@ -34,12 +34,12 @@ class PageModel(TimeStampMixin):
     class Meta:
         abstract = True
 
-    #
-    # def save(self, force_insert=False, force_update=False, using=None,
-    #          update_fields=None):
-    #     super(PageModel, self).save()
-    #     self.full_clean()
-    #     self.slug = slugify(self.name)
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+
+        self.slug = slugify(self.name)
+        super(PageModel, self).save()
+        self.full_clean()
 
     def __unicode__(self):
         return self.name
@@ -236,6 +236,8 @@ class Season(PageModel):
     def clean(self):
         pass
 
+    def full_clean(self, exclude=None, validate_unique=True):
+        pass
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
 
@@ -574,7 +576,7 @@ class Player(PageModel):
 
     def normalized_sore(self) -> float:
         return (50 - (
-                    self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()) if Player.score_diffrence() != 0 else 0
+                self.total_score - Player.get_min_point_ever()) / Player.score_diffrence()) if Player.score_diffrence() != 0 else 0
 
     @property
     def calculate_normal(self):

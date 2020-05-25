@@ -45,6 +45,7 @@ def create_season_(season):
     create_season(typ=season.type,
                   name=season.name,
                   game=season.game,
+                  description=season.description,
                   starting_at=season.starting_at,
                   sponsor_name=season.sponsor_name,
                   difficulty=season.difficulty
@@ -55,6 +56,7 @@ def create_season(*,
                   typ: Type,
                   name: str,
                   game: Game,
+                  description:str,
                   starting_at: dt.date,
                   sponsor_name: str,
                   difficulty
@@ -62,6 +64,7 @@ def create_season(*,
     season, created = Season.objects.get_or_create(name=name,
                                                    type=typ,
                                                    game=game,
+                                                   description=description,
                                                    starting_at=starting_at,
                                                    sponsor_name=sponsor_name,
                                                    difficulty=difficulty
