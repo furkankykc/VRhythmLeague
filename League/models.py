@@ -537,11 +537,13 @@ class Player(PageModel):
     #     instance.player.save()
     @classmethod
     def get_max_point_ever(cls) -> int:
-        return Player.objects.only('total_score').aggregate(Max('total_score'))['total_score__max']
+        score = Player.objects.only('total_score').aggregate(Max('total_score'))['total_score__max']
 
+        return score if score is not None else 0
     @classmethod
     def get_min_point_ever(cls) -> int:
-        return Player.objects.filter(total_score__gt=0).aggregate(Min('total_score'))['total_score__min']
+        score = Player.objects.filter(total_score__gt=0).aggregate(Min('total_score'))['total_score__min']
+        return score if score is not None else 0
 
     @classmethod
     def get_total_player_count(cls) -> int:

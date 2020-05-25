@@ -40,7 +40,7 @@ def get_songs_bulk_saber(start_val=1, end_val=sys.maxsize):
         print('Page:{}'.format(i).center(80, '-'))
 
 
-# get_songs_bulk_saber(1400, 5000)
+# getsongs_bulk_saber(1400, 5000)
 
 # services.create_season(name='Alpha Season', game=models.Game.objects.first(),
 #                        starting_at=timezone.now() + dt.timedelta(weeks=1), typ=models.Type.objects.first(),sponsor_name='Vr Gaming Room')
