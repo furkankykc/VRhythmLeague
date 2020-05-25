@@ -569,7 +569,7 @@ class Player(PageModel):
     @classmethod
     def mean(cls):
         player_list = Player.objects.filter(total_score__gt=0).values_list('total_score', flat=True)
-        mean = statistics.mean(player_list)
+        mean = statistics.mean(player_list) if player_list.count() > 0 else 0
         return mean
 
     def normalized_sore(self) -> float:
