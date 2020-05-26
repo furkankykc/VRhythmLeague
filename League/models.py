@@ -38,7 +38,8 @@ class PageModel(TimeStampMixin):
              update_fields=None):
         super(PageModel, self).save()
         self.slug = slugify(self.name)
-      #  self.full_clean()
+
+    #  self.full_clean()
 
     def __unicode__(self):
         return self.name
@@ -87,11 +88,12 @@ class Song(PageModel):
     song_author_name = models.CharField(max_length=_max_length)
     level_author_name = models.CharField(max_length=_max_length)
     # diffs = models.OneToOneField(Difficulties, on_delete=models.CASCADE,related_name='diff_ez')
-    easy = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='easy',blank=True, null=True)
-    normal = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='normal',blank=True, null=True)
-    hard = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='hard',blank=True, null=True)
-    expert = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert',blank=True, null=True)
-    expert_plus = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert_plus',blank=True, null=True)
+    easy = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='easy', blank=True, null=True)
+    normal = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='normal', blank=True, null=True)
+    hard = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='hard', blank=True, null=True)
+    expert = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert', blank=True, null=True)
+    expert_plus = models.OneToOneField(Difficulty, on_delete=models.CASCADE, related_name='expert_plus', blank=True,
+                                       null=True)
 
     up_votes = models.BigIntegerField()
     down_votes = models.BigIntegerField()
@@ -610,3 +612,9 @@ class Player(PageModel):
 
 class AlphaUsers(models.Model):
     steam_id = models.CharField(max_length=50)
+
+    def __str__(self):
+        try:
+            return Player.objects.get(steam_uid=self.steam_id).user.username
+        except ObjectDoesNotExist:
+            return self.steam_id
