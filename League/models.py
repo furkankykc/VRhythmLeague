@@ -473,7 +473,7 @@ class Score(TimeStampMixin):
     week = models.ManyToManyField(Week, blank=True, related_name='week_scores')
 
     def apply_weeks(self):
-        weeks = Week.objects.filter(songs__pk__exact=self.song.pk, season__user_list=self.user,
+        weeks = Week.objects.filter(songs__pk__exact=self.song.pk, season__user_list__in=[self.user],
                                     season__user_list__is_active=True)
         [self.week.add(week) for week in weeks.all()]
 
