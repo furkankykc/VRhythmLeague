@@ -478,7 +478,9 @@ class Score(TimeStampMixin):
         [self.week.add(week) for week in weeks.all()]
 
     def clean(self):
-        Player.objects.get(user=self.user).total_score += self.score
+        player = Player.objects.get(user=self.user)
+        player.total_score += self.score
+        player.save()
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
