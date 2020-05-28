@@ -402,7 +402,7 @@ class Week(PageModel):
     def highscores(self):
         # self.week_scores.filter(user).aggregate(StdDev('total_score'))['total_score__stddev']
         # return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')[:10]
-        return self.week_scores.values('user').annotate(score=Sum('score')).order_by('score')
+        return self.week_scores.values('user').annotate(score=Sum('score')).order_by('-score')
 
     @property
     def get_highscores(self):
