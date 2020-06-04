@@ -1,7 +1,8 @@
 # TODO: Insert clever settings mechanism
-import django
 import os
 import sys
+
+import django
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "leagueSystem.settings")
 django.setup()
@@ -19,7 +20,6 @@ def get_songs_from_saber(list=4, page=1):
         'hot',
         'rating',
         'latest',
-        'latest',
         'downloads',
         'plays',
     ]
@@ -35,13 +35,13 @@ def get_songs_from_saber(list=4, page=1):
     services.create_songs_from_url(data)
 
 
-def get_songs_bulk_saber(start_val=1, end_val=sys.maxsize):
+def get_songs_bulk_saber(start_val=1, end_val=sys.maxsize, shortby: int = 1):
     for i in range(start_val, end_val):
-        get_songs_from_saber(4, i)
+        get_songs_from_saber(shortby, i)
         print('Page:{}'.format(i).center(80, '-'))
 
 
-get_songs_bulk_saber(1, 5000)
+print("Example usage :\n0:hot\n1:rating\n2:latest\n3:downloads\n4:plays\nget_songs_bulk_saber(1, 5000,shortby = 1)\n")
 
 # services.create_season(name='Alpha Season', game=models.Game.objects.first(),
 #                        starting_at=timezone.now() + dt.timedelta(weeks=1), typ=models.Type.objects.first(),sponsor_name='Vr Gaming Room')
