@@ -31,7 +31,6 @@ def get_songs_from_saber(list=4, page=1):
         # This means something went wrong.
         raise ValueError('GET /tasks/ {}'.format(resp.status_code))
     data = resp.json()
-    print(data)
     services.create_songs_from_url(data)
 
 
@@ -39,7 +38,6 @@ def get_songs_bulk_saber(start_val=1, end_val=sys.maxsize, shortby: int = 1):
     for i in range(start_val, end_val):
         get_songs_from_saber(shortby, i)
         print('Page:{}'.format(i).center(80, '-'))
-
 
 print("Example usage :\n0:hot\n1:rating\n2:latest\n3:downloads\n4:plays\nget_songs_bulk_saber(1, 5000,shortby = 1)\n")
 
