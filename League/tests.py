@@ -1,4 +1,5 @@
 # TODO: Insert clever settings mechanism
+# from __future__ import unicode_literals
 import os
 import sys
 
@@ -39,6 +40,8 @@ def get_songs_bulk_saber(start_val=1, end_val=sys.maxsize, shortby: int = 1):
         get_songs_from_saber(shortby, i)
         print('Page:{}'.format(i).center(80, '-'))
 
+
+# get_songs_bulk_saber(236, 237, 1)
 print("Example usage :\n0:hot\n1:rating\n2:latest\n3:downloads\n4:plays\nget_songs_bulk_saber(1, 5000,shortby = 1)\n")
 
 # services.create_season(name='Alpha Season', game=models.Game.objects.first(),
